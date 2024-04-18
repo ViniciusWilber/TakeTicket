@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cadastroEvento.css">
+    <title>Registro do Evento</title>
+</head>
+
+<body>
+    <section class="container">
+        <header>Registro do Evento</header>
+        <form action="#" class="form">
+            <div class="input-box">
+                <label>Empresa</label>
+                <input type="text" placeholder="Nome Fantasia" />
+            </div>
+            <div class="input-box">
+                <label>CNPJ</label>
+                <input type="text" placeholder="XX. XXX. XXX/0001-XX" />
+            </div>
+            <section class="column">
+                <div class="input-box">
+                    <label>Código</label>
+                    <input type="text" placeholder="Descrição" />
+                </div>
+                <div class="input-box">
+                    <label>Data de Abertura</label>
+                    <input type="date" placeholder="dd/mm/aaaa" />
+                </div>
+            </section>
+            <section class="gender-box">
+                <h3>Evento</h3>
+                <div class="gender-option">
+                    <div class="gender">
+                        <input type="radio" id="check" name="gender" />
+                        <label for="check">Gratuito</label>
+                    </div>
+                    <div class="gender">
+                        <input type="radio" id="check" name="gender" />
+                        <label for="check">Pago</label>
+                    </div>
+                    <div class="gender">
+                        <input type="radio" id="check" name="gender" />
+                        <label for="check">Avançado</label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="input-box endereço">
+                <label>Endereço</label>
+                <label for="image1">Imagem 1:</label>
+                <input type="file" id="image1" name="image1" accept="image/*" />
+                <label for="image2">Imagem 2:</label>
+                <input type="file" id="image2" name="image2" accept="image/*" />
+                <label for="image3">Imagem 3:</label>
+                <input type="file" id="image3" name="image3" accept="image/*" />
+                <label for="image4">Imagem 4:</label>
+                <input type="file" id="image4" name="image4" accept="image/*" />
+                <input type="text" placeholder="CEP" />
+                <div class="column">
+                    <div class="select-box">
+                        <select>
+                            <option hidden>Região</option><!--Função Selecionar-->
+                            <option>Zona Sul</option>
+                            <option>Zona Norte</option>
+                            <option>Zona Oeste</option>
+                            <option>Zona Leste</option>
+                        </select>
+                    </div>
+                    <input type="text" placeholder="Número" />
+                </div>
+                <div class="column">
+                    <input type="number" placeholder="Telefone" />
+                    <input type="text" placeholder="Rua/Av" />
+                </div>
+            </section>
+            <button>Enviar</button>
+        </form>
+    </section>
+</body>
+
+</html>
