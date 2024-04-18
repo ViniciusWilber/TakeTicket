@@ -189,6 +189,18 @@ header {
     width: 90%;
     height: 120px;
 }
+.caracteristicas .sobre1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+.caracteristicas .sobre2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
 .promotor{
     display: flex;
     justify-content: flex-start;
