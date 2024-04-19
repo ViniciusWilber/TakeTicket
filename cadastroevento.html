@@ -10,28 +10,39 @@
 
 <body>
     <section class="container">
-        <header>Registro do Evento</header>
+        <h1>Cadastro do Evento</h1>
         <form action="#" class="form">
             <div class="input-box">
-                <label>Empresa</label>
-                <input type="text" placeholder="Nome Fantasia" />
+                <label>Nome do evento</label>
+                <input type="text" placeholder="Nome do evento" />
             </div>
-            <div class="input-box">
-                <label>CNPJ</label>
-                <input type="text" placeholder="XX. XXX. XXX/0001-XX" />
+            <br>
+            <label>Tema do evento</label>
+            <div class="select-box">
+                <select>
+                    <option hidden>Selecione o tipo do seu evento</option>
+                    <option>Exposições</option>
+                    <option>Museus</option>
+                    <option>Sociais</option>
+                    <option>Excursões</option>
+                    <option>Trilhas</option>
+                    <option>Viagens</option>
+                    <option>Ferias</option>
+                    <option>Atrações</option>
+                </select>
             </div>
             <section class="column">
                 <div class="input-box">
-                    <label>Código</label>
-                    <input type="text" placeholder="Descrição" />
+                    <label>Inicio do evento</label>
+                    <input type="date" placeholder="dd/mm/aaaa" />
                 </div>
                 <div class="input-box">
-                    <label>Data de Abertura</label>
+                    <label>Termino do evento</label>
                     <input type="date" placeholder="dd/mm/aaaa" />
                 </div>
             </section>
             <section class="gender-box">
-                <h3>Evento</h3>
+                <h3>Tipo de evento</h3>
                 <div class="gender-option">
                     <div class="gender">
                         <input type="radio" id="check" name="gender" />
@@ -41,15 +52,10 @@
                         <input type="radio" id="check" name="gender" />
                         <label for="check">Pago</label>
                     </div>
-                    <div class="gender">
-                        <input type="radio" id="check" name="gender" />
-                        <label for="check">Avançado</label>
-                    </div>
                 </div>
             </section>
 
             <section class="input-box endereço">
-                <label>Endereço</label>
                 <label for="image1">Imagem 1:</label>
                 <input type="file" id="image1" name="image1" accept="image/*" />
                 <label for="image2">Imagem 2:</label>
@@ -58,18 +64,24 @@
                 <input type="file" id="image3" name="image3" accept="image/*" />
                 <label for="image4">Imagem 4:</label>
                 <input type="file" id="image4" name="image4" accept="image/*" />
+                <br>
+                
+                <label>Descreva detalhadamento e seu evento</label>
+                <input type="text" placeholder="Sobre" />
+                <label>Endereço</label>
                 <input type="text" placeholder="CEP" />
                 <div class="column">
-                    <div class="select-box">
+                    <!-- <div class="select-box">
                         <select>
-                            <option hidden>Região</option><!--Função Selecionar-->
+                            <option hidden>Região</option>
                             <option>Zona Sul</option>
                             <option>Zona Norte</option>
                             <option>Zona Oeste</option>
                             <option>Zona Leste</option>
                         </select>
-                    </div>
+                    </div> -->
                     <input type="text" placeholder="Número" />
+                    <input type="text" placeholder="complemento" />
                 </div>
                 <div class="column">
                     <input type="number" placeholder="Telefone" />
