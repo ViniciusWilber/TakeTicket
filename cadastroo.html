@@ -8,36 +8,36 @@
 </head>
 <body>
     <main>
-        <h1>Cadastro</h1>
-        <form action="" class="form">
+        <form action="#" class="form">
+            <h1>Cadastro</h1>
             <section>
                 <div class="campo">
-                    <input type="email" class="cadastro" placeholder="email">
-                    <input type="email" class="cadastro" placeholder="repetir email">
+                    <input type="email" class="cadastro" placeholder="Email">
+                    <input type="email" class="cadastro" placeholder="Repetir email">
                 </div>
                 <div class="campo">
-                    <input type="text" class="cadastro" placeholder="senha">
-                    <input type="text" class="cadastro" placeholder="repetir senha">
+                    <input type="password" class="cadastro" placeholder="Senha">
+                    <input type="password" class="cadastro" placeholder="Repetir senha">
                 </div>
             </section>
             <section>
                 <div class="check">
-                    <input type="radio" id="check" name="gender" />
+                    <input type="radio" id="check" />
                     <label for="check">pessoa fisica</label>
-                    <input type="radio" id="check" name="gender" />
+                    <input type="radio" id="check" />
                     <label for="check">pessoa juridica</label>
                 </div>
             </section>
             <section>
                 <div class="campo">
                     <input type="text" class="cadastro" placeholder="Nome/Sobrenome">
-                    <input type="date" class="numero" placeholder="DD/MM/AAAA">
                     <input type="text" class="numero" placeholder="CPF/CNPJ">
+                    <input type="date" class="numero" placeholder="DD/MM/AAAA">
                 </div>
                 <div class="campo">
-                    <input type="text" class="cadastro" placeholder="CEP">
-                    <input type="text" class="cadastro" placeholder="Cidade">
-                    <input type="text" class="cadastro" placeholder="bairro">
+                    <input type="text" class="numero" placeholder="CEP">
+                    <input type="text" class="numero" placeholder="Cidade">
+                    <input type="text" class="cadastro" placeholder="Bairro">
                 </div>
             </section>
             <section>
@@ -52,18 +52,17 @@
                     <input type="text" class="numero" placeholder="Telefone/Celular">
                 </div>
                 <div class="check">
-                    <input type="radio" id="check" name="gender" />
+                    <input type="radio" id="check"  />
                     <label for="check"><a href="">Eu li e concordo com os termos e condiçoes</a></label>
                 </div>
             </section>
-            <section>
-                <div class="botoes">
-                    <button class="confirmar" id="confirmar">Confirmar</button>
-                    <button class="cancelar"  id="cancelar">Cancelar</button>
-                </div>
-            </section>
         </form>
-
+        <section>
+            <div class="botoes">
+                <a href="pagina1.html"><button class="confirmar" id="confirmar">Confirmar</button></a>
+                <a href="login.html"><button class="cancelar"  id="cancelar">Cancelar</button></a>
+            </div>
+        </section>
     </main>
 </body>
 </html>

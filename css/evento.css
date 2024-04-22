@@ -301,6 +301,14 @@ header {
     gap: 1rem;
     padding: 10rem;
 }
+.Mapa{
+  display: flex;
+  align-items: flex-start;
+  justify-items: flex-start;
+  flex-direction: column;
+  padding: 5rem;
+  padding-left: 18vw;
+}
 footer{
     background: linear-gradient(-105grad, #044292, #03aca0);
     display: flex;
