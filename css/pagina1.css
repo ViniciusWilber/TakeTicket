@@ -205,6 +205,8 @@ header {
     background: var(--input-bg-color);
     border-right: 2px solid var(--input-border-color);
     outline: none;
+    font-size: 25px;
+    padding-left: 1rem;
   }
   
   .input::-webkit-input-placeholder {

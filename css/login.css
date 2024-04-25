@@ -1,3 +1,8 @@
+
+:root {
+    --tamanhoTitulo: 3rem;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -27,7 +32,8 @@ main{
     border-radius: 25px 0px 0px 25px;
 }
 .direita h1 {
-    font-size: 50px;
+    font-size: var(--tamanhoTitulo);
+    /* font-size: 50px; */
     padding-bottom: 3rem;
 }
 .direita button {
@@ -141,4 +147,10 @@ main{
     color: #ffffff;
     font-size: 22px;
     cursor: pointer;
+}
+
+@media screen {
+    :root {
+        --tamanhoTitulo: 34px;
+    }
 }
