@@ -10,6 +10,9 @@ header {
     height: 100px;
     padding-left: 30px;
 }
+header img{
+  width: 20%;
+}
 .botoes {
     display: flex;
     justify-content: center;
