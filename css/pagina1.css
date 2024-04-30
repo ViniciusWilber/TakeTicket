@@ -483,31 +483,31 @@ footer .termos {
   bottom: 0;
   left: 395px;
 } 
-@media (max-width: 1600px){
+@media (max-width: 1440px){
 
   .texto1 h1{
     font-size: 40px;
   }
   .cartas{
-    padding: 20px;
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 50px;
     height: 100%;
     flex-wrap: wrap;
-    padding-left: 10%;
+    padding-left: 5%;
     padding-right: 10%;
   }
   .curioso{
-    padding: 100px;
-    padding-left: 140px;
+    padding: 50px;
+    padding-left: 70px;
   }
   .curioso img{
     height: 30%;
   }
 }
-@media (max-width: 1100px){
+@media (max-width: 1024px){
   .primeira{
     flex-wrap: wrap;
     flex-direction: column;
@@ -517,13 +517,12 @@ footer .termos {
   }
   .curioso{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 100%;
+    max-width: 35%;
   }
   .curioso img{
-    padding-left: 100px;
-    width: 90%;
+    padding: 1px;
   }
   .curioso p{
     padding-right: 10%;
