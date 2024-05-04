@@ -344,6 +344,17 @@ header img{
     height: 220px;
     border-radius: 13px, 13px; 
   }
+.cartasTema{
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* gap: 30px; */
+  height: 950px;
+  flex-wrap: wrap;
+  padding-left: 15rem;
+  padding-right: 15rem;
+}
 .grupo{
   display: flex;
   justify-content: space-between;
