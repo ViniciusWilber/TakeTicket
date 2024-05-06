@@ -312,6 +312,30 @@ header img{
   flex-direction: column;
   align-items: center;
 }
+.cartasExposicoes{
+  display: none;
+}
+.cartasMuseus{
+  display: none;
+}
+.cartasSociais{
+  display: none;
+}
+.cartasExcursoes{
+  display: none;
+}
+.cartasTrilhas{
+  display: none;
+}
+.cartasViagens{
+  display: none;
+}
+.cartasFerias{
+  display: none;
+}
+.cartasAtracoes{
+  display: none;
+}
 .cartas{
     padding: 30px;
     display: flex;
