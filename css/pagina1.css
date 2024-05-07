@@ -298,6 +298,14 @@ header img{
     text-decoration: none;
     font-size: 60px;
 }
+.navegacao button{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: white;
+  cursor: pointer;
+  background-color: white;
+}
 .navegacao nav{
     text-decoration: none;
     display: flex;
@@ -564,7 +572,7 @@ footer .termos {
     padding-left: 12%;
   }
 }
-@media (max-width: 970px){
+@media (max-width: 768px){
   .Login{
     padding: 20%;
     font-size: 20px;
@@ -648,7 +656,7 @@ footer .termos {
   }
 }
 
-@media (max-width: 412px){
+@media (max-width: 425px){
   .Login{
     padding: 23%;
     font-size: 12px;
