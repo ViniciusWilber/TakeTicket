@@ -66,14 +66,16 @@
                 <label>Descreva detalhadamento e seu evento</label>
                 <input type="text" placeholder="Sobre" />
                 <label>Endereço</label>
-                <input type="text" placeholder="Rua" />
+                <input type="text" id="rua" placeholder="Rua" />
                 <div class="column">
                     <input type="text" placeholder="Número" />
                     <input type="text" placeholder="Complemento" />
+                    <input type="text" id="cidade" placeholder="cidade" />
                 </div>
                 <div class="column">
                     <input type="text" placeholder="Telefone" />
-                    <input type="text" placeholder="CEP" />
+                    <input type="text" id="cep" placeholder="CEP" />
+                    <input type="text" id="bairro" placeholder="BAIRRO" />
                 </div>
             </section>
         </form>
@@ -81,6 +83,7 @@
         <a href="Evento.html"><button type="submit" class="botao">Enviar</button></a>
         <a href="Evento.html"><button type="submit" class="botao">Cancelar</button></a>
         </div>
+        <script src="js/cadastroeventos.js"></script>
     </section>
 </body>
 </html>
