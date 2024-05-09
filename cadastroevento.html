@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,17 +63,15 @@
                 <label for="image4">Imagem 4:</label>
                 <input type="file" id="image4" name="image4" accept="image/*" />
                 <label>Descreva detalhadamento e seu evento</label>
-                <input type="text" placeholder="Sobre" />
+                <input type="text" placeholder="Sobre" class="sobre" />
                 <label>Endereço</label>
-                <input type="text" id="rua" placeholder="Rua" />
+                <input type="text" id="cep" class="numero" placeholder="CEP">
                 <div class="column">
-                    <input type="text" id="cep" placeholder="CEP" />
+                    <input type="text" id="rua" placeholder="Rua" />
                     <input type="text" placeholder="Número" />
                     <input type="text" placeholder="Complemento" />
- 
                 </div>
                 <div class="column">
-
                     <input type="text" id="cidade" placeholder="Cidade" />
                     <input type="text" id="bairro" placeholder="Bairro" />
                     <input type="text" placeholder="Telefone" />
@@ -82,8 +79,8 @@
             </section>
         </form>
         <div>
-        <a href="Evento.html"><button type="submit" class="botao">Enviar</button></a>
-        <a href="Evento.html"><button type="submit" class="botao">Cancelar</button></a>
+        <a href="Evento.html"><button type="submit" class="enviar">Enviar</button></a>
+        <a href="index.html"><button type="submit" class="cancelar">Cancelar</button></a>
         </div>
         <script src="js/cadastroeventos.js"></script>
     </section>

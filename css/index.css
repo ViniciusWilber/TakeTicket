@@ -7,11 +7,11 @@ header {
     background-color: #212221;
     display: flex;
     justify-content:space-between;
-    height: 100px;
+    height: 100%;
     padding-left: 30px;
 }
 header img{
-  width: 20%;
+  max-width: 20%;
 }
 .botoes {
     display: flex;
@@ -344,13 +344,24 @@ header img{
 .cartasAtracoes{
   display: none;
 }
+.cartasTema{
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  height: 100%;
+  flex-wrap: wrap;
+  padding-left: 15rem;
+  padding-right: 15rem;
+}
 .cartas{
     padding: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* gap: 30px; */
-    height: 950px;
+    gap: 30px;
+    height: 100%;
     flex-wrap: wrap;
     padding-left: 15rem;
     padding-right: 15rem;
@@ -376,17 +387,6 @@ header img{
     height: 220px;
     border-radius: 13px, 13px; 
   }
-.cartasTema{
-  padding: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* gap: 30px; */
-  height: 950px;
-  flex-wrap: wrap;
-  padding-left: 15rem;
-  padding-right: 15rem;
-}
 .grupo{
   display: flex;
   justify-content: space-between;
@@ -418,9 +418,7 @@ header img{
     align-items: center;
 }
 .reserva {
-    display: flex;
     justify-content: center;
-    align-items: center;
     transition: all 0.2s ease-in;
     position: relative;
     overflow: hidden;
@@ -431,8 +429,7 @@ header img{
     font-size: 18px;
     border-radius: 0.5em;
     background: #f8f8f8;
-    border: 2px solid #009087;
-    /* box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff; */
+    box-shadow: 4px 4px 9px #c5c5c5, -6px -6px 12px #ffffff;
   }
   
   .reserva:active {
@@ -490,12 +487,11 @@ header img{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding: 130px;
-    padding-left: 230px;
+    padding: 100px;
+    padding-left:18%;
 }
 .curioso h1{
   font-size: 50px;
-
 }
 .curioso p{
   font-size: 23px;
@@ -547,7 +543,7 @@ footer .termos {
     padding-left: 70px;
   }
   .curioso img{
-    height: 30%;
+    height: 40%;
   }
 }
 @media (max-width: 1024px){
@@ -657,6 +653,9 @@ footer .termos {
 }
 
 @media (max-width: 425px){
+  header img {
+    max-width: 40%;
+  }
   .Login{
     padding: 23%;
     font-size: 12px;
@@ -706,22 +705,24 @@ footer .termos {
     padding-right: 10%;
   }
   .curioso{
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 10px;
   }
   .curioso img{
     padding-left: 30px;
-    width: 90%;
+    width: 220%;
   }
   .curioso h1{
     font-size: 30px;
   }
   .curioso p{
-    padding-right: 10%;
-    padding-left: 12%;
+    width: 300px;
+    padding-right: 5%;
+    padding-left:50%;
   }
   footer{
     background: linear-gradient(-105grad, #044292, #03aca0);
