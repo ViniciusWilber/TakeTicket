@@ -521,9 +521,42 @@ footer .termos {
   position: absolute;
   bottom: 0;
   left: 395px;
-} 
-@media (max-width: 1440px){
+}
+.cookies-msg{
+  width: 80%;
+  height: 100px;
+  background-color: white;
+  position: fixed;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%);
+}
+.cookies-msg .cookies-txt{
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  padding: 20%;
+}
+.cookies-msg .cookies-btn{
+  margin-left: 30px;
+}
+.cookies-msg .cookies-btn button{
+  background-color: #000000;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 10px 40px;
+  cursor: pointer;
+  transition: .2s;
+}
+.cookies-msg .cookies-btn button:hover{
+  transform: scale(0.9);
+}
 
+@media (max-width: 1440px){
+  .header{
+    width: 1440;
+  }
   .texto1 h1{
     font-size: 40px;
   }
@@ -547,6 +580,9 @@ footer .termos {
   }
 }
 @media (max-width: 1024px){
+  header{
+    width: 1024px;
+  }
   .primeira{
     flex-wrap: wrap;
     flex-direction: column;
@@ -569,6 +605,9 @@ footer .termos {
   }
 }
 @media (max-width: 768px){
+  header{
+    width: 768px;
+  }
   .Login{
     padding: 20%;
     font-size: 20px;
@@ -626,7 +665,7 @@ footer .termos {
   }
   .curioso img{
     padding-left: 250px;
-    width: 70%;
+    width: 100%;
   }
   .curioso h1{
     font-size: 30px;
@@ -653,6 +692,9 @@ footer .termos {
 }
 
 @media (max-width: 425px){
+  header{
+    width: 425px;
+  }
   header img {
     max-width: 40%;
   }
@@ -730,7 +772,7 @@ footer .termos {
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    width: 412px;
+    width: 100%;
     position: relative;
   }
   footer .termos {
