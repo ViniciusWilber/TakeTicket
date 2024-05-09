@@ -1,19 +1,22 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-main{
+
+main {
     padding-left: 200px;
     padding-right: 200px;
 }
+
 header {
     background-color: #212221;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     height: 100px;
     padding-left: 30px;
 }
+
 .botoes {
     display: flex;
     justify-content: center;
@@ -21,6 +24,7 @@ header {
     gap: 30px;
     padding-right: 30px;
 }
+
 .Login {
     display: inline-block;
     transition: all 0.2s ease-in;
@@ -35,14 +39,14 @@ header {
     background: #e8e8e8;
     border: 1px solid #e8e8e8;
     /* box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff; */
-  }
-  
-  .Login:active {
+}
+
+.Login:active {
     color: #666;
     box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
-  }
-  
-  .Login:before {
+}
+
+.Login:before {
     content: "";
     position: absolute;
     left: 50%;
@@ -55,9 +59,9 @@ header {
     display: block;
     transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
     z-index: -1;
-  }
-  
-  .Login:after {
+}
+
+.Login:after {
     content: "";
     position: absolute;
     left: 55%;
@@ -70,24 +74,25 @@ header {
     display: block;
     transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
     z-index: -1;
-  }
-  
-  .Login:hover {
-  color: #ffffff;
+}
+
+.Login:hover {
+    color: #ffffff;
     border: 1px solid #009087;
-  }
-  
-  .Login:hover:before {
+}
+
+.Login:hover:before {
     top: -35%;
     background-color: #009087;
     transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-  }
-  
-  .Login:hover:after {
+}
+
+.Login:hover:after {
     top: -45%;
     background-color: #009087;
     transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-  }
+}
+
 .SejaMenbro {
     display: inline-block;
     transition: all 0.2s ease-in;
@@ -102,14 +107,14 @@ header {
     background: #e8e8e8;
     border: 1px solid #e8e8e8;
     /* box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff; */
-  }
-  
-  .SejaMenbro:active {
+}
+
+.SejaMenbro:active {
     color: #666;
     box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
-  }
-  
-  .SejaMenbro:before {
+}
+
+.SejaMenbro:before {
     content: "";
     position: absolute;
     left: 50%;
@@ -122,9 +127,9 @@ header {
     display: block;
     transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
     z-index: -1;
-  }
-  
-  .SejaMenbro:after {
+}
+
+.SejaMenbro:after {
     content: "";
     position: absolute;
     left: 55%;
@@ -137,121 +142,69 @@ header {
     display: block;
     transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
     z-index: -1;
-  }
-  
-  .SejaMenbro:hover {
+}
+
+.SejaMenbro:hover {
     color: #ffffff;
     border: 1px solid #009087;
-  }
-  
-  .SejaMenbro:hover:before {
+}
+
+.SejaMenbro:hover:before {
     top: -35%;
     background-color: #009087;
     transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-  }
-  
-  .SejaMenbro:hover:after {
+}
+
+.SejaMenbro:hover:after {
     top: -45%;
     background-color: #009087;
     transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-  }
+}
+
 .primeiro {
     padding: 0%;
     height: 10%;
 }
-.primeiro .masp{
+
+.primeiro .masp {
     font-family: Inter;
     font-size: 48px;
     font-style: italic;
     margin: 2rem;
 }
+
 .primeiro img {
     padding: 0;
 }
-.primeiro .museu{
+
+.primeiro .museu {
     font-family: Inter;
     font-size: 48px;
     font-style: italic;
     padding: 2rem;
-} 
-.segundo .dados .card{
+}
+
+.segundo .dados .card {
     display: flex;
-    justify-content: left;
-    align-items: center;
     padding-top: 20px;
     padding: 25px;
     box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.386);
     border-radius: 15px;
     width: 600px;
 }
-.segundo .dados .card .ticket{
-    padding-right: 17px;
-}
- 
-.segundo .dados .card .milhoes{
-    padding-left: 1px;
-    position: static;
-}
-.segundo .dados .card .master{
-    position: static;
-    padding-right: 3px;
- 
-}
-.segundo .dados .card .pessoas{
-    padding-left: 2px;
-}
-.segundo .promotora .conjuto{
+.segundo .dados .card1{
     display: flex;
-}
-.segundo .promotora .conjuto .foto{
-    padding-top: 2rem;
- 
-}
-.segundo .promotora .conjuto .nome{
-    padding-left: 15px;
-    margin-top: 4.4rem;
-}
-.segundo .promotora .conjuto .mercado{
-    margin-left: 145px;
-    padding-right: 227px;
-    height: 100px;
-    padding-top: 6rem;
-    position: absolute;
-}
-.segundo .local{
-    display: inline-flex;
     align-items: center;
-    padding-top: 2rem;
-}
-.segundo .local img{
-    margin-right: 9px;
-    margin-left: 9px;
-}
-.segundo .endereco{
-    margin-left: 41px;
-}
-.masp{
-width: 521px;
-padding-left: 41px;
-}
 
-.segundo .evento{
-    display: inline-flex;
-    align-items: center;
-    padding-top: 2rem;
 }
-.segundo .evento .medalha{
-    padding-left: -10px;
+.segundo .dados .card1 .milhoes{
+    padding-left: 1rem;
 }
-.conj{
-    margin-top: -700px;
-    margin-left: 78%;
-    font-size: 30px;
+.segundo .dados .card2{
     display: flex;
-    flex-direction: column;
- 
+    align-items: center;
 }
-.reservado{
+.segundo .promotora .reservado {
     display: flex;
     margin: 60px;
     flex-wrap: nowrap;
@@ -268,7 +221,7 @@ padding-left: 41px;
     padding: 2rem;
     gap: 20px;
 }
-.reservado .reserva{
+.segundo .promotora .reservado .reserva {
     border-radius: 7px;
     background-color: white;
     border-color: white;
@@ -277,7 +230,7 @@ padding-left: 41px;
     height: 4rem
 }
 
-.reservado .comprar{
+.segundo .promotora .reservado .comprar {
     background-color: rgba(81, 208, 171, 1);
     border: white;
     border-radius: 7px;
@@ -286,17 +239,67 @@ padding-left: 41px;
     font-weight: bold;
     font-size: larger;
 }
-.terceiro{
+.segundo .promotora .segundo .promotora .conjuto {
+    display: flex;
+}
+
+.segundo .promotora .conjuto{
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+}
+.segundo .promotora .conjuto .info{
+    display: inline-block;
+    padding-left: 1rem;
+}
+.segundo .promotora .local{
+    display: flex;
+    padding-top: 2rem;
+    align-items: center;
+}
+.endereco{
+    padding-left: 2rem;
+    }
+.segundo .evento{
+    display: flex;
+    padding-top: 2rem;
+}
+.segundo .evento.sobre{
+    padding-left: 1rem;
+}
+.masp {
+    width: 521px;
+    padding-left: 2rem;
+}
+.localizacao{
+    padding-left: 1rem;
+}
+
+
+.conj {
+    margin-top: -700px;
+    margin-left: 78%;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+.terceiro {
     width: 100%;
     display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
-.terceiro .fotos{
+
+.terceiro .fotos {
     padding: 4rem;
 }
-.terceiro .icones{
+
+.terceiro .icones {
     background-color: #ffffff;
     border: 1px solid;
     border-color: #00000026;
@@ -310,35 +313,41 @@ flex-direction: column;
     flex-direction: column;
     justify-content: center;
     font-style: italic;
-  }
+}
+
 .terceiro .gmail {
     display: flex;
     padding-left: 1rem;
 }
 
-.terceiro .gmail p{
+.terceiro .gmail p {
     position: absolute;
     left: 5.3rem;
     font-size: 24px;
 }
-.terceiro .pessoas{
+
+.terceiro .pessoas {
     margin-top: 0.8rem;
     display: flex;
     padding-left: 0.8rem;
 }
-.terceiro .pessoas p{
+
+.terceiro .pessoas p {
     font-size: 24px;
 
 }
-.terceiro .fone{
+
+.terceiro .fone {
     display: flex;
     margin-top: .8rem;
     padding-left: 0.4rem;
 }
-.terceiro .fone p{
+
+.terceiro .fone p {
     font-size: 24px;
 }
-.terceiro .follow{
+
+.terceiro .follow {
     position: absolute;
     left: 42rem;
     display: flex;
@@ -353,15 +362,16 @@ flex-direction: column;
     justify-content: center;
     font-size: 2.5rem;
     top: 3rem;
-    
+
 }
 
-.quarto .onde{
+.quarto .onde {
     padding-top: 3rem;
     font-size: 3rem;
     padding-left: 6rem;
 }
- .mapa{
+
+.mapa {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -370,12 +380,14 @@ flex-direction: column;
     border-radius: 5rem;
 
 }
-.quarto .museu{
+
+.quarto .museu {
     font-size: 1.4rem;
     width: 40rem;
     padding-left: 6rem;
 }
-footer{
+
+footer {
     background: linear-gradient(-105grad, #044292, #03aca0);
     display: flex;
     justify-content: center;
@@ -384,106 +396,123 @@ footer{
     position: relative;
     gap: 200px;
 }
+
 footer div {
-  text-decoration: none;
-  height: 150px;
-  width: 250px;
-  display: flex;
-  align-items: initial;
-  align-content: space-between;
-  flex-direction: column;
-  padding: 20px;
-  
+    text-decoration: none;
+    height: 150px;
+    width: 250px;
+    display: flex;
+    align-items: initial;
+    align-content: space-between;
+    flex-direction: column;
+    padding: 20px;
+
 }
+
 footer .termos {
-  display: flex;
-  position: absolute;
-  bottom: 0;
-  left: 395px;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 395px;
 }
-@media (max-width:320px){
+
+@media (max-width:320px) {
     main {
         padding-left: 0px;
         padding-right: 0px;
     }
+
     .primeiro {
         padding: 0%;
         height: 10%;
     }
-    .primeiro .masp{
+
+    .primeiro .masp {
         font-family: Inter;
         font-size: 48px;
         font-style: italic;
         margin: 2rem;
     }
+
     .primeiro img {
         padding: 0;
         padding-left: 2rem;
         padding-right: 4rem;
         width: 20rem;
     }
-    .primeiro .museu{
+
+    .primeiro .museu {
         font-family: Inter;
         font-size: 1.3rem;
         font-style: italic;
         padding: 11px
     }
-    .segundo .dados .card{
+
+    .segundo .dados .card {
         display: inline-block;
         box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.386);
         border-radius: 15px;
         width: 16rem;
         margin-left: 0.5em;
     }
-    .segundo .dados .card1{
-        display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .segundo .dados .card .ticket{
-            padding-left: 0rem;
-        }
-        .segundo .dados .card2{
-            display: flex;
-                justify-content: center;
-                align-items: center;
-                padding-top:1rem;
-            }
-        .segundo .dados .card .master {
-            padding-left: 0rem;
-        }
-        .segundo .promotora .conjuto .nome {
-            padding-left: .3rem;
-            margin-top: 3rem;
-        }
-        .segundo .promotora .conjuto .mercado {
-            padding-top: 6.5rem;
-            width: 26rem;
-            font-size: 0.9rem;
-        }
-        .segundo .endereco {
-            margin-left: 36px;
-            width: 17rem;
-        }
-        .masp {
-            width: 20rem;
-            padding-left: 41px;
-        }
 
-        .terceiro .fotos {
-            padding-top: 1rem;
-            padding-left: 0rem;
-            width: 18rem;
-        }
-        .terceiro .icones{
-            width: 17rem;
-            padding: 1rem;
-            
-        }
-        .reservado{
-            margin-left: 1rem;
-            margin-top: 26px;
-            position:relative;
-        }
+    .segundo .dados .card1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-  
+
+    .segundo .dados .card .ticket {
+        padding-left: 0rem;
+    }
+
+    .segundo .dados .card2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 1rem;
+    }
+
+    .segundo .dados .card .master {
+        padding-left: 0rem;
+    }
+
+    .segundo .promotora .conjuto .nome {
+        padding-left: .3rem;
+        margin-top: 3rem;
+    }
+
+    .segundo .promotora .conjuto .mercado {
+        padding-top: 6.5rem;
+        width: 26rem;
+        font-size: 0.9rem;
+    }
+
+    .segundo .endereco {
+        margin-left: 36px;
+        width: 17rem;
+    }
+
+    .masp {
+        width: 20rem;
+        padding-left: 41px;
+    }
+
+    .terceiro .fotos {
+        padding-top: 1rem;
+        padding-left: 0rem;
+        width: 18rem;
+    }
+
+    .terceiro .icones {
+        width: 17rem;
+        padding: 1rem;
+
+    }
+
+    .reservado {
+        margin-left: 1rem;
+        margin-top: 26px;
+        position: relative;
+    }
+}
