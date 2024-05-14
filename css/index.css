@@ -11,7 +11,10 @@ header {
     padding-left: 30px;
 }
 header img{
-  max-width: 20%;
+  max-width: 100%;
+}
+header .logo{
+  width: 100px;
 }
 .botoes {
     display: flex;
@@ -356,15 +359,16 @@ header img{
   padding-right: 15rem;
 }
 .cartas{
-    padding: 30px;
+    width: 100%;
+    height: 100%;
+    padding: 3%;
+    padding-left: 13%;
+    padding-right: 13%;
+    gap: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 30px;
-    height: 100%;
     flex-wrap: wrap;
-    padding-left: 15rem;
-    padding-right: 15rem;
 }
 
 .carta1{
