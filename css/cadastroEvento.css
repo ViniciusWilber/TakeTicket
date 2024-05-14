@@ -100,7 +100,7 @@ form input{
 }
 .enviar{
   height: 55px;
-  width: 100%;
+  width: 50%;
   color: #fff;
   font-size: 1rem;
   border: none;
@@ -113,7 +113,7 @@ form input{
 }
 .cancelar{
   height: 55px;
-  width: 100%;
+  width: 49%;
   color: #fff;
   font-size: 1rem;
   border: none;

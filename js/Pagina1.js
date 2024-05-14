@@ -88,3 +88,23 @@ $(document).ready(()=>{
         $('.cartasAtracoes').show();
     });
 });
+$('#aceitar').click(()=>{
+    $('#cookies-msg').hide(); 
+});
+
+
+
+
+
+
+// if(!localStorage.cokkies){
+//     document.querySelector('#cookies-msg').classList.remove('hide');
+// }
+// const aceitarCookies = () =>{
+//     document.querySelector('#cookies-msg').classList.add('hide');
+//     localStorage.setItem("cookies", "accept")
+// };
+
+// const aceitar = document.querySelector("#aceitar");
+
+// aceitar.addEventListener('click' , aceitarCookies);
