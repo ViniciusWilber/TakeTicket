@@ -323,9 +323,6 @@ header .logo{
   flex-direction: column;
   align-items: center;
 }
-.cartasExposicoes{
-  display: none;
-}
 .cartasMuseus{
   display: none;
 }
@@ -347,28 +344,29 @@ header .logo{
 .cartasAtracoes{
   display: none;
 }
-.cartasTema{
-  padding: 30px;
+/* .cartasTema{
+  padding: 1%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 30px;
+  width: 100%;
   height: 100%;
   flex-wrap: wrap;
-  padding-left: 15rem;
-  padding-right: 15rem;
-}
-.cartas{
-    width: 100%;
-    height: 100%;
-    padding: 3%;
-    padding-left: 13%;
-    padding-right: 13%;
-    gap: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+  padding-left: 13%;
+  padding-right: 13%;
+} */
+.cartasTema{
+  padding: 1%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+  padding-left: 13%;
+  padding-right: 13%;
 }
 
 .carta1{
@@ -376,7 +374,6 @@ header .logo{
     width: 362px;
     height: 420px;
     top: 0;
-    left: 26px;
     background-color: #ffffff;
     border-radius: 13px;
     border: 1px solid;
@@ -545,7 +542,7 @@ footer .termos {
   display: flex;
   align-items: center;
   text-align: justify;
-  width: 80%;
+  max-width: 80%;
   padding: 2%;
   font-size: 19px;
 }
@@ -666,11 +663,40 @@ footer .termos {
     gap: 10px;
     height: 100%;
     flex-wrap: wrap;
+
   }
   .cartasTema{
-    width: 768px;
+    width: 767px;
     display: flex;
 
+  }
+  .cookies-msg {
+    width: 80%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.527);
+    position: fixed;
+    border: .5px solid rgba(0, 0, 0, 0.171);
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 1;
+  }
+  .cookies-msg .cookies-txt{
+    font-size:16px;
+  }
+  .cookies-msg .cookies-btn button{
+    background-color: #1a9c8b;
+    color: rgb(255, 255, 255);
+    border: #1a9c8b;
+    font-size: 14px;
+    padding: 4px 20px;
+    cursor: pointer;
+    transition: .2s;
+    border-radius: 7px;
   }
   .curioso{
     display: flex;
@@ -724,15 +750,13 @@ footer .termos {
   }
   .primeira{
     flex-wrap: wrap;
-    flex-direction: column;
-    padding: 1%;
+    padding: 10%;
     padding-left: 10%;
     padding-right: 10%;
     width: 412px;
   }
   .primeira img{
-    padding-left: 15%;
-    width: 80%;
+    display: none;
   }
   .texto1 h1{
     font-size: 25px;
@@ -761,6 +785,19 @@ footer .termos {
     flex-wrap: wrap;
     padding-left: 1%;
     padding-right: 10%;
+  }
+  .cookies-msg .cookies-txt{
+    font-size:12px;
+  }
+  .cookies-msg .cookies-btn button{
+    background-color: #1a9c8b;
+    color: rgb(255, 255, 255);
+    border: #1a9c8b;
+    font-size: 14px;
+    padding: 4px 20px;
+    cursor: pointer;
+    transition: .2s;
+    border-radius: 7px;
   }
   .curioso{
     width: 100%;

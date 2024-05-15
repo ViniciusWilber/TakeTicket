@@ -1,7 +1,6 @@
 $(document).ready(()=>{
     $('#click1').click(() =>{
-        $('.cartas').hide();
-        $('.cartasExposicoes').show();
+        $('.cartas').fadeIn('slow');
         $('.cartasMuseus').hide();
         $('.cartasSociais').hide();
         $('.cartasExcursoes').hide();
@@ -12,8 +11,7 @@ $(document).ready(()=>{
     });
     $('#click2').click(() =>{
         $('.cartas').hide();
-        $('.cartasExposicoes').hide();
-        $('.cartasMuseus').show();
+        $('.cartasMuseus').fadeIn('slow');
         $('.cartasSociais').hide();
         $('.cartasExcursoes').hide();
         $('.cartasTrilhas').hide();
@@ -23,9 +21,8 @@ $(document).ready(()=>{
     });
     $('#click3').click(() =>{
         $('.cartas').hide();
-        $('.cartasExposicoes').hide();
         $('.cartasMuseus').hide();
-        $('.cartasSociais').show();
+        $('.cartasSociais').fadeIn('slow');
         $('.cartasExcursoes').hide();
         $('.cartasTrilhas').hide();
         $('.cartasViagens').hide();
@@ -34,10 +31,9 @@ $(document).ready(()=>{
     });
     $('#click4').click(() =>{
         $('.cartas').hide();
-        $('.cartasExposicoes').hide();
         $('.cartasMuseus').hide();
         $('.cartasSociais').hide();
-        $('.cartasExcursoes').show();
+        $('.cartasExcursoes').fadeIn('slow');
         $('.cartasTrilhas').hide();
         $('.cartasViagens').hide();
         $('.cartasFerias').hide();
@@ -45,51 +41,47 @@ $(document).ready(()=>{
     });
     $('#click5').click(() =>{
         $('.cartas').hide();
-        $('.cartasExposicoes').hide();
         $('.cartasMuseus').hide();
         $('.cartasSociais').hide();
         $('.cartasExcursoes').hide();
-        $('.cartasTrilhas').show();
+        $('.cartasTrilhas').fadeIn('slow');
         $('.cartasViagens').hide();
         $('.cartasFerias').hide();
         $('.cartasAtracoes').hide();
     });
     $('#click6').click(() =>{
         $('.cartas').hide();
-        $('.cartasExposicoes').hide();
         $('.cartasMuseus').hide();
         $('.cartasSociais').hide();
         $('.cartasExcursoes').hide();
         $('.cartasTrilhas').hide();
-        $('.cartasViagens').show();
+        $('.cartasViagens').fadeIn('slow');
         $('.cartasFerias').hide();
         $('.cartasAtracoes').hide();
     });
     $('#click7').click(() =>{
         $('.cartas').hide();
-        $('.cartasExposicoes').hide();
         $('.cartasMuseus').hide();
         $('.cartasSociais').hide();
         $('.cartasExcursoes').hide();
         $('.cartasTrilhas').hide();
         $('.cartasViagens').hide();
-        $('.cartasFerias').show();
+        $('.cartasFerias').fadeIn('slow');
         $('.cartasAtracoes').hide();
     });
     $('#click8').click(() =>{
         $('.cartas').hide();
-        $('.cartasExposicoes').hide();
         $('.cartasMuseus').hide();
         $('.cartasSociais').hide();
         $('.cartasExcursoes').hide();
         $('.cartasTrilhas').hide();
         $('.cartasViagens').hide();
         $('.cartasFerias').hide();
-        $('.cartasAtracoes').show();
+        $('.cartasAtracoes').fadeIn('slow');
     });
 });
 $('#aceitar').click(()=>{
-    $('#cookies-msg').hide(); 
+    $('#cookies-msg').slideToggle(); 
 });
 
 
