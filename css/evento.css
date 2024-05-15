@@ -13,7 +13,11 @@ header {
 }
 
 header img {
-  width: 20%;
+  width: 100%;
+}
+
+header .logo {
+  width: 100px;
 }
 
 .botoes {
@@ -520,6 +524,53 @@ footer .termos {
   bottom: 0;
   left: 395px;
 }
-@media (max-width:425px) {
 
+@media (max-width:425px) {
+  header {
+    align-items: center;
+    padding-left: 3%;
+    padding-right: 3%;
+    width: 100%;
+  }
+
+  .botoes {
+    padding-right: 0px;
+    gap: 15%;
+  }
+  .SejaMenbro {
+    padding: 0.5em 0.5em;
+    font-size: 90%;
+    width: 107%;
+  }
+  .Login {
+    font-size: 90%;
+    height: 3rem;
+  }
+  main{
+    padding: 3%;
+  }
+  .sec1 .titulo2 {
+    padding: 2%;
+    font-size: 1.3rem;
+}
+.sec2 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column-reverse;
+}
+
+
+
+
+.caracteristicas .sobre1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 23%;
+  gap: 4%;
+}
+.caracteristicas .sobre2 p{
+  width: 5%;
+}
 }
