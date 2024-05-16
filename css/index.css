@@ -634,7 +634,7 @@ footer .termos {
     font-size: 25px;
   }
   .search{
-    --search-min-width: 600px;
+    --search-min-width: 400px;
   }
   .navegacao nav{
     flex-wrap: wrap;
