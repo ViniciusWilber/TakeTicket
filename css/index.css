@@ -344,18 +344,6 @@ header .logo{
 .cartasAtracoes{
   display: none;
 }
-/* .cartasTema{
-  padding: 1%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px;
-  width: 100%;
-  height: 100%;
-  flex-wrap: wrap;
-  padding-left: 13%;
-  padding-right: 13%;
-} */
 .cartasTema{
   padding: 1%;
   display: flex;
@@ -365,8 +353,8 @@ header .logo{
   width: 100%;
   height: 100%;
   flex-wrap: wrap;
-  padding-left: 13%;
-  padding-right: 13%;
+  padding-left: 11%;
+  padding-right: 11%;
 }
 
 .carta1{
@@ -486,10 +474,13 @@ header .logo{
   }
 .curioso{
     display: flex;
+    position: relative;
     justify-content: center;
     flex-direction: column;
-    padding: 100px;
-    padding-left:18%;
+    padding: 5%;
+    width: 100%;
+    padding-left:13%;
+    padding-right: 13%;
 }
 .curioso h1{
   font-size: 50px;
@@ -537,6 +528,7 @@ footer .termos {
   left: 50%;
   transform: translate(-50%);
   z-index: 1;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .cookies-msg .cookies-txt{
   display: flex;
@@ -565,13 +557,10 @@ footer .termos {
 }
 
 @media (max-width: 1440px){
-  .header{
-    width: 1440;
-  }
   .texto1 h1{
     font-size: 40px;
   }
-  .cartas{
+  .cartasTema{
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -579,9 +568,8 @@ footer .termos {
     gap: 50px;
     height: 100%;
     flex-wrap: wrap;
-    /* padding-left: 5%;
-    padding-right: 10%; */
   }
+
   .curioso{
     padding: 50px;
     padding-left: 70px;
@@ -591,9 +579,9 @@ footer .termos {
   }
 }
 @media (max-width: 1024px){
-  header{
+  /* header{
     width: 1024px;
-  }
+  } */
   .primeira{
     flex-wrap: wrap;
     flex-direction: column;
@@ -616,12 +604,15 @@ footer .termos {
   }
 }
 @media (max-width: 768px){
-  header{
-    width: 768px;
-  }
   .Login{
     padding: 20%;
     font-size: 20px;
+  }
+  .img2{
+    display: none;
+  }
+  .img3{
+    display: none;
   }
   .SejaMenbro{
     padding: 4%;
@@ -630,20 +621,20 @@ footer .termos {
   .primeira{
     flex-wrap: wrap;
     flex-direction: column;
-    padding: 1%;
+    padding: 4%;
     padding-left: 10%;
     padding-right: 10%;
-    width: 970px;
+    width: 100%;
   }
-  .primeira img{
-    padding-left: 15%;
-    width: 80%;
+  .primeira .img1{
+    padding: 3.5%;
+    width: 100%;
   }
   .texto1 h1{
     font-size: 25px;
   }
   .search{
-    --search-min-width: 200px;
+    --search-min-width: 600px;
   }
   .navegacao nav{
     flex-wrap: wrap;
@@ -656,22 +647,20 @@ footer .termos {
     padding-right: 1%;
     padding-top: 1%;
   }
-  .cartas{
+  .cartasTema{
+    padding: 1%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
+    width: 100%;
     height: 100%;
     flex-wrap: wrap;
-
-  }
-  .cartasTema{
-    width: 767px;
-    display: flex;
-
+    padding-left: 1%;
+    padding-right: 1%;
   }
   .cookies-msg {
-    width: 80%;
+    width: 90%;
     height: 100px;
     display: flex;
     justify-content: space-between;
@@ -684,6 +673,7 @@ footer .termos {
     left: 50%;
     transform: translate(-50%);
     z-index: 1;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
   .cookies-msg .cookies-txt{
     font-size:16px;
@@ -702,7 +692,6 @@ footer .termos {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     padding: 10px;
   }
   .curioso img{
@@ -722,7 +711,7 @@ footer .termos {
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    width: 970px;
+    width: 100%;
     position: relative;
   }
   footer .termos {
@@ -734,14 +723,13 @@ footer .termos {
 }
 
 @media (max-width: 425px){
-  header{
+  /* header{
     width: 425px;
-  }
+  } */
   header img {
-    max-width: 40%;
+    max-width: 100%;
   }
   .Login{
-    padding: 23%;
     font-size: 12px;
   }
   .SejaMenbro{
@@ -775,16 +763,34 @@ footer .termos {
     padding-right: 1%;
     padding-top: 1%;
   }
-  .cartas{
-    padding: 10px;
+  .cartasTema{
+    padding: 1%;
+    padding-top: 3%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 50px;
+    gap: 70px;
+    width: 100%;
     height: 100%;
     flex-wrap: wrap;
-    padding-left: 1%;
-    padding-right: 10%;
+    padding-left: 6%;
+    padding-right: 0%;
+  }
+  .cookies-msg {
+    width: 90%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.527);
+    position: fixed;
+    border: .5px solid rgba(0, 0, 0, 0.171);
+    bottom: 3%;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 1;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
   .cookies-msg .cookies-txt{
     font-size:12px;
@@ -794,7 +800,7 @@ footer .termos {
     color: rgb(255, 255, 255);
     border: #1a9c8b;
     font-size: 14px;
-    padding: 4px 20px;
+    padding: 20px 8px;
     cursor: pointer;
     transition: .2s;
     border-radius: 7px;
@@ -806,13 +812,138 @@ footer .termos {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 20px;
   }
   .curioso img{
-    padding-left: 30px;
-    width: 220%;
+    display: none;
   }
   .curioso h1{
     font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .curioso p{
+    width: 300px;
+    padding-right: 5%;
+    padding-left:50%;
+  }
+  footer{
+    background: linear-gradient(-105grad, #044292, #03aca0);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+  }
+  footer .termos {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 3px;
+  }
+}
+@media (max-width: 375px){
+  /* header{
+    width: 425px;
+  } */
+  header img {
+    max-width: 100%;
+  }
+  .Login{
+    font-size: 12px;
+  }
+  .SejaMenbro{
+    padding: 1%;
+    font-size: 12px;
+  }
+  .primeira{
+    flex-wrap: wrap;
+    padding: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 412px;
+  }
+  .primeira img{
+    display: none;
+  }
+  .texto1 h1{
+    font-size: 25px;
+  }
+  .search{
+    --search-min-width: 200px;
+  }
+  .navegacao nav{
+    flex-wrap: wrap;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 1%;
+  }
+  .cartasTema{
+    padding: 1%;
+    padding-top: 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+  .cookies-msg {
+    width: 90%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.527);
+    position: fixed;
+    border: .5px solid rgba(0, 0, 0, 0.171);
+    bottom: 3%;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 1;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .cookies-msg .cookies-txt{
+    font-size:12px;
+  }
+  .cookies-msg .cookies-btn button{
+    background-color: #1a9c8b;
+    color: rgb(255, 255, 255);
+    border: #1a9c8b;
+    font-size: 14px;
+    padding: 20px 8px;
+    cursor: pointer;
+    transition: .2s;
+    border-radius: 7px;
+  }
+  .curioso{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .curioso img{
+    display: none;
+  }
+  .curioso h1{
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .curioso p{
     width: 300px;
