@@ -163,14 +163,14 @@ main{
     }
     .esquerda{
         padding-top: 20%;
-        gap: 15%;
+        gap: 70px;
         background-color: #03aca100;
     }
     .direita button {
         cursor: pointer;
         height: 3.6rem;
-        width: 19rem;
-        border: 1px solid rgba(48, 33, 33, 0.445);
+        width: 15rem;
+        border: 1px solid rgba(48, 33, 33, 0);
         border-radius: 8px;
         background-color: rgba(0, 0, 0, 0);
         color: #000000;
