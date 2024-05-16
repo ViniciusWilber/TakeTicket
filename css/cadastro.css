@@ -5,7 +5,7 @@
     font-family: "Poppins", sans-serif;
   }
 body{
-    width: 100%;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,7 +16,7 @@ main{
     border: 1px solid rgba(128, 128, 128, 0);
     background-color: rgba(221, 227, 233, 0.116);
     border-radius: 15px;
-    width: 70%;
+    width: 100vw;
     height: 70%;
     padding: 3%;
 }
@@ -200,9 +200,17 @@ div{
       flex-direction: column;
     }
     .numero{
-      width: 500px;
+      width: 100%;
     }
     .cadastro{
-      width: 500px;
+      width: 100%;
+    }
+  }
+  @media (max-width: 850px){
+    .numero{
+      width: 100%;
+    }
+    .cadastro{
+      width: 100%;
     }
   }
