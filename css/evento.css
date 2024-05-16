@@ -495,7 +495,11 @@ header .logo {
   padding: 2%;
   padding-left: 20%;
 }
+.linkMaps{
+  color: #090909;
+  font-size: 100%;
 
+}
 footer {
   background: linear-gradient(-105grad, #044292, #03aca0);
   display: flex;
@@ -537,70 +541,126 @@ footer .termos {
     padding-right: 0px;
     gap: 15%;
   }
+
   .SejaMenbro {
     padding: 0.5em 0.5em;
     font-size: 90%;
     width: 107%;
   }
+
   .Login {
     font-size: 90%;
     height: 3rem;
   }
-  main{
+
+  main {
     padding: 3%;
   }
+
   .sec1 .titulo2 {
     padding: 2%;
     font-size: 1.3rem;
-}
-.sec2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column-reverse;
-}
-.caracteristicas {
-  width: 56%;
-}
-.caracteristicas .sobre1 {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 23%;
-  gap: 4%;
-}
-.caracteristicas .sobre1 p{
-  width: 30%;
-}
-.caracteristicas .sobre2 {
-  display: flex;
-  align-items: center;
-  padding: 2rem;
-  justify-content: flex-end;
-}
-.caracteristicas .sobre2 p{
-  width: 32%;
-}
-.paulista{
-  width: 58%;
-}
-.masp{
-  width: 54%;
-}
-.carrossel{
-  flex-direction: column;
-}
-.enderecos {
-  width: 24rem;
-  font-size: 1.2rem;
-  gap: 5%;
-}
-.Mapa {
-padding-left: 4%;
-}
-.infoEvento {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  }
+
+  .sec2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    gap: 32px;
+  }
+
+  .caracteristicas {
+    width: 56%;
+  }
+  .caracteristicas .sobre1 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 23%;
+    gap: 4%;
+  }
+
+  .caracteristicas .sobre1 p {
+    width: 30%;
+  }
+
+  .caracteristicas .sobre2 {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    justify-content: flex-end;
+  }
+
+  .caracteristicas .sobre2 p {
+    width: 32%;
+  }
+
+  .paulista {
+    width: 58%;
+  }
+
+  .masp {
+    width: 54%;
+  }
+
+  .carrossel {
+    flex-direction: column;
+  }
+
+  .enderecos {
+    width: 24rem;
+    font-size: 1.2rem;
+    gap: 5%;
+  }
+
+  .Mapa {
+    padding-left: 4%;
+  }
+
+  .infoEvento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .promotor {
+    justify-content: center;
+  }
+
+  .localizacao {
+    padding-right: 33%;
+  }
+
+  .sobreEvento {
+    padding-right: 27%;
+  }
+  .maps{
+    display: none;
+  }
+  .linkMaps{
+    padding: 15%;
+  }
+  footer{
+    background: linear-gradient(-105grad, #044292, #03aca0);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+  }
+  footer .termos {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 3px;
 }
 }
