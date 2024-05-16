@@ -10,11 +10,12 @@ body{
     align-items: center;
 }
 main{
+    width: 70%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     padding:2rem;
-    flex-grow: 1;
 }
 .esquerda{
     display: flex;
@@ -22,8 +23,8 @@ main{
     align-items: center;
     flex-direction: column;
     background-color: rgba(42, 157, 185, 0.418);
-    width: 900px;
-    height: 50rem;
+    width: 40%;
+    height: 800px;
     padding: 3rem;
     border-radius: 25px 0px 0px 25px;
     flex-grow: 1;
@@ -41,7 +42,6 @@ main{
     justify-content: center;
     align-items: center;
     gap: 30px;
-    flex-grow: 1;
 }
 .cadastro{
     border: none;
@@ -49,7 +49,7 @@ main{
     border-radius: 8px;
     width: 25rem;
     height: 3rem;
-    /* padding: 1.5em; */
+    padding: 1.5em;
     background-color: #e1e2e3;
     box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
     transition: 300ms ease-in-out;
@@ -84,11 +84,8 @@ main{
     transition: 300ms ease-in-out;
     text-align: center;
     font-size: 20px;
-    flex-grow: 1;
-
 }
 .botao {
-    flex-grow: 1;
     display: inline-block;
     transition: all 0.2s ease-in;
     position: relative;
@@ -163,8 +160,20 @@ main{
     align-items: center;
     flex-direction: column;
     background-color: rgba(42, 157, 185, 0.418);
-    width: 800px;
-    height: 50rem;
+    height: 800px;
     gap: 5rem;
     border-radius: 0px 25px 25px 0px;
+}
+@media (max-width: 1500px){
+  .direita{
+    display: none;
+  }
+  .esquerda{
+    border-radius: 20px;
+  }
+}
+@media (max-width: 750px){
+  .esquerda{
+    background-color: #e1e2e300;
+  }
 }
