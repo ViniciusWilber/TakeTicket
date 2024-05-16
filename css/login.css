@@ -13,12 +13,13 @@ body{
     background: linear-gradient( #044292, #03aca0);
 }
 main{
-    width: 75%;
+    background: linear-gradient( #044292, #03aca0);
+    width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 8rem;
+    padding: 8%;
 }
 .direita{
     display: flex;
@@ -27,7 +28,7 @@ main{
     flex-direction: column;
     background-color: rgba(255, 255, 255, 0.219);
     width: 80%;
-    height: 650px;
+    height: 500px;
     gap: 5rem;
     border-radius: 0px 25px 25px 0px;
 }
@@ -59,7 +60,7 @@ main{
     flex-direction: column;
     background-color: rgba(42, 157, 185, 0.418);
     width: 100%;
-    height: 650px;
+    height: 500px;
     gap: 5rem;
     border-radius: 25px 0px 0px 25px;
 }
@@ -167,6 +168,7 @@ main{
         display: none;
     }
     .esquerda{
+        height: 300px;
         border-radius: 10px;
     }
 }
