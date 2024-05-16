@@ -556,21 +556,51 @@ footer .termos {
 .sec2 {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column-reverse;
 }
-
-
-
-
+.caracteristicas {
+  width: 56%;
+}
 .caracteristicas .sobre1 {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 23%;
   gap: 4%;
 }
+.caracteristicas .sobre1 p{
+  width: 30%;
+}
+.caracteristicas .sobre2 {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  justify-content: flex-end;
+}
 .caracteristicas .sobre2 p{
-  width: 5%;
+  width: 32%;
+}
+.paulista{
+  width: 58%;
+}
+.masp{
+  width: 54%;
+}
+.carrossel{
+  flex-direction: column;
+}
+.enderecos {
+  width: 24rem;
+  font-size: 1.2rem;
+  gap: 5%;
+}
+.Mapa {
+padding-left: 4%;
+}
+.infoEvento {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 }
