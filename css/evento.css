@@ -656,6 +656,7 @@ footer .termos {
     flex-direction: column;
     width: 100%;
     position: relative;
+    gap: 0;
   }
   footer .termos {
     display: flex;

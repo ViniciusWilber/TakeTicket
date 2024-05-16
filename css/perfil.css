@@ -382,3 +382,114 @@ footer .termos {
   bottom: 0;
   left: 395px;
 } 
+@media (max-width:425px) {
+  header {
+    background-color: #212221;
+    display: flex;
+    justify-content:space-between;
+    height: 100px;
+    padding-left: 30px;
+}
+header img{
+  width: 100%;
+}
+header a {
+  width: 25%;
+}
+  /* header {
+    align-items: center;
+    padding-left: 3%;
+    padding-right: 3%;
+    width: 100%;
+  } */
+
+  .botoes {
+    padding-right: 0px;
+    gap: 15%;
+  }
+
+  .SejaMenbro {
+    padding: 0.5em 0.5em;
+    font-size: 90%;
+    width: 136%;
+  }
+
+  .Login {
+    font-size: 90%;
+    height: 3rem;
+  }
+main.Perfil{
+display: inline-block;
+}
+#imgPerfil {
+  display: flex;
+  width: 186%;
+}
+.esquerda{
+  display: flex;
+        flex-direction: row;
+}
+.direita{
+  width: 100%;
+  gap: 20px;
+}
+.sociais a{
+  color: #000000;
+}
+.sociais p{
+  width: 20rem;
+}
+hr{
+  display: none;
+}
+.resumo{
+  display: none;
+}
+.sobreMin{
+  gap: 0;
+}
+.botoesEvento {
+  justify-content: center;
+}
+.botoesEvento button{
+  width: 8rem;
+  height: 2.5rem;
+}
+.emandamento img {
+  width: 44%;
+}
+.emandamento p {
+  width: 70%;
+}
+.emandamento {
+  gap: 4%;
+}
+.emandamento input {
+display: none;
+}
+.eventosPassados{ 
+  border-top: none;
+}
+.eventos{
+  border-top:none;
+}
+
+
+  footer{
+    background: linear-gradient(-105grad, #044292, #03aca0);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    gap: 0;
+  }
+  footer .termos {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 3px;
+}
+}
+
