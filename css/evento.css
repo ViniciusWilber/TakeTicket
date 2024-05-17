@@ -571,7 +571,7 @@ footer .termos {
   }
 
   .caracteristicas {
-    width: 56%;
+    width: 100%;
   }
   .caracteristicas .sobre1 {
     display: flex;
@@ -597,11 +597,13 @@ footer .termos {
   }
 
   .paulista {
-    width: 58%;
+    width: 90%;
+    padding-left: 10%;
   }
 
   .masp {
-    width: 54%;
+    width: 90%;
+    padding-left: 10%;
   }
 
   .carrossel {
@@ -621,7 +623,8 @@ footer .termos {
   .infoEvento {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    width: 100%;
+    align-items: flex-start;
   }
 
   .conteudo {
@@ -636,11 +639,12 @@ footer .termos {
   }
 
   .localizacao {
-    padding-right: 33%;
+    padding-right: 49%;
+    width: 50%;
   }
 
-  .sobreEvento {
-    padding-right: 27%;
+  .sobreEvento h1 {
+    width: 100%;
   }
   .maps{
     display: none;
@@ -664,4 +668,10 @@ footer .termos {
     bottom: 0;
     left: 3px;
 }
+hr{
+  display: none;
+  }
+  .gerais{
+    width: 100%;
+  }
 }

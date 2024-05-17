@@ -433,11 +433,15 @@ display: inline-block;
   width: 100%;
   gap: 20px;
 }
+.sociais{
+  width: 100%;
+}
 .sociais a{
   color: #000000;
 }
 .sociais p{
-  width: 20rem;
+  width: 100%;
+  font-size: 100%;
 }
 hr{
   display: none;
