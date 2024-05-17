@@ -7,18 +7,15 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-size: 100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient( #044292, #03aca0);
 }
 main{
-    width: 75%;
-    height: 100%;
+    background: linear-gradient( #044292, #03aca0);
+    width: 100vw;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 8rem;
+    padding: 14%;
 }
 .direita{
     display: flex;
@@ -26,10 +23,10 @@ main{
     align-items: center;
     flex-direction: column;
     background-color: rgba(255, 255, 255, 0.219);
-    width: 80%;
-    height: 650px;
+    width: 40%;
+    height: 700px;
     gap: 5rem;
-    border-radius: 25px 0px 0px 25px;
+    border-radius: 0px 25px 25px 0px;
 }
 .direita h1 {
     font-size: 45px;
@@ -58,10 +55,10 @@ main{
     align-items: center;
     flex-direction: column;
     background-color: rgba(42, 157, 185, 0.418);
-    width: 100%;
-    height: 650px;
+    width: 40%;
+    height: 700px;
     gap: 5rem;
-    border-radius: 0px 25px 25px 0px;
+    border-radius: 25px 0px 0px 25px;
 }
 .esquerda h1 {
     font-size: 50px;
@@ -148,4 +145,35 @@ main{
     color: #ffffff;
     font-size: 22px;
     cursor: pointer;
+}
+@media (max-width: 1050px){
+    main{
+        flex-direction: column;
+    }
+    .direita{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background:none;
+
+    }
+    .direita h1{
+        display: none;
+    }
+    .esquerda{
+        padding-top: 20%;
+        gap: 70px;
+        background-color: #03aca100;
+    }
+    .direita button {
+        cursor: pointer;
+        height: 3.6rem;
+        width: 15rem;
+        border: 1px solid rgba(48, 33, 33, 0);
+        border-radius: 8px;
+        background-color: rgba(0, 0, 0, 0);
+        color: #000000;
+        font-size: 20px;
+    }
 }
