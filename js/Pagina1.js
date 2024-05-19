@@ -84,19 +84,17 @@ $('#aceitar').click(()=>{
     $('#cookies-msg').slideToggle(); 
 });
 
+  // Seleciona todos os botões
+  var botoes = document.querySelectorAll('.meu-botao');
 
-
-
-
-
-// if(!localStorage.cokkies){
-//     document.querySelector('#cookies-msg').classList.remove('hide');
-// }
-// const aceitarCookies = () =>{
-//     document.querySelector('#cookies-msg').classList.add('hide');
-//     localStorage.setItem("cookies", "accept")
-// };
-
-// const aceitar = document.querySelector("#aceitar");
-
-// aceitar.addEventListener('click' , aceitarCookies);
+  // Adiciona um ouvinte de evento para cada botão
+  botoes.forEach(function(botao) {
+    botao.addEventListener('click', function() {
+      // Remove a classe 'clicado' de todos os botões
+      botoes.forEach(function(b) {
+        b.classList.remove('clicado');
+      });
+      // Adiciona a classe 'clicado' ao botão clicado
+      botao.classList.add('clicado');
+    });
+  });

@@ -12,7 +12,8 @@ body{
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background: linear-gradient(-105grad, #044292, #03aca0);
+  background: linear-gradient(-105grad, #131b85ee, #01eeff93);
+  filter: drop-shadow(2px 2px 4px rgba(4, 0, 255, 0.37));
 }
 .container{
   position: relative;
@@ -78,7 +79,7 @@ padding: 0 15px;
   column-gap: 5px;
 }
 form input{
-  accent-color: rgb(17, 209, 235);/*selecionar com cor*/
+  accent-color: rgb(17, 210, 235);/*selecionar com cor*/
 }
 .form :where(.gender input, .gender label){
   cursor: pointer;
@@ -109,7 +110,8 @@ form input{
   border-radius: 6px;
   font-weight: 400;
   transition: all 0.2s ease;
-  background-color: rgb(17, 209, 235);
+  background:rgba(0, 153, 255, 0.747);
+  filter: drop-shadow(2px 2px 4px rgba(4, 0, 255, 0.37));
 }
 .cancelar{
   height: 55px;

@@ -10,15 +10,16 @@ body{
     align-items: center;
     justify-content: center;
     padding: 3%;
-    background: linear-gradient(-105grad, #044292, #03aca0);
+    background: linear-gradient(-105grad, #131b85ee, #01eeff93);
+    filter: drop-shadow(2px 2px 4px rgba(4, 0, 255, 0.37));
 }
 main{
-    border: 1px solid rgba(128, 128, 128, 0);
-    background-color: rgba(221, 227, 233, 0.116);
+    border: 2px solid rgba(0, 18, 99, 0.062);
+    background-color: #03759734;
+    filter: drop-shadow(2px 2px 4px rgba(4, 0, 255, 0.37));
     border-radius: 15px;
-    width: 100vw;
-    height: 70%;
-    padding: 3%;
+    width: 80%;
+    padding: 1%;
 }
 .campo{
     width:100%;
@@ -102,7 +103,8 @@ div{
     top: 180%;
     width: 160%;
     height: 190%;
-    background-color: #009087;
+    background-color: #0ff5e693;
+    filter: drop-shadow(2px 2px 4px rgba(4, 0, 255, 0.37));
     border-radius: 50%;
     display: block;
     transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
@@ -111,18 +113,21 @@ div{
   
   .confirmar:hover {
   color: #ffffff;
-    border: 1px solid #5e5e5e;
+    border: 1px solid #0ff5e693;
+    filter: drop-shadow(2px 2px 4px rgba(4, 0, 255, 0.37));
   }
   
   .confirmar:hover:before {
     top: -35%;
-    background-color: #02cec0;
+    background-color: #0ff5e693;
+    filter: drop-shadow(2px 2px 4px rgba(4, 0, 255, 0.37));
     transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
   }
   
   .confirmar:hover:after {
     top: -45%;
-    background-color: #02cec0;
+    background-color: #0ff5e693;
+    filter: drop-shadow(2px 2px 4px rgba(4, 0, 255, 0.37));
     transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
   }
 .cancelar {
@@ -169,7 +174,8 @@ div{
     top: 180%;
     width: 160%;
     height: 190%;
-    background-color: #02cec0;
+    background-color: #0ff5e693;
+    filter: drop-shadow(2px 2px 4px rgba(4, 0, 255, 0.37));
     border-radius: 50%;
     display: block;
     transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
@@ -178,18 +184,21 @@ div{
   
   .cancelar:hover {
   color: #000000;
-    border: 1px solid #02cec0;
+    border: 1px solid #0ff5e693;
+    filter: drop-shadow(2px 2px 4px rgba(4, 0, 255, 0.37));
   }
   
   .cancelar:hover:before {
     top: -35%;
-    background-color: #02cec0;
+    background-color: #0ff5e693;
+    filter: drop-shadow(2px 2px 4px rgba(4, 0, 255, 0.37));
     transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
   }
   
   .cancelar:hover:after {
     top: -45%;
-    background-color: #02cec0;
+    background-color: #0ff5e693;
+    filter: drop-shadow(2px 2px 4px rgba(4, 0, 255, 0.37));
     transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
   }
   @media (max-width: 1024px){
@@ -200,10 +209,10 @@ div{
       flex-direction: column;
     }
     .numero{
-      width: 100%;
+      width: 90%;
     }
     .cadastro{
-      width: 100%;
+      width:90%;
     }
   }
   @media (max-width: 850px){
@@ -212,5 +221,19 @@ div{
     }
     .cadastro{
       width: 100%;
+    }
+    .botoes{
+      gap: 10%;
+    }
+  }
+  @media (max-width: 470px){
+    .numero{
+      width: 100%;
+    }
+    .cadastro{
+      width: 100%;
+    }
+    .botoes{
+      gap: 1%;
     }
   }

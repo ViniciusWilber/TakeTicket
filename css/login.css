@@ -9,7 +9,8 @@ body{
     align-items: center;
 }
 main{
-    background: linear-gradient( #044292, #03aca0);
+    background: linear-gradient(-105grad, #131b85ee, #01eeff93);
+    filter: drop-shadow(2px 2px 4px rgba(4, 0, 255, 0.37));
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -22,7 +23,9 @@ main{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.219);
+    background-color: rgba(3, 66, 95, 0.089);
+    filter: drop-shadow(2px 2px 4px rgba(4, 0, 255, 0.884));
+    border: 1px solid rgba(0, 0, 0, 0.144);
     width: 40%;
     height: 700px;
     gap: 5rem;
@@ -54,7 +57,9 @@ main{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgba(42, 157, 185, 0.418);
+    background-color: rgba(3, 66, 95, 0.089);
+    filter: drop-shadow(2px 2px 4px rgba(4, 0, 255, 0.884));
+    border: 1px solid rgba(0, 0, 0, 0.11);
     width: 40%;
     height: 700px;
     gap: 5rem;
@@ -156,7 +161,7 @@ main{
         align-items: center;
         flex-direction: column;
         background:none;
-
+        border: none;
     }
     .direita h1{
         display: none;
@@ -165,6 +170,7 @@ main{
         padding-top: 20%;
         gap: 70px;
         background-color: #03aca100;
+        border: none;
     }
     .direita button {
         cursor: pointer;
