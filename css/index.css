@@ -679,11 +679,9 @@ footer .termos {
     padding-top: 1%;
   }
   .cartasTema{
-      padding: 3%;
-      padding-left: 25%;
-      padding-right: 25%;
+      padding-top: 5%;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       gap: 70px;
       width: 100%;
@@ -755,11 +753,9 @@ footer .termos {
 
 @media (max-width: 675px){
   .cartasTema{
-    padding: 2%;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-top: 5%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 70px;
     width: 100%;
@@ -770,9 +766,9 @@ footer .termos {
 
 @media (max-width: 435px){
   .cartasTema{
-    padding: 8%;
+    padding-top: 4%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 70px;
     width: 100%;
@@ -819,9 +815,9 @@ footer .termos {
     padding-top: 1%;
   }
   .cartasTema{
-    padding: 6%;
+    padding-top: 3%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 70px;
     width: 100%;
@@ -896,7 +892,7 @@ footer .termos {
 }
 @media (max-width: 390px){
   .cartasTema{
-    padding: 4%;
+    padding-top: 3%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -950,7 +946,7 @@ footer .termos {
   .cartasTema{
     padding: 2%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 30px;
     width: 100%;
@@ -1024,9 +1020,9 @@ footer .termos {
 }
 @media (max-width: 320px){
   .cartasTema{
-    padding: 1%;
+    padding-top: 1%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 70px;
     width: 100%;

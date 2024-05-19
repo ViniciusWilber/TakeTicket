@@ -5,7 +5,7 @@
     font-family: "Poppins", sans-serif;
   }
 body{
-    width: 100vw;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,8 +18,8 @@ main{
     background-color: #03759734;
     filter: drop-shadow(2px 2px 4px rgba(4, 0, 255, 0.37));
     border-radius: 15px;
-    width: 80%;
-    padding: 1%;
+    width: 70%;
+    padding: 2%;
 }
 .campo{
     width:100%;
@@ -225,6 +225,14 @@ div{
     .botoes{
       gap: 10%;
     }
+    main{
+      border: 2px solid rgba(0, 18, 99, 0.062);
+      background-color: #03759734;
+      filter: drop-shadow(2px 2px 4px rgba(4, 0, 255, 0.37));
+      border-radius: 15px;
+      width: 100%;
+      padding: 3%;
+  }
   }
   @media (max-width: 470px){
     .numero{
@@ -236,4 +244,12 @@ div{
     .botoes{
       gap: 1%;
     }
+    main{
+      border: 2px solid rgba(0, 18, 99, 0.062);
+      background-color: #03759734;
+      filter: drop-shadow(2px 2px 4px rgba(4, 0, 255, 0.37));
+      border-radius: 15px;
+      width: 100%;
+      padding: 3%;
+  }
   }
