@@ -9,8 +9,7 @@ body{
     align-items: center;
 }
 main{
-    background: linear-gradient(-105grad, #131b85ee, #01eeff93);
-    filter: drop-shadow(2px 2px 4px rgba(4, 0, 255, 0.37));
+    background: white ;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -23,18 +22,12 @@ main{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgba(3, 66, 95, 0.089);
-    filter: drop-shadow(2px 2px 4px rgba(4, 0, 255, 0.884));
-    border: 1px solid rgba(0, 0, 0, 0.144);
-    width: 40%;
-    height: 700px;
-    gap: 5rem;
-    border-radius: 0px 25px 25px 0px;
-}
-.direita h1 {
-    font-size: 45px;
-    /* font-size: 50px; */
-    padding-bottom: 3rem;
+    background-color: #827C70;
+    border: 1px solid #827C70;
+    width: 45%;
+    height: 800px;
+    gap: 2rem;
+    border-radius: 0px 10px 10px 0px;
 }
 .direita button {
     cursor: pointer;
@@ -49,24 +42,18 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
     gap: 2rem;
 }
 .esquerda{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    background-color: rgba(3, 66, 95, 0.089);
-    filter: drop-shadow(2px 2px 4px rgba(4, 0, 255, 0.884));
-    border: 1px solid rgba(0, 0, 0, 0.11);
-    width: 40%;
-    height: 700px;
+    background-color: #F28705;
+    border: 1px solid #F28705;
+    width: 45%;
+    height: 800px;
     gap: 5rem;
-    border-radius: 25px 0px 0px 25px;
-}
-.esquerda h1 {
-    font-size: 50px;
+    border-radius: 10px 0px 0px 10px;
 }
 .loginText{
     display: flex;
