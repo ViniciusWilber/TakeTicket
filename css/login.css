@@ -140,6 +140,7 @@ a {
 } */
 
 .botao {
+    cursor: pointer;
     width: 9em;
     height: 3em;
     border-radius: 8px;
