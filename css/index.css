@@ -67,8 +67,7 @@ header .logo{
     top: 180%;
     width: 160%;
     height: 190%;
-    background-color: #0ff5e693;
-    filter: drop-shadow(2px 2px 4px rgba(4, 0, 255, 0.884));
+    background-color: #F28705;
     border-radius: 50%;
     display: block;
     transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
@@ -77,20 +76,19 @@ header .logo{
   
   .Login:hover {
   color: #ffffff;
-    border: 1px solid #0ff5e693;
-    filter: drop-shadow(2px 2px 4px rgba(4, 0, 255, 0.884));
+    border: 1px solid #F28705;
   }
   
   .Login:hover:before {
     top: -35%;
-    background-color: #0ff5e693;
+    background-color: #F28705;
     transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
     filter: drop-shadow(2px 2px 4px rgba(4, 0, 255, 0.884));
   }
   
   .Login:hover:after {
     top: -45%;
-    background-color: #0ff5e693;
+    background-color: #F28705;
     transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
     filter: drop-shadow(2px 2px 4px rgba(4, 0, 255, 0.884));
   }
