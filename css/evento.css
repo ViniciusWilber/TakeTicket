@@ -72,7 +72,7 @@ header .logo {
   top: 180%;
   width: 160%;
   height: 190%;
-  background-color: #F28705;
+  background-color: #6CCBD3;
   filter: drop-shadow(2px 2px 4px rgb(141, 141, 141));
   border-radius: 50%;
   display: block;
@@ -82,20 +82,20 @@ header .logo {
 
 .Login:hover {
 color: #ffffff;
-  border: 1px solid #F28705;
+  border: 1px solid #6CCBD3;
   filter: drop-shadow(2px 2px 4px rgb(141, 141, 141));
 }
 
 .Login:hover:before {
   top: -35%;
-  background-color: #F28705;
+  background-color: #6CCBD3;
   transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
   filter: drop-shadow(2px 2px 4px rgb(141, 141, 141));
 }
 
 .Login:hover:after {
   top: -45%;
-  background-color: #F28705;
+  background-color: #6CCBD3;
   transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
   filter: drop-shadow(2px 2px 4px rgb(141, 141, 141));
 }
@@ -142,7 +142,7 @@ color: #ffffff;
   top: 180%;
   width: 160%;
   height: 190%;
-  background-color: #F28705;
+  background-color: #6CCBD3;
   filter: drop-shadow(2px 2px 4px rgb(141, 141, 141));
   border-radius: 50%;
   display: block;
@@ -152,20 +152,20 @@ color: #ffffff;
 
 .SejaMenbro:hover {
   color: #ffffff;
-  border: 1px solid #F28705;
+  border: 1px solid #6CCBD3;
   filter: drop-shadow(2px 2px 4px rgb(141, 141, 141));
 }
 
 .SejaMenbro:hover:before {
   top: -35%;
-  background-color: #F28705;
+  background-color: #6CCBD3;
   filter: drop-shadow(2px 2px 4px rgb(141, 141, 141));
   transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
 
 .SejaMenbro:hover:after {
   top: -45%;
-  background-color: #F28705;
+  background-color: #6CCBD3;
   filter: drop-shadow(2px 2px 4px rgb(141, 141, 141));
   transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
@@ -310,10 +310,9 @@ color: #ffffff;
   cursor: pointer;
   font-size: 18px;
   border-radius: 0.5em;
-  background: #F28705;
-  filter: drop-shadow(2px 2px 4px rgba(4, 0, 255, 0.651));
-  border: 1px solid #fcfafa;
-  /* box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff; */
+  background: #6CCBD3;
+  border: 1px solid #6CCBD3;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
   width: 16.5rem;
   height: 4rem;
   font-size: 1.5rem;
@@ -347,8 +346,7 @@ color: #ffffff;
   top: 180%;
   width: 160%;
   height: 190%;
-  background-color:#F28705;
-  filter: drop-shadow(2px 2px 4px rgba(4, 0, 255, 0.37));
+  background-color:#51D0AB;
   border-radius: 50%;
   display: block;
   transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
@@ -357,21 +355,18 @@ color: #ffffff;
 
 .compra:hover {
   color: #ffffff;
-  border: 1px solid #F28705;
-  filter: drop-shadow(2px 2px 4px rgba(4, 0, 255, 0.37));
+  border: 1px solid #6CCBD3;
 }
 
 .compra:hover:before {
   top: -35%;
-  background-color: #f23405;
-  filter: drop-shadow(2px 2px 4px rgba(4, 0, 255, 0.37));
+  background-color: #6CCBD3;
   transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
 
 .compra:hover:after {
   top: -45%;
-  background-color: #f13d07;
-  filter: drop-shadow(2px 2px 4px rgba(4, 0, 255, 0.37));
+  background-color: #6CCBD3;
   transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
 
@@ -431,9 +426,9 @@ color: #ffffff;
   cursor: pointer;
   font-size: 18px;
   border-radius: 0.5em;
-  background: #009ddbc7;
+  background: #6CCBD3;
   ;
-  border: 1px solid #acacac;
+  border: 1px solid #6CCBD3;
   /* box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff; */
 }
 
@@ -465,7 +460,7 @@ color: #ffffff;
   top: 180%;
   width: 160%;
   height: 190%;
-  background-color: #000fdbc7;
+  background-color: #6CCBD3;
   border-radius: 50%;
   display: block;
   transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
@@ -474,21 +469,21 @@ color: #ffffff;
 
 .follow:hover {
   color: #ffffff;
-  border: 1px solid #000fdbc7;
-  background: linear-gradient(-105grad, #000fdbc7, #0fa1f593);
+  border: 1px solid #6CCBD3;
+  background: linear-gradient(-105grad,#51D0AB, #6CCBD3 );
 }
 
 .follow:hover:before {
   top: -35%;
-  background-color: #000fdbc7;
-  background: linear-gradient(-105grad, #000fdbc7, #0fa1f593);
+  background-color: #6CCBD3;
+  background: linear-gradient(-105grad,#51D0AB, #6CCBD3 );
   transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
 
 .follow:hover:after {
   top: -45%;
-  background-color: #000fdbc7;
-  background: linear-gradient(-105grad, #000fdbc7, #0fa1f593);
+  background-color: #6CCBD3;
+  background: linear-gradient(-105grad,#51D0AB, #6CCBD3 );
   transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
 
@@ -514,33 +509,30 @@ color: #ffffff;
   font-size: 100%;
 
 }
-footer {
-  background: linear-gradient(-105grad, #000fdbc7, #0fa1f593);
+footer{
+  background: linear-gradient(-105grad,#51D0AB, #6CCBD3 );
   display: flex;
   justify-content: center;
   width: 100%;
-  /* min-height: 250px; */
   position: relative;
-  gap: 200px;
+  gap: 13%;
 }
-
 footer div {
-  text-decoration: none;
-  height: 150px;
-  width: 250px;
-  display: flex;
-  align-items: initial;
-  align-content: space-between;
-  flex-direction: column;
-  padding: 20px;
+text-decoration: none;
+height: 150px;
+width: 250px;
+display: flex;
+align-items: initial;
+align-content: space-between;
+flex-direction: column;
+padding: 20px;
 
 }
-
 footer .termos {
-  display: flex;
-  position: absolute;
-  bottom: 0;
-  left: 395px;
+display: flex;
+position: absolute;
+bottom: 0;
+left: 395px;
 }
 
 @media (max-width:425px) {
