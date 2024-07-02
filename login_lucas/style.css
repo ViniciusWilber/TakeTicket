@@ -1,0 +1,415 @@
+body {
+  margin: 0;
+  background: rgb(255, 255, 255);
+}
+
+main {
+  display: flex;
+  padding: 5rem;
+  justify-content: center;
+}
+
+.parte1 {
+  background: #62D0C1;
+  display: flex;
+  align-items: center;
+
+}
+
+.parte1 img {
+  width: 40rem;
+}
+
+.parte2 {
+  background: #273446;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 7rem 7rem 7rem 3rem;
+  font-size: 1.5rem;
+  color: white;
+  height: 26rem;
+}
+
+.ca2 {
+  background: #273446;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 7rem 7rem 7rem 3rem;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.cadastro {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cadastro p {
+  color: #ffffff73;
+}
+
+.botoes {
+  display: flex;
+}
+
+input {
+  background: #273446;
+  border: 0 #273446;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+}
+
+input:active {
+  border: red;
+}
+
+.nome {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+.senha {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+.email {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+.membro {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+.membro {
+  border-radius: 4rem;
+  background: #273446;
+  border: #273446;
+  width: 9rem;
+  height: 2rem;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.membro {
+  border-radius: 4rem;
+  background: #273446;
+  border: #273446;
+  width: 7rem;
+  height: 2rem;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.membro:hover {
+  background: #62D0C1;
+  color: black;
+  width: 9rem
+}
+
+.membro .but2:hover {
+  background: #62D0C1;
+  color: black;
+  width: 7rem;
+
+}
+
+.carta2 {
+  width: 63%;
+  gap: 2rem;
+  background: #273446;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 4rem;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.infopessoais {
+  display: flex;
+}
+
+.login {
+  display: flex;
+}
+
+#click1 {
+  font-size: 35px;
+  color: #b6b6b6b7;
+  position: relative;
+  background: #273446;
+  border: 0;
+  cursor: pointer;
+}
+
+#click1::before {
+  content: '';
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #F28705;
+  position: absolute;
+  bottom: -.25rem;
+  left: 0;
+  transition: width .4s;
+}
+
+#click1:hover::before {
+  width: 100%;
+}
+
+#but1 {
+  font-size: 35px;
+  color: #b6b6b6b7;
+  position: relative;
+  background: #273446;
+  border: 0;
+  cursor: pointer;
+}
+
+#but1::before {
+  content: '';
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #F28705;
+  position: absolute;
+  bottom: -.25rem;
+  left: 0;
+  transition: width .4s;
+}
+
+#but1:hover::before {
+  width: 100%;
+}
+
+.form__group {
+  position: relative;
+  padding: 20px 0 0;
+  width: 21%;
+  max-width: 300px;
+}
+
+#but2 {
+  font-size: 35px;
+  color: #b6b6b6b7;
+  position: relative;
+  background: #273446;
+  border: 0;
+  cursor: pointer;
+}
+
+#but2::before {
+  content: '';
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #F28705;
+  position: absolute;
+  bottom: -.25rem;
+  left: 0;
+  transition: width .4s;
+}
+
+#but2:hover::before {
+  width: 100%;
+}
+
+#but3 {
+  font-size: 35px;
+  color: #b6b6b6b7;
+  position: relative;
+  background: #273446;
+  border: 0;
+  cursor: pointer;
+}
+
+#but3::before {
+  content: '';
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #F28705;
+  position: absolute;
+  bottom: -.25rem;
+  left: 0;
+  transition: width .4s;
+}
+
+#but3:hover::before {
+  width: 100%;
+}
+
+.form__group {
+  position: relative;
+  padding: 20px 0 0;
+  width: 21%;
+  max-width: 300px;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 17px;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:placeholder-shown~.form__label {
+  font-size: 17px;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #9b9b9b85;
+  pointer-events: none;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #F28705, #c02f03);
+  border-image-slice: 1;
+}
+
+.form__field:focus~.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #F28705;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required,
+.form__field:invalid {
+  box-shadow: none;
+}
+
+.nome,
+.login {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.form__group1 {
+  position: relative;
+  padding: 20px 0 0;
+  width: 40%;
+  max-width: 300px;
+}
+
+.form__group2 {
+  position: relative;
+  padding: 20px 0 0;
+  width: 84%;
+  max-width: 300px;
+}
+
+.divisao {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.botao {
+  cursor: pointer;
+  width: 9em;
+  height: 3em;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 6px 6px 12px #c5c5c5,
+}
+
+.botao::before {
+  content: '';
+  width: 0;
+  height: 3em;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #6CCBD3 0%, #51D0AB 100%);
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.botao:hover::before {
+  width: 9em;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+}
+
+.icones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.sociais {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+}
+
+.endereco {
+  width: 62%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.dados {
+  width: 62%;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2rem;
+  justify-content: center;
+}
