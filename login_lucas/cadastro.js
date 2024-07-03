@@ -5,7 +5,7 @@ const img = document.querySelector('.img');
 
 carta2.style.display = 'none';
 
-document.getElementById('but2').addEventListener('click', function() {
+document.getElementById('but3').addEventListener('click', function() {
     carta2.style.display = 'none'; 
     carta1.style.display = 'flex'; 
     img.style.display = 'flex';
