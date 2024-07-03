@@ -63,7 +63,7 @@ input {
 }
 
 input:active {
-  border: red;
+  border: #6CCBD3;
 }
 
 .nome {
@@ -88,40 +88,19 @@ input:active {
 }
 
 .membro {
+  border-radius: 4rem;
+  background: #273446;
+  border: #273446;
+  width: 100%;
+  height: 2rem;
+  color: white;
+  font-size: 1.2rem;
   display: flex;
-  align-items: center;
-  gap: 1rem;
-  font-family: "Open Sans", sans-serif;
+  justify-content: center;
+  gap: 4rem;
 }
 
-.membro {
-  border-radius: 4rem;
-  background: #273446;
-  border: #273446;
-  width: 9rem;
-  height: 2rem;
-  color: white;
-  font-size: 1.2rem;
-}
-
-.membro {
-  border-radius: 4rem;
-  background: #273446;
-  border: #273446;
-  width: 7rem;
-  height: 2rem;
-  color: white;
-  font-size: 1.2rem;
-  cursor: pointer;
-}
-
-.membro:hover {
-  background: #62D0C1;
-  color: black;
-  width: 9rem
-}
-
-.membro .but2:hover {
+.but2:hover {
   background: #62D0C1;
   color: black;
   width: 7rem;
@@ -130,11 +109,10 @@ input:active {
 
 .carta2 {
   width: 63%;
-  gap: 2rem;
   background: #273446;
   flex-direction: column;
   gap: 3rem;
-  padding: 4rem;
+  padding: 2rem 2rem;
   font-size: 1.5rem;
   color: white;
 }
@@ -161,7 +139,7 @@ input:active {
   width: 0;
   height: 2px;
   border-radius: 2px;
-  background-color: #F28705;
+  background-color: #6CCBD3;
   position: absolute;
   bottom: -.25rem;
   left: 0;
@@ -186,7 +164,7 @@ input:active {
   width: 0;
   height: 2px;
   border-radius: 2px;
-  background-color: #F28705;
+  background-color: #6CCBD3;
   position: absolute;
   bottom: -.25rem;
   left: 0;
@@ -211,6 +189,8 @@ input:active {
   background: #273446;
   border: 0;
   cursor: pointer;
+  padding: 0 0 4% 0;
+  height: 100%;
 }
 
 #but2::before {
@@ -218,7 +198,7 @@ input:active {
   width: 0;
   height: 2px;
   border-radius: 2px;
-  background-color: #F28705;
+  background-color: #6CCBD3;
   position: absolute;
   bottom: -.25rem;
   left: 0;
@@ -236,6 +216,7 @@ input:active {
   background: #273446;
   border: 0;
   cursor: pointer;
+  padding: 0 0 4% 0;
 }
 
 #but3::before {
@@ -243,7 +224,7 @@ input:active {
   width: 0;
   height: 2px;
   border-radius: 2px;
-  background-color: #F28705;
+  background-color: #6CCBD3;
   position: absolute;
   bottom: -.25rem;
   left: 0;
@@ -298,7 +279,7 @@ input:active {
   padding-bottom: 6px;
   font-weight: 700;
   border-width: 3px;
-  border-image: linear-gradient(to right, #F28705, #c02f03);
+  border-image: linear-gradient(to right, #6CCBD3, #6CCBD3);
   border-image-slice: 1;
 }
 
@@ -308,7 +289,7 @@ input:active {
   display: block;
   transition: 0.2s;
   font-size: 17px;
-  color: #F28705;
+  color: #6CCBD3;
   font-weight: 700;
 }
 
@@ -399,17 +380,21 @@ input:active {
 }
 
 .endereco {
-  width: 62%;
+  width: 90%;
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 3.4rem;
   justify-content: center;
 }
 
 .dados {
-  width: 62%;
+  width: 87%;
   display: flex;
   flex-wrap: nowrap;
   gap: 2rem;
   justify-content: center;
+  padding: 1rem 2rem 3rem 2rem;
+}
+.fa-brands{
+  color: #6CCBD3;
 }
