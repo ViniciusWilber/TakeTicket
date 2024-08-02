@@ -10,12 +10,10 @@
 
 <body>
     <header>
-        <a href="index.html" class="logo"><img src="imagens/imgIndex/logoSletras.png" alt=""></a>
-        <ul class="botoes">
-            <a href="cadastroevento.html"><button class="SejaMenbro">Promover meu evento </button></a>
-            <a href="login.html"><button class="Login">Login</button></a>
-        </ul>
-    </header>
+        <?php
+            include_once "header.php";
+          ?>
+        </header>
     <main>
         <section class="sec1">
             <div class="titulo">

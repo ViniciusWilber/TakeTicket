@@ -10,12 +10,10 @@
     <title>Perfil/ViniciusWilber</title>
 </head>
 <body>
-    <header>
-        <a href="index.html"><img src="imagens/imgIndex/logoSletras.png" alt=""></a>
-        <ul class="botoes">
-            <a href="cadastroevento.html"><button class="SejaMenbro">Promover Evento</button></a>
-            <a href="login.html"><button class="Login">Login</button></a> 
-        </ul>
+<header>
+    <?php
+        include_once "header.php";
+      ?>
     </header>
     <main class="Perfil">
         <div class="esquerda">
