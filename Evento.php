@@ -44,7 +44,7 @@
                     </div>
                     <div class="gerais">
                         <div class="promotor">
-                            <a href="perfil.html"><img src="imagens/imgEvento/Ellipse 7.png" alt=""></a>
+                            <a href="perfil.php"><img src="imagens/imgEvento/Ellipse 7.png" alt=""></a>
                             <div class="infos">
                                 <h1 class="name">josé Alves</h1>
                                 <h3 class="sobrePromote">promotor a mais de 5 anos</h3>
@@ -80,7 +80,7 @@
                     <p>R$50,00</p>
                 </div>
                 <P>Dia unico</P>
-                <a href="pagamento.html"><button class="compra">Comprar +</button></a>
+                <a href="pagamento.php"><button class="compra">Comprar +</button></a>
             </div>
         </section>
         <section>
@@ -107,7 +107,7 @@
                         <p>Assinantes</p>
                     </div>
                 </div>
-                <a href="perfil.html"><button class="follow">Follow</button></a>
+                <a href="perfil.php"><button class="follow">Follow</button></a>
             </div>
         </div>
         <section class="Mapa">

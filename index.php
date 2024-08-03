@@ -17,11 +17,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
     <?php
         include_once "header.php";
       ?>
-    </header>
     <main>
         <section class="primeira" >
             <div class="texto1" >
@@ -80,7 +78,7 @@
                                 </div>
                             </div>
                             <div class="butao">
-                                <a href="Evento.html"><button class="reserva">Reservar</button></a>
+                                <a href="Evento.php"><button class="reserva">Reservar</button></a>
                             </div>
                         </div>
                         <div class="carta1">
@@ -220,7 +218,7 @@
                                 </div>
                             </div>
                             <div class="butao">
-                                <a href="Evento.html"><button class="reserva">Reservar</button></a>
+                                <a href="Evento.php"><button class="reserva">Reservar</button></a>
                             </div>
                         </div>
                         <div class="carta1">
@@ -292,7 +290,7 @@
                                 </div>
                             </div>
                             <div class="butao">
-                                <a href="Evento.html"><button class="reserva">Reservar</button></a>
+                                <a href="Evento.php"><button class="reserva">Reservar</button></a>
                             </div>
                         </div>
                         <div class="carta1">
@@ -432,7 +430,7 @@
                                 </div>
                             </div>
                             <div class="butao">
-                                <a href="Evento.html"><button class="reserva">Reservar</button></a>
+                                <a href="Evento.php"><button class="reserva">Reservar</button></a>
                             </div>
                         </div>
                         <div class="carta1">
@@ -504,7 +502,7 @@
                                 </div>
                             </div>
                             <div class="butao">
-                                <a href="Evento.html"><button class="reserva">Reservar</button></a>
+                                <a href="Evento.php"><button class="reserva">Reservar</button></a>
                             </div>
                         </div>
                         <div class="carta1">
@@ -661,7 +659,7 @@
                                 </div>
                             </div>
                             <div class="butao">
-                                <a href="Evento.html"><button class="reserva">Reservar</button></a>
+                                <a href="Evento.php"><button class="reserva">Reservar</button></a>
                             </div>
                         </div>
                         <div class="carta1">
@@ -716,7 +714,7 @@
                                 </div>
                             </div>
                             <div class="butao">
-                                <a href="Evento.html"><button class="reserva">Reservar</button></a>
+                                <a href="Evento.php"><button class="reserva">Reservar</button></a>
                             </div>
                         </div>
                         <div class="carta1">
@@ -873,7 +871,7 @@
                                 </div>
                             </div>
                             <div class="butao">
-                                <a href="Evento.html"><button class="reserva">Reservar</button></a>
+                                <a href="Evento.php"><button class="reserva">Reservar</button></a>
                             </div>
                         </div>
                         <div class="carta1">
@@ -934,11 +932,9 @@
             </div>
         </div>
     </main>
-    <footer>
     <?php
         include_once "footer.php";
       ?>
-    </footer>
     <script src="js/Pagina1.js"></script>
 </body>
 </html>

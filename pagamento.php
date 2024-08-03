@@ -31,8 +31,8 @@
                 </div>
             </form>
             <div class="pagamento">
-                <a href="Evento.html"><button class="botao">Comfirmar</button></a>
-                <a href="Evento.html"><button class="botao">Cancelar</button></a>
+                <a href="Evento.php"><button class="botao">Comfirmar</button></a>
+                <a href="Evento.php"><button class="botao">Cancelar</button></a>
             </div>
         </div>
         <div class="direita">

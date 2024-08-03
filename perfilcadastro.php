@@ -11,10 +11,10 @@
 </head>
 <body>
     <header>
-        <a href="index.html"><img src="LogoSomente.png" alt="Logo"></a>
+        <a href="index.php"><img src="LogoSomente.png" alt="Logo"></a>
         <ul class="botoes">
-            <li><a href="cadastroevento.html" class="SejaMenbro">Promover Evento</a></li>
-            <li><a href="login.html" class="Login">Login</a></li>
+            <li><a href="cadastroevento.php" class="SejaMenbro">Promover Evento</a></li>
+            <li><a href="login.php" class="Login">Login</a></li>
         </ul>
     </header>
     <main class="Perfil">
@@ -132,8 +132,8 @@
                             </div>
                         </section>
                         <div class="column">
-                            <a href="Evento.html"><button type="submit" class="enviar">Enviar</button></a>
-                            <a href="index.html"><button type="submit" class="cancelar">Cancelar</button></a>
+                            <a href="Evento.php"><button type="submit" class="enviar">Enviar</button></a>
+                            <a href="index.php"><button type="submit" class="cancelar">Cancelar</button></a>
                         </div>
                     </form>
                 </section>

@@ -61,8 +61,8 @@
         </form>
         <section>
             <div class="botoes">
-                <a href="index.html"><button class="confirmar" id="confirmar">Confirmar</button></a>
-                <a href="login.html"><button class="cancelar"  id="cancelar">Cancelar</button></a>
+                <a href="index.php"><button class="confirmar" id="confirmar">Confirmar</button></a>
+                <a href="login.php"><button class="cancelar"  id="cancelar">Cancelar</button></a>
             </div>
         </section>
     </main>

@@ -8,10 +8,11 @@ header {
     display: flex;
     justify-content:space-between;
     height: 100%;
+    /* gap: 70em; */
     padding-left: 30px;
 }
 header img{
-  max-width: 110%;
+  max-width: 100%;
 }
 header .logo{
   width: 100px;
@@ -20,7 +21,7 @@ header .logo{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 70px;
     padding-right: 30px;
 }
 .Login {
