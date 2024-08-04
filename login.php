@@ -33,9 +33,15 @@
                         </a>
                     </div>
                     <p class="form-text">ou utilize sua conta</p>
-                    <div class="form-input-container">
-                        <input type="email" class="form-input" placeholder="Email">
-                        <input type="password" class="form-input" placeholder="Senha">
+                    <div class="form__group2">
+                        <input type="text" class="form__field" id="input1" placeholder=" ">
+                        <label for="input1" class="form__label">Label</label>
+                      </div>
+                      
+                    <div class="form__group2 field">
+
+                        <label for="name" class="form__label">senha</label>
+                        <input type="input" class="form__field" placeholder="senha" required="">
                     </div>
                     <a href="#" class="form-link">Esqueceu a senha?</a>
                     <button type="button" class="form-button">Logar</button>
