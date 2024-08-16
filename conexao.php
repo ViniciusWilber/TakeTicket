@@ -1,8 +1,8 @@
 <?PHP
     $host = "localhost";
-    $banco = "TakeTicket";
+    $banco = "taketicket";
     $user = "root";
-    $senha = "TakeTicket";
+    $senha = "";
     $conexao = new PDO("mysql:host=$host;dbname=$banco", $user, $senha);
     if(!$conexao){
         echo "Deu bom";

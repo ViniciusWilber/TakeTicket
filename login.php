@@ -50,7 +50,7 @@
                         <a href="#" id="open-register-mobile">Registre-se</a>
                     </p>
                 </form>
-                <form class="form form-register">
+                <form class="form form-register" method="POST" action="processo.php">
                     <h2 class="form-title">Criar Conta</h2>
                     <div class="form-social">
                         <a href="#" class="social-icon">
@@ -65,7 +65,8 @@
                     </div>
                     <p class="form-text">ou cadastre seu email</p>
 
-                    <form method="post "action="processo.php">
+                    <form method="POST" action="processo.php">
+
                     <div class="form-input-container">
                         <input type="text" class="form-input" placeholder="Nome" name="nome" id="nome">
                         <input type="email" class="form-input" placeholder="Email" name="email" id="email">
@@ -95,5 +96,6 @@
             </div>
         </div>
     </main>
+
 </body>
 </html>
