@@ -64,17 +64,21 @@
                         </a>
                     </div>
                     <p class="form-text">ou cadastre seu email</p>
+
+                    <form method="post "action="processo.php">
                     <div class="form-input-container">
-                        <input type="text" class="form-input" placeholder="Nome">
-                        <input type="email" class="form-input" placeholder="Email">
-                        <input type="password" class="form-input" placeholder="Senha">
+                        <input type="text" class="form-input" placeholder="Nome" name="nome" id="nome">
+                        <input type="email" class="form-input" placeholder="Email" name="email" id="email">
+                        <input type="password" class="form-input" placeholder="Senha" name="senha" id="senha">
                     </div>
-                    <button type="button" class="form-button">Cadastrar</button>
+                    <button class="form-button" type="submit">Cadastrar</button>
+                    </form>
                     <p class="mobile-text">
                         Já tem conta?
                         <a href="#" id="open-login-mobile">Login</a>
                     </p>
                 </form>
+
             </div>
             <div class="overlay-container">
                 <div class="overlay">
