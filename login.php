@@ -19,7 +19,7 @@
     <main>
         <div class="login-container" id="login-container">
             <div class="form-container">
-                <form class="form form-login">
+                <form class="form form-login"  method="POST" action="logar.php"> 
                     <h2 class="form-title">Sing-in</h2>
                     <div class="form-social">
                         <a href="#" class="social-icon">
@@ -34,17 +34,17 @@
                     </div>
                     <p class="form-text">ou utilize sua conta</p>
                     <div class="form__group2">
-                        <input type="text" class="form__field" id="input1" placeholder=" ">
-                        <label for="input1" class="form__label">Label</label>
+                        <input type="email" class="form-input" name="email" id="email" placeholder="email">
+                        <label for="email" class="form__label">Label</label>
                       </div>
                       
                     <div class="form__group2 field">
 
-                        <label for="name" class="form__label">senha</label>
-                        <input type="input" class="form__field" placeholder="senha" required="">
+                        <label for="senha" class="form__label">senha</label>
+                        <input type="password" class="form-input" placeholder="senha" name="senha" id="senha">
                     </div>
                     <a href="#" class="form-link">Esqueceu a senha?</a>
-                    <button type="button" class="form-button">Logar</button>
+                    <button type="submit" class="form-button" >Logar</button>
                     <p class="mobile-text">
                         Não tem conta?
                         <a href="#" id="open-register-mobile">Registre-se</a>
@@ -65,7 +65,6 @@
                     </div>
                     <p class="form-text">ou cadastre seu email</p>
 
-                    <form method="POST" action="processo.php">
 
                     <div class="form-input-container">
                         <input type="text" class="form-input" placeholder="Nome" name="nome" id="nome">
@@ -73,7 +72,6 @@
                         <input type="password" class="form-input" placeholder="Senha" name="senha" id="senha">
                     </div>
                     <button class="form-button" type="submit">Cadastrar</button>
-                    </form>
                     <p class="mobile-text">
                         Já tem conta?
                         <a href="#" id="open-login-mobile">Login</a>

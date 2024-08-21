@@ -2,10 +2,7 @@
 include_once "conexao.php";
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $erro = "";
-    $nome = $_POST['nome'];
-    if(empty($nome)&& strlen($nome) < 3){
-        $erro .="digite um nome <br>";
-    }
+    
     $email = $_POST['email'];
     if(empty($email)){
         $erro .="digite um email <br>";

@@ -16,8 +16,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     //$insert->bindParam(':cpf', $cpf);
     //$insert->bindParam(':senha', $senha);
     if($insert->execute($novo)){
-        header('location: cadastro.php?status=ok');
+        header('location: index.php?status=ok');
     }else{
-        header('location: cadastro.php?status=erro');
+        header('location: index.php?status=erro');
     }
+    
 }
