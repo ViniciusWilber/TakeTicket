@@ -12,6 +12,7 @@ a{
 }
 /* resert */
 
+
 /* color */
 :root{
     --primary-color: #6CCBD3;
@@ -31,6 +32,13 @@ a{
         align-items: center;
     }
 /* main */
+
+/*botão de fechar a modal*/
+.close{
+    position: absolute;
+    z-index: 2;
+    right: 0;
+  }
 
 
 /* login-container */

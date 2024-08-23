@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./css/main.css">
 
     <script src="./js/login.js" defer></script>
-    <title>Login - Leonid</title>
+    <title>login</title>
 </head>
 <body>
     <main>
