@@ -32,7 +32,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             'senha' => $senhaCripto
         ];
      
-        $insert = $conexao->prepare("INSERT INTO usuario (nome, email, cpf, senha) VALUES (:nome, :email, :senha)");
+        $insert = $conexao->prepare("INSERT INTO usuario (nome, email, senha) VALUES (:nome, :email, :senha)");
         // $insert->bindParam(':nome', $nome);
         // $insert->bindParam(':email', $email);
         // $insert->bindParam(':cpf', $cpf);

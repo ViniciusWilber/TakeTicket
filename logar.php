@@ -4,7 +4,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $msg = "login incorreta.";
     $email = $_POST['email'];
     if(empty($email)){
-        $erro .="digite um email <br>";
+        echo "digite um email <br>";
     }else{
         $selectEmail = $conexao->prepare("SELECT email FROM usuario WHERE email = :email");
         $selectEmail->bindParam('email', $email);
@@ -14,7 +14,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
     $senha = $_POST['senha'];
     if(empty($senha)){
-        $erro .="digite um email <br>";
+        echo "digite um senha <br>";
     }else{
         $selectSenha = $conexao->prepare("SELECT senha FROM usuario WHERE senha = :senha");
         $selectSenha->bindParam('senha', $senha);
