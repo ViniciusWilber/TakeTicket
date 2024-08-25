@@ -1,41 +1,34 @@
 <?php
 include_once "conexao.php";
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $msg = "login incorreta.";
     $email = $_POST['email'];
+    if(empty($email)){
+        $erro .="digite um email <br>";
+    }else{
+        $selectEmail = $conexao->prepare("SELECT email FROM usuario WHERE email = :email");
+        $selectEmail->bindParam('email', $email);
+        $selectEmail->execute();
+        //$verificaEmail = $selectEmail->fetch(PDO::FETCH_ASSOC);
+
+    }
     $senha = $_POST['senha'];
-    $status = $_POST['status'];
-    if($status > 0) {
+    if(empty($senha)){
+        $erro .="digite um email <br>";
+    }else{
+        $selectSenha = $conexao->prepare("SELECT senha FROM usuario WHERE senha = :senha");
+        $selectSenha->bindParam('senha', $senha);
+        $selectSenha->execute();
+        //$verificaEmail = $selectEmail->fetch(PDO::FETCH_ASSOC);
 
-    if($email == $login_admin) {
-        if("senha" == $senha){
 
-            header('location: ./');
 
-        } else {
-            header('location: ./?erro=erro');
-        }//caso a senha esteja errada
-    } else{
-        header ('location: ./?erro=erro');
-    }//caso o usúario não esteja correto
-} else{
-    //Verificação USUÁRIO
-    if($email == $login_user) {
-        if($senha == $senha_user){
-            //verificar se existe uma sessão, se não existir ele inicia uma sessão
-            session_start();
-            //global SESSION grava dados da pessoa logada
-            $_SESSION['email'] = $login_user;
-            $_SESSION['nome'] = $nome_user;
-            $_SESSION['status'] = 1;
-            //redirecionar a página para o local indicado, no caso root (raiz) index.php
-            header('location: ./');
 
-        } else {
-            header('location: ./?erro=erro');
-        }//caso a senha esteja errada
-    } else{
-        header ('location: ./?erro=erro');
-    }//caso o usúario não esteja correto
-}
-}
-?>
+
+
+        if($selectSenha->rowCount() && $selectEmail->rowCount()){
+            header('location: index.php');
+        }else{
+            echo $msg;
+        }
+    }}

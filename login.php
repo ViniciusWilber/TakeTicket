@@ -33,16 +33,20 @@
                         </a>
                     </div>
                     <p class="form-text">ou utilize sua conta</p>
-                    <div class="form__group2">
-                        <input type="email" class="form-input" name="email" id="email" placeholder="email">
-                        <label for="email" class="form__label">Label</label>
-                      </div>
-                      
-                    <div class="form__group2 field">
-
-                        <label for="senha" class="form__label">senha</label>
-                        <input type="password" class="form-input" placeholder="senha" name="senha" id="senha">
+                    <section class="formulario_geral">
+                <form method="post" action="logar.php" id="form_login">
+                    <h1>Entrar na LojaTech</h1>
+                    <div class="form_grupo">
+                        <input type="email" name="email" id="email" class="form_input" placeholder="Email">
                     </div>
+                    <div class="form_grupo">
+                        <input type="password" name="senha" id="senha" class="form_input" placeholder="Senha">
+                    </div>
+                    <div class="form_grupo">
+                        <button type="submit" class="form_btn">Entrar</button>
+                    </div>
+                </form>
+            </section>
                     <a href="#" class="form-link">Esqueceu a senha?</a>
                     <button type="submit" class="form-button" >Logar</button>
                     <p class="mobile-text">
