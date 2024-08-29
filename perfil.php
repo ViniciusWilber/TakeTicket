@@ -10,15 +10,38 @@
     <title>Perfil/ViniciusWilber</title>
 </head>
 <body>
-<header>
     <?php
         include_once "header.php";
       ?>
-    </header>
     <main class="Perfil">
         <div class="esquerda">
             <div class="elementos">
                 <img src="imagen/AdobeStock_638744252_Preview.jpeg" alt="" id="imgPerfil">
+                <div class="sobreMin">
+                <div class="nome">
+                    <h1>José Alves</h1>
+                    <h5>promotor a mais de 5 anos</h5>
+                </div>
+                <div class="fama">
+                    <div class="rating">
+                        <input value="5" name="rating" id="star5" type="radio">
+                        <label for="star5"></label>
+                        <input value="4" name="rating" id="star4" type="radio">
+                        <label for="star4"></label>
+                        <input value="3" name="rating" id="star3" type="radio">
+                        <label for="star3"></label>
+                        <input value="2" name="rating" id="star2" type="radio">
+                        <label for="star2"></label>
+                        <input value="1" name="rating" id="star1" type="radio">
+                        <label for="star1"></label>
+                      </div>
+                </div>
+                <div class="interacao">
+                    <button class="mensagem"><i class="fa-solid fa-message"></i>mensagem</button>
+                    <button class="seguir"><i class="fa-solid fa-plus"></i>Seguir</button>
+                    <button class="reportar">reportar usuario</button>
+                </div>
+            </div>
             <div class="sociais">
                 <ul class="example-2">
                     <li class="icon-content">
@@ -117,31 +140,6 @@
             </div>
         </div>
         <div class="direita">
-            <div class="sobreMin">
-                <div class="nome">
-                    <h1>José Alves</h1>
-                    <h5>promotor a mais de 5 anos</h5>
-                </div>
-                <div class="fama">
-                    <div class="rating">
-                        <input value="5" name="rating" id="star5" type="radio">
-                        <label for="star5"></label>
-                        <input value="4" name="rating" id="star4" type="radio">
-                        <label for="star4"></label>
-                        <input value="3" name="rating" id="star3" type="radio">
-                        <label for="star3"></label>
-                        <input value="2" name="rating" id="star2" type="radio">
-                        <label for="star2"></label>
-                        <input value="1" name="rating" id="star1" type="radio">
-                        <label for="star1"></label>
-                      </div>
-                </div>
-                <div class="interacao">
-                    <button class="mensagem"><i class="fa-solid fa-message"></i>mensagem</button>
-                    <button class="seguir"><i class="fa-solid fa-plus"></i>Seguir</button>
-                    <button class="reportar">reportar usuario</button>
-                </div>
-            </div>
             <div class="seusEventos">
                 <div class="botoesEvento">
                     <button class="andamento" id="alt">Eventos em andamento</button>
@@ -190,28 +188,9 @@
             </div>
         </div>
     </main>
-    <footer>
-        <div>
-            <a href=""><i class=""></i>Central de ajuda</a>
-            <a href=""><i class=""></i>Opções de cancelamento</a>
-            <a href=""><i class=""></i>Duvidas frequentes</a>
-            <a href=""><i class=""></i>Apoio a pessoa com deficiencia</a>
-        </div>
-        <div>
-            <a href=""><i class=""></i></a>
-            <a href=""><i class=""></i>Carreiras</a>
-            <a href=""><i class=""></i>Investidores</a>
-            <a href=""><i class=""></i>Anuncies seu evento na TAKETICKET</a>
-        </div>
-        <div>
-            <h3>Horario de atendimento</h3>
-            <p>Seg.: À Sex.: 09:00 Ás 17:00</p>
-            <a href=""><i class=""></i>TakeTicket@gmail.com</a>
-        </div>
-        <section class="termos">
-            <p>2024 TakeTiket, inc.  .Privacidade  .Termos .Informaçãoes da empresa.</p>
-        </section>
-    </footer>
+    <?php
+        include_once "footer.php"
+      ?>
     <script>
         $(document).ready(()=>{
             $('#alt').click(() =>{
