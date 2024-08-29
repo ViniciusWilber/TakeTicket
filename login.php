@@ -36,7 +36,6 @@
                         </a>
                     </div>
                     <p class="form-text">ou utilize sua conta</p>
-                    <h1>Entrar na LojaTech</h1>
                     <section class="formulario_geral">
                             <div class="form-input-container">
                                 <input type="email" name="email" id="email" class="form-input" placeholder="Email">
