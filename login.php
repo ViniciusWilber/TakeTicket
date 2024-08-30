@@ -20,6 +20,7 @@
 
 <body>
     <main>
+    <button class="close-button" id="close-button">&times;</button>
         <div class="login-container" id="login-container">
             <div class="form-container">
                 <form class="form form-login" method="POST" action="logar.php">
