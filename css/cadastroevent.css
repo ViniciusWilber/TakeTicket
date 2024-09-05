@@ -23,7 +23,6 @@ body {
     color: #333;
 }
 
-.input-box,
 .image-upload,
 textarea,
 select {
@@ -58,7 +57,6 @@ textarea {
     gap: 2rem;
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    width: ;
     align-items: center;
     margin-top: 2rem;
 }
@@ -131,4 +129,18 @@ small {
     color: #888;
     display: block;
     margin-top: 5px;
+}
+.input-box{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+
+.input-box:focus{
+    border-color: #00B2E2; /* Azul Tiffany */
+    outline: none;
 }
