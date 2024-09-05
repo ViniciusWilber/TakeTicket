@@ -199,7 +199,7 @@ color: #ffffff;
 .sec2 {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 10%;
 }
 
@@ -492,8 +492,8 @@ color: #ffffff;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  padding: 3%;
-
+  padding-top: 20%;
+  padding-bottom: 5%;
 }
 
 .Mapa {

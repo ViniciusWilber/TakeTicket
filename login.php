@@ -91,7 +91,7 @@
                 <div class="overlay">
                     <!-- <h2 class="form-title form-title-light">Bem vindo á Tacke Ticket!</h2> -->
                     <img src="imagens/imgIndex/LogoBranco.png" alt="">
-                    <p class="form-text">Cadastre-se e comece a usar a nossa plataforma on-line</p>
+                    <p class="form-text">"Bem-vindo à TakeTicket! Explore os melhores eventos de São Paulo. Se ainda não tem uma conta, cadastre-se e comece a aproveitar!</p>
                     <button class="form-button form-button-light" id="open-register">Cadastrar</button>
                 </div>
             </div>

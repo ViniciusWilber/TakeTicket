@@ -187,11 +187,11 @@ color: #ffffff;
     width: 100%;
 }
 .sociais{
-  padding-top: 25px;
+  padding-top: 60px;
   display: flex;
   flex-direction: column;
   font-size: 20px;
-  gap: 10px;
+  gap: 20px;
 }
 ul {
   list-style: none;
@@ -310,6 +310,7 @@ ul {
   align-items: flex-start;
   flex-direction: column;
   gap: 20px;
+  padding-top: 30px;
 }
 .rating {
   display: inline-block;
@@ -407,8 +408,8 @@ ul {
   gap: 20px;
 }
 .botoesEvento button{
-  width: 15%;
-  height: 30px;
+  width: 25%;
+  height: 40px;
 
 }
 .botoesEvento button {
@@ -450,17 +451,14 @@ ul {
   align-items: center;
   padding: 3%;
   width: 100%;
-  /* border: 1px solid rgba(114, 114, 114, 0.267); */
+  border: 1px solid rgba(114, 114, 114, 0.267);
 }
 .emandamento img{
-  width: 15%;
+  width: 40%;
 }
-.emandamento input{
-  width: 10%;
-  height: 100%;
-}
+
 .emandamento p {
-  width: 70%;
+  width: 40%;
 }
 footer{
   background: linear-gradient(-105grad, #000fdbc7, #0fa1f593);

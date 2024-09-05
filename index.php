@@ -57,7 +57,7 @@
                 <button id="click3" class="meu-botao"><img src="imagens/imgIcon/UNESCO.png" alt="">Sociais</button>
                 <button id="click4" class="meu-botao"><img src="imagens/imgIcon/Adventures.png" alt="">Excursões</button>
                 <button id="click5" class="meu-botao"><img src="imagens/imgIcon/Trekking.png" alt="">Trilhas</button>
-                <button id="click6" class="meu-botao"><img src="imagens/imgIcon/Airplane Take Off.png" alt="">Viagens</button>
+                <button id="click6" class="meu-botao"><img src="imagens\imgIcon\Airplane-Take-Off.ico" alt="">Viagens</button>
                 <button id="click7" class="meu-botao"><img src="imagens/imgIcon/Sun Lounger.png" alt="">Ferias</button>
                 <button id="click8" class="meu-botao"><img src="imagens/imgIcon/Movie Projector.png" alt="">Atrações</button>
             </nav>
