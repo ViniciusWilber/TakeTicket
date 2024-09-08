@@ -22,11 +22,13 @@
 
                     <!-- Campos para endereço -->
                     <input type="text" id="endereco" name="endereco" class="input-box" placeholder="Endereço">
-                    <span class="small-text">Campo Obrigatório</span>
 
-                    <label for="nome-local">Nome do Local *</label>
+                    <div class="info" >
+                    <label for="nome-local">Nome do Local</label>
                     <input type="text" id="nome-local" name="nome-local" class="input-box" maxlength="100"
                         placeholder="Nome do Local">
+</div>
+
 
                     <label for="cep">CEP</label>
                     <input type="text" id="cep" name="cep" class="input-box" placeholder="CEP">

@@ -1,34 +1,37 @@
 <?php
 include_once "conexao.php";
+
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $msg = "login incorreta.";
+    $msg = "Login incorreto.";
     $email = $_POST['email'];
-    if(empty($email)){
-        echo "digite um email <br>";
-    }else{
-        $selectEmail = $conexao->prepare("SELECT email FROM usuario WHERE email = :email");
-        $selectEmail->bindParam('email', $email);
-        $selectEmail->execute();
-        //$verificaEmail = $selectEmail->fetch(PDO::FETCH_ASSOC);
-
-    }
     $senha = $_POST['senha'];
-    if(empty($senha)){
-        echo "digite um senha <br>";
-    }else{
-        $selectSenha = $conexao->prepare("SELECT senha FROM usuario WHERE senha = :senha");
-        $selectSenha->bindParam('senha', $senha);
-        $selectSenha->execute();
-        //$verificaEmail = $selectEmail->fetch(PDO::FETCH_ASSOC);
+    $senhaCripto = password_hash($senha, PASSWORD_DEFAULT);
 
+    if (empty($email)) {
+        echo "Digite um email <br>";
+    } else {
+        // Verifica se o email existe
+        $selectEmail = $conexao->prepare("SELECT email, senha FROM usuario WHERE email = :email");
+        $selectEmail->bindParam(':email', $email);
+        $selectEmail->execute();
 
+        if ($selectEmail->rowCount() == 0) {
+            echo "Email não encontrado <br>";
+        } else {
+            if (empty($senha)) {
+                echo "Digite uma senha <br>";
+            } else {
+                // Pega o usuário encontrado
+                $usuario = $selectEmail->fetch(PDO::FETCH_ASSOC);
 
-
-
-
-        if($selectSenha->rowCount() && $selectEmail->rowCount()){
-            header('location: index.php');
-        }else{
-            echo $msg;
+                // Verifica se a senha informada corresponde ao hash
+                if (password_verify($senha, $senhaCripto)){
+                    header('Location: index.php');
+                } else {
+                    echo $msg;
+                }
+            }
         }
-    }}
+    }
+}
+?>

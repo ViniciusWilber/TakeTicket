@@ -3,6 +3,7 @@ include_once "conexao.php";
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $erro = "";
     $nome = $_POST['nome'];
+    $padraoSenha = '~^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*\(\)\_\+\[\]\{\}\|\:\"\<\>\.\,\/\?\-]).{8,}$~';
     if(empty($nome)&& strlen($nome) < 3){
         $erro .="digite um nome <br>";
     }
@@ -18,10 +19,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $erro .= "Email já cadastrado!<br>";
         }
     }
+
     $senha = $_POST['senha'];
-    if(empty($senha) OR strlen($senha) < 8 ){
-        $erro .="digite uma senha com pelo menos 8 caracteres<br>";
-    } else {
+
+    if (!preg_match($padraoSenha, $senha)){
+    $erro .= "Digite no minimo 8 caracteres <br>Com pelo menos uma letra maiuscula <br>Um caracter especial <br> E pelo menos um número";
+    }else {
         $senhaCripto = password_hash($senha, PASSWORD_DEFAULT);
     }
     echo $erro;
