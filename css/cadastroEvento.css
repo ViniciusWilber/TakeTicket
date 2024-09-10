@@ -11,6 +11,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     margin-bottom: 20px;
+    display: flex;
 }
 
 .section {
@@ -99,7 +100,7 @@ textarea {
     margin-bottom: 5px;
 }
 
-#nome-evento, #imagem-divulgacao, #assunto, #categoria, #descricao-evento {
+#nome-evento {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -107,7 +108,39 @@ textarea {
     margin-bottom: 10px;
     box-sizing: border-box;
 }
+#imagem-divulgacao{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+#categoria{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+#descricao-evento{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box; 
+}
 
+#assunto{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
 .descricao-ia {
     background-color: #007bff;
     color: white;

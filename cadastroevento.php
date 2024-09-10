@@ -10,7 +10,7 @@
 
 <body>
 
-        <?php include_once "header.php"; ?>
+    <?php include_once "header.php"; ?>
 
     <main>
         <div class="geral">
@@ -23,11 +23,11 @@
                     <!-- Campos para endereço -->
                     <input type="text" id="endereco" name="endereco" class="input-box" placeholder="Endereço">
 
-                    <div class="info" >
-                    <label for="nome-local">Nome do Local</label>
-                    <input type="text" id="nome-local" name="nome-local" class="input-box" maxlength="100"
-                        placeholder="Nome do Local">
-</div>
+                    <div class="info">
+                        <label for="nome-local">Nome do Local</label>
+                        <input type="text" id="nome-local" name="nome-local" class="input-box" maxlength="100"
+                            placeholder="Nome do Local">
+                    </div>
 
 
                     <label for="cep">CEP</label>
@@ -94,26 +94,26 @@
                 </div>
             </div>
             <div class="container">
-            <div class="section">
-                <h3>4. Data e horário</h3>
-                <label for="data-inicio">Data de Início *</label>
-                <input type="date" id="data-inicio" class="input-box" value="2024-09-04">
+                <div class="section">
+                    <h3>4. Data e horário</h3>
+                    <label for="data-inicio">Data de Início *</label>
+                    <input type="date" id="data-inicio" class="input-box" value="2024-09-04">
 
-                <label for="hora-inicio">Hora de Início *</label>
-                <input type="time" id="hora-inicio" class="input-box" value="19:30">
+                    <label for="hora-inicio">Hora de Início *</label>
+                    <input type="time" id="hora-inicio" class="input-box" value="19:30">
 
-                <label for="data-termino">Data de Término *</label>
-                <input type="date" id="data-termino" class="input-box" value="2024-09-06">
+                    <label for="data-termino">Data de Término *</label>
+                    <input type="date" id="data-termino" class="input-box" value="2024-09-06">
 
-                <label for="hora-termino">Hora de Término *</label>
-                <input type="time" id="hora-termino" class="input-box" value="19:30">
-            </div>
+                    <label for="hora-termino">Hora de Término *</label>
+                    <input type="time" id="hora-termino" class="input-box" value="19:30">
+                </div>
             </div>
         </div>
         <!-- Seção 5: Ingressos -->
 
     </main>
-        <?php 
+    <?php 
         include_once "footer.php"; 
         ?>
 
