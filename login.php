@@ -87,7 +87,7 @@
             </div>
             <div class="overlay-container">
                 <div class="overlay">
-                <a href="index.php"><button class="close-button" id="close-button">&times;</button></a>
+
                     <h2 class="form-title form-title-light">Já tem conta?</h2>
                     <p class="form-text">Para entrar na nossa plataforma faça login com suas informações</p>
                     <button class="form-button form-button-light" id="open-login">Entrar</button>

@@ -19,7 +19,6 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     margin-bottom: 20px;
-    display: flex;
 }
 
 .section {
@@ -184,7 +183,4 @@ small {
 .input-box:focus{
     border-color: #00B2E2; /* Azul Tiffany */
     outline: none;
-}
-.section1{
-    display: flex;
 }
