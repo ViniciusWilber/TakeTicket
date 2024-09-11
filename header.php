@@ -11,7 +11,7 @@
         <header>
             <a href="index.php" class="logo"><img src="imagens/imgIndex/LogoSletras.png" alt=""></a>
             <ul class="botoes">
-                <a href="login.php"><button class="Login">Login</button></a>  
+                <a href="login.php"><button class="Login">Logi</button></a>  
             </ul>   
         </header>
     </main>
