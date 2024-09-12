@@ -37,6 +37,7 @@
                       </div>
                 </div>
                 <div class="interacao">
+                    <a href="cadastroevento.php"><button class="mensagem"></i>Criar Evento</button></a>
                     <button class="mensagem"><i class="fa-solid fa-message"></i>mensagem</button>
                     <button class="seguir"><i class="fa-solid fa-plus"></i>Seguir</button>
                     <button class="reportar">reportar usuario</button>
