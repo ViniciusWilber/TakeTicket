@@ -18,8 +18,8 @@
                                     <h2>R$: 100,00</h2>
                                 </div>
                                 <div class="iconcard">
-                                    <a href=""><i class="fa-solid fa-heart"></i></a>
-                                    <a href=""><i class="fa fa-share-alt"></i></a>
+                                    <a href=""><i id="coracao" class="fa-solid fa-heart"></i></a>
+                                    <a href=""><i id="link" class="fa fa-share-alt"></i></a>
                                 </div>
                             </div>
                             <div class="butao">
@@ -35,8 +35,8 @@
                                     <h2>R$: 1250,00</h2>
                                 </div>
                                 <div class="iconcard">
-                                    <a href=""><i class="fa-solid fa-heart"></i></a>
-                                    <a href=""><i class="fa fa-share-alt"></i></a>
+                                    <a href=""><i id="coracao" class="fa-solid fa-heart"></i></a>
+                                    <a href=""><i id="link" class="fa fa-share-alt"></i></a>
                                 </div>
                             </div>
                             <div class="butao">
@@ -52,8 +52,8 @@
                                     <h2>R$: 630,00</h2>
                                 </div>
                                 <div class="iconcard">
-                                    <a href=""><i class="fa-solid fa-heart"></i></a>
-                                    <a href=""><i class="fa fa-share-alt"></i></a>
+                                    <a href=""><i id="coracao" class="fa-solid fa-heart"></i></a>
+                                    <a href=""><i id="link" class="fa fa-share-alt"></i></a>
                                 </div>
                             </div>
                             <div class="butao">
@@ -69,8 +69,8 @@
                                     <h2>R$: 130,00</h2>
                                 </div>
                                 <div class="iconcard">
-                                    <a href=""><i class="fa-solid fa-heart"></i></a>
-                                    <a href=""><i class="fa fa-share-alt"></i></a>
+                                    <a href=""><i id="coracao" class="fa-solid fa-heart"></i></a>
+                                    <a href=""><i  id="link" class="fa fa-share-alt"></i></a>
                                 </div>
                             </div>
                             <div class="butao">
@@ -86,8 +86,8 @@
                                     <h2>R$: 40,00</h2>
                                 </div>
                                 <div class="iconcard">
-                                    <a href=""><i class="fa-solid fa-heart"></i></a>
-                                    <a href=""><i class="fa fa-share-alt"></i></a>
+                                    <a href=""><i id="coracao" class="fa-solid fa-heart"></i></a>
+                                    <a href=""><i id="link"  class="fa fa-share-alt"></i></a>
                                 </div>
                             </div>
                             <div class="butao">
@@ -103,8 +103,8 @@
                                     <h2>R$: 6000,00</h2>
                                 </div>
                                 <div class="iconcard">
-                                    <a href=""><i class="fa-solid fa-heart"></i></a>
-                                    <a href=""><i class="fa fa-share-alt"></i></a>
+                                    <a href=""><i  id="coracao" class="fa-solid fa-heart"></i></a>
+                                    <a href=""><i id="link" class="fa fa-share-alt"></i></a>
                                 </div>
                             </div>
                             <div class="butao">

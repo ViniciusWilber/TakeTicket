@@ -101,7 +101,7 @@
     position: absolute;
     top: -3px;
     right: -18px;
-    background: #6CCBD3;
+    background: #000000;
     border-radius: 30px;
     
     transition: var(--transition-cubic-bezier);
@@ -156,34 +156,92 @@
     text-decoration: none;
     font-size: 60px;
 }
-.meu-botao{
-  max-width: 100%;
-  height: 100%;
+/* Estilo da barra de navegação */
+
+#coracao:hover{
+  color: #ff3838;
+}
+
+.navg {
+  background-color: #ffffff;
+  padding: 15px 30px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: white;
-  cursor: pointer;
-  background-color: white;
-  border-radius: 5px;
+  flex-wrap: wrap; /* Permite que os botões quebrem linha em telas menores */
+  justify-content: center; /* Centraliza os botões */
+  border-radius: 12px;
+ 
+  gap: 10px; /* Espaçamento entre os botões */
 }
-.meu-botao img:hover{
-  width: 115%;
-}
-.conjunto1 button{
+
+/* Botões */
+.meu-botao {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  border: white;
+  justify-content: center;
+  width: 150px;
+  height: 60px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ffffff, #e9fdff);
+  color: #000000;
+  font-weight: bold;
   cursor: pointer;
-  background-color: white;
-  border-radius: 5px;
-  border: solid 1px rgb(233, 232, 232);
+  transition: transform 0.2s, background 0.3s, box-shadow 0.3s;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  text-align: center;
+  margin: 5px; /* Adiciona espaçamento ao redor dos botões */
 }
-/* .meu-botao.clicado {
-  background-color: #6CCBD3;
-  box-shadow: 2px 2px 3px 1px #00000040;
-} */
+
+/* Imagens dos botões */
+.meu-botao img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  margin-right: 8px;
+}
+
+/* Botão clicado */
+.meu-botao.clicado {
+  background: linear-gradient(135deg, #6CCBD3, #3BAFDA);
+  box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+
+}
+
+/* Efeito hover */
+.meu-botao:hover {
+  background: linear-gradient(135deg, #6CCBD3, #3BAFDA);
+  transform: translateY(-3px);
+  box-shadow: 4px 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .meu-botao {
+    width: 100px; /* Reduz a largura dos botões em telas menores */
+    height: 50px; /* Reduz a altura dos botões em telas menores */
+    font-size: 14px; /* Diminui o tamanho da fonte */
+  }
+
+  .meu-botao img {
+    width: 20px; /* Reduz tamanho das imagens */
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .meu-botao {
+    width: 80px; /* Mais ajuste para telas muito pequenas */
+    height: 45px;
+    font-size: 12px;
+  }
+
+  .meu-botao img {
+    width: 16px;
+    height: 16px;
+  }
+}
 .navegacao nav{
     width: 100%;
     height: 120px;
@@ -370,7 +428,7 @@
   }
   .navg {
     width: 60%;
-    background: #03aca0;
+    background: #ffffff;
   }
   .navegacao nav{
     flex-wrap: wrap;
