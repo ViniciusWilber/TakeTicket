@@ -44,8 +44,8 @@
                         <div class="promotor">
                             <a href="perfil.php"><img src="imagens/imgEvento/Ellipse 7.png" alt=""></a>
                             <div class="infos">
-                                <h1 class="name">José Alves</h1>
-                                <h3 class="sobrePromote">Promotor a mais de 5 anos</h3>
+                                <h1 class="name">josé Alves</h1>
+                                <h3 class="sobrePromote">promotor a mais de 5 anos</h3>
                             </div>
                         </div>
                         <hr>

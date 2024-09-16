@@ -171,7 +171,7 @@ small {
     margin-top: 5px;
 }
 .input-box{
-    width: 100%;
+    width: 70%;
     padding: 12px;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -183,4 +183,25 @@ small {
 .input-box:focus{
     border-color: #00B2E2; /* Azul Tiffany */
     outline: none;
+}
+
+.inicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.quadrado{
+    border-radius: 1rem;
+    width: 32%;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+.section1{
+    display: flex;
+    justify-content: space-around;
 }

@@ -13,13 +13,13 @@
                             <img class="cartaimg" src="imagens/imgIndex/Rectangle 66.png" alt="">
                             <div class="grupo">
                                 <div class="textocarta">
-                                    <h1>Museu de São Paulo</h1>
+                                    <h1>museu de são paulo</h1>
                                     <p>dia 8 AGO</p>
                                     <h2>R$: 100,00</h2>
                                 </div>
                                 <div class="iconcard">
-                                    <a href=""><i class="fa-solid fa-heart"></i></a>
-                                    <a href=""><i class="fa fa-share-alt"></i></a>
+                                    <a href=""><i id="coracao" class="fa-solid fa-heart"></i></a>
+                                    <a href=""><i id="link" class="fa fa-share-alt"></i></a>
                                 </div>
                             </div>
                             <div class="butao">
@@ -35,8 +35,8 @@
                                     <h2>R$: 1250,00</h2>
                                 </div>
                                 <div class="iconcard">
-                                    <a href=""><i class="fa-solid fa-heart"></i></a>
-                                    <a href=""><i class="fa fa-share-alt"></i></a>
+                                    <a href=""><i id="coracao" class="fa-solid fa-heart"></i></a>
+                                    <a href=""><i id="link" class="fa fa-share-alt"></i></a>
                                 </div>
                             </div>
                             <div class="butao">
@@ -52,8 +52,8 @@
                                     <h2>R$: 630,00</h2>
                                 </div>
                                 <div class="iconcard">
-                                    <a href=""><i class="fa-solid fa-heart"></i></a>
-                                    <a href=""><i class="fa fa-share-alt"></i></a>
+                                    <a href=""><i id="coracao" class="fa-solid fa-heart"></i></a>
+                                    <a href=""><i id="link" class="fa fa-share-alt"></i></a>
                                 </div>
                             </div>
                             <div class="butao">
@@ -64,13 +64,13 @@
                             <img class="cartaimg" src="imagens/imgPerfil/AdobeStock_124355455.jpg" alt="">
                             <div class="grupo">
                                 <div class="textocarta">
-                                    <h1>Lago Legal</h1>
+                                    <h1>Lago legal</h1>
                                     <p>dia 10 JUN</p>
                                     <h2>R$: 130,00</h2>
                                 </div>
                                 <div class="iconcard">
-                                    <a href=""><i class="fa-solid fa-heart"></i></a>
-                                    <a href=""><i class="fa fa-share-alt"></i></a>
+                                    <a href=""><i id="coracao" class="fa-solid fa-heart"></i></a>
+                                    <a href=""><i  id="link" class="fa fa-share-alt"></i></a>
                                 </div>
                             </div>
                             <div class="butao">
@@ -81,13 +81,13 @@
                             <img class="cartaimg" src="imagens/imgPerfil/AdobeStock_293894349.jpg" alt="">
                             <div class="grupo">
                                 <div class="textocarta">
-                                    <h1>São Paulo</h1>
+                                    <h1>são paulo</h1>
                                     <p>dia 25 JUL</p>
                                     <h2>R$: 40,00</h2>
                                 </div>
                                 <div class="iconcard">
-                                    <a href=""><i class="fa-solid fa-heart"></i></a>
-                                    <a href=""><i class="fa fa-share-alt"></i></a>
+                                    <a href=""><i id="coracao" class="fa-solid fa-heart"></i></a>
+                                    <a href=""><i id="link"  class="fa fa-share-alt"></i></a>
                                 </div>
                             </div>
                             <div class="butao">
@@ -103,8 +103,8 @@
                                     <h2>R$: 6000,00</h2>
                                 </div>
                                 <div class="iconcard">
-                                    <a href=""><i class="fa-solid fa-heart"></i></a>
-                                    <a href=""><i class="fa fa-share-alt"></i></a>
+                                    <a href=""><i  id="coracao" class="fa-solid fa-heart"></i></a>
+                                    <a href=""><i id="link" class="fa fa-share-alt"></i></a>
                                 </div>
                             </div>
                             <div class="butao">

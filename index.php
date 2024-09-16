@@ -25,7 +25,7 @@
             <div class="texto1" >
                 <p>Com mais de 10000 eventos realizados</p>
                 <h1 class="tituloIndex">Uma forma diferente de encontrar seu </h1>
-                <h1 class="tituloCor">Passeio Cultural em São Paulo.</h1>    
+                <h1 class="tituloCor">passeio cultural em São Paulo.</h1>    
             </div>
             <div class="imagens">
                 <img src="imagens/imgIndex/Rectangle 36.png" alt="" class="img1">
@@ -104,7 +104,7 @@
             </div>
         </section>
         <section class="curioso">
-            <h1>Curiosidades por São Paulo</h1>
+            <h1>Curiosidades por são paulo</h1>
             <div class="curiosidades">
                 <img src="imagens/imgIndex/Rectangle 66.png" alt="">
                 <img src="imagens/imgIndex/Rectangle 67.png" alt="">

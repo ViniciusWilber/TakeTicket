@@ -44,9 +44,8 @@
       gap: 5px;
   }
   .textocarta h1 {
-    color: #eb4f8b; /*mudança de cor no  titulo do card*/
-    font-family: inter;
-    font-weight: 900;
+    font-family: "Roboto Mono";
+    font-weight: bold 700;
   }
   .iconcard{
     display: flex;
