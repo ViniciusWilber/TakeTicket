@@ -101,7 +101,7 @@
     position: absolute;
     top: -3px;
     right: -18px;
-    background: #000000;
+    background: #6CCBD3;
     border-radius: 30px;
     
     transition: var(--transition-cubic-bezier);
@@ -116,7 +116,7 @@
     height: 50px;
     top: -3px;
     right: -18px;
-    background: transparent;
+    background: rgba(255, 255, 255, 0);
     border: none;
     cursor: pointer;
     border-bottom-right-radius: var(--border-radius);
@@ -182,7 +182,7 @@
   height: 60px;
   border: none;
   border-radius: 8px;
-  background: linear-gradient(135deg, #ffffff, #e9fdff);
+  background: linear-gradient(135deg, #d7faf7, #e9fdff);
   color: #000000;
   font-weight: bold;
   cursor: pointer;

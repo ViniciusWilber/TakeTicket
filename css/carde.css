@@ -83,6 +83,8 @@
       cursor: pointer;
       font-size: 18px;
       border-radius: 0.5em;
+      border: 0.1px solid ;
+      border-color: #e7e7e7 ;
       background: #e7e7e7;
       box-shadow: 4px 4px 10px 1px #afafaf, -6px -6px 12px #ffffff;
     }
