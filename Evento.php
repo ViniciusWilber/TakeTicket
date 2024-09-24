@@ -9,13 +9,9 @@
 </head>
 
 <body>
-    <header>
-        <a href="index.html" class="logo"><img src="imagens/imgEvento/TAKE TIKET (1).png" alt=""></a>
-        <ul class="botoes">
-            <a href="cadastroevento.html"><button class="SejaMenbro">Promover meu evento </button></a>
-            <a href="login.html"><button class="Login">Login</button></a>
-        </ul>
-    </header>
+        <?php
+            include_once "header.php"
+          ?>
     <main>
         <section class="sec1">
             <div class="titulo">
@@ -46,7 +42,7 @@
                     </div>
                     <div class="gerais">
                         <div class="promotor">
-                            <a href="perfil.html"><img src="imagens/imgEvento/Ellipse 7.png" alt=""></a>
+                            <a href="perfil.php"><img src="imagens/imgEvento/Ellipse 7.png" alt=""></a>
                             <div class="infos">
                                 <h1 class="name">josé Alves</h1>
                                 <h3 class="sobrePromote">promotor a mais de 5 anos</h3>
@@ -82,7 +78,7 @@
                     <p>R$50,00</p>
                 </div>
                 <P>Dia unico</P>
-                <a href="pagamento.html"><button class="compra">Comprar +</button></a>
+                <a href="pagamento.php"><button class="compra">Comprar +</button></a>
             </div>
         </section>
         <section>
@@ -109,7 +105,7 @@
                         <p>Assinantes</p>
                     </div>
                 </div>
-                <a href="perfil.html"><button class="follow">Follow</button></a>
+                <a href="perfil.php"><button class="follow">Follow</button></a>
             </div>
         </div>
         <section class="Mapa">
@@ -127,28 +123,9 @@
                 Paulo</h2>
         </section>
     </main>
-    <footer>
-        <div>
-            <a href=""><i class=""></i>Central de ajuda</a>
-            <a href=""><i class=""></i>Opções de cancelamento</a>
-            <a href=""><i class=""></i>Duvidas frequentes</a>
-            <a href=""><i class=""></i>Apoio a pessoa com deficiencia</a>
-        </div>
-        <div>
-            <a href=""><i class=""></i></a>
-            <a href=""><i class=""></i>Carreiras</a>
-            <a href=""><i class=""></i>Investidores</a>
-            <a href=""><i class=""></i>Anuncies seu evento na TAKETICKET</a>
-        </div>
-        <div>
-            <h3>Horario de atendimento</h3>
-            <p>Seg.: À Sex.: 09:00 Ás 17:00</p>
-            <a href=""><i class=""></i>TakeTicket@gmail.com</a>
-        </div>
-        <section class="termos">
-            <p>2024 TakeTiket, inc. .Privacidade .Termos .Informaçãoes da empresa.</p>
-        </section>
-    </footer>
+    <?php
+        include_once "footer.php"
+      ?>
 </body>
 
 </html>
