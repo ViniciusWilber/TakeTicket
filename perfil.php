@@ -20,7 +20,7 @@
                 <div class="sobreMin">
                 <div class="nome">
                     <h1>José Alves</h1>
-                    <h5>promotor a mais de 5 anos</h5>
+                    <h5>Promotor a mais de 5 anos</h5>
                 </div>
                 <div class="fama">
                     <div class="rating">
@@ -38,9 +38,9 @@
                 </div>
                 <div class="interacao">
                     <a href="cadastroevento.php"><button class="mensagem"></i>Criar Evento</button></a>
-                    <button class="mensagem"><i class="fa-solid fa-message"></i>mensagem</button>
+                    <button class="mensagem"><i class="fa-solid fa-message"></i>Mensagem</button>
                     <button class="seguir"><i class="fa-solid fa-plus"></i>Seguir</button>
-                    <button class="reportar">reportar usuario</button>
+                    <button class="reportar">Reportar Usuario</button>
                 </div>
             </div>
             <div class="sociais">
@@ -143,8 +143,8 @@
         <div class="direita">
             <div class="seusEventos">
                 <div class="botoesEvento">
-                    <button class="andamento" id="alt">Eventos em andamento</button>
-                    <button class="passado" id="btn">Eventos passados</button>
+                    <button class="andamento" id="alt">Eventos em Andamento</button>
+                    <button class="passado" id="btn">Eventos Passados</button>
                 </div>
                 <div class="eventos" id="eventos">
                     <div class="emandamento">
@@ -155,7 +155,7 @@
                     </div>
                     <div class="emandamento">
                         <img src="imagens/imgPerfil/AdobeStock_123555466.jpg" alt="">
-                        <p>trago vida a espaços, deixando minha marca na cena cultural da cidade.</p>
+                        <p>Trago vida a espaços, deixando minha marca na cena cultural da cidade.</p>
                         <label>DD/MM/AAAA</label>
                     </div>
                     <div class="emandamento">
@@ -182,7 +182,7 @@
                     </div>
                     <div class="emandamento">
                         <img src="imagens/imgPerfil/AdobeStock_369248728.jpg" alt="">
-                        <p>deixo minha marca na cena cultural deste enclave glamoroso.</p>
+                        <p>Deixo minha marca na cena cultural deste enclave glamoroso.</p>
                         <label>DD/MM/AAAA</label>
                     </div>
                 </div>

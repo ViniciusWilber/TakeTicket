@@ -13,7 +13,7 @@
                             <img class="cartaimg" src="imagens/imgIndex/Rectangle 66.png" alt="">
                             <div class="grupo">
                                 <div class="textocarta">
-                                    <h1>museu de são paulo</h1>
+                                    <h1>Museu de São Paulo</h1>
                                     <p>dia 8 AGO</p>
                                     <h2>R$: 100,00</h2>
                                 </div>
@@ -81,7 +81,7 @@
                             <img class="cartaimg" src="imagens/imgPerfil/AdobeStock_293894349.jpg" alt="">
                             <div class="grupo">
                                 <div class="textocarta">
-                                    <h1>são paulo</h1>
+                                    <h1>São Paulo</h1>
                                     <p>dia 25 JUL</p>
                                     <h2>R$: 40,00</h2>
                                 </div>
