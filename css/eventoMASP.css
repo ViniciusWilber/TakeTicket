@@ -1,0 +1,524 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+header {
+    background-color: #212221;
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    padding-left: 30px;
+}
+
+.botoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding-right: 30px;
+}
+
+.Login {
+    display: inline-block;
+    transition: all 0.2s ease-in;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    color: #090909;
+    padding: 0.5em 1.7em;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    /* box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff; */
+}
+
+.Login:active {
+    color: #666;
+    box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+}
+
+.Login:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.25);
+    top: 100%;
+    width: 140%;
+    height: 180%;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+}
+
+.Login:after {
+    content: "";
+    position: absolute;
+    left: 55%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.45);
+    top: 180%;
+    width: 160%;
+    height: 190%;
+    background-color: #009087;
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+}
+
+.Login:hover {
+    color: #ffffff;
+    border: 1px solid #009087;
+}
+
+.Login:hover:before {
+    top: -35%;
+    background-color: #009087;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.Login:hover:after {
+    top: -45%;
+    background-color: #009087;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.SejaMenbro {
+    display: inline-block;
+    transition: all 0.2s ease-in;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    color: #090909;
+    padding: 0.5em 1.7em;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    /* box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff; */
+}
+
+.SejaMenbro:active {
+    color: #666;
+    box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+}
+
+.SejaMenbro:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.25);
+    top: 100%;
+    width: 140%;
+    height: 180%;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+}
+
+.SejaMenbro:after {
+    content: "";
+    position: absolute;
+    left: 55%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.45);
+    top: 180%;
+    width: 160%;
+    height: 190%;
+    background-color: #009087;
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+}
+
+.SejaMenbro:hover {
+    color: #ffffff;
+    border: 1px solid #009087;
+}
+
+.SejaMenbro:hover:before {
+    top: -35%;
+    background-color: #009087;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.SejaMenbro:hover:after {
+    top: -45%;
+    background-color: #009087;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.primeiro {
+    padding: 0%;
+    height: 10%;
+}
+
+.primeiro .masp {
+    font-family: Inter;
+    font-size: 48px;
+    font-style: italic;
+    margin: 2rem;
+}
+
+.primeiro img {
+    padding: 0;
+}
+
+.primeiro .museu {
+    font-family: Inter;
+    font-size: 48px;
+    font-style: italic;
+    padding: 2rem;
+}
+
+.segundo .dados .card {
+    display: flex;
+    padding-top: 20px;
+    padding: 25px;
+    box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.386);
+    border-radius: 15px;
+    width: 600px;
+}
+.segundo .dados .card1{
+    display: flex;
+    align-items: center;
+
+}
+.segundo .dados .card1 .milhoes{
+    padding-left: 1rem;
+}
+.segundo .dados .card2{
+    display: flex;
+    align-items: center;
+}
+.segundo .promotora .reservado {
+    display: flex;
+    margin: 60px;
+    flex-wrap: nowrap;
+    position: absolute;
+    margin-left: 70rem;
+    margin-top: -80rem;
+    box-shadow: 5px 5px 5px 5px rgb(0 0 0 / 39%);
+    border-radius: 15px;
+    width: 16rem;
+    height: 31rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.segundo .promotora .reservado .reserva {
+    border-radius: 7px;
+    background-color: white;
+    border-color: white;
+    font-size: 44px;
+    width: 12rem;
+    height: 4rem
+}
+.segundo .promotora .reservado .data{
+    padding-top: 2rem;
+}
+.segundo .promotora .reservado .promocao{
+    font-size: 1.8rem;
+    padding-top: 2rem;
+}
+.segundo .promotora .reservado .comprar {
+    background-color: rgba(81, 208, 171, 1);
+    border: white;
+    border-radius: 7px;
+    width: 176px;
+    height: 74px;
+    font-weight: bold;
+    font-size: larger;
+}
+.segundo .promotora .segundo .promotora .conjuto {
+    display: flex;
+}
+
+.segundo .promotora .conjuto{
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+}
+.segundo .promotora .conjuto .info{
+    display: inline-block;
+    padding-left: 1rem;
+}
+.segundo .promotora .local{
+    display: flex;
+    padding-top: 2rem;
+    align-items: center;
+}
+.endereco{
+    padding-left: 2rem;
+    }
+.segundo .evento{
+    display: flex;
+    padding-top: 2rem;
+}
+.segundo .evento.sobre{
+    padding-left: 1rem;
+}
+.masp {
+    width: 521px;
+    padding-left: 2rem;
+}
+.localizacao{
+    padding-left: 1rem;
+}
+
+
+.conj {
+    margin-top: -700px;
+    margin-left: 78%;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+.terceiro {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.terceiro .fotos {
+    padding: 4rem;
+}
+
+.terceiro .icones {
+    background-color: #ffffff;
+    border: 1px solid;
+    border-color: #00000026;
+    border-radius: 16px;
+    box-shadow: 10px 10px 10px #00000040;
+    height: 171px;
+    position: relative;
+    width: 954px;
+    padding: 9px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-style: italic;
+}
+
+.terceiro .gmail {
+    display: flex;
+    padding-left: 1rem;
+}
+
+.terceiro .gmail p {
+    position: absolute;
+    left: 5.3rem;
+    font-size: 24px;
+}
+
+.terceiro .pessoas {
+    margin-top: 0.8rem;
+    display: flex;
+    padding-left: 0.8rem;
+}
+
+.terceiro .pessoas p {
+    font-size: 24px;
+
+}
+
+.terceiro .fone {
+    display: flex;
+    margin-top: .8rem;
+    padding-left: 0.4rem;
+}
+
+.terceiro .fone p {
+    font-size: 24px;
+}
+
+.terceiro .follow {
+    position: absolute;
+    left: 42rem;
+    display: flex;
+    border: white;
+    border-radius: 7px;
+    background-color: rgba(81, 208, 171, 1);
+    padding: 33px;
+    font-weight: bold;
+    width: 176px;
+    height: 74px;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    top: 3rem;
+
+}
+
+.quarto .onde {
+    padding-top: 3rem;
+    font-size: 3rem;
+    padding-left: 6rem;
+}
+
+.mapa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    /*padding-left: 11rem;*/
+    border-radius: 5rem;
+
+}
+
+.quarto .museu {
+    font-size: 1.4rem;
+    width: 40rem;
+    padding-left: 6rem;
+}
+
+footer {
+    background: linear-gradient(-105grad, #044292, #03aca0);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* min-height: 250px; */
+    position: relative;
+    gap: 200px;
+}
+
+footer div {
+    text-decoration: none;
+    height: 150px;
+    width: 250px;
+    display: flex;
+    align-items: initial;
+    align-content: space-between;
+    flex-direction: column;
+    padding: 20px;
+
+}
+
+footer .termos {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 395px;
+}
+
+@media (max-width:320px) {
+    main {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .primeiro {
+        padding: 0%;
+        height: 10%;
+    }
+
+    .primeiro .masp {
+        font-family: Inter;
+        font-size: 48px;
+        font-style: italic;
+        margin: 2rem;
+    }
+
+    .primeiro img {
+        padding: 0;
+        padding-left: 2rem;
+        padding-right: 4rem;
+        width: 20rem;
+    }
+
+    .primeiro .museu {
+        font-family: Inter;
+        font-size: 1.3rem;
+        font-style: italic;
+        padding: 11px
+    }
+
+    .segundo .dados .card {
+        display: inline-block;
+        box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.386);
+        border-radius: 15px;
+        width: 16rem;
+        margin-left: 0.5em;
+    }
+
+    .segundo .dados .card1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .segundo .dados .card .ticket {
+        padding-left: 0rem;
+    }
+
+    .segundo .dados .card2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 1rem;
+    }
+
+    .segundo .dados .card .master {
+        padding-left: 0rem;
+    }
+
+    .segundo .promotora .conjuto .nome {
+        padding-left: .3rem;
+        margin-top: 3rem;
+    }
+
+    .segundo .promotora .conjuto .mercado {
+        padding-top: 6.5rem;
+        width: 26rem;
+        font-size: 0.9rem;
+    }
+
+    .segundo .endereco {
+        margin-left: 36px;
+        width: 17rem;
+    }
+
+    .masp {
+        width: 20rem;
+        padding-left: 41px;
+    }
+
+    .terceiro .fotos {
+        padding-top: 1rem;
+        padding-left: 0rem;
+        width: 18rem;
+    }
+
+    .terceiro .icones {
+        width: 17rem;
+        padding: 1rem;
+
+    }
+
+    .reservado {
+        margin-left: 1rem;
+        margin-top: 26px;
+        position: relative;
+    }
+}

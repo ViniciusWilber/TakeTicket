@@ -15,61 +15,60 @@
     <main>
         <div class="geral">
             <!-- Seção de Informações Básicas -->
-            <div class="container1">
-                <div class="section1">
-                    <h3>1. Onde o seu evento vai acontecer?</h3>
-
-                    <div class="primeiro">
-                    <div class="info">
-                        <label for="nome-local">Rua</label>
-                        <input type="text" id="nome-local" name="nome-local" class="input-box" maxlength="100"
-                            placeholder="Nome do Local">
-                    </div>
+            <fieldset class="container1">
+                <legend>Informações básicas</legend>
+                <section class="section1">
 
 
-                    <div class="info">
-                        <label for="cep">CEP</label>
-                        <input type="text" id="cep" name="cep" class="input-box" placeholder="CEP">
-                    </div>
 
-                    <div class="info">
-                        <label for="rua">Logradouro</label>
-                        <input type="text" id="rua" name="rua" class="input-box" placeholder="Rua/Avenida">
-                    </div>
-                
-                <div class="info">
-                    <label for="numero">Número</label>
-                    <input type="text" id="numero" name="numero" class="input-box" placeholder="Número">
-                </div>
-                </div>
-                <div class="info">
-                    <label for="complemento">Complemento</label>
-                    <input type="text" id="complemento" name="complemento" class="input-box" maxlength="250"
-                        placeholder="Complemento">
-                </div>
+                        <div class="info">
+
+                            <input type="text" id="rua" name="rua" class="input-box" placeholder="Rua/Avenida">
+                        </div>
 
 
-                <div class="info">
-                    <label for="bairro">Bairro</label>
-                    <input type="text" id="bairro" name="bairro" class="input-box" placeholder="Bairro">
-                </div>
+                        <div class="info">
+                            <input type="text" id="cep" name="cep" class="input-box" placeholder="CEP">
+                        </div>
 
-                <div class="info">
-                    <label for="cidade">Cidade </label>
-                    <input type="text" id="cidade" name="cidade" class="input-box" placeholder="Cidade">
-                </div>
 
-                <div class="info">
-                    <label for="estado">Estado</label>
-                    <input type="text" id="estado" name="estado" class="input-box" placeholder="Estado">
-                </div>
-                </div>
-            </div>
+                        <div class="info">
 
-            <div class="container">
+                            <input type="text" id="bairro" name="bairro" class="input-box" placeholder="Bairro">
+                        </div>
+                </section>
+                <section class="section1">
+                        <div class="info">
+
+                            <input type="text" id="numero" name="numero" class="input-box" placeholder="Número">
+                        </div>
+                        <div class="info">
+
+                            <input type="text" id="complemento" name="complemento" class="input-box" maxlength="250"
+                                placeholder="Complemento">
+                        </div>
+
+
+
+
+                        <div class="info">
+    
+                            <input type="text" id="cidade" name="cidade" class="input-box" placeholder="Cidade">
+                        </div>
+
+                        <div class="info">
+
+                            <input type="text" id="estado" name="estado" class="input-box" placeholder="Estado">
+                        </div>
+                    </section>
+
+        </fieldset>
+
+        <fieldset class="container">
+            <legend>Informações básicas</legend>
+
                 <div class="section">
-                    <h3>2. Informações básicas</h3>
-                    <p>Adicione as principais informações do evento.</p>
+
                     <form>
                         <label for="nome-evento">Nome do evento *</label>
                         <input type="text" id="nome-evento" name="nome-evento" placeholder="Nome do evento" required
@@ -91,44 +90,58 @@
                             <!-- Adicione outras opções aqui -->
                         </select>
                     </form>
-                </div>
+      
             </div>
+        </fieldset>
+        <!-- Seção de Descrição do Evento -->
+        <fieldset class="container">
+            <legend>Descrição do evento</legend>
 
-            <!-- Seção de Descrição do Evento -->
-            <div class="container">
-                <div class="section">
-                    <h3>3. Descrição do evento</h3>
-                    <p>Conte todos os detalhes do seu evento, como a programação e os diferenciais da sua produção.</p>
-                    <textarea id="descricao-evento" rows="5"
-                        placeholder="Adicione aqui a descrição do seu evento..."></textarea>
-                </div>
-            </div>
-            <div class="container">
+            <p>Conte todos os detalhes do seu evento, como a programação e os diferenciais da sua produção.</p>
+            <textarea id="descricao-evento" rows="5"
+                placeholder="Adicione aqui a descrição do seu evento..."></textarea>
 
-                    <h3>4. Data e horário</h3>
-                    <div class="section1">
+        </fieldset>
+        <fieldset class="container">
+            <legend>Data e horário</legend>
 
-                        <fieldset class="quadrado">
+            <div class="data">
+            <fieldset class="quadrado">
 
-                    <label for="data-inicio">Início *</label>
-                    <input type="date" id="data-inicio" class="input-box" value="2024-09-04">
-                    <input type="time" id="hora-inicio" class="input-box" value="19:30">
-    
-                    </fieldset>
-                    
-                        <fieldset class="quadrado">
+                <label for="data-inicio">Início *</label>
+                <input type="date" id="data-inicio" class="input-box" value="2024-09-04">
+                <input type="time" id="hora-inicio" class="input-box" value="19:30">
+
+
+                </fieldset>
+                <fieldset class="quadrado">
 
                     <label for="data-termino">Término *</label>
                     <input type="date" id="data-inicio" class="input-box" value="2024-09-06">
                     <input type="time" id="hora-inicio" class="input-box" value="19:30">
-                    </fieldset>
 
-                    </div>
-                </div>
+
+
+            </fieldset>
+        </div>
+            <button class="animated-button">
+                <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                  ></path>
+                </svg>
+                <span class="text">Cadastrar</span>
+                <span class="circle"></span>
+                <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                  ></path>
+                </svg>
+              </button>
+        </fieldset>
+
             </div>
-        </div>
-        </div>
-        <!-- Seção 5: Ingressos -->
+            <!-- Seção 5: Ingressos -->
 
     </main>
     <?php 
