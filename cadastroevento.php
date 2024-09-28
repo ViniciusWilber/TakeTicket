@@ -13,13 +13,21 @@
     <?php include_once "header.php"; ?>
 
     <main>
+        <form action="cadastrar.php" method="POST">
         <div class="geral">
             <!-- Seção de Informações Básicas -->
             <fieldset class="container1">
                 <legend>Informações básicas</legend>
                 <section class="section1">
 
+                    <input type="text" name="id">
 
+                    <label for="escolha">Escolha um promotor:</label>
+                    <input type="text" name="promotor_id">
+        <option value="1">Lucas - 1</option>
+        <option value="2">Opção 2</option>
+        <option value="3">Opção 3</option>
+    </select>
 
                         <div class="info">
 
@@ -70,24 +78,15 @@
                 <div class="section">
 
                     <form>
-                        <label for="nome-evento">Nome do evento *</label>
-                        <input type="text" id="nome-evento" name="nome-evento" placeholder="Nome do evento" required
+                        <label for="nome">Nome do evento *</label>
+                        <input type="text" id="nome" name="nome" placeholder="Nome do evento" required
                             maxlength="100">
 
                         <label for="imagem-divulgacao">Imagem de divulgação (opcional)</label>
                         <input type="file" id="imagem-divulgacao" accept=".jpg, .jpeg, .png, .gif"
                             aria-describedby="imagem-instrucao">
 
-                        <label for="assunto">Assunto *</label>
-                        <select id="assunto" name="assunto" required>
-                            <option value="">Selecione um assunto</option>
-                            <!-- Adicione outras opções aqui -->
-                        </select>
-
-                        <label for="categoria">Categoria (opcional)</label>
-                        <select id="categoria" name="categoria">
-                            <option value="">Selecione uma categoria</option>
-                            <!-- Adicione outras opções aqui -->
+                       
                         </select>
                     </form>
       
@@ -99,7 +98,7 @@
 
             <p>Conte todos os detalhes do seu evento, como a programação e os diferenciais da sua produção.</p>
             <textarea id="descricao-evento" rows="5"
-                placeholder="Adicione aqui a descrição do seu evento..."></textarea>
+                placeholder="Adicione aqui a descrição do seu evento..." name="descricao"></textarea>
 
         </fieldset>
         <fieldset class="container">
@@ -109,20 +108,19 @@
             <fieldset class="quadrado">
 
                 <label for="data-inicio">Início *</label>
-                <input type="date" id="data-inicio" class="input-box" value="2024-09-04">
-                <input type="time" id="hora-inicio" class="input-box" value="19:30">
+                <input type="date" id="data-inicio" class="input-box" value="2024-09-04" name="horario">
+                <input type="time" id="hora-inicio" class="input-box" value="19:30" name="hora">
 
 
                 </fieldset>
                 <fieldset class="quadrado">
 
-                    <label for="data-termino">Término *</label>
-                    <input type="date" id="data-inicio" class="input-box" value="2024-09-06">
-                    <input type="time" id="hora-inicio" class="input-box" value="19:30">
-
+                <input type="text" name="descricao">
 
 
             </fieldset>
+            <label for="">local</label>
+            <input type="text" name="endereco">
         </div>
             <button class="animated-button">
                 <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
@@ -139,7 +137,7 @@
                 </svg>
               </button>
         </fieldset>
-
+        </form>
             </div>
             <!-- Seção 5: Ingressos -->
 

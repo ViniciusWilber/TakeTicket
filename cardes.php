@@ -9,6 +9,47 @@
 <body>
     <main>
     <div class="cartasTema">
+    <?php
+                        include "conexao.php"
+                    ?>
+        <?php
+
+$pdo = new PDO('mysql:host=localhost;dbname=TakeTicket', 'root', '');
+            $stmt = $pdo->query("SELECT * FROM evento");
+            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            if (count($results) > 0) {
+                // Percorre cada evento e exibe os dados
+                foreach ($results as $dados) {
+        ?>
+        ?>
+
+
+                        <div class="carta1">
+                            <img class="cartaimg" src="imagens/imgPerfil/AdobeStock_369248728.jpg" alt="">
+                            <div class="grupo">
+                                <div class="textocarta">
+                                    <h1> <?=$dados["nome"] ?></h1>
+                                    <p><?=$dados["data"] ?></p>
+                                    <h2>R$: 1250,00</h2>
+                                </div>
+                                <div class="iconcard">
+                                    <a href=""><i id="coracao" class="fa-solid fa-heart"></i></a>
+                                    <a href=""><i id="link" class="fa fa-share-alt"></i></a>
+                                </div>
+                            </div>
+                            <div class="butao">
+                                <button class="reserva">Reservar</button>
+                            </div>
+                        </div>
+
+                        <?php
+            } // Fim do foreach
+        } else {
+            echo "Nenhum evento encontrado.";
+        }
+    ?>
+
+
                         <div class="carta1">
                             <img class="cartaimg" src="imagens/imgIndex/Rectangle 66.png" alt="">
                             <div class="grupo">
@@ -26,23 +67,11 @@
                                 <a href="Evento.php"><button class="reserva">Reservar</button></a>
                             </div>
                         </div>
-                        <div class="carta1">
-                            <img class="cartaimg" src="imagens/imgPerfil/AdobeStock_369248728.jpg" alt="">
-                            <div class="grupo">
-                                <div class="textocarta">
-                                    <h1>Monaco Paulista</h1>
-                                    <p>dia 29 FEV</p>
-                                    <h2>R$: 1250,00</h2>
-                                </div>
-                                <div class="iconcard">
-                                    <a href=""><i id="coracao" class="fa-solid fa-heart"></i></a>
-                                    <a href=""><i id="link" class="fa fa-share-alt"></i></a>
-                                </div>
-                            </div>
-                            <div class="butao">
-                                <button class="reserva">Reservar</button>
-                            </div>
-                        </div>
+
+
+
+
+
                         <div class="carta1">
                             <img class="cartaimg" src="imagens/imgPerfil/AdobeStock_123555466.jpg" alt="">
                             <div class="grupo">
