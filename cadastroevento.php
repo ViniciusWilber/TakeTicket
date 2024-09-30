@@ -20,13 +20,11 @@
                 <legend>Informações básicas</legend>
                 <section class="section1">
 
-                    <input type="text" name="id">
 
                     <label for="escolha">Escolha um promotor:</label>
                     <input type="text" name="promotor_id">
         <option value="1">Lucas - 1</option>
-        <option value="2">Opção 2</option>
-        <option value="3">Opção 3</option>
+
     </select>
 
                         <div class="info">
@@ -114,7 +112,7 @@
 
                 </fieldset>
                 <fieldset class="quadrado">
-
+                <label for="">dexrição</label>
                 <input type="text" name="descricao">
 
 

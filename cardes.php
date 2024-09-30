@@ -10,8 +10,8 @@
     <main>
     <div class="cartasTema">
     <?php
-                        include "conexao.php"
-                    ?>
+    include "conexao.php"
+    ?>
         <?php
 
 $pdo = new PDO('mysql:host=localhost;dbname=TakeTicket', 'root', '');
@@ -21,7 +21,6 @@ $pdo = new PDO('mysql:host=localhost;dbname=TakeTicket', 'root', '');
                 // Percorre cada evento e exibe os dados
                 foreach ($results as $dados) {
         ?>
-        ?>
 
 
                         <div class="carta1">
@@ -29,7 +28,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=TakeTicket', 'root', '');
                             <div class="grupo">
                                 <div class="textocarta">
                                     <h1> <?=$dados["nome"] ?></h1>
-                                    <p><?=$dados["data"] ?></p>
+                                    <p><?=$dados["horario"] ?></p>
                                     <h2>R$: 1250,00</h2>
                                 </div>
                                 <div class="iconcard">
@@ -38,7 +37,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=TakeTicket', 'root', '');
                                 </div>
                             </div>
                             <div class="butao">
-                                <button class="reserva">Reservar</button>
+                                <a href="Evento.php"><button class="reserva">Reservar</button></a>
                             </div>
                         </div>
 
