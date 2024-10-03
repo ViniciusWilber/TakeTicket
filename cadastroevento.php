@@ -84,6 +84,8 @@
                         <input type="file" id="imagem-divulgacao" accept=".jpg, .jpeg, .png, .gif"
                             aria-describedby="imagem-instrucao">
 
+                            <label for="">valor</label>
+                        <input type="text" name="valor">
                        
                         </select>
                     </form>

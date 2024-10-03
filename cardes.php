@@ -29,7 +29,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=TakeTicket', 'root', '');
                                 <div class="textocarta">
                                     <h1> <?=$dados["nome"] ?></h1>
                                     <p><?=$dados["horario"] ?></p>
-                                    <h2>R$: 1250,00</h2>
+                                    <h2><?=$dados["valor"] ?></h2>
                                 </div>
                                 <div class="iconcard">
                                     <a href=""><i id="coracao" class="fa-solid fa-heart"></i></a>

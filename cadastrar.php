@@ -9,7 +9,7 @@
     $hora = $_POST["hora"];
     $endereco = $_POST["endereco"];
     $promotor_id = $_POST["promotor_id"];
-
+    $valor = $_POST["valor"];
     // Prepara a consulta SQL
     $sql = "INSERT INTO evento (
  
@@ -18,15 +18,16 @@
         horario,
         hora,
         endereco,
-        promotor_id
+        promotor_id,
+        valor
     ) VALUES (
-
         :nome,
         :descricao,
         :horario,
         :hora,
         :endereco,
-        :promotor_id
+        :promotor_id,
+        :valor
     )";
 
     // Executa a inserção no banco de dados
@@ -41,6 +42,7 @@
         $stmt->bindParam(':hora', $hora);
         $stmt->bindParam(':endereco', $endereco);
         $stmt->bindParam(':promotor_id', $promotor_id);
+        $stmt->bindParam(':valor', $valor);
 
         // Executa a inserção
         if ($stmt->execute()) {
