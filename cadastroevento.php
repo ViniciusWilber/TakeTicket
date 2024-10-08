@@ -29,12 +29,12 @@
 
                         <div class="info">
 
-                            <input type="text" id="rua" name="rua" class="input-box" placeholder="Rua/Avenida">
+                            <input type="text" id="rua" name="logradouro" class="input-box" placeholder="Rua/Avenida">
                         </div>
 
 
                         <div class="info">
-                            <input type="text" id="cep" name="cep" class="input-box" placeholder="CEP">
+                            <input type="text" id="cep" name="CEP" class="input-box" placeholder="CEP">
                         </div>
 
 

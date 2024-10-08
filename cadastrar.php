@@ -10,6 +10,13 @@
     $endereco = $_POST["endereco"];
     $promotor_id = $_POST["promotor_id"];
     $valor = $_POST["valor"];
+    $cidade = $_POST["cidade"];
+    $logradouro = $_POST["logradouro"];
+    $CEP = $_POST["CEP"];
+    $bairro = $_POST["bairro"];
+    $numero = $_POST["numero"];
+    $estado = $_POST["estado"];
+    $complemento = $_POST["complemento"];
     // Prepara a consulta SQL
     $sql = "INSERT INTO evento (
  
@@ -17,17 +24,29 @@
         descricao,
         horario,
         hora,
-        endereco,
         promotor_id,
-        valor
+        valor,
+        cidade,
+        logradouro,
+        CEP,
+        bairro,
+        numero,
+        estado,
+        complemento
     ) VALUES (
         :nome,
         :descricao,
         :horario,
         :hora,
-        :endereco,
         :promotor_id,
-        :valor
+        :valor,
+        :cidade,
+        :logradouro,
+        :CEP,
+        :bairro,
+        :numero,
+        :estado,
+        :complemento
     )";
 
     // Executa a inserção no banco de dados
@@ -40,9 +59,15 @@
         $stmt->bindParam(':descricao', $descricao);
         $stmt->bindParam(':horario', $horario);
         $stmt->bindParam(':hora', $hora);
-        $stmt->bindParam(':endereco', $endereco);
         $stmt->bindParam(':promotor_id', $promotor_id);
         $stmt->bindParam(':valor', $valor);
+        $stmt->bindParam(':cidade', $cidade);
+        $stmt->bindParam(':logradouro', $logradouro);
+        $stmt->bindParam(':CEP', $CEP);
+        $stmt->bindParam(':bairro', $bairro);
+        $stmt->bindParam(':numero', $numero);
+        $stmt->bindParam(':estado', $estado);  // Corrigido para $estado
+        $stmt->bindParam(':complemento', $complemento);  // Corrigido para $complemento
 
         // Executa a inserção
         if ($stmt->execute()) {

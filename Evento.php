@@ -13,9 +13,24 @@
             include_once "header.php"
           ?>
     <main>
+    <?php
+
+$pdo = new PDO('mysql:host=localhost;dbname=TakeTicket', 'root', '');
+            $stmt = $pdo->query("SELECT * FROM evento");
+            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            if (count($results) > 0) {
+                // Percorre cada evento e exibe os dados
+                foreach ($results as $dados) {
+        ?>
+
+
+
+                        <?php
+          
+    ?>
         <section class="sec1">
             <div class="titulo">
-                <h1>MASP</h1>
+                <h1><?=$dados["nome"] ?></h1>
             </div>
             <div class="imagensInicio">
                 <img src="imagens/imgEvento/Rectangle 34.png" alt="">
@@ -72,8 +87,8 @@
             </div>
             <div class="cartaValor">
                 <h1>Reservar</h1>
-                <h3>SEG (24/05)</h3>
-                <p>De: R$99,99,oo por:</p>
+                <h3><?=$dados["horario"] ?></h3>
+                <p><?=$valor["valor"] ?></p>
                 <div class="valorEvento">
                     <p>R$50,00</p>
                 </div>
@@ -122,6 +137,10 @@
             <h2>Museu de Arte de São Paulo encontra-se desde 7 de novembro de 1968 na Avenida Paulista, cidade de São
                 Paulo</h2>
         </section>
+        <?php
+          } // Fim do foreach
+        }
+        ?>
     </main>
     <?php
         include_once "footer.php"
