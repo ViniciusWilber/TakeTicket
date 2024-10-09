@@ -11,12 +11,12 @@
 <body>
 
     <?php
-        $pdo = new PDO('mysql:host=localhost;dbname=TakeTicket', 'root', '');
+    $pdo = new PDO('mysql:host=localhost;dbname=TakeTicket', 'root', '');
     $id = $_GET["id"];
 
-    $stmt = $pdo->query("SELECT * FROM evento");
+    $stmt = $pdo->query("SELECT * FROM evento where id= $id");
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    if (count($results) > 0) {
+    foreach ($results as $dados) {
     ?>
 
     <main>
@@ -42,24 +42,24 @@
 
 
                         <div class="info">
-                            <input type="text" id="cep" name="CEP" class="input-box" placeholder="CEP">
+                            <input type="text" id="cep" name="CEP" class="input-box" placeholder="CEP" value="<?=$dados["CEP"]?>">
                         </div>
 
 
                         <div class="info">
 
-                            <input type="text" id="bairro" name="bairro" class="input-box" placeholder="Bairro">
+                            <input type="text" id="bairro" name="bairro" class="input-box" placeholder="Bairro" value="<?=$dados["bairro"]?>">
                         </div>
                 </section>
                 <section class="section1">
                         <div class="info">
 
-                            <input type="text" id="numero" name="numero" class="input-box" placeholder="Número">
+                            <input type="text" id="numero" name="numero" class="input-box" placeholder="Número"value="<?=$dados["numero"]?>">
                         </div>
                         <div class="info">
 
                             <input type="text" id="complemento" name="complemento" class="input-box" maxlength="250"
-                                placeholder="Complemento">
+                                placeholder="Complemento"value="<?=$dados["complemento"]?>">
                         </div>
 
 
@@ -67,12 +67,12 @@
 
                         <div class="info">
     
-                            <input type="text" id="cidade" name="cidade" class="input-box" placeholder="Cidade">
+                            <input type="text" id="cidade" name="cidade" class="input-box" placeholder="Cidade"value="<?=$dados["cidade"]?>">
                         </div>
 
                         <div class="info">
 
-                            <input type="text" id="estado" name="estado" class="input-box" placeholder="Estado">
+                            <input type="text" id="estado" name="estado" class="input-box" placeholder="Estado"value="<?=$dados["estado"]?>">
                         </div>
                     </section>
 
@@ -86,14 +86,14 @@
                     <form>
                         <label for="nome">Nome do evento *</label>
                         <input type="text" id="nome" name="nome" placeholder="Nome do evento" required
-                            maxlength="100">
+                            maxlength="100" value="<?=$dados["nome"]?>">
 
                         <label for="imagem-divulgacao">Imagem de divulgação (opcional)</label>
                         <input type="file" id="imagem-divulgacao" accept=".jpg, .jpeg, .png, .gif"
                             aria-describedby="imagem-instrucao">
 
                             <label for="">valor</label>
-                        <input type="text" name="valor">
+                        <input type="text" name="valor" value="<?=$dados["valor"]?>">
                        
                         </select>
                     </form>

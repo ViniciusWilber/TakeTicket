@@ -17,7 +17,6 @@
 $pdo = new PDO('mysql:host=localhost;dbname=TakeTicket', 'root', '');
             $stmt = $pdo->query("SELECT * FROM evento");
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            if (count($results) > 0) {
                 // Percorre cada evento e exibe os dados
                 foreach ($results as $dados) {
         ?>
@@ -37,15 +36,14 @@ $pdo = new PDO('mysql:host=localhost;dbname=TakeTicket', 'root', '');
                                 </div>
                             </div>
                             <div class="butao">
-                                <a href="Evento.php"><button class="reserva">Reservar</button></a>
+                            <button class="reserva">
+    <a href="Evento.php?id=<?=$dados['id']?>">Reservar</a>
+</button>
                             </div>
                         </div>
 
                         <?php
             } // Fim do foreach
-        } else {
-            echo "Nenhum evento encontrado.";
-        }
     ?>
 
 
