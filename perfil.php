@@ -141,18 +141,34 @@
             </div>
         </div>
         <div class="direita">
+
             <div class="seusEventos">
                 <div class="botoesEvento">
                     <button class="andamento" id="alt">Eventos em Andamento</button>
                     <button class="passado" id="btn">Eventos Passados</button>
                 </div>
                 <div class="eventos" id="eventos">
+                <?php
+        $pdo = new PDO('mysql:host=localhost;dbname=TakeTicket', 'root', '');
+            $stmt = $pdo->query("SELECT * FROM evento");
+            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            if (count($results) > 0) {
+                // Percorre cada evento e exibe os dados
+                foreach ($results as $dados) {
+        ?>
                     <div class="emandamento">
                         <img src="imagens/imgPerfil/AdobeStock_293894349.jpg" alt="">
                         <p>Como promotor de eventos em São Paulo, moldo espaços para celebrar, deixando meu legado na cultura local.
                         </p>
-                        <label>DD/MM/AAAA</label>
+                        <label><?=$dados["nome"] ?></label>
+                        <button><a href="editar.php?id=<?=$dados['id']?>">editar</a></button>
                     </div>
+                    <?php
+            } // Fim do foreach
+        } else {
+            echo "Nenhum evento encontrado.";
+        }
+    ?>
                     <div class="emandamento">
                         <img src="imagens/imgPerfil/AdobeStock_123555466.jpg" alt="">
                         <p>Trago vida a espaços, deixando minha marca na cena cultural da cidade.</p>
