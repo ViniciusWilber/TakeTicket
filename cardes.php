@@ -38,6 +38,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=TakeTicket', 'root', '');
                             <div class="butao">
                             <button class="reserva">
     <a href="Evento.php?id=<?=$dados['id']?>">Reservar</a>
+    
 </button>
                             </div>
                         </div>

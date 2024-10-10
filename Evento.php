@@ -14,19 +14,12 @@
           ?>
     <main>
     <?php
+    $pdo = new PDO('mysql:host=localhost;dbname=TakeTicket', 'root', '');
+    $id = $_GET["id"];
 
-$pdo = new PDO('mysql:host=localhost;dbname=TakeTicket', 'root', '');
-            $stmt = $pdo->query("SELECT * FROM evento");
-            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            if (count($results) > 0) {
-                // Percorre cada evento e exibe os dados
-                foreach ($results as $dados) {
-        ?>
-
-
-
-                        <?php
-          
+    $stmt = $pdo->query("SELECT * FROM evento where id= $id");
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($results as $dados) {
     ?>
         <section class="sec1">
             <div class="titulo">
@@ -39,7 +32,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=TakeTicket', 'root', '');
                 <img src="imagens/imgEvento/Rectangle 33.png" alt="">
             </div>
             <div class="titulo2">
-                <h2>Museu de Arte de São Paulo</h2>
+                <h2><?=$dados["nome"] ?></h2>
             </div>
         </section>
         <section class="sec2">
@@ -139,7 +132,6 @@ $pdo = new PDO('mysql:host=localhost;dbname=TakeTicket', 'root', '');
         </section>
         <?php
           } // Fim do foreach
-        }
         ?>
     </main>
     <?php

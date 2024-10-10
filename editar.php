@@ -20,7 +20,7 @@
     ?>
 
     <main>
-        <form action="editar.php" method="POST">
+        <form action="admin/editar.php" method="POST">
         <div class="geral">
             <!-- Seção de Informações Básicas -->
             <fieldset class="container1">
