@@ -24,7 +24,7 @@
         <div class="login-container" id="login-container">
         <a href="index.php"><button id="botao1" class="close-button">x</button></a>
             <div class="form-container">
-                <form class="form form-login" method="POST" action="logar.php">
+                <form class="form form-login" method="POST" action="logar.php" class="needs-validation">
 
                     <h2 class="form-title">Sing-in</h2>
                     <div class="form-social">
@@ -55,7 +55,7 @@
                     <a href="#" id="open-register-mobile">Registre-se</a>
 
                 </form>
-                <form class="form form-register" method="POST" action="processo.php">
+                <form class="form form-register" method="POST" action="cadastrar_usuario.php">
                     
                     <h2 class="form-title">Criar Conta</h2>
                     <div class="form-social">

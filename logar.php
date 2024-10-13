@@ -1,11 +1,10 @@
 <?php
 include_once "conexao.php";
 
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $msg = "Login incorreto.";
     $email = $_POST['email'];
-    $senha = $_POST['senha'];
-    $senhaCripto = password_hash($senha, PASSWORD_DEFAULT);
+    $senha = $_POST['senha']; 
 
     if (empty($email)) {
         echo "Digite um email <br>";
@@ -21,12 +20,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             if (empty($senha)) {
                 echo "Digite uma senha <br>";
             } else {
-                // Pega o usuário encontrado
+                // Pega o hash de senha do usuário
                 $usuario = $selectEmail->fetch(PDO::FETCH_ASSOC);
 
-                // Verifica se a senha informada corresponde ao hash
-                if (password_verify($senha, $senhaCripto)){
+                // Verifica se a senha informada corresponde ao hash no banco
+                if (password_verify($senha, $usuario['senha'])) {
                     header('Location: index.php');
+                    exit; // Parar o script após o redirecionamento
                 } else {
                     echo $msg;
                 }

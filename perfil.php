@@ -162,6 +162,7 @@
                         </p>
                         <label><?=$dados["nome"] ?></label>
                         <button><a href="editar.php?id=<?=$dados['id']?>">editar</a></button>
+                        <button><a href="excluir_evento.php?id=<?=$dados['id']?>">apagar</a></button>
                     </div>
                     <?php
             } // Fim do foreach

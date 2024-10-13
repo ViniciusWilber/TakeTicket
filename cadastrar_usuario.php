@@ -45,7 +45,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             echo "cadastrado com sucesso";
         } else {
             // header('location: cadastro.php?status=error');
-            echo "Falha ao cadastrar";
+            $erro = "<div>
+            <p> erro</p>
+            </div>";
         }
     }
 }
