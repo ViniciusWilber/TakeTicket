@@ -2,12 +2,11 @@
 include_once "conexao.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $msg = "Login incorreto.";
     $email = $_POST['email'];
     $senha = $_POST['senha']; 
 
     if (empty($email)) {
-        echo "Digite um email <br>";
+        echo "digite um email";
     } else {
         // Verifica se o email existe
         $selectEmail = $conexao->prepare("SELECT email, senha FROM usuario WHERE email = :email");
@@ -15,10 +14,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $selectEmail->execute();
 
         if ($selectEmail->rowCount() == 0) {
-            echo "Email não encontrado <br>";
+            echo "Senha incorreta.";
         } else {
             if (empty($senha)) {
-                echo "Digite uma senha <br>";
+                header('Location: login.php?errosenha=Digite uma senha.');
             } else {
                 // Pega o hash de senha do usuário
                 $usuario = $selectEmail->fetch(PDO::FETCH_ASSOC);

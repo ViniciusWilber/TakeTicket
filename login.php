@@ -17,14 +17,14 @@
     <script src="./js/login.js" defer></script>
     <title>login</title>
 </head>
-
 <body>
     <main>
-
+    <dialog id="avisos"></dialog>
         <div class="login-container" id="login-container">
         <a href="index.php"><button id="botao1" class="close-button">x</button></a>
             <div class="form-container">
-                <form class="form form-login" method="POST" action="logar.php" class="needs-validation">
+
+                <form class="form form-login" method="POST" action="logar.php" class="needs-validation" id="form_cadastro">
 
                     <h2 class="form-title">Sing-in</h2>
                     <div class="form-social">
@@ -42,7 +42,13 @@
                     <section class="formulario_geral">
                             <div class="form-input-container">
                                 <input type="email" name="email" id="email" class="form-input" placeholder="Email">
+
                                 <input type="password" name="senha" id="senha" class="form-input" placeholder="Senha">
+                                <dialog id="avisos"></dialog>
+                                
+                                
+
+                        
                             </div>
 
 
