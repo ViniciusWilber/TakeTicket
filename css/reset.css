@@ -57,6 +57,32 @@ a{
     box-shadow: 0 5px 20px #A0A0A0;
     overflow: hidden;;
 }
+.form-input-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+/* form-input-container */
+
+/* form-input */
+.form-input{
+    width: 300px;
+    height: 40px;
+    padding: 10px 20px;
+    border-style: none;
+    background-color: var(--icon-color);
+}
+.input-error {
+    border: 2px solid red; /* Borda vermelha */
+    background-color: #ffe6e6; /* Fundo levemente vermelho */
+}
+
+.erro {
+    border: 2px solid red; /* Borda vermelha */
+    background-color: #ff0000; /* Fundo levemente vermelho (opcional) */
+    color: red;
+}
 
 @media (max-width:768px){
     .login-container{

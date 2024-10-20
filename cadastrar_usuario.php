@@ -4,9 +4,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $erro = "";
     $nome = $_POST['nome'];
     $padraoSenha = '~^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*\(\)\_\+\[\]\{\}\|\:\"\<\>\.\,\/\?\-]).{8,}$~';
-    if(empty($nome)&& strlen($nome) < 3){
-        $erro .="digite um nome <br>";
+    if(empty($nome) || strlen($nome) < 3) {
+        $erro .= "digite um nome <br>";
     }
+    
     $email = $_POST['email'];
     if(empty($email)){
         $erro .="digite um email <br>";

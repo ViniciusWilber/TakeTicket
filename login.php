@@ -19,12 +19,12 @@
 </head>
 <body>
     <main>
-    <dialog id="avisos"></dialog>
+
         <div class="login-container" id="login-container">
         <a href="index.php"><button id="botao1" class="close-button">x</button></a>
             <div class="form-container">
 
-                <form class="form form-login" method="POST" action="logar.php" class="needs-validation" id="form_cadastro">
+                <form class="form form-login" method="POST" action="logar.php" class="needs-validation" id="form_login">
 
                     <h2 class="form-title">Sing-in</h2>
                     <div class="form-social">
@@ -42,9 +42,11 @@
                     <section class="formulario_geral">
                             <div class="form-input-container">
                                 <input type="email" name="email" id="email" class="form-input" placeholder="Email">
+                                <p id="mensagem-email" style="color: red;"></p> 
+
 
                                 <input type="password" name="senha" id="senha" class="form-input" placeholder="Senha">
-                                <dialog id="avisos"></dialog>
+                                <p id="mensagem-senha" style="color: red;"></p>
                                 
                                 
 
@@ -61,7 +63,7 @@
                     <a href="#" id="open-register-mobile">Registre-se</a>
 
                 </form>
-                <form class="form form-register" method="POST" action="cadastrar_usuario.php">
+                <form class="form form-register" method="POST" action="cadastrar_usuario.php" id="form_cadastro">
                     
                     <h2 class="form-title">Criar Conta</h2>
                     <div class="form-social">
@@ -79,9 +81,17 @@
 
 
                     <div class="form-input-container">
-                        <input type="text" class="form-input" placeholder="Nome" name="nome" id="nome">
-                        <input type="email" class="form-input" placeholder="Email" name="email" id="email">
-                        <input type="password" class="form-input" placeholder="Senha" name="senha" id="senha">
+                        <input type="text" class="form-input" placeholder="Nome" name="nome" id="cadastro_nome">
+                        <p id="mensagem_nome" style="color: red;"></p>
+
+
+                        <input type="email" class="form-input" placeholder="Email" name="email" id="email" id="cadastro_email">
+                        <p id="mensagem_email_cadastro" style="color: red;"></p>
+
+                        <input type="password" class="form-input" placeholder="Senha" name="senha" id="cadastro_senha">
+                        <p id="mensagem_senha_cadastro" style="color: red;"></p>
+
+
                     </div>
                     <button class="form-button" type="submit">Cadastrar</button>
                     <p class="mobile-text">
