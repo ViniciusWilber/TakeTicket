@@ -85,7 +85,7 @@
                         <p id="mensagem_nome" style="color: red;"></p>
 
 
-                        <input type="email" class="form-input" placeholder="Email" name="email" id="email" id="cadastro_email">
+                        <input type="email" class="form-input" placeholder="Email" name="email" id="cadastro_email">
                         <p id="mensagem_email_cadastro" style="color: red;"></p>
 
                         <input type="password" class="form-input" placeholder="Senha" name="senha" id="cadastro_senha">

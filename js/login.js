@@ -69,10 +69,13 @@ form_login.addEventListener("submit", (e) => {
 // Código de cadastro (similar ao de login)
 const form_cadastro = document.getElementById('form_cadastro');
 const mensagem_nome = document.getElementById('mensagem_nome');
-const mensagem_senha_cadastro = document.getElementById('mensagem_senha_cadastro');
 const cadastro_nome = document.getElementById('cadastro_nome');
-const cadastro_email = document.getElementById('mensagem_email_cadastro');
+
+const cadastro_email = document.getElementById('cadastro_email');
+const mensagem_email_cadastro = document.getElementById('mensagem_email_cadastro');
+
 const cadastro_senha = document.getElementById('cadastro_senha');
+const mensagem_senha_cadastro = document.getElementById('mensagem_senha_cadastro');
 
 form_cadastro.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -103,9 +106,9 @@ form_cadastro.addEventListener("submit", (e) => {
             cadastro_email.style.border = '2px solid red';
 
         } else if (mensagem.includes('Digite no minimo 8 caracteres <br>Com pelo menos uma letra maiuscula <br>Um caracter especial <br> E pelo menos um número')) {
-            mensagemSenha.innerHTML = 'Digite no minimo 8 caracteres <br>Com pelo menos uma letra maiuscula <br>Um caracter especial <br> E pelo menos um número';
-            senha_cadastro.classList.add('erro');
-            mensagem_senha_cadastro.style.border = '2px solid red';
+            mensagem_senha_cadastro.innerHTML = 'Digite no minimo 8 caracteres <br>Com pelo menos uma letra maiuscula <br>Um caracter especial <br> E pelo menos um número';
+            mensagem_senha_cadastro.classList.add('erro');
+            cadastro_senha.style.border = '2px solid red';
 
         } 
     })
