@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 // Verifica se a senha informada corresponde ao hash no banco
                 if (password_verify($senha, $usuario['senha'])) {
-                    header('Location: index.php');
+                    header('index.php');
                     exit; // Parar o script após o redirecionamento
                 } else {
                     echo $msg;

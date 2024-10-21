@@ -42,7 +42,7 @@
                     <section class="formulario_geral">
                             <div class="form-input-container">
                                 <input type="email" name="email" id="email" class="form-input" placeholder="Email">
-                                <p id="mensagem-email" style="color: red;"></p> 
+                                <p id="avisos_login" style="color: red;"></p> 
 
 
                                 <input type="password" name="senha" id="senha" class="form-input" placeholder="Senha">
@@ -84,7 +84,8 @@
                         <input type="text" class="form-input" placeholder="Nome" name="nome" id="cadastro_nome">
                         <p id="mensagem_nome" style="color: red;"></p>
 
-
+                        <dialog > </dialog>
+                        <p id="avisos_cadastro" style="color: red;"></p>
                         <input type="email" class="form-input" placeholder="Email" name="email" id="cadastro_email">
                         <p id="mensagem_email_cadastro" style="color: red;"></p>
 
