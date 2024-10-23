@@ -40,28 +40,3 @@ form_cadastro.addEventListener("submit", (e) => {
 
 
 
-const form_login = document.getElementById('form_login');
-const avisos_login = document.getElementById('avisos_login');
-
-form_login.addEventListener("submit", (e) => {
-    e.preventDefault();
-    let dados_form = new FormData(form_login);
-
-    fetch("logar.php", {
-        body: dados_form,
-        method: 'POST'
-    })
-    .then((resposta) => {
-    if (resposta.ok) {
-        return resposta.text();
-    }else(3000
-    )
-    })
-    .then((mensagem) => {
-        avisos_login.innerHTML = mensagem;
-        avisos_login.open = true;
-        setTimeout(()=>{
-            avisos_login.open = false
-        }, 3000);
-    })
-})
