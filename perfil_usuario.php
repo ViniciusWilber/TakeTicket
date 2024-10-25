@@ -144,7 +144,7 @@
             <div class="seusEventos">
                 <div class="botoesEvento">
                     <button class="andamento" id="alt">Meus eventos ativos</button>
-                    <button class="passado" id="btn">Histórico de eventos</button>
+                    <button class="passado" id="btn">Favoritos</button>
                 </div>
                 <div class="eventos" id="eventos">
                     <div class="emandamento">
