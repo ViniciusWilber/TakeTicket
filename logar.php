@@ -25,10 +25,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 // Verifica se a senha informada corresponde ao hash no banco
                 if (password_verify($senha, $usuario['senha'])) {
-                    header('index.php');
+                    echo "login correto";
                     exit; // Parar o script após o redirecionamento
                 } else {
-                    echo $msg;
+                    echo "Login incorreto.";
                 }
             }
         }
