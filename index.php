@@ -1,4 +1,12 @@
 
+<?php
+@session_start();
+if(isset($_SESSION["id_usuario"])){
+echo "<button><a href='perfil_usuario.php'>perfil</a></button>";
+}
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">

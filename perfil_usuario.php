@@ -15,6 +15,7 @@
       ?>
     <main class="Perfil">
         <div class="esquerda">
+        <button><a href="logout.php">excluir</a></button>
             <div class="elementos">
                 <img src="imagens/imgPerfil_usuario/usuario.jpg" alt="" id="imgPerfil">
                 <div class="sobreMin">
