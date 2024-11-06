@@ -65,13 +65,8 @@
 
                                 <input type="password" name="senha" id="senha_login" class="form-input" placeholder="Senha">
                                 <p id="aviso_senha" style="color: red;"></p>
-                                
-                                
-
                         
                             </div>
-
-
                                 </section>
                                 <button type="submit"  class="form-button">Entrar</button>
                                 <a href="#" class="form-link">Esqueceu a senha?</a>
