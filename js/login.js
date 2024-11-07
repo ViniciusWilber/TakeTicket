@@ -142,7 +142,7 @@ form_login.addEventListener("submit", (e) => {
         if (mensagem.includes('Email não encontrado <br>')) {
             aviso_email.innerHTML = 'Email não encontrado <br>';
             aviso_email.style.display = 'block'; // Exibe o aviso
-            email_login.style.border = "2px solid red";
+            email_login.style.border = "solid red ";
 
             setTimeout(() => {
                 aviso_email.style.display = 'none'; // Oculta o aviso após 3 segundos
