@@ -79,7 +79,7 @@ form_cadastro.addEventListener("submit", (e) => {
         }
 
         if (mensagem.includes('Digite no minimo 8 caracteres <br>Com pelo menos uma letra maiuscula <br>Um caracter especial <br> E pelo menos um número')) {
-            mensagem_senha_cadastro.innerHTML = 'Digite no minimo 8 caracteres <br>Com pelo menos uma letra maiuscula <br>Um caracter especial <br> E pelo menos um número';
+            mensagem_senha_cadastro.innerHTML = 'Mínimo 8 caracteres, com maiúscula, número e caractere especial.';
             mensagem_senha_cadastro.style.display = 'block'; // Exibe o aviso
             cadastro_senha.style.border = "2px solid red";
 
@@ -151,7 +151,7 @@ form_login.addEventListener("submit", (e) => {
         }
         
         if (mensagem.includes('Digite uma senha <br>')) {
-            aviso_senha.innerHTML = 'Digite um email <br>';
+            aviso_senha.innerHTML = 'Digite um senha <br>';
             aviso_senha.style.display = 'block'; // Exibe o aviso
             senha_login.style.border = "2px solid red";
 

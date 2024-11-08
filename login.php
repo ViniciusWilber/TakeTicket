@@ -48,7 +48,7 @@
                             <div class="erro">
                                 <input type="email" name="email" id="email_login" class="form-input"
                                     placeholder="Email">
-                                <div id="aviso_email" style="color: red; display: none;"></div>
+                                <div id="aviso_email" style="color: red; position: absolute;"></div>
                             </div>
 
                             <div class="erro">
@@ -85,16 +85,20 @@
 
 
                     <div class="form-input-container">
+                    <div class="erro">
                         <input type="text" class="form-input" placeholder="Nome" name="nome" id="cadastro_nome">
-                        <p id="avisos_cadastro" style="color: red; display: none;"></p>
+                        <p id="avisos_cadastro" style="color: red; position: absolute;"></p>
+                        </div>
 
+                        <div class="erro">
                         <input type="email" class="form-input" placeholder="Email" name="email" id="cadastro_email">
-                        <p id="mensagem_email_cadastro" style="color: red; display: none;"></p>
+                        <p id="mensagem_email_cadastro" style="color: red; position: absolute;"></p>
+                        </div>
 
-
+                        <div class="erro">
                         <input type="password" class="form-input" placeholder="Senha" name="senha" id="cadastro_senha">
-                        <p id="mensagem_senha_cadastro" style="color: red;"></p>
-
+                        <p id="mensagem_senha_cadastro" style="color: red; position: absolute;"></p>
+                        </div>
 
                     </div>
                     <button class="form-button" type="submit">Cadastrar</button>

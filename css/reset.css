@@ -62,7 +62,7 @@ a{
 .form-input-container{
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 33px;
     align-items: center;
     position: relative;
 }
@@ -241,6 +241,7 @@ a{
     }
     .login-container.move .form-register{
         transform: translateX(0%);
+        gap: 8%;
     }
 
 

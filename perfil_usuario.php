@@ -9,13 +9,36 @@
     <link rel="stylesheet" href="css/perfil.css">
     <title>Perfil/ViniciusWilber</title>
 </head>
+<?php
+@session_start();
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/header.css">
+    <title>Header da página</title>
+</head>
 <body>
-    <?php
-        include_once "header.php";
-      ?>
+    <main>
+        <header>
+            <a href="index.php" class="logo"><img src="imagens/imgIndex/LogoSletras.png" alt=""></a>
+            <ul class="botoes">
+                <?php if (isset($_SESSION["id_usuario"])): ?>
+                    <a href="logout.php"><button class="Login">deslogar</button></a>
+                <?php else: ?>
+                    <a href="login.php"><button class="Login">Login</button></a>
+                <?php endif; ?>
+            </ul>   
+        </header>
+    </main>
+</body>
+</html>
+<body>
     <main class="Perfil">
         <div class="esquerda">
-        <button><a href="logout.php">excluir</a></button>
+        <button></button>
             <div class="elementos">
                 <img src="imagens/imgPerfil_usuario/usuario.jpg" alt="" id="imgPerfil">
                 <div class="sobreMin">
@@ -37,12 +60,7 @@
                         <label for="star1"></label>
                       </div>
                 </div>
-                <div class="interacao">
-                    <a href="cadastroevento.php"><button class="mensagem"></i>Criar Evento</button></a>
-                    <button class="mensagem"><i class="fa-solid fa-message"></i>Mensagem</button>
-                    <button class="seguir"><i class="fa-solid fa-plus"></i>Seguir</button>
-                    <button class="reportar">Reportar Usuario</button>
-                </div>
+
             </div>
             <div class="sociais">
                 <ul class="example-2">
@@ -135,9 +153,7 @@
                       <div class="tooltip">Youtube</div>
                     </li>
                   </ul>
-                <div class="resumo">
-                    <p>Olá, sou Lana Alves, tenho 26 anos e adoro aproveitar meu tempo livre indo a eventos. Procuro principalmente por eventos de rock, mas também gosto de opções externas para a família, festivais culturais e qualquer tipo de entretenimento que envolva música.</p>
-                </div>
+ 
             </div>
             </div>
         </div>
