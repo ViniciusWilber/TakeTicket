@@ -12,7 +12,6 @@
         /* Estilos básicos para a modal */
         .modal {
             display: none;
-            position: fixed;
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
@@ -54,5 +53,6 @@
 
     </main>
     <script src="js/modal.js"></script>
+    <script src="js/login.js"></script>
 </body>
 </html>
