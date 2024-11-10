@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once "conexao.php";
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $erro = "";
@@ -43,6 +44,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // $insert->bindParam(':senha', $senha);
         if($insert->execute($novo)) {
             // header('location: cadastro.php?status=ok');
+
+            $_SESSION['senha'] = $senha;
+            $_SESSION['email'] = $email;
+            $_SESSION['id_usuario'] = $conexao->lastInsertId();
             echo "cadastrado com sucesso";
         } else {
             // header('location: cadastro.php?status=error');
