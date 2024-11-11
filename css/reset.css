@@ -1,17 +1,6 @@
-/* resert */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Red Hat Display', sans-serif;
-    border: #000000;
-}
 
 
-a{
-    text-decoration: none;
-    color: var(--text-color-dark);
-}
+
 /* resert */
 
 .close-button {

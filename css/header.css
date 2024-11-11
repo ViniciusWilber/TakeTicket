@@ -17,6 +17,24 @@ header img{
 header .logo{
   width: 100px;
 }
+dialog {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 300px;
+}
+.close-btn {
+  cursor: pointer;
+  background-color: #f44336;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+}
+.no-scroll {
+overflow: hidden;
+}
 .botoes {
     display: flex;
     justify-content: center;

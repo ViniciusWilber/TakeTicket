@@ -8,15 +8,7 @@ body{
     justify-content: center;
     align-items: center;
 }
-main{
-    background: white ;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 14%;
-}
+
 .direita{
     display: flex;
     justify-content: center;
