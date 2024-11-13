@@ -301,3 +301,9 @@ small {
     height: 220px;
     opacity: 1;
   }
+  .section2{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }

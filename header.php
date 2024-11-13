@@ -1,31 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modal com Dialog e PHP</title>
-    <style>
-        body {
-            
-        }
-        dialog {
-            margin-left: 16%;
-            margin-top: 1%;
-        }
-        .close-btn {
-            cursor: pointer;
-            background-color: #f44336;
-            color: white;
-            padding: 5px 10px;
-            border: none;
-            border-radius: 5px;
-        }
-        .no-scroll {
-    overflow: hidden;
-}
-    </style>
-</head>
-<body>
+
     
     <?php
 @session_start();
@@ -59,8 +32,27 @@
             font-weight: bold;
         }
         .myModa{
+           
             background: black;
         }
+        body {
+            
+        }
+        dialog {
+            margin-left: 16%;
+            margin-top: 1%;
+        }
+        .close-btn {
+            cursor: pointer;
+            background-color: #f44336;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        .no-scroll {
+    overflow: hidden;
+}
     </style>
 </head>
         <header>
@@ -69,7 +61,8 @@
                 <?php if (isset($_SESSION["id_usuario"])): ?>
                     <a href="perfil_usuario.php"><button class="Login">Perfil</button></a>
                 <?php else: ?>
-                    <button class="Login" id="openModalBtn">Login</button>
+                    <!--<button class="Login" id="openModalBtn">Login</button>-->
+                    <a href="login.php"><button class="Login" id="openModalBtn">Login</button></a>
                 <?php endif; ?>
             </ul>
                 </header>  

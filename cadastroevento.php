@@ -13,7 +13,7 @@
     <?php include_once "header.php"; ?>
 
     <main>
-        <form action="cadastrar.php" method="POST">
+        <form action="cadastrar.php" method="POST" enctype="multipart/form-data">
         <div class="geral">
             <!-- Seção de Informações Básicas -->
             <fieldset class="container1">
@@ -21,11 +21,10 @@
                 <section class="section1">
 
 
-                    <label for="escolha">Escolha um promotor:</label>
                     <input type="text" name="promotor_id">
-        <option value="1">Lucas - 1</option>
 
     </select>
+
 
                         <div class="info">
 
@@ -42,6 +41,10 @@
 
                             <input type="text" id="bairro" name="bairro" class="input-box" placeholder="Bairro">
                         </div>
+                        <div class="info">
+
+<input type="text" id="rua" name="referencia" class="input-box" placeholder="referencia">
+</div>
                 </section>
                 <section class="section1">
                         <div class="info">
@@ -50,8 +53,8 @@
                         </div>
                         <div class="info">
 
-                            <input type="text" id="complemento" name="complemento" class="input-box" maxlength="250"
-                                placeholder="Complemento">
+                            <input type="text" id="complemento" name="complemento"  maxlength="250"
+                                placeholder="Complemento" class="input-box" >
                         </div>
 
 
@@ -73,19 +76,20 @@
         <fieldset class="container">
             <legend>Informações básicas</legend>
 
-                <div class="section">
+                <div class="section2">
 
                     <form>
-                        <label for="nome">Nome do evento *</label>
                         <input type="text" id="nome" name="nome" placeholder="Nome do evento" required
-                            maxlength="100">
+                            maxlength="100" class="input-box">
 
-                        <label for="imagem-divulgacao">Imagem de divulgação (opcional)</label>
+                            <input type="valor" name="valor" class="input-box" placeholder="valor">
+
+                        <label for="imagem-divulgacao">Imagem de divulgação</label>
                         <input type="file" id="imagem-divulgacao" accept=".jpg, .jpeg, .png, .gif"
-                            aria-describedby="imagem-instrucao">
+       aria-describedby="imagem-instrucao" name="imagens[]" multiple class="input-box">
 
-                            <label for="">valor</label>
-                        <input type="text" name="valor">
+
+
                        
                         </select>
                     </form>
@@ -107,20 +111,20 @@
             <div class="data">
             <fieldset class="quadrado">
 
-                <label for="data-inicio">Início *</label>
+                <label for="data-inicio">Início</label>
                 <input type="date" id="data-inicio" class="input-box" value="2024-09-04" name="horario">
                 <input type="time" id="hora-inicio" class="input-box" value="19:30" name="hora">
 
 
                 </fieldset>
                 <fieldset class="quadrado">
-                <label for="">dexrição</label>
-                <input type="text" name="descricao">
+                <label for="data-inicio">Fim</label>
+                <input type="date" id="data-inicio" class="input-box" value="2024-09-04" name="horario">
+                <input type="time" id="hora-inicio" class="input-box" value="19:30" name="hora">
+
 
 
             </fieldset>
-            <label for="">local</label>
-            <input type="text" name="endereco">
         </div>
             <button class="animated-button">
                 <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
