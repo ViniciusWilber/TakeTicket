@@ -17,7 +17,7 @@
             <?php
 
             $pdo = new PDO('mysql:host=localhost;dbname=TakeTicket', 'root', '');
-            $stmt = $pdo->query("SELECT * FROM evento");
+            $stmt = $pdo->query("SELECT * FROM evento WHERE nome_categoria = 'Museus'");
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
             // Percorre cada evento e exibe os dados
             foreach ($results as $dados) {

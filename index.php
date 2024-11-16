@@ -74,7 +74,7 @@
                 </div>
                 <div class="cartasMuseus">
                 <?php
-                        include "cardes.php"
+                        include "cardes_museu.php"
                     ?>  
                 </div>
                 <div class="cartasSociais">

@@ -51,6 +51,9 @@
     $estado = $_POST["estado"];
     $complemento = $_POST["complemento"];
     $referencia = $_POST["referencia"];
+    $nome_categoria = $_POST["nome_categoria"];
+
+    
 
     // Depuração: Exibir os valores que serão inseridos
 
@@ -72,7 +75,8 @@
         estado,
         complemento,
         imagens,
-        referencia
+        referencia,
+        nome_categoria
     ) VALUES (
         :nome,
         :descricao,
@@ -90,7 +94,8 @@
         :estado,
         :complemento,
         :imagens,
-        :referencia
+        :referencia,
+        :nome_categoria
     )";
 
     // Executa a inserção no banco de dados
@@ -117,6 +122,9 @@
         $stmt->bindParam(':estado', $estado);
         $stmt->bindParam(':complemento', $complemento);
         $stmt->bindParam(':referencia', $referencia);
+        $stmt->bindParam(':nome_categoria', $nome_categoria);
+
+        
 
         // Como você tem várias imagens, converte para uma string JSON
         $imagensJson = json_encode($imagens);  // Converte o array de imagens para JSON

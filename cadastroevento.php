@@ -86,6 +86,29 @@
                             <input type="file" id="imagem-divulgacao" accept=".jpg, .jpeg, .png, .gif"
                                 aria-describedby="imagem-instrucao" name="imagens[]" multiple class="input-box">
                             </select>
+
+                            <?php
+
+$pdo = new PDO('mysql:host=localhost;dbname=TakeTicket', 'root', '');
+$stmt = $pdo->query("SELECT * FROM evento_categoria");
+$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// Percorre cada evento e exibe os dados
+
+    ?><label for="categoria">Escolha uma categoria:</label>
+<select id="categoria" name="nome_categoria" placeholder="quantidade de ingressos">
+    <?php 
+    foreach ($results as $dados) {
+        // Aqui estamos assumindo que "nome_categoria" é a coluna que você deseja exibir
+        echo '<option value="' . $dados['nome_categoria'] . '">' . $dados['nome_categoria'] . '</option>';
+    }
+    
+    // Usando um laço for no lugar do foreach
+ 
+    ?>
+    </select>
+
+
+                            </select>
                         </form>
 
                     </div>
