@@ -22,7 +22,6 @@
     <main>
 
         <div class="login-container" id="login-container">
-            <a href="index.php"><button id="botao1" class="close-button">x</button></a>
             <div class="form-container">
                 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -48,13 +47,13 @@
                             <div class="erro">
                                 <input type="email" name="email" id="email_login" class="form-input"
                                     placeholder="Email">
-                                <div id="aviso_email" style="color: red; position: absolute;"></div>
+                                <div id="aviso_email" style="color: red; position: absolute; "></div>
                             </div>
 
                             <div class="erro">
                                 <input type="password" name="senha" id="senha_login" class="form-input"
                                     placeholder="Senha">
-                                <p id="aviso_senha" style="color: red; position: absolute;"></p>
+                                <p id="aviso_senha" style="color: red; position: absolute; margin: 0;"></p>
                             </div>
 
                         </div>
@@ -87,17 +86,17 @@
                     <div class="form-input-container">
                     <div class="erro">
                         <input type="text" class="form-input" placeholder="Nome" name="nome" id="cadastro_nome">
-                        <p id="avisos_cadastro" style="color: red; position: absolute;"></p>
+                        <p id="avisos_cadastro" style="color: red; position: absolute; margin: 0;"></p>
                         </div>
 
                         <div class="erro">
                         <input type="email" class="form-input" placeholder="Email" name="email" id="cadastro_email">
-                        <p id="mensagem_email_cadastro" style="color: red; position: absolute;"></p>
+                        <p id="mensagem_email_cadastro" style="color: red; position: absolute; margin: 0;"></p>
                         </div>
 
                         <div class="erro">
                         <input type="password" class="form-input" placeholder="Senha" name="senha" id="cadastro_senha">
-                        <p id="mensagem_senha_cadastro" style="color: red; position: absolute;"></p>
+                        <p id="mensagem_senha_cadastro" style="color: red; position: absolute; margin: 0;"></p>
                         </div>
 
                     </div>

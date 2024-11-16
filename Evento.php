@@ -81,9 +81,9 @@
             <div class="cartaValor">
                 <h1>Reservar</h1>
                 <h3><?=$dados["horario"] ?></h3>
-                <p><?=$valor["valor"] ?></p>
+                <p></p>
                 <div class="valorEvento">
-                    <p>R$50,00</p>
+                    <p>R$<?=$dados["valor"] ?></p>
                 </div>
                 <P>Dia unico</P>
                 <a href="pagamento.php"><button class="compra">Comprar +</button></a>
