@@ -69,42 +69,42 @@
             <div class="conjunto1">
                 <div class="cartas" >
                     <?php
-                        include "cardes.php"
+                        include "cardes/cardes.php"
                     ?>
                 </div>
                 <div class="cartasMuseus">
                 <?php
-                        include "cardes_museu.php"
+                        include 'cardes/cardes_museu.php';
                     ?>  
                 </div>
                 <div class="cartasSociais">
                 <?php
-                        include "cardes.php"
+                        include "cardes/cardes_Sociais.php"
                     ?> 
                 </div>
                 <div class="cartasExcursoes">
                 <?php
-                        include "cardes.php"
+                        include "cardes/cardes_Excursões.php"
                     ?>  
                 </div>
                 <div class="cartasTrilhas">
                 <?php
-                        include "cardes.php"
+                        include "cardes/cardes_Trilhas.php"
                     ?> 
                 </div>
                 <div class="cartasViagens">
                 <?php
-                        include "cardes.php"
+                        include "cardes/cardes_Viagens.php"
                     ?> 
                 </div>
                 <div class="cartasFerias">
                 <?php
-                        include "cardes.php"
+                        include "cardes/cardes_Ferias.php"
                     ?> 
                 </div>
                 <div class="cartasAtracoes">
                 <?php
-                        include "cardes.php"
+                        include "cardes/cardes_Atrações.php"
                     ?> 
             </div>
         </section>

@@ -25,8 +25,30 @@
             <div class="titulo">
                 <h1><?=$dados["nome"] ?></h1>
             </div>
+
+            <?php
+include_once "conexao.php";
+
+// Consulta para buscar uma única linha com o campo 'imagens'
+$query = $conexao->prepare("SELECT imagens FROM evento LIMIT 1");
+$query->execute();
+
+// Obter o resultado
+$imagemData = $query->fetch(PDO::FETCH_ASSOC);
+
+// Decodificar a string JSON para um array PHP
+$caminhosImagens = json_decode($imagemData['imagens'], true);
+
+// Verificar se a decodificação foi bem-sucedida e pegar a primeira imagem
+$caminhoImagem = $caminhosImagens[0] ?? null;
+?>
+
             <div class="imagensInicio">
-                <img src="imagens/imgEvento/Rectangle 34.png" alt="">
+            <?php if ($caminhoImagem): ?>
+                <img src="<?= htmlspecialchars($caminhoImagem) ?>" alt="" class="primeira_foto">
+                <?php else: ?>
+    <p>Imagem não encontrada.</p>
+<?php endif; ?>
                 <img src="imagens/imgEvento/Rectangle 35.png" alt="">
                 <img src="imagens/imgEvento/Rectangle 32.png" alt="">
                 <img src="imagens/imgEvento/Rectangle 33.png" alt="">
@@ -62,25 +84,19 @@
                                 <img src="imagens/imgMASP/PlaceMarker.png" alt="">
                                 <h1>Localização</h1>
                             </div>
-                            <a class="paulista" href=""> Av. Paulista, 1578 - Bela Vista, São Paulo - SP, 01310-200</a>
+                            <a class="paulista" href=""> <?=$dados["logradouro"] ?>,<?=$dados["numero"] ?> - <?=$dados["bairro"] ?>, <?=$dados["cidade"] ?> - <?=$dados["estado"] ?>, <?=$dados["CEP"] ?></a>
                             <div class="sobreEvento">
                                 <img src="imagens/imgMASP/Medal.png" alt="">
                                 <h1>Sobre o evento</h1>
                             </div>
-                            <p class="masp">O MASP é considerado  Museu de arte mais importante do Hemisfério Sul,
-                                com cerca de 10.000 peças, abrangendo arte africana, das Américas,
-                                asiática, brasileira e europeia, desde a Antiguidade até o século 21, incluindo
-                                pinturas, esculturas, desenhos, fotografias e roupas, entre outros. O museu privado e
-                                sem fins lucrativos - considerado o primeiro museu moderno do país - foi fundado pelo
-                                empresário Assis Chateaubriand em 1947. Ele está situado desde 1968 na Avenida Paulista,
-                                em São Paulo.</p>
+                            <p class="masp"><?=$dados["descricao"] ?></p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="cartaValor">
                 <h1>Reservar</h1>
-                <h3><?=$dados["horario"] ?></h3>
+                <h3><?=$dados["data_inicio"] ?></h3>
                 <p></p>
                 <div class="valorEvento">
                     <p>R$<?=$dados["valor"] ?></p>

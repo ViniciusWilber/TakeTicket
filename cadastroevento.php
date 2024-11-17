@@ -76,12 +76,13 @@
 
                         <form>
                             <input type="text" id="nome" name="nome" placeholder="Nome do evento" required
-                                maxlength="100" class="input-box">
-
+                                maxlength="100" class="input_nome">
+<div class="parte_ingresso">
                             <input type="valor" name="valor" class="input-box" placeholder="valor">
                             <input type="valor" name="valor" class="input-box" placeholder="quantidade de ingressos">
-
-
+                            </div>
+<div>
+    <div class="parte_ingresso">
                             <label for="imagem-divulgacao">Imagem de divulgação</label>
                             <input type="file" id="imagem-divulgacao" accept=".jpg, .jpeg, .png, .gif"
                                 aria-describedby="imagem-instrucao" name="imagens[]" multiple class="input-box">
@@ -95,8 +96,8 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 // Percorre cada evento e exibe os dados
 
     ?><label for="categoria">Escolha uma categoria:</label>
-<select id="categoria" name="nome_categoria" placeholder="quantidade de ingressos">
-    <?php 
+                            <select id="categoria" name="nome_categoria" placeholder="quantidade de ingressos">
+                                <?php 
     foreach ($results as $dados) {
         // Aqui estamos assumindo que "nome_categoria" é a coluna que você deseja exibir
         echo '<option value="' . $dados['nome_categoria'] . '">' . $dados['nome_categoria'] . '</option>';
@@ -105,12 +106,12 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     // Usando um laço for no lugar do foreach
  
     ?>
-    </select>
-
+                            </select>
+                        </div>
 
                             </select>
                         </form>
-
+                        </div>
                     </div>
                 </fieldset>
                 <!-- Seção de Descrição do Evento -->
