@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://kit.fontawesome.com/224a2d2542.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/perfil.css">
+    <link rel="stylesheet" href="css/perfil_usuario.css">
     <title>Perfil/ViniciusWilber</title>
 </head>
 <body>
@@ -22,11 +22,11 @@
                     <h1>Elma Maria</h1>
                     <h5>Usuaria do app a 2 anos.</h5>
                 </div>
-                <div class="promotor">
-                    <h2>Tornar-se um <a href="virarpromotor.php"><button> Promotor</button></a></h2>
-                </div>
+               
             </div>
-      
+            <div class="Sobre">
+                    <h1>Sobre</h1>
+                </div>
                 <div class="resumo">
                     <p>  Elma Maria é uma educadora apaixonada pela arte de ensinar e pelo impacto que a educação pode gerar na vida das pessoas. 
                         Com mais de 20 anos de experiência na área, ela se dedicou a transformar salas de aula em espaços acolhedores e inspiradores 
@@ -34,6 +34,9 @@
                         sua realidade e a de sua comunidade. </p>
                 </div>
             </div>
+            <div class="form-footer">
+            <p>Já é promotor?<a href="cadastropromotor.php">Promotor</a></p>
+        </div>
             </div>
         </div>
         <div class="direita">
