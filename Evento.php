@@ -19,40 +19,36 @@
 
     $stmt = $pdo->query("SELECT * FROM evento where id= $id");
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    if ($results)
+    // Decodificar o campo 'imagens' para obter as URLs
+
     foreach ($results as $dados) {
+        $caminhosImagens = json_decode($dados['imagens'], true); 
     ?>
+
         <section class="sec1">
             <div class="titulo">
                 <h1><?=$dados["nome"] ?></h1>
             </div>
 
             <?php
-include_once "conexao.php";
 
-// Consulta para buscar uma única linha com o campo 'imagens'
-$query = $conexao->prepare("SELECT imagens FROM evento LIMIT 1");
-$query->execute();
 
-// Obter o resultado
-$imagemData = $query->fetch(PDO::FETCH_ASSOC);
 
-// Decodificar a string JSON para um array PHP
-$caminhosImagens = json_decode($imagemData['imagens'], true);
-
-// Verificar se a decodificação foi bem-sucedida e pegar a primeira imagem
-$caminhoImagem = $caminhosImagens[0] ?? null;
 ?>
+<div class="imagensInicio">
+    <?php if (!empty($caminhosImagens)): ?>
+        <img src="<?= htmlspecialchars($caminhosImagens[0] ?? '') ?>" alt="Imagem do evento" class="foto_1">
+        <img src="<?= htmlspecialchars($caminhosImagens[1] ?? '') ?>" alt="Imagem do evento" class="foto2">
+        <img src="<?= htmlspecialchars($caminhosImagens[2] ?? '') ?>" alt="Imagem do evento" class="foto-3">
+        <img src="<?= htmlspecialchars($caminhosImagens[3] ?? '') ?>" alt="Imagem do evento" class="foto-4">
+    <?php else: ?>
+        <p>Imagem não encontrada.</p>
+    <?php endif; ?>
+</div>
 
-            <div class="imagensInicio">
-            <?php if ($caminhoImagem): ?>
-                <img src="<?= htmlspecialchars($caminhoImagem) ?>" alt="" class="primeira_foto">
-                <?php else: ?>
-    <p>Imagem não encontrada.</p>
-<?php endif; ?>
-                <img src="imagens/imgEvento/Rectangle 35.png" alt="">
-                <img src="imagens/imgEvento/Rectangle 32.png" alt="">
-                <img src="imagens/imgEvento/Rectangle 33.png" alt="">
-            </div>
+
+
             <div class="titulo2">
                 <h2><?=$dados["nome"] ?></h2>
             </div>
@@ -147,12 +143,11 @@ $caminhoImagem = $caminhosImagens[0] ?? null;
                 Paulo</h2>
         </section>
         <?php
-          } // Fim do foreach
+        }
         ?>
     </main>
     <?php
         include_once "footer.php"
       ?>
 </body>
-
 </html>
