@@ -39,9 +39,9 @@
 <div class="imagensInicio">
     <?php if (!empty($caminhosImagens)): ?>
         <img src="<?= htmlspecialchars($caminhosImagens[0] ?? '') ?>" alt="Imagem do evento" class="foto_1">
-        <img src="<?= htmlspecialchars($caminhosImagens[1] ?? '') ?>" alt="Imagem do evento" class="foto2">
-        <img src="<?= htmlspecialchars($caminhosImagens[2] ?? '') ?>" alt="Imagem do evento" class="foto-3">
-        <img src="<?= htmlspecialchars($caminhosImagens[3] ?? '') ?>" alt="Imagem do evento" class="foto-4">
+        <img src="<?= htmlspecialchars($caminhosImagens[1] ?? '') ?>" alt="Imagem do evento" class="foto_2">
+        <img src="<?= htmlspecialchars($caminhosImagens[2] ?? '') ?>" alt="Imagem do evento" class="foto_3">
+        <img src="<?= htmlspecialchars($caminhosImagens[3] ?? '') ?>" alt="Imagem do evento" class="foto_4">
     <?php else: ?>
         <p>Imagem não encontrada.</p>
     <?php endif; ?>

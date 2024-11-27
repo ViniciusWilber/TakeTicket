@@ -21,11 +21,14 @@
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
             // Percorre cada evento e exibe os dados
             foreach ($results as $dados) {
+                $caminhosImagens = json_decode($dados['imagens'], true); 
                 ?>
-
-
                 <div class="carta1">
-                    <img class="cartaimg" src="imagens/imgPerfil/AdobeStock_369248728.jpg" alt="">
+                <?php if (!empty($caminhosImagens)): ?>
+        <img src="<?= htmlspecialchars($caminhosImagens[0] ?? '') ?>" alt="Imagem do evento" class="cartaimg">
+    <?php else: ?>
+        <p>Imagem não encontrada.</p>
+    <?php endif; ?>
                     <div class="grupo">
                         <div class="textocarta">
                             <h1> <?= $dados["nome"] ?></h1>

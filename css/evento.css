@@ -367,25 +367,25 @@ color: #ffffff;
   z-index: -1;
 }
 .foto_1{
-  width: 32rem;
+  width: 40rem;
   height: 20em;
   border-radius: 6% 0 0 0;
   box-shadow: 5px 5px 15px rgb(0 0 0 / 16%);
 }
 .foto_2{
-  width: 32rem;
+  width: 40rem;
   height: 20em;
   border-radius: 0 6% 0 0;
   box-shadow: 5px 5px 15px rgb(0 0 0 / 16%);
 }
 .foto_3{
-  width: 32rem;
+  width: 40rem;
   height: 20em;
   border-radius: 0 0 0 6%;
   box-shadow: 5px 5px 15px rgb(0 0 0 / 16%);
 }
 .foto_4{
-  width: 32rem;
+  width: 40rem;
   height: 20em;
   border-radius: 0 0 6% 0;
   box-shadow: 5px 5px 15px rgb(0 0 0 / 16%);
