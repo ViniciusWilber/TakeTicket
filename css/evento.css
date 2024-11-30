@@ -19,6 +19,17 @@ header img {
 header .logo {
   width: 100px;
 }
+.imagem-1 img {
+  border: 2px solid red;
+}
+
+.imagem-2 img {
+  border: 2px solid blue;
+}
+
+.imagem-container {
+  margin: 10px;
+}
 
 .botoes {
   display: flex;
@@ -47,6 +58,9 @@ header .logo {
 .Login:active {
   color: #666;
   box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+}
+.primeira_foto{
+  border-radius: 20%;
 }
 
 .Login:before {
@@ -192,7 +206,7 @@ color: #ffffff;
 }
 
 .sec1 img {
-  max-width: 100%;
+  max-width: 80%;
   min-width: 20%;
 }
 
@@ -352,7 +366,30 @@ color: #ffffff;
   transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
   z-index: -1;
 }
-
+.foto_1{
+  width: 40rem;
+  height: 20em;
+  border-radius: 6% 0 0 0;
+  box-shadow: 5px 5px 15px rgb(0 0 0 / 16%);
+}
+.foto_2{
+  width: 40rem;
+  height: 20em;
+  border-radius: 0 6% 0 0;
+  box-shadow: 5px 5px 15px rgb(0 0 0 / 16%);
+}
+.foto_3{
+  width: 40rem;
+  height: 20em;
+  border-radius: 0 0 0 6%;
+  box-shadow: 5px 5px 15px rgb(0 0 0 / 16%);
+}
+.foto_4{
+  width: 40rem;
+  height: 20em;
+  border-radius: 0 0 6% 0;
+  box-shadow: 5px 5px 15px rgb(0 0 0 / 16%);
+}
 .compra:hover {
   color: #ffffff;
   border: 1px solid #6CCBD3;

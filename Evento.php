@@ -19,18 +19,36 @@
 
     $stmt = $pdo->query("SELECT * FROM evento where id= $id");
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    if ($results)
+    // Decodificar o campo 'imagens' para obter as URLs
+
     foreach ($results as $dados) {
+        $caminhosImagens = json_decode($dados['imagens'], true); 
     ?>
+
         <section class="sec1">
             <div class="titulo">
                 <h1><?=$dados["nome"] ?></h1>
             </div>
-            <div class="imagensInicio">
-                <img src="imagens/imgEvento/Rectangle 34.png" alt="">
-                <img src="imagens/imgEvento/Rectangle 35.png" alt="">
-                <img src="imagens/imgEvento/Rectangle 32.png" alt="">
-                <img src="imagens/imgEvento/Rectangle 33.png" alt="">
-            </div>
+
+            <?php
+
+
+
+?>
+<div class="imagensInicio">
+    <?php if (!empty($caminhosImagens)): ?>
+        <img src="<?= htmlspecialchars($caminhosImagens[0] ?? '') ?>" alt="Imagem do evento" class="foto_1">
+        <img src="<?= htmlspecialchars($caminhosImagens[1] ?? '') ?>" alt="Imagem do evento" class="foto_2">
+        <img src="<?= htmlspecialchars($caminhosImagens[2] ?? '') ?>" alt="Imagem do evento" class="foto_3">
+        <img src="<?= htmlspecialchars($caminhosImagens[3] ?? '') ?>" alt="Imagem do evento" class="foto_4">
+    <?php else: ?>
+        <p>Imagem não encontrada.</p>
+    <?php endif; ?>
+</div>
+
+
+
             <div class="titulo2">
                 <h2><?=$dados["nome"] ?></h2>
             </div>
@@ -62,28 +80,22 @@
                                 <img src="imagens/imgMASP/PlaceMarker.png" alt="">
                                 <h1>Localização</h1>
                             </div>
-                            <a class="paulista" href=""> Av. Paulista, 1578 - Bela Vista, São Paulo - SP, 01310-200</a>
+                            <a class="paulista" href=""> <?=$dados["logradouro"] ?>,<?=$dados["numero"] ?> - <?=$dados["bairro"] ?>, <?=$dados["cidade"] ?> - <?=$dados["estado"] ?>, <?=$dados["CEP"] ?></a>
                             <div class="sobreEvento">
                                 <img src="imagens/imgMASP/Medal.png" alt="">
                                 <h1>Sobre o evento</h1>
                             </div>
-                            <p class="masp">O MASP é considerado  Museu de arte mais importante do Hemisfério Sul,
-                                com cerca de 10.000 peças, abrangendo arte africana, das Américas,
-                                asiática, brasileira e europeia, desde a Antiguidade até o século 21, incluindo
-                                pinturas, esculturas, desenhos, fotografias e roupas, entre outros. O museu privado e
-                                sem fins lucrativos - considerado o primeiro museu moderno do país - foi fundado pelo
-                                empresário Assis Chateaubriand em 1947. Ele está situado desde 1968 na Avenida Paulista,
-                                em São Paulo.</p>
+                            <p class="masp"><?=$dados["descricao"] ?></p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="cartaValor">
                 <h1>Reservar</h1>
-                <h3><?=$dados["horario"] ?></h3>
-                <p><?=$valor["valor"] ?></p>
+                <h3><?=$dados["data_inicio"] ?></h3>
+                <p></p>
                 <div class="valorEvento">
-                    <p>R$50,00</p>
+                    <p>R$<?=$dados["valor"] ?></p>
                 </div>
                 <P>Dia unico</P>
                 <a href="pagamento.php"><button class="compra">Comprar +</button></a>
@@ -131,12 +143,11 @@
                 Paulo</h2>
         </section>
         <?php
-          } // Fim do foreach
+        }
         ?>
     </main>
     <?php
         include_once "footer.php"
       ?>
 </body>
-
 </html>

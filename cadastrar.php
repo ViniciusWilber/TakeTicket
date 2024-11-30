@@ -23,12 +23,11 @@
                 if (move_uploaded_file($_FILES["imagens"]["tmp_name"][$index], $caminhoImagem)) {
                     // Adiciona o caminho da imagem no array
                     $imagens[] = $caminhoImagem;
-                    echo "Imagem {$nomeImagem} enviada com sucesso!<br>";
+
                 } else {
-                    echo "Erro ao mover a imagem {$nomeImagem} para o diretório.<br>";
                 }
             } else {
-                echo "Erro no envio da imagem {$nomeImagem}.<br>";
+
             }
         }
     } else {
@@ -38,8 +37,10 @@
     // Recebe os dados do formulário via POST
     $nome = $_POST["nome"];
     $descricao = $_POST["descricao"];
-    $horario = $_POST["horario"];
-    $hora = $_POST["hora"];
+    $data_inicio = $_POST["data_inicio"];
+    $hora_inicio = $_POST["hora_inicio"];
+    $hora_fim = $_POST["hora_fim"];
+    $data_fim = $_POST["data_fim"];
     $promotor_id = $_POST["promotor_id"];
     $valor = $_POST["valor"];
     $cidade = $_POST["cidade"];
@@ -49,20 +50,21 @@
     $numero = $_POST["numero"];
     $estado = $_POST["estado"];
     $complemento = $_POST["complemento"];
+    $referencia = $_POST["referencia"];
+    $nome_categoria = $_POST["nome_categoria"];
+
+    
 
     // Depuração: Exibir os valores que serão inseridos
-    echo "<pre>";
-    var_dump($_POST);
-    echo "</pre>";
-    echo "Imagens: <br>";
-    var_dump($imagens);  // Exibe os caminhos das imagens
 
     // Prepara a consulta SQL
     $sql = "INSERT INTO evento (
         nome,
         descricao,
-        horario,
-        hora,
+        data_inicio,
+        hora_inicio,
+        hora_fim,
+        data_fim,
         promotor_id,
         valor,
         cidade,
@@ -72,12 +74,16 @@
         numero,
         estado,
         complemento,
-        imagens
+        imagens,
+        referencia,
+        nome_categoria
     ) VALUES (
         :nome,
         :descricao,
-        :horario,
-        :hora,
+        :data_inicio,
+        :hora_inicio,
+        :hora_fim,
+        :data_fim,
         :promotor_id,
         :valor,
         :cidade,
@@ -87,7 +93,9 @@
         :numero,
         :estado,
         :complemento,
-        :imagens
+        :imagens,
+        :referencia,
+        :nome_categoria
     )";
 
     // Executa a inserção no banco de dados
@@ -100,8 +108,10 @@
         // Atribui os valores às variáveis na consulta
         $stmt->bindParam(':nome', $nome);
         $stmt->bindParam(':descricao', $descricao);
-        $stmt->bindParam(':horario', $horario);
-        $stmt->bindParam(':hora', $hora);
+        $stmt->bindParam(':data_inicio', $data_inicio);
+        $stmt->bindParam(':hora_inicio',$hora_inicio);
+        $stmt->bindParam(':hora_fim',$hora_fim);
+        $stmt->bindParam(':data_fim',$data_fim);
         $stmt->bindParam(':promotor_id', $promotor_id);
         $stmt->bindParam(':valor', $valor);
         $stmt->bindParam(':cidade', $cidade);
@@ -111,6 +121,10 @@
         $stmt->bindParam(':numero', $numero);
         $stmt->bindParam(':estado', $estado);
         $stmt->bindParam(':complemento', $complemento);
+        $stmt->bindParam(':referencia', $referencia);
+        $stmt->bindParam(':nome_categoria', $nome_categoria);
+
+        
 
         // Como você tem várias imagens, converte para uma string JSON
         $imagensJson = json_encode($imagens);  // Converte o array de imagens para JSON
@@ -119,6 +133,8 @@
         // Executa a inserção
         if ($stmt->execute()) {
             echo "Dados inseridos com sucesso!";
+header("Location: index.php");
+exit;
         } else {
             echo "Erro ao inserir os dados. Erro SQL: " . implode(", ", $stmt->errorInfo());
         }
@@ -128,3 +144,5 @@
         echo "Erro: " . $e->getMessage();
     }
 ?>
+
+

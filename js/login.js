@@ -47,7 +47,7 @@ form_cadastro.addEventListener("submit", (e) => {
         if (mensagem.includes('digite um nome')) {
             avisos_cadastro.innerHTML = 'Digite um nome';
             avisos_cadastro.style.display = 'block'; // Exibe o aviso
-            cadastro_nome.style.border = "2px solid red";
+            cadastro_nome.style.border = "solid red";
 
             setTimeout(() => {
                 avisos_cadastro.style.display = 'none'; // Oculta o aviso após 3 segundos
@@ -59,7 +59,7 @@ form_cadastro.addEventListener("submit", (e) => {
         if (mensagem.includes('digite um email <br>')) {
             mensagem_email_cadastro.innerHTML = 'Digite um email <br>';
             mensagem_email_cadastro.style.display = 'block'; // Exibe o aviso
-            cadastro_email.style.border = "2px solid red";
+            cadastro_email.style.border = "solid red";
 
             setTimeout(() => {
                 mensagem_email_cadastro.style.display = 'none'; // Oculta o aviso após 3 segundos
@@ -70,7 +70,7 @@ form_cadastro.addEventListener("submit", (e) => {
         if (mensagem.includes('Email já cadastrado!<br>')) {
             mensagem_email_cadastro.innerHTML = 'Email já cadastrado!<br>';
             mensagem_email_cadastro.style.display = 'block'; // Exibe o aviso
-            cadastro_email.style.border = "2px solid red";
+            cadastro_email.style.border = "solid red";
 
             setTimeout(() => {
                 mensagem_email_cadastro.style.display = 'none'; // Oculta o aviso após 3 segundos
@@ -79,9 +79,9 @@ form_cadastro.addEventListener("submit", (e) => {
         }
 
         if (mensagem.includes('Digite no minimo 8 caracteres <br>Com pelo menos uma letra maiuscula <br>Um caracter especial <br> E pelo menos um número')) {
-            mensagem_senha_cadastro.innerHTML = 'Mínimo 8 caracteres, com maiúscula, número e caractere especial.';
+            mensagem_senha_cadastro.innerHTML = 'Mínimo 8 caracteres, c/ maiúscula, número e símbolo.';
             mensagem_senha_cadastro.style.display = 'block'; // Exibe o aviso
-            cadastro_senha.style.border = "2px solid red";
+            cadastro_senha.style.border = "solid red";
 
             setTimeout(() => {
                 mensagem_senha_cadastro.style.display = 'none'; // Oculta o aviso após 3 segundos
@@ -131,7 +131,7 @@ form_login.addEventListener("submit", (e) => {
         if (mensagem.includes('Digite um email <br>')) {
             aviso_email.innerHTML = 'Digite um email <br>';
             aviso_email.style.display = 'block'; // Exibe o aviso
-            email_login.style.border = "2px solid red";
+            email_login.style.border = "solid red";
 
             setTimeout(() => {
                 aviso_email.style.display = 'none'; // Oculta o aviso após 3 segundos
@@ -168,10 +168,10 @@ form_login.addEventListener("submit", (e) => {
         if (mensagem.includes('Login incorreto.')) {
             aviso_senha.innerHTML = 'Login incorreto.';
             aviso_senha.style.display = 'block'; // Exibe o aviso
-            senha_login.style.border = "2px solid red";
+            senha_login.style.border = "solid red";
             aviso_email.innerHTML = 'Login incorreto.';
             aviso_email.style.display = 'block'; // Exibe o aviso
-            email_login.style.border = "2px solid red";
+            email_login.style.border = "solid red";
 
             setTimeout(() => {
                 aviso_senha.style.display = 'none'; // Oculta o aviso após 3 segundos
