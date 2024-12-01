@@ -13,11 +13,14 @@
             <form>
                 <h1>Formas de Pagamento</h1>
                 <div class="check">
-                    <input type="checkbox" id="check" />
-                    <label for="check"><img src="imagens/imgPagamento/Magnetic Card.png" alt=""></label>
-                    <input type="checkbox" id="check" />
-                    <label for="check"><img src="imagens/imgPagamento/Pix.png" alt=""></label> 
-                </div>
+    <input type="radio" id="cartao" name="pagamento" />
+    <label for="cartao"><img src="imagens/imgPagamento/Magnetic Card.png" alt="Cartão"></label>
+
+    <input type="radio" id="pix" name="pagamento" />
+    <label for="pix"><img src="imagens/imgPagamento/Pix.png" alt="Pix"></label>
+</div>
+
+<div id="cartao-info">
                 <h2>Dados Do Cartão</h2>
                 <input type="text" class="cadastro" placeholder="Nome do Cartão">
                 <input type="text" class="cadastro" placeholder="Numenro do cartão">
@@ -25,10 +28,13 @@
                     <input type="text" class="confirm" placeholder="MM/YYYY">
                     <input type="text" class="confirm" placeholder="CVV">
                 </div>
-                <div>
-                    <input type="checkbox" id="check" />
-                    <label for="check"><a href="termosCondiçoes/modelo-termos-e-condicoes-para-site-ou-app.pdf" target="_blank">concordo com termos de condiçoes</a></label>
                 </div>
+                <div id="pix-info" style="display: none;">
+        <h2>Dados para Pix</h2>
+        <input type="text" class="cadastro" placeholder="Chave Pix">
+        <p>Escaneie o QR Code para concluir o pagamento.</p>
+        <img src="imagens/imgPagamento/qrcode-pix.png" alt="QR Code Pix">
+    </div>
             </form>
             <div class="pagamento">
                 <a href="Evento.php"><button class="botao">Comfirmar</button></a>
@@ -49,6 +55,37 @@
                 <br><br>
                 Atenciosamente, Take Ticket</p>
         </div>
-    </main>
+    </main><script>
+    // Função para alternar a exibição dos campos de pagamento
+    function togglePayment(metodo) {
+        const cartaoInfo = document.querySelector('h2 + input.cadastro, input.cadastro:nth-of-type(2), .numeros');
+        const pixInfo = document.getElementById('pix-info');
+        const cartaoinfo = document.getElementById('cartao-info');
+
+        if (metodo === 'cartao') {
+            // Exibir campos de cartão e ocultar campos de Pix
+            cartaoinfo.style.display = 'block';
+            pixInfo.style.display = 'none';
+        } else if (metodo === 'pix') {
+            // Exibir campos de Pix e ocultar campos de cartão
+            cartaoinfo.style.display = 'none';
+            pixInfo.style.display = 'block';
+        }
+    }
+
+    // Adicionando evento aos checkboxes
+    document.getElementById('cartao').addEventListener('click', () => togglePayment('cartao'));
+    document.getElementById('pix').addEventListener('click', () => togglePayment('pix'));
+
+    function toggleCheckbox(checkboxId) {
+        document.getElementById('cartao').checked = checkboxId === 'cartao';
+        document.getElementById('pix').checked = checkboxId === 'pix';
+    }
+
+    // Adicionar eventos aos checkboxes
+    document.getElementById('cartao').addEventListener('change', () => toggleCheckbox('cartao'));
+    document.getElementById('pix').addEventListener('change', () => toggleCheckbox('pix'));
+</script>
+
 </body>
 </html>
