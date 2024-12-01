@@ -1,4 +1,6 @@
+
 <?php
+session_start();
 include_once "conexao.php";
 include_once "header.php"; 
 ?>
@@ -6,7 +8,7 @@ include_once "header.php";
 <?php
 $usuario = 'root';
 $senha = '';
-$database = 'taketicket01';
+$database = 'taketicket';
 $host = 'localhost';
 
 $mysqli = new mysqli($host, $usuario, $senha, $database);
@@ -19,7 +21,7 @@ $mensagem_erro = ''; // Variável para armazenar mensagens de erro
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Verifica se todos os campos foram enviados
-    if (isset($_POST['nome'], $_POST['email'], $_POST['idade'], $_POST['numero'], $_POST['info'])) {
+    if (isset($_POST['nome'], $_POST['email'], $_POST['idade'], $_POST['numero'], $_POST['info'],)) {
         $nome = $_POST['nome'];
         $email = $_POST['email'];
         $idade = $_POST['idade'];
@@ -37,13 +39,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mensagem_erro = "E-mail já cadastrado!";
         } else {
             // Realiza a inserção no banco de dados
-            $sql = "INSERT INTO promotores (nome, email, idade, numero, info) VALUES (?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO promotores (nome, email, idade, numero, info, id_usuario) VALUES (?, ?, ?, ?, ?, ?)";
             $stmt = $mysqli->prepare($sql);
-            $stmt->bind_param('ssiss', $nome, $email, $idade, $numero, $info);
+            $stmt->bind_param('ssiss', $nome, $email, $idade, $numero, $info, $usuario);
 
             if ($stmt->execute()) {
                 // Redireciona após cadastro bem-sucedido
-                header("Location: index.php");
+                header("Location: perfil_usuario.php");
                 exit; // Interrompe a execução do código após o redirecionamento
             } else {
                 $mensagem_erro = "Erro ao cadastrar: " . $stmt->error;
@@ -67,7 +69,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="container">
         <h1>Cadastro de Promotor</h1>
         <form action="#" method="POST">
-            <div class="form-group">
+
+            <input type="text" name="id_usuario" value="<?php $_SESSION['id_usuario'] = $usuario['id_usuario']?>">
+            
                 <label for="nome">Nome Completo</label>
                 <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" value="<?php echo isset($_POST['nome']) ? $_POST['nome'] : ''; ?>" required>
             </div>
