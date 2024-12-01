@@ -11,7 +11,7 @@
 </head>
 <body>
     <?php
-        include_once "header_logout.php";
+        include_once "header.php";
       ?>
     <main class="Perfil">
         <div class="esquerda">
@@ -161,7 +161,8 @@
                         <p>Como promotor de eventos em São Paulo, moldo espaços para celebrar, deixando meu legado na cultura local.
                         </p>
                         <label><?=$dados["nome"] ?></label>
-
+                        <button><a href="editar.php?id=<?=$dados['id']?>">editar</a></button>
+                        <button><a href="excluir_evento.php?id=<?=$dados['id']?>">apagar</a></button>
                     </div>
                     <?php
             } // Fim do foreach
