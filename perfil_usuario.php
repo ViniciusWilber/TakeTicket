@@ -19,7 +19,7 @@
                 <img src="imagens/imgPerfil_usuario/usuario.jpg" alt="" id="imgPerfil">
                 <div class="sobreMin">
                 <div class="nome">
-                    <h1>Elma Maria</h1>
+                    <a href="editar_perfil.php"><button>editar perfil</button></a><h1>Elma Maria</h1>
                     <h5>Usuaria do app a 2 anos.</h5>
                 </div>
                
