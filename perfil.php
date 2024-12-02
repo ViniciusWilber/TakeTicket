@@ -144,8 +144,6 @@ $eventos = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <p>Como promotor de eventos em São Paulo, moldo espaços para celebrar, deixando meu legado na cultura local.
       </p>
       <label><?= $dados["nome"] ?></label>
-      <button><a href="editar.php?id=<?= $dados['id'] ?>">editar</a></button>
-      <button><a href="excluir_evento.php?id=<?= $dados['id'] ?>">apagar</a></button>
     </div>
     
     <?php

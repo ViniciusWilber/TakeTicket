@@ -20,7 +20,7 @@
     <label for="pix"><img src="imagens/imgPagamento/Pix.png" alt="Pix"></label>
 </div>
 
-<div id="cartao-info">
+<div id="cartao-info" class="cartao-info">
                 <h2>Dados Do Cartão</h2>
                 <input type="text" class="cadastro" placeholder="Nome do Cartão">
                 <input type="text" class="cadastro" placeholder="Numenro do cartão">

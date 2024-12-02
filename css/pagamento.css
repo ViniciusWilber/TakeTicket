@@ -4,8 +4,6 @@
     box-sizing: border-box;
 }
 body{
-  background: linear-gradient(-105grad, #131b85ee, #01eeff93);
-    filter: drop-shadow(2px 2px 4px rgba(4, 0, 255, 0.37));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,6 +15,11 @@ main{
     align-items: center;
     justify-content: center;
     padding:10%;
+}
+.cartao-info{
+  display: flex;
+flex-direction: column;
+gap: 1rem;
 }
 .esquerda{
     display: flex;
@@ -174,11 +177,7 @@ main{
 .direita img{
   width: 40%;
 }
-    .cartao-info{
-      display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    }
+
 @media (max-width: 1100px){
   .direita img{
     display: none;
