@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once "conexao.php";
 include_once "header.php"; 
 ?>
@@ -6,7 +7,7 @@ include_once "header.php";
 <?php
 $usuario = 'root';
 $senha = '';
-$database = 'taketicket01';
+$database = 'taketicket';
 $host = 'localhost';
 
 $mysqli = new mysqli($host, $usuario, $senha, $database);
@@ -25,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $idade = $_POST['idade'];
         $numero = $_POST['numero'];
         $info = $_POST['info'];
+        $id_usuario = $_SESSION['id_usuario'];
 
         // Verifica se o email já está cadastrado
         $sql_check = "SELECT * FROM promotores WHERE email = ?";
@@ -37,9 +39,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mensagem_erro = "E-mail já cadastrado!";
         } else {
             // Realiza a inserção no banco de dados
-            $sql = "INSERT INTO promotores (nome, email, idade, numero, info) VALUES (?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO promotores (nome, email, idade, numero, info, id_usuario) VALUES (?, ?, ?, ?, ?, ?)";
             $stmt = $mysqli->prepare($sql);
-            $stmt->bind_param('ssiss', $nome, $email, $idade, $numero, $info);
+            $stmt->bind_param('ssisss', $nome, $email, $idade, $numero, $info, $id_usuario);
 
             if ($stmt->execute()) {
                 // Redireciona após cadastro bem-sucedido

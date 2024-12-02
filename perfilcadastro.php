@@ -10,13 +10,9 @@
     <title>Perfil/ViniciusWilber</title>
 </head>
 <body>
-    <header>
-        <a href="index.php"><img src="LogoSomente.png" alt="Logo"></a>
-        <ul class="botoes">
-            <li><a href="cadastroevento.php" class="SejaMenbro">Promover Evento</a></li>
-            <li><a href="login.php" class="Login">Login</a></li>
-        </ul>
-    </header>
+<?php
+  include_once "header_deslogar.php";
+  ?>
     <main class="Perfil">
         <div class="esquerda">
             <img src="imagen/AdobeStock_638744252_Preview.jpeg" alt="Imagem de Perfil" id="imgPerfil">

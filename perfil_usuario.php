@@ -10,9 +10,9 @@
     <title>Perfil/ViniciusWilber</title>
 </head>
 <body>
-    <?php
-        include_once "header.php";
-      ?>
+<?php
+  include_once "header_deslogar.php";
+  ?>
     <main class="Perfil">
         <div class="esquerda">
             <div class="elementos">

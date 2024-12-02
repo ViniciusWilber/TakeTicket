@@ -30,7 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 // Verifica se a senha informada corresponde ao hash no banco
                 if (password_verify($senha, $usuario['senha'])) {
-                    $_SESSION['senha'] = $senha;
                     $_SESSION['email'] = $email;
                     $_SESSION['id_usuario'] = $usuario['id_usuario'];
 

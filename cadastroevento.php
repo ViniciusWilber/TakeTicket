@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -25,10 +28,9 @@
                                 maxlength="100" class="input_nome">
                             <input type="text" id="nome" name="nome" placeholder="Frase de efeito" required
                                 maxlength="100" class="input_nome">
-                                <p>Descrição do evento</p>
-                                <textarea id="descricao-evento" rows="5"
-                                    placeholder="Adicione aqui a descrição do seu evento..."
-                                    name="descricao"></textarea>
+                            <p>Descrição do evento</p>
+                            <textarea id="descricao-evento" rows="5"
+                                placeholder="Adicione aqui a descrição do seu evento..." name="descricao"></textarea>
 
                             <div>
                                 <div class="parte_ingresso">
@@ -39,18 +41,40 @@
 
                                 </div>
                                 </select>
+                                <?php
+
+                                $pdo = new PDO('mysql:host=localhost;dbname=TakeTicket', 'root', '');
+                                $stmt = $pdo->query("SELECT * FROM evento_categoria");
+                                $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                // Percorre cada evento e exibe os dados
+                                
+                                ?><label for="categoria">Escolha uma categoria:</label>
+                                <select id="categoria" name="nome_categoria" placeholder="quantidade de ingressos">
+                                    <?php
+                                    foreach ($results as $dados) {
+                                        // Aqui estamos assumindo que "nome_categoria" é a coluna que você deseja exibir
+                                        echo '<option value="' . $dados['nome_categoria'] . '">' . $dados['nome_categoria'] . '</option>';
+                                    }
+
+                                    // Usando um laço for no lugar do foreach
+                                    
+                                    ?>
+                                </select>
+
+
+                                </select>
 
                             </div>
                     </div>
                 </fieldset>
                 <fieldset class="container">
-                <legend>Ingressos</legend>
-                <input type="valor" name="valor" class="input-box" placeholder="nome do ingresso, ex: ingresso vip, 1ª lote, 2ª lote">
-                <div class="parte_ingresso">
-                                <input type="valor" name="valor" class="input-box" placeholder="valor">
-                                <input type="valor" name="valor" class="input-box"
-                                    placeholder="quantidade de ingressos">
-                            </div>
+                    <legend>Ingressos</legend>
+                    <input type="valor" name="valor" class="input-box"
+                        placeholder="nome do ingresso, ex: ingresso vip, 1ª lote, 2ª lote">
+                    <div class="parte_ingresso">
+                        <input type="valor" name="valor" class="input-box" placeholder="valor">
+                        <input type="valor" name="valor" class="input-box" placeholder="quantidade de ingressos">
+                    </div>
                 </fieldset>
                 <!-- Seção de Descrição do Evento -->
 
@@ -86,7 +110,29 @@
                 <fieldset class="container1">
                     <legend>Informações básicas</legend>
                     <section class="section1">
-                        <input type="text" name="promotor_id">
+
+
+                        <?php
+                        $usuario = $_SESSION['id_usuario']; // ID do usuário da sessão
+                        
+                        $pdo = new PDO('mysql:host=localhost;dbname=TakeTicket', 'root', '');
+
+                        // Prepara a consulta para buscar o promotor com o mesmo id_usuario
+                        $stmt = $pdo->prepare("SELECT * FROM promotores WHERE id_usuario = :id_usuario");
+                        $stmt->bindParam(':id_usuario', $usuario, PDO::PARAM_INT);
+                        $stmt->execute();
+
+                        // Pega o resultado
+                        $promotor = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                        ?>
+
+                        <!-- Verifica se o promotor foi encontrado antes de gerar o input -->
+                        <?php if ($promotor): ?>
+                            <input type="text" name="id_promotor" value="<?= $promotor['id'] ?>">
+                        <?php else: ?>
+                            <p>Promotor não encontrado.</p>
+                        <?php endif; ?>
 
                         </select>
                         <div class="info">
