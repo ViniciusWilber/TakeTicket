@@ -12,16 +12,33 @@
 <body>
 <?php
   include_once "header_deslogar.php";
+try {
+    // Conexão com o banco de dados
+    $pdo = new PDO('mysql:host=localhost;dbname=taketicket', 'root', ''); // Ajuste as credenciais
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // Selecionar o texto da tabela
+    $stmt = $pdo->query('SELECT * FROM eventos LIMIT 1'); // Apenas um registro
+    $evento = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$evento) {
+        die('Nenhum evento encontrado. Insira dados na tabela.');
+    }
+} catch (PDOException $e) {
+    die('Erro ao conectar ao banco de dados: ' . $e->getMessage());
+}
+?>
   ?>
     <main class="Perfil">
         <div class="esquerda">
             <div class="elementos">
                 <img src="imagens/imgPerfil_usuario/usuario.jpg" alt="" id="imgPerfil">
                 <div class="sobreMin">
-                <div class="nome">
-                    <a href="editar_perfil.php"><button>editar perfil</button></a><h1>Elma Maria</h1>
-                    <h5>Usuaria do app a 2 anos.</h5>
-                </div>
+                <a href="perfil_editar.php?id=<?php echo $evento['id']; ?>">
+    <button>Editar Perfil</button>
+    </a>
+                <h1><?php echo htmlspecialchars($evento['texto']); ?></h1>
+   
                
             </div>
             <div class="Sobre">
