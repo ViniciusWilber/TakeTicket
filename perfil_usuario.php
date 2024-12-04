@@ -14,43 +14,60 @@
   include_once "header_deslogar.php";
 try {
     // Conexão com o banco de dados
+    // Verificando se o campo 'sobre' está vazio e atribuindo um valor padrão caso necessário
+$sobre = !empty($editar['sobre']) ? $editar['sobre'] : 'Texto padrão sobre o perfil';
+
     $pdo = new PDO('mysql:host=localhost;dbname=taketicket', 'root', ''); // Ajuste as credenciais
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Selecionar o texto da tabela
-    $stmt = $pdo->query('SELECT * FROM eventos LIMIT 1'); // Apenas um registro
-    $evento = $stmt->fetch(PDO::FETCH_ASSOC);
+    $stmt = $pdo->query('SELECT * FROM editar_nome LIMIT 1'); // Apenas um registro
+    $editar = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if (!$evento) {
+    if (!$editar) {
         die('Nenhum evento encontrado. Insira dados na tabela.');
     }
 } catch (PDOException $e) {
     die('Erro ao conectar ao banco de dados: ' . $e->getMessage());
 }
 ?>
-  ?>
+<?php 
+try {
+    // Conexão com o banco de dados
+    // Verificando se o campo 'sobre' está vazio e atribuindo um valor padrão caso necessário
+$sobre = !empty($editar_sobre['sobre']) ? $editar_sobre['sobre'] : 'Texto padrão sobre o perfil';
+
+    $pdo = new PDO('mysql:host=localhost;dbname=taketicket', 'root', ''); // Ajuste as credenciais
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // Selecionar o texto da tabela
+    $stmt = $pdo->query('SELECT * FROM editar_sobre LIMIT 1'); // Apenas um registro
+    $editar2 = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$editar2) {
+        die('Nenhum evento encontrado. Insira dados na tabela.');
+    }
+} catch (PDOException $e) {
+    die('Erro ao conectar ao banco de dados: ' . $e->getMessage());
+}
+?>
     <main class="Perfil">
         <div class="esquerda">
             <div class="elementos">
-                <img src="imagens/imgPerfil_usuario/usuario.jpg" alt="" id="imgPerfil">
+            <img src="<?php echo htmlspecialchars($editar03['caminho_imagem']); ?>" alt="Imagem do Perfil">
                 <div class="sobreMin">
-                <a href="perfil_editar.php?id=<?php echo $evento['id']; ?>">
+                <a href="perfil_editar.php?id=<?php echo $editar['id']; ?>">
     <button>Editar Perfil</button>
     </a>
-                <h1><?php echo htmlspecialchars($evento['texto']); ?></h1>
-   
-               
+                <h1><?php echo htmlspecialchars($editar['texto']); ?></h1>
             </div>
             <div class="Sobre">
-                    <h1>Sobre</h1>
-                </div>
-                <div class="resumo">
-                    <p>  Elma Maria é uma educadora apaixonada pela arte de ensinar e pelo impacto que a educação pode gerar na vida das pessoas. 
-                        Com mais de 20 anos de experiência na área, ela se dedicou a transformar salas de aula em espaços acolhedores e inspiradores 
-                        para seus alunos. Nascida em uma pequena cidade do interior, Elma sempre acreditou que a educação seria o caminho para mudar 
-                        sua realidade e a de sua comunidade. </p>
-                </div>
-            </div>
+    <h1>Sobre</h1>
+</div>
+<div class="resumo">
+    <p><?php echo htmlspecialchars($editar2['sobre']); ?></p>
+</div>
+
             <div class="form-footer">
             <p>Já é promotor?<a href="cadastropromotor.php">Promotor</a></p>
         </div>
