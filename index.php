@@ -42,7 +42,7 @@
             <div class="search">
                 <div class="search-box">
                   <div class="search-field">
-                    <input placeholder="Search..." class="input" type="text">
+                    <!--input do pesquisar--><input placeholder="Search..." class="input" type="text"><!--input do pesquisar-->
                     <div class="search-box-icon">
                       <button class="btn-icon-content">
                         <i class="search-icon">
