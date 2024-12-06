@@ -19,15 +19,64 @@ session_start();
   include_once "header.php";
   include_once "conexao.php";
   ?>
-  <main class="Perfil">
-    <div class="esquerda">
-      <div class="elementos">
-        <img src="imagen/AdobeStock_638744252_Preview.jpeg" alt="" id="imgPerfil">
-        <div class="sobreMin">
-          <div class="nome">
-            <h1>José Alves</h1>
-            <h5>Promotor a mais de 5 anos</h5>
-          </div>
+  <?php
+  try {
+    // Conexão com o banco de dados
+    // Verificando se o campo 'sobre' está vazio e atribuindo um valor padrão caso necessário
+$sobre = !empty($editar['sobre']) ? $editar['sobre'] : 'Texto padrão sobre o perfil';
+
+    $pdo = new PDO('mysql:host=localhost;dbname=taketicket', 'root', ''); // Ajuste as credenciais
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // Selecionar o texto da tabela
+    $stmt = $pdo->query('SELECT * FROM editar_nome LIMIT 1'); // Apenas um registro
+    $editar = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$editar) {
+        die('Nenhum evento encontrado. Insira dados na tabela.');
+    }
+} catch (PDOException $e) {
+    die('Erro ao conectar ao banco de dados: ' . $e->getMessage());
+}
+?>
+<?php 
+try {
+    // Conexão com o banco de dados
+    // Verificando se o campo 'sobre' está vazio e atribuindo um valor padrão caso necessário
+$sobre = !empty($editar_sobre['sobre']) ? $editar_sobre['sobre'] : 'Texto padrão sobre o perfil';
+
+    $pdo = new PDO('mysql:host=localhost;dbname=taketicket', 'root', ''); // Ajuste as credenciais
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // Selecionar o texto da tabela
+    $stmt = $pdo->query('SELECT * FROM editar_sobre LIMIT 1'); // Apenas um registro
+    $editar2 = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$editar2) {
+        die('Nenhum evento encontrado. Insira dados na tabela.');
+    }
+} catch (PDOException $e) {
+    die('Erro ao conectar ao banco de dados: ' . $e->getMessage());
+}
+?>
+ <main class="Perfil">
+      <div class="esquerda">
+            <div class="elementos">
+            <img src="<?php echo htmlspecialchars($editar03['caminho_imagem']); ?>" alt="Imagem do Perfil">
+                <div class="sobreMin">
+                <a href="perfil_editar.php?id=<?php echo $editar['id']; ?>">
+    <button>Editar Perfil</button>
+    </a>
+                <h1><?php echo htmlspecialchars($editar['texto']); ?></h1>
+            </div>
+            <hr>
+            <div class="Sobre">
+            <h1>Sobre</h1>
+          <div class="resumo">
+    <p><?php echo htmlspecialchars($editar2['sobre']); ?></p>
+</div>
+</div>
+
           <div class="fama">
             <div class="rating">
               <input value="5" name="rating" id="star5" type="radio">
@@ -44,7 +93,6 @@ session_start();
           </div>
           <div class="interacao">
             <a href="cadastroevento.php"><button class="mensagem"></i>Criar Evento</button></a>
-            <a href="cadastropromotor.php">promotor</a>
             <button class="mensagem"><i class="fa-solid fa-message"></i>Mensagem</button>
             <button class="seguir"><i class="fa-solid fa-plus"></i>Seguir</button>
             <button class="reportar">Reportar Usuario</button>
@@ -101,14 +149,9 @@ session_start();
               <div class="tooltip">Youtube</div>
             </li>
           </ul>
-          <div class="resumo">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim corporis tempore minus illum laboriosam,
-              beatae nihil voluptas aperiam ducimus exercitationem repellat, distinctio, deleniti quia voluptates nisi
-              libero Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, voluptas eveniet impedit
-              voluptatem, nam </p>
           </div>
-        </div>
       </div>
+      
     </div>
     <div class="direita">
 
