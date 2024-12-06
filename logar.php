@@ -26,8 +26,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             } else {
                 // Pega o hash de senha do usuário
                 $usuario = $selectEmail->fetch(PDO::FETCH_ASSOC);
-                
-
                 // Verifica se a senha informada corresponde ao hash no banco
                 if (password_verify($senha, $usuario['senha'])) {
                     $_SESSION['email'] = $email;
