@@ -39,9 +39,7 @@ $sobre = !empty($editar['sobre']) ? $editar['sobre'] : 'Texto padrão sobre o pe
             <div class="elementos">
             <img src="<?php echo htmlspecialchars($editar03['caminho_imagem']); ?>" alt="Imagem do Perfil">
                 <div class="sobreMin">
-                <a href="perfil_editar.php?id=<?php echo $editar['id']; ?>">
-    <button>Editar Perfil</button>
-    </a>
+                    <a href="perfil_editar.php">egwgwg</a>
                 <h1><?php echo $editar['nome']; ?></h1>
             </div>
             <div class="Sobre">

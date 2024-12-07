@@ -10,6 +10,30 @@ session_start();
     <script src="https://kit.fontawesome.com/224a2d2542.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/pagamento.css">
     <title>Pagamento</title>
+    <style>
+        #form-checkout {
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+        }
+
+        .container {
+            border-radius: 8px;
+            width: 15rem;
+            height: 3rem;
+            padding: 0.5em;
+            background-color: #e1e2e3;
+            box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
+            transition: 300ms ease-in-out;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .junto {
+            display: flex;
+            gap: 2%;
+        }
+    </style>
 </head>
 
 <body>
@@ -25,20 +49,23 @@ session_start();
         ?>
         <div class="esquerda">
             <form id="form-checkout">
-                <div id="form-checkout__cardNumber" class="container"></div>
-                <div id="form-checkout__expirationDate" class="container"></div>
-                <div id="form-checkout__securityCode" class="container"></div>
-                <input type="text" id="form-checkout__cardholderName" />
-                <select id="form-checkout__issuer"></select>
-                <select id="form-checkout__installments"></select>
-                <select id="form-checkout__identificationType"></select>
-                <input type="text" id="form-checkout__identificationNumber" />
-                <input type="email" id="form-checkout__cardholderEmail" />
 
-                <button type="submit" id="form-checkout__submit">Pagar</button>
-                <progress value="0" class="progress-bar">Carregando...</progress>
+                <div id="form-checkout__cardNumber" class="container"></div>
+                <div class="junto">
+                    <div id="form-checkout__expirationDate" class="container"></div>
+                    <div id="form-checkout__securityCode" class="container"></div>
+                </div>
+                <input type="text" id="form-checkout__cardholderName" class="cadastro" />
+                <select id="form-checkout__issuer" class="cadastro"></select>
+                <select id="form-checkout__installments" class="cadastro"></select>
+                <select id="form-checkout__identificationType" class="cadastro"></select>
+                <input type="text" id="form-checkout__identificationNumber" class="cadastro" />
+                <input type="email" id="form-checkout__cardholderEmail" class="cadastro" />
+
+                <button type="submit" id="form-checkout__submit" class="botao">Pagar</button>
+                <progress value="0" class="progress-bar" class="botao">Carregando...</progress>
             </form>
-            <form a>
+            <!-- <form a>
                 <p>R$</p>
                 <h1>Formas de Pagamento</h1>
                 <div class="check">
@@ -64,11 +91,11 @@ session_start();
                     <p>Escaneie o QR Code para concluir o pagamento.</p>
                     <img src="imagens/imgPagamento/qrcode-pix.png" alt="QR Code Pix">
                 </div>
-            </form>
-            <div class="pagamento">
+            </form> -->
+            <!-- <div class="pagamento">
                 <a href="Evento.php"><button class="botao">Comfirmar</button></a>
                 <a href="Evento.php"><button class="botao">Cancelar</button></a>
-            </div>
+            </div> -->
         </div>
         <div class="direita">
             <img src="imagens/imgIndex/logo3.png" alt="">

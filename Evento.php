@@ -10,7 +10,8 @@
 
 <body>
     <?php
-    include_once "header.php"
+    include_once "header.php";
+    include_once "conexao.php"
         ?>
     <main>
         <?php
@@ -66,6 +67,24 @@
                                 <div class="promotor">
                                     <a href="perfil.php"><img src="imagens/imgEvento/Ellipse 7.png" alt=""></a>
                                     <div class="infos">
+                                        <?php
+                                        $conexao = $pdo->prepare("
+                                        SELECT evento.*, promotores.nome AS nome_promotor
+                                        FROM evento
+                                        JOIN promotores ON evento.promotor_id = promotores.id
+                                        WHERE evento.id = :id
+                                        ");
+                                        $conexao->bindParam(':id', $id, PDO::PARAM_INT);
+                                        $conexao->execute();
+                                        $results = $conexao->fetchAll(PDO::FETCH_ASSOC);
+
+                                        if ($results) {
+                                            foreach ($results as $row) {
+                                                echo "Nome do promotor: " . $row['nome_promotor'];
+                                            }
+                                        }
+
+                                        ?>
                                         <h1 class="name">José Alves</h1>
                                         <h3 class="sobrePromote">Promotor a mais de 5 anos</h3>
                                     </div>
@@ -93,7 +112,6 @@
                         <h3><?= $dados["data_inicio"] ?></h3>
                         <p></p>
                         <div class="valorEvento">
-                            <form action=""></form>
                             <p>R$<?= $dados["valor"] ?></p>
                         </div>
                         <P>Dia unico</P>
