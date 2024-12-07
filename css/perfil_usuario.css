@@ -170,6 +170,22 @@ margin-left: -5%;
 padding: 5%;
 }
 
+
+.editar {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+.editar a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.editar a:hover {
+  text-decoration: underline;
+}
 .form-footer {
     margin-top: 15px;
     text-align: center;

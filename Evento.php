@@ -49,6 +49,7 @@
                     <div class="titulo2">
                         <h2><?= $dados["nome"] ?></h2>
                     </div>
+
                 </section>
                 <section class="sec2">
                     <div class="info">
@@ -64,9 +65,11 @@
                                 </div>
                             </div>
                             <div class="gerais">
+
                                 <div class="promotor">
                                     <a href="perfil.php"><img src="imagens/imgEvento/Ellipse 7.png" alt=""></a>
                                     <div class="infos">
+<<<<<<< Updated upstream
                                         <?php
                                         $conexao = $pdo->prepare("
                                         SELECT evento.*, promotores.nome AS nome_promotor
@@ -86,6 +89,9 @@
 
                                         ?>
                                         <h1 class="name">José Alves</h1>
+=======
+                                        <h1 class="name"><?= $dados["promotor_id"] ?></h1>
+>>>>>>> Stashed changes
                                         <h3 class="sobrePromote">Promotor a mais de 5 anos</h3>
                                     </div>
                                 </div>
