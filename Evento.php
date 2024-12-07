@@ -69,29 +69,30 @@
                                 <div class="promotor">
                                     <a href="perfil.php"><img src="imagens/imgEvento/Ellipse 7.png" alt=""></a>
                                     <div class="infos">
-<<<<<<< Updated upstream
                                         <?php
                                         $conexao = $pdo->prepare("
-                                        SELECT evento.*, promotores.nome AS nome_promotor
+                                        SELECT promotores.nome AS nome_promotor
                                         FROM evento
-                                        JOIN promotores ON evento.promotor_id = promotores.id
+                                        INNER JOIN promotores ON evento.id_promotor = promotores.id
                                         WHERE evento.id = :id
                                         ");
                                         $conexao->bindParam(':id', $id, PDO::PARAM_INT);
                                         $conexao->execute();
-                                        $results = $conexao->fetchAll(PDO::FETCH_ASSOC);
 
-                                        if ($results) {
-                                            foreach ($results as $row) {
-                                                echo "Nome do promotor: " . $row['nome_promotor'];
-                                            }
-                                        }
+                                        // Depurando o valor de $id (para verificar)
+                                        //var_dump($id);
 
+                                        // Obtendo o resultado
+                                        $results = $conexao->fetch(PDO::FETCH_ASSOC);
+
+                                        // Verificando se retornou algo
+                                            
                                         ?>
-                                        <h1 class="name">José Alves</h1>
-=======
-                                        <h1 class="name"><?= $dados["promotor_id"] ?></h1>
->>>>>>> Stashed changes
+
+                                        <h1 class="name"> <?php echo $results['nome_promotor'];?></h1>
+                            
+                                        
+
                                         <h3 class="sobrePromote">Promotor a mais de 5 anos</h3>
                                     </div>
                                 </div>

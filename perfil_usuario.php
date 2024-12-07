@@ -1,5 +1,3 @@
-<?php session_start();
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -18,6 +16,8 @@
 try {
     // Conexão com o banco de dados
     // Verificando se o campo 'sobre' está vazio e atribuindo um valor padrão caso necessário
+$sobre = !empty($editar['sobre']) ? $editar['sobre'] : 'Texto padrão sobre o perfil';
+
     $pdo = new PDO('mysql:host=localhost;dbname=taketicket', 'root', ''); // Ajuste as credenciais
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -35,20 +35,22 @@ try {
 }
 ?>
     <main class="Perfil">
-        
         <div class="esquerda">
-            <a class="editar" href="perfil_editar.php?id=<?= $_SESSION['id_usuario'] ?>">
-                editar
-            </a>
             <div class="elementos">
             <img src="<?php echo htmlspecialchars($editar03['caminho_imagem']); ?>" alt="Imagem do Perfil">
                 <div class="sobreMin">
-<<<<<<< Updated upstream
-                    <a href="perfil_editar.php">egwgwg</a>
-=======
->>>>>>> Stashed changes
+                <a href="perfil_editar.php?id=<?php echo $editar['id']; ?>">
+    <button>Editar Perfil</button>
+    </a>
                 <h1><?php echo $editar['nome']; ?></h1>
             </div>
+            <div class="Sobre">
+    <h1>Sobre</h1>
+</div>
+<div class="resumo">
+    <p><?php echo htmlspecialchars($editar2['sobre']); ?></p>
+</div>
+
             <div class="form-footer">
             <p>Já é promotor?<a href="cadastropromotor.php">Promotor</a></p>
         </div>
