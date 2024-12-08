@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
         rel="stylesheet">
-        <link rel="stylesheet" href="css/carde.css">
+    <link rel="stylesheet" href="css/carde.css">
 </head>
 
 <body>
@@ -98,7 +98,8 @@
                                         <h2><?= $dados["valor"] ?></h2>
                                     </div>
                                     <div class="iconcard">
-                                        <a href=""><i id="coracao" class="fa-solid fa-heart"></i></a>
+                                        <button class="favoritar" id="favoritar<?= $dados["id"] ?>"><i id="coracao"
+                                                class="fa fa-solid fa-heart" style="font-size: 25px;"></i></button>
                                         <a href=""><i id="link" class="fa fa-share-alt"></i></a>
                                     </div>
                                 </div>
@@ -365,6 +366,23 @@
             </div>
         </div>
     </main>
+    <script>
+        const favoritar = document.querySelectorAll(".favoritar")
+        favoritar.forEach((coracao) => {
+            //console.log(coracao)
+            coracao.addEventListener('click', () => {
+                //console.log(coracao.value)
+                fetch('favoritar.php?id=' + coracao.value)
+                    .then((resposta) => {
+                        return resposta.text()
+
+                    })
+                    .then((retorno) => {
+                        console.log(retorno)
+                    })
+            })
+        })
+    </script>
     <?php
     include_once "footer.php"
         ?>

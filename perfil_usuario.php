@@ -96,11 +96,35 @@
                     }
                     ?>
                 </div>
+                
                 <div class="eventosPassados" id="eventosPassados">
                     <!-- Eventos passados aqui -->
+
+                    <div class="eventos" id="eventos">
+                    <?php
+                    include_once "conexao.php";
+                    $stmt = $conexao->prepare("SELECT * FROM evento e, favoritos f WHERE e.id = f.evento_id && f.usuario_id = :id && f.status = 0");
+                    $stmt->bindParam("id", $_SESSION['id_usuario']);
+                    $stmt->execute();
+                    while ($dados = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                    ?>
+                        <div class="emandamento">
+                            <img src="imagens/imgPerfil/AdobeStock_293894349.jpg" alt="">
+                            <p>Como promotor de eventos em São Paulo, moldo espaços para celebrar, deixando meu legado na cultura local.
+                            </p>
+                            <label><?= $dados["nome"] ?></label>
+                            <a href="editar.php?id=<?= $dados['id'] ?>"></a><button class="Login">editar</button></a>
+                            <a href="excluir_evento.php?id=<?= $dados['id'] ?>"></a><button class="Login">apagar</button></a>
+                        </div>
+                    <?php
+                    }
+                    ?>
+                   
+                </div>
                 </div>
             </div>
         </div>
+        
     </main>
     <?php include_once "footer.php" ?>
 
