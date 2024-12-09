@@ -19,46 +19,7 @@ session_start();
   include_once "header.php";
   include_once "conexao.php";
   ?>
-  <?php
-  try {
-    // Conexão com o banco de dados
-    // Verificando se o campo 'sobre' está vazio e atribuindo um valor padrão caso necessário
-    $sobre = !empty($editar['sobre']) ? $editar['sobre'] : 'Texto padrão sobre o perfil';
 
-    $pdo = new PDO('mysql:host=localhost;dbname=taketicket', 'root', ''); // Ajuste as credenciais
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    // Selecionar o texto da tabela
-    $stmt = $pdo->query('SELECT * FROM editar_nome LIMIT 1'); // Apenas um registro
-    $editar = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if (!$editar) {
-      die('Nenhum evento encontrado. Insira dados na tabela.');
-    }
-  } catch (PDOException $e) {
-    die('Erro ao conectar ao banco de dados: ' . $e->getMessage());
-  }
-  ?>
-  <?php
-  try {
-    // Conexão com o banco de dados
-    // Verificando se o campo 'sobre' está vazio e atribuindo um valor padrão caso necessário
-    $sobre = !empty($editar_sobre['sobre']) ? $editar_sobre['sobre'] : 'Texto padrão sobre o perfil';
-
-    $pdo = new PDO('mysql:host=localhost;dbname=taketicket', 'root', ''); // Ajuste as credenciais
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    // Selecionar o texto da tabela
-    $stmt = $pdo->query('SELECT * FROM editar_sobre LIMIT 1'); // Apenas um registro
-    $editar2 = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if (!$editar2) {
-      die('Nenhum evento encontrado. Insira dados na tabela.');
-    }
-  } catch (PDOException $e) {
-    die('Erro ao conectar ao banco de dados: ' . $e->getMessage());
-  }
-  ?>
   <main class="Perfil">
     <div class="esquerda">
       <div class="elementos">
@@ -67,13 +28,13 @@ session_start();
           <a href="perfil_editar.php?id=<?php echo $editar['id']; ?>">
             <button>Editar Perfil</button>
           </a>
-          <h1><?php echo htmlspecialchars($editar['texto']); ?></h1>
+          <h1></h1>
         </div>
         <hr>
         <div class="Sobre">
           <h1>Sobre</h1>
           <div class="resumo">
-            <p><?php echo htmlspecialchars($editar2['sobre']); ?></p>
+            <p></p>
           </div>
         </div>
 
