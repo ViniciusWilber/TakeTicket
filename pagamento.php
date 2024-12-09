@@ -1,71 +1,93 @@
-<?php
-session_start();
-?>
-<!DOCTYPE html>
-<html lang="pt-br">
+<p?php session_start(); ?>
+    <!DOCTYPE html>
+    <html lang="pt-br">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/224a2d2542.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/pagamento.css">
-    <title>Pagamento</title>
-    <style>
-        #form-checkout {
-            display: flex;
-            flex-direction: column;
-            max-width: 600px;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/224a2d2542.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/pagamento.css">
+        <title>Pagamento</title>
+        <style>
+            #form-checkout {
+                display: flex;
+                flex-direction: column;
+                max-width: 600px;
+            }
 
-        .container {
-            border-radius: 8px;
-            width: 15rem;
-            height: 3rem;
-            padding: 0.5em;
-            background-color: #e1e2e3;
-            box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
-            transition: 300ms ease-in-out;
-            text-align: center;
-            font-size: 20px;
-        }
+            .container {
+                border-radius: 8px;
+                width: 15rem;
+                height: 3rem;
+                padding: 0.5em;
+                background-color: #e1e2e3;
+                box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
+                transition: 300ms ease-in-out;
+                text-align: center;
+                font-size: 20px;
+            }
 
-        .junto {
-            display: flex;
-            gap: 2%;
-        }
-    </style>
-</head>
+            .junto {
+                display: flex;
+                gap: 2%;
+            }
 
-<body>
-    <main>
-        <?php
-        include_once "conexao.php";
+            .direita img {
+                width: 36rem;
+                border-radius: 2rem 2rem 0 0;
+            }
 
-        $id = $_GET["id"];
-        $stmt = $conexao->prepare("SELECT * FROM evento where id=?");
-        $stmt->execute([$id]);
-        $results = $stmt->fetch(PDO::FETCH_ASSOC);
-        $_SESSION['valor'] = $results["valor"];
-        ?>
-        <div class="esquerda">
-            <form id="form-checkout">
+            .direita {
+                flex-grow: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                background-color: rgba(16, 154, 189, 0.418);
+                height: 800px;
+                gap: 1rem;
+                font-size: 20px;
+                padding: 2%;
+                border-radius: 0px 25px 25px 0px;
+            }
+            .nome_evento{
+                padding-left: 16rem;
+            }
+        </style>
+    </head>
 
-                <div id="form-checkout__cardNumber" class="container"></div>
-                <div class="junto">
-                    <div id="form-checkout__expirationDate" class="container"></div>
-                    <div id="form-checkout__securityCode" class="container"></div>
-                </div>
-                <input type="text" id="form-checkout__cardholderName" class="cadastro" />
-                <select id="form-checkout__issuer" class="cadastro"></select>
-                <select id="form-checkout__installments" class="cadastro"></select>
-                <select id="form-checkout__identificationType" class="cadastro"></select>
-                <input type="text" id="form-checkout__identificationNumber" class="cadastro" />
-                <input type="email" id="form-checkout__cardholderEmail" class="cadastro" />
+    <body>
+        
+        <main>
+            <?php
+            include_once "conexao.php";
 
-                <button type="submit" id="form-checkout__submit" class="botao">Pagar</button>
-                <progress value="0" class="progress-bar" class="botao">Carregando...</progress>
-            </form>
-            <!-- <form a>
+            $id = $_GET["id"];
+            $stmt = $conexao->prepare("SELECT * FROM evento where id=?");
+            $stmt->execute([$id]);
+            $results = $stmt->fetch(PDO::FETCH_ASSOC);
+            $_SESSION['valor'] = $results["valor"];
+            ?>
+
+            <div class="esquerda">
+                <form id="form-checkout">
+
+                    <div id="form-checkout__cardNumber" class="container"></div>
+                    <div class="junto">
+                        <div id="form-checkout__expirationDate" class="container"></div>
+                        <div id="form-checkout__securityCode" class="container"></div>
+                    </div>
+                    <input type="text" id="form-checkout__cardholderName" class="cadastro" />
+                    <select id="form-checkout__issuer" class="cadastro"></select>
+                    <select id="form-checkout__installments" class="cadastro"></select>
+                    <select id="form-checkout__identificationType" class="cadastro"></select>
+                    <input type="text" id="form-checkout__identificationNumber" class="cadastro" />
+                    <input type="email" id="form-checkout__cardholderEmail" class="cadastro" />
+
+                    <button type="submit" id="form-checkout__submit" class="botao">Pagar</button>
+                    <progress value="0" class="progress-bar" class="botao">Carregando...</progress>
+                </form>
+                <!-- <form a>
                 <p>R$</p>
                 <h1>Formas de Pagamento</h1>
                 <div class="check">
@@ -92,174 +114,192 @@ session_start();
                     <img src="imagens/imgPagamento/qrcode-pix.png" alt="QR Code Pix">
                 </div>
             </form> -->
-            <!-- <div class="pagamento">
+                <!-- <div class="pagamento">
                 <a href="Evento.php"><button class="botao">Comfirmar</button></a>
                 <a href="Evento.php"><button class="botao">Cancelar</button></a>
             </div> -->
-        </div>
-        <div class="direita">
-            <img src="imagens/imgIndex/logo3.png" alt="">
-            <p>Prezado(a) Cliente,
+            </div>
+            <div class="direita">
 
-                Gostaríamos de expressar nossa sincera gratidão por ter escolhido nossa empresa para efetuar suas
-                ecolhas. Valorizamos imensamente a confiança que você deposita em nós e estamos comprometidos em
-                oferecer a melhor experiência possível.
-                <br><br>
-                É importante ressaltar que a segurança e a privacidade de suas informações são prioridades absolutas
-                para nós. Nosso sistema utiliza as mais avançadas medidas de proteção para garantir que seus dados
-                permaneçam seguros e confidenciais em todos os momentos. Você pode ter certeza de que suas informações
-                estão em boas mãos e serão tratadas com o mais alto nível de cuidado.
-                <br><br>
-                Se surgir qualquer dúvida ou preocupação durante o processo de pagamento, por favor, não hesite em
-                entrar em contato conosco. Estamos aqui para ajudar e garantir que sua experiência seja tranquila e
-                satisfatória.
-                <br><br>
-                Mais uma vez, obrigado por escolher nossa empresa. Estamos ansiosos para continuar atendendo suas
-                necessidades no futuro.
-                <br><br>
-                Atenciosamente, Take Ticket
-            </p>
-        </div>
-    </main>
-    <script>
-        // Função para alternar a exibição dos campos de pagamento
-        function togglePayment(metodo) {
-            const cartaoInfo = document.querySelector('h2 + input.cadastro, input.cadastro:nth-of-type(2), .numeros');
-            const pixInfo = document.getElementById('pix-info');
-            const cartaoinfo = document.getElementById('cartao-info');
+                <div class="dados">
+                    <h1 clas="nome_evento"><?= $results["nome"] ?></h1>
+                    <p class="paulista"> <?= $results["logradouro"] ?>,<?= $results["numero"] ?> -
+                        <?= $results["bairro"] ?>, <?= $results["cidade"] ?> - <?= $results["estado"] ?>,
+                        <?= $results["CEP"] ?>
+                    </p>
+                    <?php
 
-            if (metodo === 'cartao') {
-                // Exibir campos de cartão e ocultar campos de Pix
-                cartaoinfo.style.display = 'block';
-                pixInfo.style.display = 'none';
-            } else if (metodo === 'pix') {
-                // Exibir campos de Pix e ocultar campos de cartão
-                cartaoinfo.style.display = 'none';
-                pixInfo.style.display = 'block';
-            }
-        }
+                    $caminhosImagens = json_decode($results['imagens'], true);
+                    ?>
+                    <?php if (!empty($caminhosImagens)): ?>
+                        <?php
+                        $conexao = $conexao->prepare("
+                                        SELECT promotores.nome AS nome_promotor
+                                        FROM evento
+                                        INNER JOIN promotores ON evento.id_promotor = promotores.id
+                                        WHERE evento.id = :id
+                                        ");
+                        $conexao->bindParam(':id', $id, PDO::PARAM_INT);
+                        $conexao->execute();
 
-        // Adicionando evento aos checkboxes
-        document.getElementById('cartao').addEventListener('click', () => togglePayment('cartao'));
-        document.getElementById('pix').addEventListener('click', () => togglePayment('pix'));
+                        // Depurando o valor de $id (para verificar)
+                        //var_dump($id);
+                    
+                        // Obtendo o resultado
+                        $results = $conexao->fetch(PDO::FETCH_ASSOC);
 
-        function toggleCheckbox(checkboxId) {
-            document.getElementById('cartao').checked = checkboxId === 'cartao';
-            document.getElementById('pix').checked = checkboxId === 'pix';
-        }
-
-        // Adicionar eventos aos checkboxes
-        document.getElementById('cartao').addEventListener('change', () => toggleCheckbox('cartao'));
-        document.getElementById('pix').addEventListener('change', () => toggleCheckbox('pix'));
-    </script>
-    <script src="https://sdk.mercadopago.com/js/v2"></script>
-    <script>
-        const mp = new MercadoPago("TEST-0aa04b1c-87eb-47cc-b6be-82f180539c72");
+                        // Verificando se retornou algo
+                    
+                        ?>
+                        <img src="<?= htmlspecialchars($caminhosImagens[0] ?? '') ?>" alt="Imagem do evento" class="foto_1">
+                        <h1 class="name"> Promovido por:<?php echo $results['nome_promotor']; ?></h1>
 
 
-        const cardForm = mp.cardForm({
-            amount: "10.5",
-            iframe: true,
-            form: {
-                id: "form-checkout",
-                cardNumber: {
-                    id: "form-checkout__cardNumber",
-                    placeholder: "Número do cartão",
-                },
-                expirationDate: {
-                    id: "form-checkout__expirationDate",
-                    placeholder: "MM/YY",
-                },
-                securityCode: {
-                    id: "form-checkout__securityCode",
-                    placeholder: "Código de segurança",
-                },
-                cardholderName: {
-                    id: "form-checkout__cardholderName",
-                    placeholder: "Titular do cartão",
-                },
-                issuer: {
-                    id: "form-checkout__issuer",
-                    placeholder: "Banco emissor",
-                },
-                installments: {
-                    id: "form-checkout__installments",
-                    placeholder: "Parcelas",
-                },
-                identificationType: {
-                    id: "form-checkout__identificationType",
-                    placeholder: "Tipo de documento",
-                },
-                identificationNumber: {
-                    id: "form-checkout__identificationNumber",
-                    placeholder: "Número do documento",
-                },
-                cardholderEmail: {
-                    id: "form-checkout__cardholderEmail",
-                    placeholder: "E-mail",
-                },
-            },
-            callbacks: {
-                onFormMounted: error => {
-                    if (error) return console.warn("Form Mounted handling error: ", error);
-                    console.log("Form mounted");
-                },
-                onSubmit: event => {
-                    event.preventDefault();
+                    <?php else: ?>
+                        <p>Imagem não encontrada.</p>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </main>
+        <script>
+            // Função para alternar a exibição dos campos de pagamento
+            function togglePayment(metodo) {
+                const cartaoInfo = document.querySelector('h2 + input.cadastro, input.cadastro:nth-of-type(2), .numeros');
+                const pixInfo = document.getElementById('pix-info');
+                const cartaoinfo = document.getElementById('cartao-info');
 
-                    const {
-                        paymentMethodId: payment_method_id,
-                        issuerId: issuer_id,
-                        cardholderEmail: email,
-                        amount,
-                        token,
-                        installments,
-                        identificationNumber,
-                        identificationType,
-                    } = cardForm.getCardFormData();
-
-                    fetch("/pag_processa.php", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                        body: JSON.stringify({
-                            token,
-                            issuer_id,
-                            payment_method_id,
-                            transaction_amount: <?= floatval($results["valor"]) ?>,//valor a ser pago
-                            installments: Number(installments),//parcelas
-                            description: "Descrição do produto",//descrição
-                            payer: {
-                                email,
-                                identification: {
-                                    type: identificationType,
-                                    number: identificationNumber,
-                                },
-                            },
-                        }),
-                    }).then((resposta) => {
-                        return resposta.json()
-                    })
-                        .then((dados) => {
-                            window.location.href = 'aprovado.php?id=${dados.id}';
-                        })
-                },
-                onFetching: (resource) => {
-                    console.log("Fetching resource: ", resource);
-
-                    // Animate progress bar
-                    const progressBar = document.querySelector(".progress-bar");
-                    progressBar.removeAttribute("value");
-
-                    return () => {
-                        progressBar.setAttribute("value", "0");
-                    };
+                if (metodo === 'cartao') {
+                    // Exibir campos de cartão e ocultar campos de Pix
+                    cartaoinfo.style.display = 'block';
+                    pixInfo.style.display = 'none';
+                } else if (metodo === 'pix') {
+                    // Exibir campos de Pix e ocultar campos de cartão
+                    cartaoinfo.style.display = 'none';
+                    pixInfo.style.display = 'block';
                 }
-            },
-        });
+            }
 
-    </script>
-</body>
+            // Adicionando evento aos checkboxes
+            document.getElementById('cartao').addEventListener('click', () => togglePayment('cartao'));
+            document.getElementById('pix').addEventListener('click', () => togglePayment('pix'));
 
-</html>
+            function toggleCheckbox(checkboxId) {
+                document.getElementById('cartao').checked = checkboxId === 'cartao';
+                document.getElementById('pix').checked = checkboxId === 'pix';
+            }
+
+            // Adicionar eventos aos checkboxes
+            document.getElementById('cartao').addEventListener('change', () => toggleCheckbox('cartao'));
+            document.getElementById('pix').addEventListener('change', () => toggleCheckbox('pix'));
+        </script>
+        <script src="https://sdk.mercadopago.com/js/v2"></script>
+        <script>
+            const mp = new MercadoPago("TEST-0aa04b1c-87eb-47cc-b6be-82f180539c72");
+
+
+            const cardForm = mp.cardForm({
+                amount: "10.5",
+                iframe: true,
+                form: {
+                    id: "form-checkout",
+                    cardNumber: {
+                        id: "form-checkout__cardNumber",
+                        placeholder: "Número do cartão",
+                    },
+                    expirationDate: {
+                        id: "form-checkout__expirationDate",
+                        placeholder: "MM/YY",
+                    },
+                    securityCode: {
+                        id: "form-checkout__securityCode",
+                        placeholder: "Código de segurança",
+                    },
+                    cardholderName: {
+                        id: "form-checkout__cardholderName",
+                        placeholder: "Titular do cartão",
+                    },
+                    issuer: {
+                        id: "form-checkout__issuer",
+                        placeholder: "Banco emissor",
+                    },
+                    installments: {
+                        id: "form-checkout__installments",
+                        placeholder: "Parcelas",
+                    },
+                    identificationType: {
+                        id: "form-checkout__identificationType",
+                        placeholder: "Tipo de documento",
+                    },
+                    identificationNumber: {
+                        id: "form-checkout__identificationNumber",
+                        placeholder: "Número do documento",
+                    },
+                    cardholderEmail: {
+                        id: "form-checkout__cardholderEmail",
+                        placeholder: "E-mail",
+                    },
+                },
+                callbacks: {
+                    onFormMounted: error => {
+                        if (error) return console.warn("Form Mounted handling error: ", error);
+                        console.log("Form mounted");
+                    },
+                    onSubmit: event => {
+                        event.preventDefault();
+
+                        const {
+                            paymentMethodId: payment_method_id,
+                            issuerId: issuer_id,
+                            cardholderEmail: email,
+                            amount,
+                            token,
+                            installments,
+                            identificationNumber,
+                            identificationType,
+                        } = cardForm.getCardFormData();
+
+                        fetch("/pag_processa.php", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify({
+                                token,
+                                issuer_id,
+                                payment_method_id,
+                                transaction_amount: <?= floatval($results["valor"]) ?>,//valor a ser pago
+                                installments: Number(installments),//parcelas
+                                description: "Descrição do produto",//descrição
+                                payer: {
+                                    email,
+                                    identification: {
+                                        type: identificationType,
+                                        number: identificationNumber,
+                                    },
+                                },
+                            }),
+                        }).then((resposta) => {
+                            return resposta.json()
+                        })
+                            .then((dados) => {
+                                window.location.href = 'aprovado.php?id=${dados.id}';
+                            })
+                    },
+                    onFetching: (resource) => {
+                        console.log("Fetching resource: ", resource);
+
+                        // Animate progress bar
+                        const progressBar = document.querySelector(".progress-bar");
+                        progressBar.removeAttribute("value");
+
+                        return () => {
+                            progressBar.setAttribute("value", "0");
+                        };
+                    }
+                },
+            });
+
+        </script>
+    </body>
+
+    </html>

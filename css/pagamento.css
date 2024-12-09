@@ -53,7 +53,10 @@ main {
   align-items: center;
   gap: 30px;
 }
-
+.foto_1{
+  width: 37rem;
+  border-radius: 1rem;
+}
 .cadastro {
   border-radius: 8px;
   width: 25rem;
@@ -173,22 +176,22 @@ main {
 }
 
 .direita {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: rgba(16, 154, 189, 0.418);
-  height: 800px;
-  gap: 1rem;
-  font-size: 20px;
-  padding: 4%;
-  border-radius: 0px 25px 25px 0px;
+    /* flex-grow: 1; */
+    display: flex
+;
+    flex-direction: column;
+    background-color: rgb(205 231 238 / 42%);
+    height: 800px;
+    /* gap: 1rem; */
+    font-size: 20px;
+    padding: 4%;
+    /* border-radius: 0px 25px 25px 0px; */
+    justify-content: center;
+    align-items: center;
 }
 
-.direita img {
-  width: 40%;
-}
+
+
 
 @media (max-width: 1100px) {
   .direita img {

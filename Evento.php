@@ -126,12 +126,6 @@
                     </div>
                 </section>
                 <section>
-                    <div class="carrossel">
-                        <img src="imagens/imgEvento/Rectangle 59.png" alt="">
-                        <img src="imagens/imgEvento/Rectangle 60.png" alt="">
-                        <img src="imagens/imgEvento/Rectangle 61.png" alt="">
-                        <img src="imagens/imgEvento/Rectangle 62.png" alt="">
-                    </div>
                 </section>
                 <div class="contato">
                     <div class="enderecos">
