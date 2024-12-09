@@ -1,48 +1,118 @@
 <?php
-    // Inclui a conexão com o banco
+include "conexao.php";
 
-        $pdo = new PDO('mysql:host=localhost;dbname=TakeTicket', 'root', '');
-   
-    // Recebe os dados do formulário via POST
-    $id = $_POST["id"];
-    $nome = $_POST["nome"];
-    $descricao = $_POST["descricao"];
-    $horario = $_POST["horario"];
-    $hora = $_POST["hora"];
-    $endereco = $_POST["endereco"];
-    $valor = $_POST["valor"];
-    $cidade = $_POST["cidade"];
-    $logradouro = $_POST["logradouro"];
-    $CEP = $_POST["CEP"];
-    $bairro = $_POST["bairro"];
-    $numero = $_POST["numero"];
-    $estado = $_POST["estado"];
-    $complemento = $_POST["complemento"];
+// Verifica se as imagens foram enviadas corretamente
+if (isset($_FILES["imagens"]) && count($_FILES["imagens"]["name"]) > 0) {
+    $diretorioDestino = "./img/";
 
-    // Prepara a consulta SQL com placeholders
-    $sql = "UPDATE evento SET 
-        nome = :nome,
-        descricao = :descricao,
-        horario = :horario,
-        hora = :hora,
-        valor = :valor,
-        cidade = :cidade,
-        logradouro = :logradouro,
-        CEP = :CEP,
-        bairro = :bairro,
-        numero = :numero,
-        estado = :estado,
-        complemento = :complemento
-    WHERE id = :id";
+    // Verifica se a pasta existe, caso contrário, cria
+    if (!is_dir($diretorioDestino)) {
+        mkdir($diretorioDestino, 0777, true);  // Permissões de escrita
+    }
 
-    // Prepara a consulta
+    $imagens = [];  // Array para armazenar os caminhos das imagens
+
+    // Loop para processar as imagens
+    foreach ($_FILES["imagens"]["name"] as $index => $nomeImagem) {
+        // Caminho completo onde a imagem será salva
+        $caminhoImagem = $diretorioDestino . $nomeImagem;
+
+        // Verifica se o arquivo foi enviado corretamente
+        if ($_FILES["imagens"]["error"][$index] == 0) {
+            // Tenta mover o arquivo para o diretório de destino
+            if (move_uploaded_file($_FILES["imagens"]["tmp_name"][$index], $caminhoImagem)) {
+                // Adiciona o caminho da imagem no array
+                $imagens[] = $caminhoImagem;
+
+            } else {
+            }
+        } else {
+
+        }
+    }
+} else {
+    $imagens = [];  // Se nenhuma imagem foi enviada ou houve erro
+}
+
+// Recebe os dados do formulário via POST
+$nome = $_POST["nome"];
+$descricao = $_POST["descricao"];
+$data_inicio = $_POST["data_inicio"];
+$hora_inicio = $_POST["hora_inicio"];
+$hora_fim = $_POST["hora_fim"];
+$data_fim = $_POST["data_fim"];
+$promotor_id = $_POST["id_promotor"];  // Recebe o ID do promotor do formulário
+$valor = $_POST["valor"];
+$cidade = $_POST["cidade"];
+$logradouro = $_POST["logradouro"];
+$CEP = $_POST["CEP"];
+$bairro = $_POST["bairro"];
+$numero = $_POST["numero"];
+$estado = $_POST["estado"];
+$complemento = $_POST["complemento"];
+$referencia = $_POST["referencia"];
+$nome_categoria = $_POST["nome_categoria"];
+
+
+
+// Depuração: Exibir os valores que serão inseridos
+
+// Prepara a consulta SQL
+$sql = "UPDATE evento SET (
+        nome,
+        descricao,
+        data_inicio,
+        hora_inicio,
+        hora_fim,
+        data_fim,
+        id_promotor,
+        valor,
+        cidade,
+        logradouro,
+        CEP,
+        bairro,
+        numero,
+        estado,
+        complemento,
+        imagens,
+        referencia,
+        nome_categoria
+    ) VALUES (
+        :nome,
+        :descricao,
+        :data_inicio,
+        :hora_inicio,
+        :hora_fim,
+        :data_fim,
+        :id_promotor,
+        :valor,
+        :cidade,
+        :logradouro,
+        :CEP,
+        :bairro,
+        :numero,
+        :estado,
+        :complemento,
+        :imagens,
+        :referencia,
+        :nome_categoria
+    )";
+
+// Executa a inserção no banco de dados
+try {
+    $pdo = new PDO('mysql:host=localhost;dbname=TakeTicket', 'root', '');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
     $stmt = $pdo->prepare($sql);
 
     // Atribui os valores às variáveis na consulta
     $stmt->bindParam(':nome', $nome);
     $stmt->bindParam(':descricao', $descricao);
-    $stmt->bindParam(':horario', $horario);
-    $stmt->bindParam(':hora', $hora);
+    $stmt->bindParam(':data_inicio', $data_inicio);
+    $stmt->bindParam(':hora_inicio', $hora_inicio);
+    $stmt->bindParam(':hora_fim', $hora_fim);
+    $stmt->bindParam(':data_fim', $data_fim);
+    $stmt->bindParam(':id_promotor', $promotor_id);
     $stmt->bindParam(':valor', $valor);
     $stmt->bindParam(':cidade', $cidade);
     $stmt->bindParam(':logradouro', $logradouro);
@@ -51,12 +121,26 @@
     $stmt->bindParam(':numero', $numero);
     $stmt->bindParam(':estado', $estado);
     $stmt->bindParam(':complemento', $complemento);
-    $stmt->bindParam(':id', $id);
+    $stmt->bindParam(':referencia', $referencia);
+    $stmt->bindParam(':nome_categoria', $nome_categoria);
+
+
+
+    // Como você tem várias imagens, converte para uma string JSON
+    $imagensJson = json_encode($imagens);  // Converte o array de imagens para JSON
+    $stmt->bindParam(':imagens', $imagensJson);
 
     // Executa a inserção
     if ($stmt->execute()) {
-        echo "Dados alterados com sucesso!";
+        echo "Dados inseridos com sucesso!";
+        header("Location: index.php");
+        exit;
     } else {
-        echo "Erro ao atualizar os dados.";
+        echo "Erro ao inserir os dados. Erro SQL: " . implode(", ", $stmt->errorInfo());
     }
-?>
+
+} catch (PDOException $e) {
+    // Captura erro de PDO e exibe
+    echo "Erro: " . $e->getMessage();
+}
+?>"UPDATE evento SET

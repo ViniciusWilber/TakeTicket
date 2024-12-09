@@ -143,4 +143,4 @@ try {
     // Captura erro de PDO e exibe
     echo "Erro: " . $e->getMessage();
 }
-?>
+?>"UPDATE evento SET
