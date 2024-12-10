@@ -17,6 +17,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/carde.css">
+    <style>
+        .img1{
+            width: 54rem;
+        }
+        .img2{
+        width: 16rem;
+            }.img3{
+        width: 37.5rem;}
+        </style>
 </head>
 
 <body>
@@ -33,8 +42,10 @@
             </div>
             <div class="imagens">
                 <img src="imagens/imgIndex/Rectangle 36.png" alt="" class="img1">
+                <div>
                 <img src="imagens/imgIndex/Rectangle 38.png" alt="" class="img2">
                 <img src="imagens/imgIndex/Rectangle 37.png" alt="" class="img3">
+                </div>
             </div>
         </section>
         <div class="campoDeBusca">

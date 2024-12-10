@@ -1,4 +1,4 @@
-'use strict';
+//'use strict';
 
 const loginContainer = document.getElementById('login-container');
 
@@ -10,7 +10,6 @@ document.getElementById('open-register-mobile').addEventListener('click', moveOv
 document.getElementById('open-login-mobile').addEventListener('click', moveOverlay);
 
 
-'use strict';
 
 const form_cadastro = document.getElementById('form_cadastro');
 
@@ -90,7 +89,7 @@ form_cadastro.addEventListener("submit", (e) => {
         }
 
         if (mensagem.includes('cadastrado com sucesso')) {
-           location.href = 'index.php';
+           //location.href = 'index.php';
         }
         
 
@@ -162,7 +161,7 @@ form_login.addEventListener("submit", (e) => {
         }
 
         if (mensagem.includes('Login correto.')) {
-            location.href = 'index.php';
+            //location.href = 'index.php';
         }
 
         if (mensagem.includes('Login incorreto.')) {

@@ -33,7 +33,7 @@
             }
 
             .direita img {
-                width: 36rem;
+                width: 27rem;
                 border-radius: 2rem 2rem 0 0;
             }
 
@@ -50,14 +50,15 @@
                 padding: 2%;
                 border-radius: 0px 25px 25px 0px;
             }
-            .nome_evento{
+
+            .nome_evento {
                 padding-left: 16rem;
             }
         </style>
     </head>
 
     <body>
-        
+
         <main>
             <?php
             include_once "conexao.php";
@@ -66,7 +67,7 @@
             $stmt = $conexao->prepare("SELECT * FROM evento where id=?");
             $stmt->execute([$id]);
             $results = $stmt->fetch(PDO::FETCH_ASSOC);
-            $_SESSION['valor'] = $results["valor"];
+            $_SESSION['valor'] = $results["valor"] ?? 0;
             ?>
 
             <div class="esquerda">
@@ -133,26 +134,25 @@
                     ?>
                     <?php if (!empty($caminhosImagens)): ?>
                         <?php
-                        $conexao = $conexao->prepare("
-                                        SELECT promotores.nome AS nome_promotor
-                                        FROM evento
+                        $select = $conexao->prepare("
+                                        SELECT promotores.* FROM evento
                                         INNER JOIN promotores ON evento.id_promotor = promotores.id
                                         WHERE evento.id = :id
                                         ");
-                        $conexao->bindParam(':id', $id, PDO::PARAM_INT);
-                        $conexao->execute();
+                        $select->bindParam(':id', $id, PDO::PARAM_INT);
+                        $select->execute();
 
                         // Depurando o valor de $id (para verificar)
                         //var_dump($id);
                     
                         // Obtendo o resultado
-                        $results = $conexao->fetch(PDO::FETCH_ASSOC);
+                        $resultado = $select->fetch(PDO::FETCH_ASSOC);
 
                         // Verificando se retornou algo
                     
                         ?>
                         <img src="<?= htmlspecialchars($caminhosImagens[0] ?? '') ?>" alt="Imagem do evento" class="foto_1">
-                        <h1 class="name"> Promovido por:<?php echo $results['nome_promotor']; ?></h1>
+                        <h1 class="name"> Promovido por:<?php echo $resultado['nome']; ?></h1>
 
 
                     <?php else: ?>
@@ -258,7 +258,7 @@
                             identificationType,
                         } = cardForm.getCardFormData();
 
-                        fetch("/pag_processa.php", {
+                        fetch("pagamentos/pag_processa.php", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json",
@@ -267,7 +267,7 @@
                                 token,
                                 issuer_id,
                                 payment_method_id,
-                                transaction_amount: <?= floatval($results["valor"]) ?>,//valor a ser pago
+                                transaction_amount: <?= floatval($_SESSION['valor']) ?>,//valor a ser pago
                                 installments: Number(installments),//parcelas
                                 description: "Descrição do produto",//descrição
                                 payer: {
@@ -282,7 +282,7 @@
                             return resposta.json()
                         })
                             .then((dados) => {
-                                window.location.href = 'aprovado.php?id=${dados.id}';
+                                window.location.href = `pagamentos/aprovado.php?id=${dados.id}`;
                             })
                     },
                     onFetching: (resource) => {

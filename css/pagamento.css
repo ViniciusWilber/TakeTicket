@@ -70,8 +70,6 @@ main {
 
 }
 
-
-
 .numeros {
   display: flex;
   justify-content: center;
@@ -189,10 +187,6 @@ main {
     justify-content: center;
     align-items: center;
 }
-
-
-
-
 @media (max-width: 1100px) {
   .direita img {
     display: none;
