@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 use PHPMailer\PHPMailer\PHPMailer;
@@ -124,26 +125,26 @@ use PHPMailer\PHPMailer\Exception;
 
 
                         <?php
-                        $usuario = $_SESSION['id_usuario']; // ID do usuário da sessão
+                        // $usuario = $_SESSION['id_usuario']; // ID do usuário da sessão
                         
-                        $pdo = new PDO('mysql:host=localhost;dbname=TakeTicket', 'root', '');
+                        // $pdo = new PDO('mysql:host=localhost;dbname=TakeTicket', 'root', '');
 
-                        // Prepara a consulta para buscar o promotor com o mesmo id_usuario
-                        $stmt = $pdo->prepare("SELECT * FROM promotores WHERE id_usuario = :id_usuario");
-                        $stmt->bindParam(':id_usuario', $usuario, PDO::PARAM_INT);
-                        $stmt->execute();
+                        // // Prepara a consulta para buscar o promotor com o mesmo id_usuario
+                        // $stmt = $pdo->prepare("SELECT * FROM promotores WHERE id_usuario = :id_usuario");
+                        // $stmt->bindParam(':id_usuario', $usuario, PDO::PARAM_INT);
+                        // $stmt->execute();
 
-                        // Pega o resultado
-                        $promotor = $stmt->fetch(PDO::FETCH_ASSOC);
+                        // // Pega o resultado
+                        // $promotor = $stmt->fetch(PDO::FETCH_ASSOC);
 
-                        ?>
+                        // ?>
 
                         <!-- Verifica se o promotor foi encontrado antes de gerar o input -->
-                        <?php if ($promotor): ?>
-                            <input type="text" name="id_promotor" value="<?= $promotor['id'] ?>" style="display: none;">
-                        <?php else: ?>
-                            <p>Promotor não encontrado.</p>
-                        <?php endif; ?>
+                       
+                         <input type="text" name="id_promotor" >
+                         <!-- 
+                             <p>Promotor não encontrado.</p>
+                         -->
 
                         </select>
                         <div class="info">

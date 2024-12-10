@@ -161,7 +161,7 @@ form_login.addEventListener("submit", (e) => {
         }
 
         if (mensagem.includes('Login correto.')) {
-            //location.href = 'index.php';
+            location.href = 'index.php';
         }
 
         if (mensagem.includes('Login incorreto.')) {

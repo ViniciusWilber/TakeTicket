@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -17,7 +20,7 @@
 
     .container {
       border-radius: 8px;
-      width: 27rem;
+      width: 43rem;
       height: 2.8rem;
       padding: 0.5em;
       background-color: #e1e2e3;
@@ -29,7 +32,7 @@
 
     .cadastro {
       border-radius: 8px;
-      width: 27rem;
+      width: 43rem;
       height: 2.8rem;
       padding: 0.5em;
       background-color: #e1e2e3;
@@ -41,7 +44,7 @@
 
     .progress-bar {
       border-radius: 8px;
-      width: 27rem;
+      width: 43rem;
       height: 2.8rem;
       padding: 0.5em;
       background-color: #e1e2e3;
@@ -53,7 +56,7 @@
 
     .botao {
       border-radius: 8px;
-      width: 27rem;
+      width: 43rem;
       height: 2.8rem;
       padding: 0.5em;
       background-color: #e1e2e3;
@@ -126,11 +129,39 @@
   ?>
   <?php
 
-  $id = $_GET["id"];
+  $id = $_GET["id"] ?? "";
+  $nome = $_GET["nome"] ?? "";
+  if (!$id) {
+
+    header("location:evento.php");
+  }
   $stmt = $conexao->prepare("SELECT * FROM evento where id=?");
   $stmt->execute([$id]);
   $results = $stmt->fetch(PDO::FETCH_ASSOC);
   $_SESSION['valor'] = $results["valor"] ?? 0;
+
+
+  $id_usuario = $_SESSION['id_usuario'];
+
+  $sql = "INSERT INTO ingresso (
+        evento_id,
+        id_usuario
+        ) VALUES (
+        :evento_id,
+      :id_usuario
+      )";
+
+
+  $stmt = $conexao->prepare($sql);
+
+  // Atribui os valores às variáveis na consulta
+  $stmt->bindParam(':evento_id', $id);
+  $stmt->bindParam(':id_usuario', $id_usuario);
+
+
+  if ($stmt->execute()) {
+    echo "Dados inseridos com sucesso!";
+  }
   ?>
 
   <div class="corpo">
@@ -141,10 +172,8 @@
         <form id="form-checkout">
 
           <div id="form-checkout__cardNumber" class="container"></div>
-          <div class="junto">
-            <div id="form-checkout__expirationDate" class="container"></div>
-            <div id="form-checkout__securityCode" class="container"></div>
-          </div>
+          <div id="form-checkout__expirationDate" class="container"></div>
+          <div id="form-checkout__securityCode" class="container"></div>
           <input type="text" id="form-checkout__cardholderName" class="cadastro" />
           <select id="form-checkout__issuer" class="cadastro"></select>
           <select id="form-checkout__installments" class="cadastro"></select>
@@ -203,8 +232,8 @@
 
   <!-- Footer -->
   <?php
-    include_once "footer.php"
-        ?>
+  include_once "footer.php"
+    ?>
   </div>
   <script>
     // Função para alternar a exibição dos campos de pagamento
@@ -314,7 +343,7 @@
               payment_method_id,
               transaction_amount: <?= floatval($_SESSION['valor']) ?>,//valor a ser pago
               installments: Number(installments),//parcelas
-              description: "Descrição do produto",//descrição
+              description: "<?= $nome?>",//descrição
               payer: {
                 email,
                 identification: {
@@ -327,7 +356,8 @@
             return resposta.json()
           })
             .then((dados) => {
-              window.location.href = `pagamentos/aprovado.php?id=${dados.id}`;
+              //window.location.href = `pagamentos/aprovado.php?id=${dados.id}`;
+              console.log(dados.id)
             })
         },
         onFetching: (resource) => {

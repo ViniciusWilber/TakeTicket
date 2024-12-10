@@ -122,7 +122,7 @@
                             <p>R$<?= $dados["valor"] ?></p>
                         </div>
                         <P>Dia unico</P>
-                        <a href="pagamento.php?id=<?= $dados['id'] ?>" class="compra">Comprar +</a>
+                        <a href="pagamento.php?id=<?= $dados['id'] ?>&nome=<?= urlencode($dados['nome'])?>" class="compra">Comprar +</a>
                     </div>
                 </section>
                 <section>

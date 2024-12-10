@@ -1,6 +1,12 @@
 <?php
-include "conexao.php";
+session_start();
+use PHPMailer\PHPMailer\PHPMailer;//email
+use PHPMailer\PHPMailer\SMTP;//email
+use PHPMailer\PHPMailer\Exception;//email
+require 'vendor/autoload.php';//email
 
+
+include "conexao.php";
 // Verifica se as imagens foram enviadas corretamente
 if (isset($_FILES["imagens"]) && count($_FILES["imagens"]["name"]) > 0) {
     $diretorioDestino = "./img/";
@@ -137,7 +143,7 @@ try {
         $mail = new PHPMailer(true);
 
             try {
-                $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+                $mail->SMTPDebug = SMTP::DEBUG_OFF;                      //Enable verbose debug output
                 $mail->isSMTP();                                            //Send using SMTP
                 $mail->Host = 'smtp.gmail.com';                     //Set the SMTP server to send through
                 $mail->SMTPAuth = true;                                   //Enable SMTP authentication

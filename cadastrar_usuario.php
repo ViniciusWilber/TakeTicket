@@ -3,10 +3,8 @@ session_start();
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-
-
-
 require 'vendor/autoload.php';
+
 include_once "conexao.php";
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $erro = "";

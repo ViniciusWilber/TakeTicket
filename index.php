@@ -18,14 +18,18 @@
         rel="stylesheet">
     <link rel="stylesheet" href="css/carde.css">
     <style>
-        .img1{
+        .img1 {
             width: 54rem;
         }
-        .img2{
-        width: 16rem;
-            }.img3{
-        width: 37.5rem;}
-        </style>
+
+        .img2 {
+            width: 16rem;
+        }
+
+        .img3 {
+            width: 37.5rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -43,8 +47,8 @@
             <div class="imagens">
                 <img src="imagens/imgIndex/Rectangle 36.png" alt="" class="img1">
                 <div>
-                <img src="imagens/imgIndex/Rectangle 38.png" alt="" class="img2">
-                <img src="imagens/imgIndex/Rectangle 37.png" alt="" class="img3">
+                    <img src="imagens/imgIndex/Rectangle 38.png" alt="" class="img2">
+                    <img src="imagens/imgIndex/Rectangle 37.png" alt="" class="img3">
                 </div>
             </div>
         </section>
@@ -52,10 +56,15 @@
             <div class="search">
                 <div class="search-box">
                     <div class="search-field">
+<<<<<<< Updated upstream
                         <form action="#">
                         <!--input do pesquisar--><input placeholder="Search..." class="input"
                             type="text" name="pesquisa">
                             </form><!--input do pesquisar-->
+=======
+                        <!--input do pesquisar--><input placeholder="Search..." class="input" type="text"
+                            name="nome_evento"><!--input do pesquisar-->
+>>>>>>> Stashed changes
                         <div class="search-box-icon">
                             <button class="btn-icon-content">
                                 <i class="search-icon">
@@ -129,7 +138,7 @@
                 <div class="cartas">
                     <div class="cartasTema">
                         <?php
-                       
+
                         $stmt = $conexao->query("SELECT * FROM evento");
                         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         // Percorre cada evento e exibe os dados
@@ -171,23 +180,22 @@
                         include "conexao.php"
                             ?>
                         <?php
-                         // SELECT * FROM `evento` WHERE 1
-                         if (!isset($_GET['nome_evento'])) {
-                            header("location:index.php");
-                        }
+                        $pesquisa = $_GET['nome_evento'] ?? "";
+                        // SELECT * FROM `evento` WHERE 1
+                        //  if (!isset($pesquisar)) {
+                        //     header("location:index.php");
+                        // }
+                        
+                        $nome = "%" . trim($pesquisa) . "%";
 
-                        $nome = "%".trim($_GET['nome_evento'])."%";
-
-                        $dbh = new PDO('mysql:host=127.0.0.1;dbname=taketicket', 'root', 'root1234');
-
-                        $sth =  $dbh->prepare('SELECT * FROM evento WHERE `nome` LIKE :nome');
+                        $sth = $conexao->prepare('SELECT * FROM evento WHERE `nome` LIKE :nome');
                         $sth->bindParam(':nome', $nome, PDO::PARAM_STR);
                         $sth->execute();
 
                         $resultados = $sth->fetchAll(PDO::FETCH_ASSOC);
 
-                        print_r($resultados); exit;
-
+                        // print_r($resultados);
+                        
                         $stmt = $conexao->query("SELECT * FROM evento WHERE nome_categoria = 'Museus'");
                         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         // Percorre cada evento e exibe os dados
