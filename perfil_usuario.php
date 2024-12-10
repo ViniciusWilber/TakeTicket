@@ -55,9 +55,6 @@
         <div class="esquerda">
             <div class="elementos">
                 <?php if (isset($message)) echo "<p>$message</p>"; ?>
-                <form method="POST" enctype="multipart/form-data">
-                    <input type="file" name="image" accept="image/*" required>
-                    <button type="submit">Enviar</button>
                 </form>
                 <?php if ($imagePath): ?>
                     <img src="<?= $imagePath ?>" style="max-width: 300px;">
@@ -67,6 +64,7 @@
             <div class="form-footer">
                 <p>Já é promotor?<a href="cadastropromotor.php">Promotor</a></p>
             </div>
+            <a href="editar_perfil.php"><button>Editar Perfil</button></a>
         </div>
 
         <div class="direita">
