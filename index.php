@@ -52,8 +52,10 @@
             <div class="search">
                 <div class="search-box">
                     <div class="search-field">
+                        <form action="#">
                         <!--input do pesquisar--><input placeholder="Search..." class="input"
-                            type="text"><!--input do pesquisar-->
+                            type="text" name="pesquisa">
+                            </form><!--input do pesquisar-->
                         <div class="search-box-icon">
                             <button class="btn-icon-content">
                                 <i class="search-icon">
@@ -86,6 +88,44 @@
                         alt="">Atrações</button>
             </nav>
             <div class="conjunto1">
+            <div class="cartas">
+                    <div class="cartasTema">
+                        <?php
+                            $pesquisa = $_GET["pesquisa"];//modificar
+                        $stmt = $conexao->query("SELECT * FROM `evento` WHERE nome LIKE '%pesquisa%'");
+                        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                        // Percorre cada evento e exibe os dados
+                        foreach ($results as $dados) {
+                            $caminhosImagens = json_decode($dados['imagens'], true);
+                            ?>
+                            <div class="carta1">
+                                <?php if (!empty($caminhosImagens)): ?>
+                                    <img src="<?= htmlspecialchars($caminhosImagens[0] ?? '') ?>" alt="Imagem do evento"
+                                        class="cartaimg">
+                                <?php else: ?>
+                                    <p>Imagem não encontrada.</p>
+                                <?php endif; ?>
+                                <div class="grupo">
+                                    <div class="textocarta">
+                                        <h1> <?= $dados["nome"] ?></h1>
+                                        <p><?= $dados["data_inicio"] ?></p>
+                                        <h2><?= $dados["valor"] ?></h2>
+                                    </div>
+                                    <div class="iconcard">
+                                        <button class="favoritar" id="favoritar<?= $dados["id"] ?>"><i id="coracao"
+                                                class="fa fa-solid fa-heart" style="font-size: 25px;"></i></button>
+                                        <a href=""><i id="link" class="fa fa-share-alt"></i></a>
+                                    </div>
+                                </div>
+                                <div class="butao">
+                                    <a href="Evento.php?id=<?= $dados['id'] ?>"><button
+                                            class="reserva">Reservar</button></a>
+                                </div>
+                            </div>
+                            <?php
+                        } // Fim do foreach
+                        ?>
+                    </div>
                 <div class="cartas">
                     <div class="cartasTema">
                         <?php
