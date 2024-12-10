@@ -88,7 +88,7 @@ form_cadastro.addEventListener("submit", (e) => {
             }, 3000);
         }
 
-        if (mensagem.includes('cadastrado com sucesso')) {
+        if (mensagem.includes('vv')) {
            //location.href = 'index.php';
         }
         

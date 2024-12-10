@@ -12,7 +12,15 @@ body {
     border-radius: 10px;
     margin-bottom: 20px;
 }
-.container1{
+
+.parte_ingresso{
+    display: flex;
+    gap: 2rem;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container1 {
     width: 61%;
     background-color: #fff;
     padding: 20px;
@@ -23,10 +31,12 @@ body {
     flex-direction: column;
     gap: 1rem;
 }
+
 .data {
     display: flex;
     justify-content: space-evenly;
 }
+
 .section {
     margin-bottom: 20px;
 }
@@ -49,7 +59,8 @@ select {
 }
 
 textarea {
-    resize: vertical; /* Permite redimensionamento apenas na vertical */
+    resize: vertical;
+    /* Permite redimensionamento apenas na vertical */
 }
 
 .image-upload {
@@ -121,7 +132,8 @@ textarea {
     margin-bottom: 10px;
     box-sizing: border-box;
 }
-#imagem-divulgacao{
+
+#imagem-divulgacao {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -129,24 +141,13 @@ textarea {
     margin-bottom: 10px;
     box-sizing: border-box;
 }
-#categoria{
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-}
-#descricao-evento{
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    box-sizing: border-box; 
+#imagem-divulgacao :focus {
+    border: 1px solid #00B2E2;
+    /* Azul Tiffany */
+    outline: none;
 }
 
-#assunto{
+#categoria {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -154,6 +155,34 @@ textarea {
     margin-bottom: 10px;
     box-sizing: border-box;
 }
+
+#descricao-evento {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+#descricao-evento:focus  {
+    border-color: #00B2E2;
+    /* Azul Tiffany */
+    outline: none;
+}
+#assunto {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
 .descricao-ia {
     background-color: #007bff;
     color: white;
@@ -176,7 +205,8 @@ small {
     display: block;
     margin-top: 5px;
 }
-.input-box{
+
+.input-box {
     width: 70%;
     padding: 12px;
     border: 1px solid #ddd;
@@ -184,6 +214,7 @@ small {
     font-size: 16px;
     transition: border-color 0.3s;
 }
+
 .input_nome {
     width: 97%;
     padding: 12px;
@@ -193,27 +224,31 @@ small {
     transition: border-color 0.3s;
 }
 
-.input-nome:focus{
-    border-color: #00B2E2; /* Azul Tiffany */
+.input_nome:focus {
+    border-color: #00B2E2;
+    /* Azul Tiffany */
     outline: none;
 }
 
-.input-box:focus{
-    border-color: #00B2E2; /* Azul Tiffany */
+.input-box:focus {
+    border-color: #00B2E2;
+    /* Azul Tiffany */
     outline: none;
 }
-.parte_ingresso{
+
+.parte_ingresso {
     display: flex;
     gap: 2rem;
 }
 
-.inicio{
+.inicio {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
 }
-.quadrado{
+
+.quadrado {
     border-radius: 1rem;
     width: 32%;
     padding: 0.5rem;
@@ -223,12 +258,14 @@ small {
     align-items: center;
     gap: 0.5rem;
 }
-.section1{
+
+.section1 {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
 }
+
 .animated-button {
     position: relative;
     display: flex;
@@ -247,25 +284,25 @@ small {
     overflow: hidden;
     transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     margin-top: 1rem;
-  }
-  
-  .animated-button svg {
+}
+
+.animated-button svg {
     position: absolute;
     width: 24px;
     fill: greenyellow;
     z-index: 9;
     transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  
-  .animated-button .arr-1 {
+}
+
+.animated-button .arr-1 {
     right: 16px;
-  }
-  
-  .animated-button .arr-2 {
+}
+
+.animated-button .arr-2 {
     left: -25%;
-  }
-  
-  .animated-button .circle {
+}
+
+.animated-button .circle {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -276,50 +313,51 @@ small {
     border-radius: 50%;
     opacity: 0;
     transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  
-  .animated-button .text {
+}
+
+.animated-button .text {
     position: relative;
     z-index: 1;
     transform: translateX(-12px);
     transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  
-  .animated-button:hover {
+}
+
+.animated-button:hover {
     box-shadow: 0 0 0 12px transparent;
     color: #212121;
     border-radius: 12px;
-  }
-  
-  .animated-button:hover .arr-1 {
+}
+
+.animated-button:hover .arr-1 {
     right: -25%;
-  }
-  
-  .animated-button:hover .arr-2 {
+}
+
+.animated-button:hover .arr-2 {
     left: 16px;
-  }
-  
-  .animated-button:hover .text {
+}
+
+.animated-button:hover .text {
     transform: translateX(12px);
-  }
-  
-  .animated-button:hover svg {
+}
+
+.animated-button:hover svg {
     fill: #212121;
-  }
-  
-  .animated-button:active {
+}
+
+.animated-button:active {
     scale: 0.95;
     box-shadow: 0 0 0 4px greenyellow;
-  }
-  
-  .animated-button:hover .circle {
+}
+
+.animated-button:hover .circle {
     width: 220px;
     height: 220px;
     opacity: 1;
-  }
-  .section2{
+}
+
+.section2 {
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-  }
+}

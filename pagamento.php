@@ -11,12 +11,50 @@
       display: flex;
       flex-direction: column;
       max-width: 600px;
+      /* width: 100%; */
+      gap: 0.5rem;
     }
 
     .container {
       border-radius: 8px;
-      width: 1rem;
-      height: 1rem;
+      width: 27rem;
+      height: 2.8rem;
+      padding: 0.5em;
+      background-color: #e1e2e3;
+      box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
+      transition: 300ms ease-in-out;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    .cadastro {
+      border-radius: 8px;
+      width: 27rem;
+      height: 2.8rem;
+      padding: 0.5em;
+      background-color: #e1e2e3;
+      box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
+      transition: 300ms ease-in-out;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    .progress-bar {
+      border-radius: 8px;
+      width: 27rem;
+      height: 2.8rem;
+      padding: 0.5em;
+      background-color: #e1e2e3;
+      box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
+      transition: 300ms ease-in-out;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    .botao {
+      border-radius: 8px;
+      width: 27rem;
+      height: 2.8rem;
       padding: 0.5em;
       background-color: #e1e2e3;
       box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
@@ -71,10 +109,11 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      gap: 1.5rem;
     }
 
     .foto_1 {
-      width: 29rem;
+      width: 33rem;
       border-radius: 4%;
     }
   </style>
@@ -86,7 +125,6 @@
   include "conexao.php";
   ?>
   <?php
-  include_once "conexao.php";
 
   $id = $_GET["id"];
   $stmt = $conexao->prepare("SELECT * FROM evento where id=?");
@@ -125,7 +163,7 @@
 
       <div class="dados">
         <h1 clas="nome_evento"><?= $results["nome"] ?></h1>
-        <p class="paulista"> <?= $results["logradouro"] ?>,<?= $results["numero"] ?> -
+        <p class="paulista">Endereço: <?= $results["logradouro"] ?>,<?= $results["numero"] ?> -
           <?= $results["bairro"] ?>, <?= $results["cidade"] ?> - <?= $results["estado"] ?>,
           <?= $results["CEP"] ?>
         </p>
@@ -164,22 +202,9 @@
   </div>
 
   <!-- Footer -->
-  <div class="footer">
-    <div class="footer-links">
-      <a href="#">Central de ajuda</a>
-      <a href="#">Opções de cancelamento</a>
-      <a href="#">Dúvidas frequentes</a>
-      <a href="#">Apoio a pessoa com deficiência</a>
-      <a href="#">Carreiras</a>
-      <a href="#">Investidores</a>
-      <a href="#">Anuncie seu evento na TAKETICKET</a>
-    </div>
-    <div class="contact-info">
-      <p>Horário de atendimento: Seg. à Sex. 09:00 às 17:00</p>
-      <p>Email: <a href="mailto:TakeTicket@gmail.com">TakeTicket@gmail.com</a></p>
-      <p>© 2024 TakeTicket, inc. | <a href="#">Privacidade</a> | <a href="#">Termos</a> | <a href="#">Informações da
-          empresa</a></p>
-    </div>
+  <?php
+    include_once "footer.php"
+        ?>
   </div>
   <script>
     // Função para alternar a exibição dos campos de pagamento

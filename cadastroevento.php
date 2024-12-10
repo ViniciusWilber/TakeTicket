@@ -1,5 +1,8 @@
 <?php
 session_start();
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -9,6 +12,34 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interface Simples</title>
     <link rel="stylesheet" href="css/cadastroEvento.css">
+    <style>
+.input_valor{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+.input_valor:focus {
+    border: 1px solid #00B2E2;
+    /* Azul Tiffany */
+    outline: none;
+}
+.container_ingresso{
+    width: 61%;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex
+;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+  </style>
 </head>
 
 <body>
@@ -26,9 +57,6 @@ session_start();
                         <form>
                             <input type="text" id="nome" name="nome" placeholder="Nome do evento" required
                                 maxlength="100" class="input_nome">
-                            <input type="text" id="nome" name="nome" placeholder="Frase de efeito" required
-                                maxlength="100" class="input_nome">
-                            <p>Descrição do evento</p>
                             <textarea id="descricao-evento" rows="5"
                                 placeholder="Adicione aqui a descrição do seu evento..." name="descricao"></textarea>
 
@@ -36,9 +64,8 @@ session_start();
                                 <div class="parte_ingresso">
                                     <label for="imagem-divulgacao">Imagem de divulgação</label>
                                     <input type="file" id="imagem-divulgacao" accept=".jpg, .jpeg, .png, .gif"
-                                        aria-describedby="imagem-instrucao" name="imagens[]" multiple class="input-box">
+                                        aria-describedby="imagem-instrucao" name="imagens[]" multiple>
                                     </select>
-
                                 </div>
                                 </select>
                                 <?php
@@ -48,7 +75,7 @@ session_start();
                                 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 // Percorre cada evento e exibe os dados
                                 
-                                ?><label for="categoria">Escolha uma categoria:</label>
+                                ?>
                                 <select id="categoria" name="nome_categoria" placeholder="quantidade de ingressos">
                                     <?php
                                     foreach ($results as $dados) {
@@ -57,19 +84,16 @@ session_start();
                                     }
 
                                     // Usando um laço for no lugar do foreach
-                                    
                                     ?>
                                 </select>
-
-
                                 </select>
 
                             </div>
                     </div>
                 </fieldset>
-                <fieldset class="container">
+                <fieldset class="container_ingresso">
                     <legend>Ingressos</legend>
-                    <input type="valor" name="valor" class="input-box"
+                    <input type="valor" name="valor" class="input_valor"
                         placeholder="nome do ingresso, ex: ingresso vip, 1ª lote, 2ª lote">
                     <div class="parte_ingresso">
                         <input type="valor" name="valor" class="input-box" placeholder="valor">
@@ -92,20 +116,7 @@ session_start();
                             <input type="time" id="hora-inicio" class="input-box" value="19:30" name="data_fim">
                         </fieldset>
                     </div>
-                    <button class="animated-button">
-                        <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
-                            </path>
-                        </svg>
-                        <span class="text">Cadastrar</span>
-                        <span class="circle"></span>
-                        <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
-                            </path>
-                        </svg>
-                    </button>
+
                 </fieldset>
                 <fieldset class="container1">
                     <legend>Informações básicas</legend>
@@ -129,7 +140,7 @@ session_start();
 
                         <!-- Verifica se o promotor foi encontrado antes de gerar o input -->
                         <?php if ($promotor): ?>
-                            <input type="text" name="id_promotor" value="<?= $promotor['id'] ?>">
+                            <input type="text" name="id_promotor" value="<?= $promotor['id'] ?>" style="display: none;">
                         <?php else: ?>
                             <p>Promotor não encontrado.</p>
                         <?php endif; ?>
@@ -163,6 +174,7 @@ session_start();
                             <input type="text" id="estado" name="estado" class="input-box" placeholder="Estado">
                         </div>
                     </section>
+                    <button class="Login">cadastrar</button>
                 </fieldset>
         </form>
         </div>

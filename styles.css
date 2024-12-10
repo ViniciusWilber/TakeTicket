@@ -31,9 +31,6 @@ body {
 /* Estilo do título de ingressos */
 h1 {
   font-size: 24px;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
 }
 
 .cart-icon {
