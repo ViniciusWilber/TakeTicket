@@ -89,6 +89,7 @@
                 <div class="cartas">
                     <div class="cartasTema">
                         <?php
+                       
                         $stmt = $conexao->query("SELECT * FROM evento");
                         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         // Percorre cada evento e exibe os dados
@@ -130,6 +131,23 @@
                         include "conexao.php"
                             ?>
                         <?php
+                         // SELECT * FROM `evento` WHERE 1
+                         if (!isset($_GET['nome_evento'])) {
+                            header("location:index.php");
+                        }
+
+                        $nome = "%".trim($_GET['nome_evento'])."%";
+
+                        $dbh = new PDO('mysql:host=127.0.0.1;dbname=taketicket', 'root', 'root1234');
+
+                        $sth =  $dbh->prepare('SELECT * FROM evento WHERE `nome` LIKE :nome');
+                        $sth->bindParam(':nome', $nome, PDO::PARAM_STR);
+                        $sth->execute();
+
+                        $resultados = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+                        print_r($resultados); exit;
+
                         $stmt = $conexao->query("SELECT * FROM evento WHERE nome_categoria = 'Museus'");
                         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         // Percorre cada evento e exibe os dados
