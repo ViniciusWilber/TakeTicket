@@ -140,7 +140,6 @@ if ($result && $row = $result->fetch(PDO::FETCH_ASSOC)) {
     </style>
 </head>
 <body>
-    <h1>Editar Perfil</h1>
     <div class="editar">
         <!-- Mensagem de erro ou sucesso -->
         <?php if (isset($message)): ?>
@@ -149,7 +148,9 @@ if ($result && $row = $result->fetch(PDO::FETCH_ASSOC)) {
 
         <!-- Formulário para envio de imagem e edição de nome -->
         <form method="POST" enctype="multipart/form-data">
+            <h1>Imagem:</h1>
             <input type="file" name="image" accept="image/*">
+            <h1>Nome:</h1>
             <input type="text" name="nome" value="<?= htmlspecialchars($editar['nome'] ?? '') ?>" placeholder="Editar nome">
             <button type="submit">Enviar</button>
         </form>
