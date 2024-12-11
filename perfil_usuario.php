@@ -12,23 +12,30 @@
 <body>
 <?php
   include_once "header_deslogar.php";
-  $id = $_SESSION['id_usuario'];
   try {
-    $pdo = new PDO('mysql:host=localhost;dbname=taketicket', 'root', ''); 
+    // Conexão com o banco de dados
+    $pdo = new PDO('mysql:host=localhost;dbname=taketicket', 'root', '');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Selecionar o texto da tabela
+    // Certifique-se de que o ID do usuário está armazenado na sessão após o login
+    if (!isset($_SESSION['id_usuario'])) {
+        die('Usuário não autenticado. Faça login para acessar.');
+    }
+
+    $id = $_SESSION['id_usuario']; // Pegar o ID do usuário da sessão
+
+    // Selecionar os dados do usuário logado
     $stmt = $pdo->prepare('SELECT * FROM usuario WHERE id_usuario = :id');
-    $stmt->bindParam('id', $id);
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
     $stmt->execute();
     $editar = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if (!$editar) {
-        die('Nenhum evento encontrado. Insira dados na tabela.');
+        die('Usuário não encontrado no banco de dados.');
     }
-  } catch (PDOException $e) {
+} catch (PDOException $e) {
     die('Erro ao conectar ao banco de dados: ' . $e->getMessage());
-  }
+}
 
   if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['image'])) {
     $uploadDir = 'uploads/';
@@ -59,7 +66,7 @@
                 <?php if ($imagePath): ?>
                     <img src="<?= $imagePath ?>" style="max-width: 300px;">
                 <?php endif; ?>
-                <h1><?php echo $editar['nome']; ?></h1>
+                <h1><?php echo htmlspecialchars($editar['nome']); ?></h1>
             </div>
             <div class="form-footer">
                 <p>Já é promotor?<a href="cadastropromotor.php">Promotor</a></p>
