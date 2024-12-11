@@ -42,6 +42,7 @@ include_once "conexao.php";
     } catch (PDOException $e) {
         die('Erro ao conectar ao banco de dados: ' . $e->getMessage());
     }
+    
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['image'])) {
         $uploadDir = 'uploads/';
@@ -78,12 +79,12 @@ include_once "conexao.php";
     
             </div>
             <div class="botoes">
-            <a href="editar_perfil.php"><button>
+            <a href="editar_perfil_promotor.php"><button>
   <span class="transition"></span>
   <span class="gradient"></span>
   <span class="label">Editar Perfil</span>
 </button></a>
-            <a href="editar_perfil.php"><button>
+            <a href="cadastroevento.php"><button>
   <span class="transition"></span>
   <span class="gradient"></span>
   <span class="label">Criar Evento</span>
