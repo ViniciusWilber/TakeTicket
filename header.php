@@ -61,27 +61,11 @@
     <a href="index.php" class="logo"><img src="imagens/imgIndex/LogoSletras.png" alt=""></a>
     <ul class="botoes">
     <?php
-    // Inicie a sessão, se ainda não estiver iniciada
-    include_once "conexao.php";
-
-    // Verifique se o id_usuario existe na sessão
-    if (isset($_SESSION['id_usuario'])) {
-        // Utilize a conexão existente
-        $id_usuario = $_SESSION['id_usuario'];
-
-        // Prepare e execute a consulta usando a conexão existente
-        $stmt = $conexao->prepare("SELECT * FROM promotores WHERE id_usuario = ?");
-        $stmt->execute([$id_usuario]);
-
-        // Verifique se o id_usuario está na tabela promotores
-        if ($stmt->rowCount() > 0): ?>
-            <a href="perfil.php"><button class="Login">Perfil</button></a>
-        <?php else: ?>
-            <a href="perfil_usuario.php"><button class="Login">Perfil</button></a>
-        <?php endif;
-    } else { ?>
-        <a href="login.php"><button class="Login" id="openModalBtn">Login</button></a>
-    <?php } ?>
+if (isset($_SESSION['id_usuario'])): ?>
+    <a href="perfil.php"><button class="Login">Perfil</button></a>
+<?php else: ?>
+    <a href="login.php"><button class="Login" id="openModalBtn">Login</button></a>
+<?php endif; ?>
 
     </ul>
 
