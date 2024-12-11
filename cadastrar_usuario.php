@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['senha'] = $senha;
             $_SESSION['email'] = $email;
             $_SESSION['id_usuario'] = $conexao->lastInsertId();
-            //echo "cadastrado com sucesso";
+            echo "cadastrado com sucesso";
             $mail = new PHPMailer(true);
 
             try {
@@ -67,10 +67,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $mail->Port = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
                 //Recipients
-                $mail->setFrom('lucascorreia.6570@gmail.com', '$nome');
+                $mail->setFrom('ticketttake60@gmail.com', 'taketicket');
                 $mail->addAddress($_SESSION['email'], $nome);     //Add a recipient
                 //$mail->addAddress($email2, 'nick');               //Name is optional
-                $mail->addReplyTo('lucascorreia.6570@gmail.com', 'lucas');
+                $mail->addReplyTo('ticketttake60@gmail.com', 'taketicket');
                 //$mail->addCC('cc@example.com');
                 //$mail->addBCC('bcc@example.com');
 
@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 //Content
                 $mail->isHTML(true);                                  //Set email format to HTML
                 $mail->Subject = 'Teste de PHPmailer';
-                $mail->msgHTML(file_get_contents('conteudo.php'), __DIR__);
+                $mail->msgHTML(file_get_contents('conteudo_usuario.php'), __DIR__);
                 $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
                 if ($mail->send()) {

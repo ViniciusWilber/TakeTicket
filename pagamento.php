@@ -160,7 +160,7 @@ session_start();
 
 
   if ($stmt->execute()) {
-    echo "Dados inseridos com sucesso!";
+    //echo "Dados inseridos com sucesso!";
   }
   ?>
 

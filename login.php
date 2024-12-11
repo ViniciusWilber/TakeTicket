@@ -16,6 +16,39 @@
 
     <script src="./js/login.js" defer></script>
     <title>login</title>
+    <style>
+        /* Estiliza a mensagem flutuante */
+        #aviso {
+            position: fixed;
+            /* Fixa a mensagem em relação à tela */
+            top: 20%;
+            /* Posição vertical */
+            left: 50%;
+            /* Posição horizontal */
+            transform: translate(-50%, -50%);
+            /* Centraliza perfeitamente */
+            background-color: rgba(0, 0, 0, 0.8);
+            /* Fundo escuro transparente */
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            display: none;
+            /* Começa oculta */
+            z-index: 9999;
+            /* Fica acima de tudo */
+            text-align: center;
+            font-size: 18px;
+        }
+
+        /* Estiliza o botão */
+        #botao {
+            margin: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -31,13 +64,13 @@
 
                     <h2 class="form-title">Sing-in</h2>
                     <div class="form-social">
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-facebook-f"></i>
+                        <a href="#" class="social-icon" style="text-decoration: none; color: black;">
+                            <i class="fab fa-facebook-f" ></i>
                         </a>
-                        <a href="#" class="social-icon">
+                        <a href="#" class="social-icon" style="text-decoration: none; color: black;">
                             <i class="fab fa-google"></i>
                         </a>
-                        <a href="#" class="social-icon">
+                        <a href="#" class="social-icon" style="text-decoration: none; color: black;">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
                     </div>
@@ -59,44 +92,47 @@
                         </div>
                     </section>
                     <button type="submit" class="form-button">Entrar</button>
-                    <a href="#" class="form-link">Esqueceu a senha?</a>
+                    <a href="#" class="form-link" style="text-decoration: none; color: black;">Esqueceu a senha?</a>
+
                     <p class="mobile-text">
                         Não tem conta?
                     </p>
-                    <a href="#" id="open-register-mobile">Registre-se</a>
+                    <a href="#" id="open-register-mobile" style="text-decoration: none; color: black;">Registre-se</a>
 
                 </form>
                 <form class="form form-register" method="POST" action="cadastrar_usuario.php" id="form_cadastro">
 
                     <h2 class="form-title">Criar Conta</h2>
                     <div class="form-social">
-                        <a href="#" class="social-icon">
+                        <a href="#" class="social-icon" style="text-decoration: none; color: black;">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#" class="social-icon">
+                        <a href="#" class="social-icon" style="text-decoration: none; color: black;">
                             <i class="fab fa-google"></i>
                         </a>
-                        <a href="#" class="social-icon">
+                        <a href="#" class="social-icon" style="text-decoration: none; color: black;">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
                     </div>
                     <p class="form-text">ou cadastre seu email</p>
-
-
+                    <div id="aviso">
+                        Faça a confirmação no email cadastrado e em seguida o login
+                    </div>
                     <div class="form-input-container">
-                    <div class="erro">
-                        <input type="text" class="form-input" placeholder="Nome" name="nome" id="cadastro_nome">
-                        <p id="avisos_cadastro" style="color: red; position: absolute; margin: 0;"></p>
+                        <div class="erro">
+                            <input type="text" class="form-input" placeholder="Nome" name="nome" id="cadastro_nome">
+                            <p id="avisos_cadastro" style="color: red; position: absolute; margin: 0;"></p>
                         </div>
 
                         <div class="erro">
-                        <input type="email" class="form-input" placeholder="Email" name="email" id="cadastro_email">
-                        <p id="mensagem_email_cadastro" style="color: red; position: absolute; margin: 0;"></p>
+                            <input type="email" class="form-input" placeholder="Email" name="email" id="cadastro_email">
+                            <p id="mensagem_email_cadastro" style="color: red; position: absolute; margin: 0;"></p>
                         </div>
 
                         <div class="erro">
-                        <input type="password" class="form-input" placeholder="Senha" name="senha" id="cadastro_senha">
-                        <p id="mensagem_senha_cadastro" style="color: red; position: absolute; margin: 0;"></p>
+                            <input type="password" class="form-input" placeholder="Senha" name="senha"
+                                id="cadastro_senha">
+                            <p id="mensagem_senha_cadastro" style="color: red; position: absolute; margin: 0;"></p>
                         </div>
 
                     </div>
@@ -125,9 +161,6 @@
             </div>
         </div>
     </main>
-    <script>
-
-    </script>
 </body>
 
 </html>

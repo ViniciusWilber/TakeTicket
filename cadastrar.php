@@ -153,10 +153,10 @@ try {
                 $mail->Port = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
                 //Recipients
-                $mail->setFrom('lucascorreia.6570@gmail.com', '$nome');
+                $mail->setFrom('ticketttake60@gmail.com', 'taketicket');
                 $mail->addAddress($_SESSION['email'], $nome);     //Add a recipient
                 //$mail->addAddress($email2, 'nick');               //Name is optional
-                $mail->addReplyTo('lucascorreia.6570@gmail.com', 'lucas');
+                $mail->addReplyTo('ticketttake60@gmail.com', 'taketicket');
                 //$mail->addCC('cc@example.com');
                 //$mail->addBCC('bcc@example.com');
 
@@ -167,7 +167,7 @@ try {
                 //Content
                 $mail->isHTML(true);                                  //Set email format to HTML
                 $mail->Subject = 'Teste de PHPmailer';
-                $mail->msgHTML(file_get_contents('conteudo.php'), __DIR__);
+                $mail->msgHTML(file_get_contents('conteudo_evento.php'), __DIR__);
                 $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
                 if ($mail->send()) {

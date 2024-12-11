@@ -22,6 +22,9 @@ const cadastro_email = document.getElementById('cadastro_email');
 
 const mensagem_senha_cadastro = document.getElementById('mensagem_senha_cadastro');
 const cadastro_senha = document.getElementById('cadastro_senha');
+//'use strict';
+const aviso = document.getElementById('aviso');
+
 
 form_cadastro.addEventListener("submit", (e) => {
     e.preventDefault(); // Evita que o formulário seja enviado de maneira tradicional
@@ -88,8 +91,14 @@ form_cadastro.addEventListener("submit", (e) => {
             }, 3000);
         }
 
-        if (mensagem.includes('vv')) {
+        if (mensagem.includes('cadastrado com sucesso')) {
            //location.href = 'index.php';
+           aviso.style.display = 'block'; // Mostra a mensagem
+
+            // Opcional: Ocultar a mensagem após alguns segundos
+            setTimeout(() => {
+                aviso.style.display = 'none'; // Esconde novamente
+            }, 3000);
         }
         
 

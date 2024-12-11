@@ -93,43 +93,7 @@
                         alt="">Atrações</button>
             </nav>
             <div class="conjunto1">
-            <div class="cartas">
-                    <div class="cartasTema">
-                        <?php
-                            $pesquisa = $_GET["pesquisa"];//modificar
-                        $stmt = $conexao->query("SELECT * FROM `evento` WHERE nome LIKE '%pesquisa%'");
-                        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                        // Percorre cada evento e exibe os dados
-                        foreach ($results as $dados) {
-                            $caminhosImagens = json_decode($dados['imagens'], true);
-                            ?>
-                            <div class="carta1">
-                                <?php if (!empty($caminhosImagens)): ?>
-                                    <img src="<?= htmlspecialchars($caminhosImagens[0] ?? '') ?>" alt="Imagem do evento"
-                                        class="cartaimg">
-                                <?php else: ?>
-                                    <p>Imagem não encontrada.</p>
-                                <?php endif; ?>
-                                <div class="grupo">
-                                    <div class="textocarta">
-                                        <h1> <?= $dados["nome"] ?></h1>
-                                        <p><?= $dados["data_inicio"] ?></p>
-                                        <h2><?= $dados["valor"] ?></h2>
-                                    </div>
-                                    <div class="iconcard">
-                                        <button class="favoritar" id="favoritar<?= $dados["id"] ?>"><i id="coracao"
-                                                class="fa fa-solid fa-heart" style="font-size: 25px;"></i></button>
-                                        <a href=""><i id="link" class="fa fa-share-alt"></i></a>
-                                    </div>
-                                </div>
-                                <div class="butao">
-                                    <a href="Evento.php?id=<?= $dados['id'] ?>"><button
-                                            class="reserva">Reservar</button></a>
-                                </div>
-                            </div>
-                            <?php
-                        } // Fim do foreach
-                        ?>
+                        
                     </div>
                 <div class="cartas">
                     <div class="cartasTema">
@@ -176,19 +140,6 @@
                         include "conexao.php"
                             ?>
                         <?php
-                        $pesquisa = $_GET['nome_evento'] ?? "";
-                        // SELECT * FROM `evento` WHERE 1
-                        //  if (!isset($pesquisar)) {
-                        //     header("location:index.php");
-                        // }
-                        
-                        $nome = "%" . trim($pesquisa) . "%";
-
-                        $sth = $conexao->prepare('SELECT * FROM evento WHERE `nome` LIKE :nome');
-                        $sth->bindParam(':nome', $nome, PDO::PARAM_STR);
-                        $sth->execute();
-
-                        $resultados = $sth->fetchAll(PDO::FETCH_ASSOC);
 
                         // print_r($resultados);
                         
@@ -252,7 +203,7 @@
                     </div>
                 </div>
                 <div class="cartasExcursoes">
-                    <div class="cartasTema">s
+                    <div class="cartasTema">
                         <?php
                         $stmt = $conexao->query("SELECT * FROM evento WHERE nome_categoria = 'Excursões'");
                         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -378,9 +329,6 @@
                 <div class="cartasAtracoes">
                     <div class="cartasTema">
                         <?php
-                        include "conexao.php"
-                            ?>
-                        <?php
                         $stmt = $conexao->query("SELECT * FROM evento WHERE nome_categoria = 'Atrações'");
                         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         // Percorre cada evento e exibe os dados
@@ -439,23 +387,6 @@
             </div>
         </div>
     </main>
-    <script>
-        const favoritar = document.querySelectorAll(".favoritar")
-        favoritar.forEach((coracao) => {
-            //console.log(coracao)
-            coracao.addEventListener('click', () => {
-                //console.log(coracao.value)
-                fetch('favoritar.php?id=' + coracao.value)
-                    .then((resposta) => {
-                        return resposta.text()
-
-                    })
-                    .then((retorno) => {
-                        console.log(retorno)
-                    })
-            })
-        })
-    </script>
     <?php
     include_once "footer.php"
         ?>

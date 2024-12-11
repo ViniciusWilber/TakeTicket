@@ -77,24 +77,37 @@
         <div class="direita">
             <div class="seusEventos">
                 <div class="botoesEvento">
-                    <button class="andamento" id="alt">Meus Eventos Atuais</button>
+                    <button class="andamento" id="alt">Meus Eventos Comprados</button>
                     <button class="passado" id="btn">Meus Eventos Concluídos</button>
                 </div>
                 <div class="eventos" id="eventos">
-                    <?php
-                    $stmt = $pdo->query("SELECT * FROM evento");
-                    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                    if (count($results) > 0) {
-                        foreach ($results as $dados) {
-                    ?>
-                        <div class="emandamento">
-                            <img src="imagens/imgPerfil/AdobeStock_293894349.jpg" alt="">
-                            <p>Como promotor de eventos em São Paulo, moldo espaços para celebrar, deixando meu legado na cultura local.</p>
-                            <label><?=$dados["nome"] ?></label>
-                            <a href="editar.php?id=<?=$dados['id']?>"><button class="Login">editar</button></a>
-                            <a href="excluir_evento.php?id=<?=$dados['id']?>"><button class="Login">apagar</button></a>
-                        </div>
-                    <?php
+                <?php
+                    include_once "conexao.php";
+
+                    // Verifique se o id_usuario existe na sessão
+                    if (isset($_SESSION['id_usuario'])) {
+                        // Pega o id_usuario da sessão
+                        $id_usuario = $_SESSION['id_usuario'];
+
+                        // Consulta utilizando INNER JOIN para buscar nome do evento e foto
+                        $sql = "
+                    SELECT evento.nome,evento.descricao
+                    FROM ingresso
+                    INNER JOIN evento ON ingresso.evento_id = evento.id
+                    WHERE ingresso.id_usuario = ?
+                        ";
+
+                        // Prepare e execute a consulta utilizando sua conexão existente
+                        $stmt = $conexao->prepare($sql);
+                        $stmt->execute([$id_usuario]);
+                        foreach ($stmt as $dados) {
+                            ?>
+                            <div class="emandamento">
+                                <img src="imagens/imgPerfil/AdobeStock_293894349.jpg" alt="">
+                                <p><?= $dados["descricao"] ?></p>
+                                <label><?= $dados["nome"] ?></label>
+                            </div>
+                            <?php
                         }
                     } else {
                         echo "Nenhum evento encontrado.";

@@ -6,6 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/evento.css">
     <title>Evento</title>
+    <style>
+        /* Estilos para a mensagem flutuante */
+        .login-message {
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            display: none;
+            /* Inicialmente oculta */
+        }
+
+        .login-message a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -81,17 +103,17 @@
 
                                         // Depurando o valor de $id (para verificar)
                                         //var_dump($id);
-
+                                    
                                         // Obtendo o resultado
                                         $results = $conexao->fetch(PDO::FETCH_ASSOC);
 
                                         // Verificando se retornou algo
-                                            
+                                    
                                         ?>
 
-                                        <h1 class="name"> <?php echo $results['nome_promotor'];?></h1>
-                            
-                                        
+                                        <h1 class="name"> <?php echo $results['nome_promotor']; ?></h1>
+
+
 
                                         <h3 class="sobrePromote">Promotor a mais de 5 anos</h3>
                                     </div>
@@ -122,29 +144,19 @@
                             <p>R$<?= $dados["valor"] ?></p>
                         </div>
                         <P>Dia unico</P>
-                        <a href="pagamento.php?id=<?= $dados['id'] ?>&nome=<?= urlencode($dados['nome'])?>" class="compra">Comprar +</a>
+                        <a href="pagamento.php?id=<?= $dados['id'] ?>&nome=<?= urlencode($dados['nome']) ?>" class="compra"
+                            id="comprarLink" style="text-decoration: none;">Comprar +</a>
+
+                        <!-- Div flutuante para a mensagem de login -->
+                        <div id="loginMessage" class="login-message" style="display: none;">
+                            <p>Você precisa estar logado para realizar a compra, <a href="login.php">faça login aqui.</a>
+                            </p>
+                        </div>
                     </div>
                 </section>
                 <section>
                 </section>
                 <div class="contato">
-                    <div class="enderecos">
-                        <div>
-                            <div class="gmail">
-                                <img src="imagens/imgMASP/GmailLogo.png" alt="">
-                                <p>Masp.sp@org.br</p>
-                            </div>
-                            <div class="users">
-                                <img src="imagens/imgMASP/Users.png" alt="">
-                                <p>200.888k Seguidores</p>
-                            </div>
-                            <div class="fone">
-                                <img src="imagens/imgMASP/Megaphone.png" alt="">
-                                <p>Assinantes</p>
-                            </div>
-                        </div>
-                        <a href="perfil.php"><button class="follow">Follow</button></a>
-                    </div>
                 </div>
                 <section class="Mapa">
                     <h1>Onde ira acontercer</h1>
@@ -172,6 +184,25 @@
     <?php
     include_once "footer.php"
         ?>
+    <script>
+        document.getElementById('comprarLink').addEventListener('click', function (event) {
+            // Verifique se o usuário está logado
+            <?php if (isset($_SESSION['id_usuario'])): ?>
+                // O usuário está logado, permite o clique e segue o link
+                // Não fazemos nada aqui, o link funcionará normalmente
+            <?php else: ?>
+                // O usuário não está logado, impede o clique e mostra a mensagem flutuante
+                event.preventDefault();  // Impede o redirecionamento
+                document.getElementById('loginMessage').style.display = 'block';  // Exibe a mensagem flutuante
+
+                // Após 5 segundos, a mensagem desaparece
+                setTimeout(function () {
+                    document.getElementById('loginMessage').style.display = 'none';
+                }, 5000);
+            <?php endif; ?>
+        });
+
+    </script>
 </body>
 
 </html>
