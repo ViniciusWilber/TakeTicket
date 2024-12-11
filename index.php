@@ -56,15 +56,11 @@
             <div class="search">
                 <div class="search-box">
                     <div class="search-field">
-<<<<<<< Updated upstream
+
                         <form action="#">
                         <!--input do pesquisar--><input placeholder="Search..." class="input"
                             type="text" name="pesquisa">
                             </form><!--input do pesquisar-->
-=======
-                        <!--input do pesquisar--><input placeholder="Search..." class="input" type="text"
-                            name="nome_evento"><!--input do pesquisar-->
->>>>>>> Stashed changes
                         <div class="search-box-icon">
                             <button class="btn-icon-content">
                                 <i class="search-icon">
