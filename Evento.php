@@ -44,6 +44,27 @@
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if ($results)
         // Decodificar o campo 'imagens' para obter as URLs
+    
+  if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['image'])) {
+    $uploadDir = 'uploads/';
+    $uploadFile = $uploadDir . basename($_FILES['image']['name']);
+    
+    if (!is_dir($uploadDir)) mkdir($uploadDir, 0777, true);
+    
+    $ext = strtolower(pathinfo($uploadFile, PATHINFO_EXTENSION));
+    if (in_array($ext, ['jpg', 'png']) && move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile)) {
+        $stmt = $pdo->prepare("INSERT INTO images (image_path) VALUES (:image_path)");
+        $stmt->bindParam(':image_path', $uploadFile);
+        $stmt->execute();
+        $message = "Imagem enviada com sucesso!";
+    } else {
+        $message = "Erro ao enviar imagem ou formato inválido.";
+    }
+  }
+
+  $imagePath = '';
+  $result = $pdo->query("SELECT image_path FROM images ORDER BY id DESC LIMIT 1");
+  if ($result && $row = $result->fetch(PDO::FETCH_ASSOC)) $imagePath = $row['image_path'];
         ?>
         <form action="pagamento.php">
 
@@ -89,7 +110,10 @@
                             <div class="gerais">
 
                                 <div class="promotor">
-                                    <a href="perfil.php"><img src="imagens/imgEvento/Ellipse 7.png" alt=""></a>
+                                <?php if ($imagePath): ?>
+    <img src="<?= $imagePath ?>" class="imagem-arredondada">
+<?php endif; ?>
+
                                     <div class="infos">
                                         <?php
                                         $conexao = $pdo->prepare("

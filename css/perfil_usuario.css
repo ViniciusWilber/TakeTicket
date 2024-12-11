@@ -461,7 +461,7 @@ ul {
 }
 
 .botoesEvento button:active {
-  background-color: #03aca0;
+  background-color: #148784;
   box-shadow: 1px 1px 1px #c5c5c5, -4px -4px 12px #ffffff;
 }
 .botoesEvento button::after {
@@ -518,6 +518,115 @@ footer .termos {
   bottom: 0;
   left: 395px;
 } 
+/* From Uiverse.io by cssbuttons-io */ 
+button {
+  font-size: 17px;
+  padding: 1em 2.7em;
+  font-weight: 500;
+  background: #1f2937;
+  color: white;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.6em;
+  cursor: pointer;
+}
+
+.gradient {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 0.6em;
+  margin-top: -0.25em;
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.3)
+  );
+}
+
+.label {
+  position: relative;
+  top: -1px;
+}
+
+.transition {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 500ms;
+  background-color: rgba(0, 225, 255, 0.6);
+  border-radius: 9999px;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+button:hover .transition {
+  width: 14em;
+  height: 14em;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+/* Estilos gerais */
+.social-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  color: #333;
+  text-decoration: none;
+  font-size: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Cores ao passar o mouse */
+.social-button.facebook:hover {
+  background-color: #1877f2;
+  color: #fff;
+}
+
+
+.social-button.instagram:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  color: #fff;
+}
+
+.social-button.whatsapp:hover {
+  background-color: #25d366;
+  color: #fff;
+}
+/* Estilo geral para o título */
+.nome h1 {
+  font-family: 'Arial', sans-serif; /* Fonte simples e moderna */
+  font-size: 36px; /* Tamanho grande do texto */
+  font-weight: bold; /* Título em negrito */
+  color: #333; /* Cor padrão do texto */
+  text-align: center; /* Alinha o texto no centro */
+  text-transform: capitalize; /* Capitaliza a primeira letra de cada palavra */
+  letter-spacing: 1px; /* Adiciona espaçamento entre as letras */
+  margin: 20px 0; /* Espaçamento vertical ao redor do título */
+  padding: 10px 20px; /* Espaçamento interno */
+  border-radius: 8px; /* Bordas arredondadas */
+  transition: all 0.3s ease; /* Transição suave para efeitos */
+}
+
+/* Efeito ao passar o mouse */
+
+
 @media (max-width:768px) {
   header{
     width: 100%;

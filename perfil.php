@@ -66,18 +66,44 @@ include_once "conexao.php";
     if ($result && $row = $result->fetch(PDO::FETCH_ASSOC))
         $imagePath = $row['image_path'];
     ?>
-    <main class="Perfil">
+      <main class="Perfil">
         <div class="esquerda">
             <div class="elementos">
-                <?php if (isset($message))
-                    echo "<p>$message</p>"; ?>
+                <?php if (isset($message)) echo "<p>$message</p>"; ?>
                 </form>
                 <?php if ($imagePath): ?>
-                    <img src="<?= $imagePath ?>" style="max-width: 300px;">
+                    <img src="<?= $imagePath ?>" style="max-width: 500px;">
                 <?php endif; ?>
-                <h1><?php echo $editar['nome']; ?></h1>
+                <div class="nome"> <h1><?php echo htmlspecialchars($editar['nome']); ?></h1></div>
+    
             </div>
-            <a href="editar_perfil.php"><button>Editar Perfil</button></a>
+            <div class="botoes">
+            <a href="editar_perfil.php"><button>
+  <span class="transition"></span>
+  <span class="gradient"></span>
+  <span class="label">Editar Perfil</span>
+</button></a>
+            <a href="editar_perfil.php"><button>
+  <span class="transition"></span>
+  <span class="gradient"></span>
+  <span class="label">Criar Evento</span>
+</button></a>
+            </div>
+            <div class="social-buttons">
+  <a href="#" class="social-button facebook">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a href="#" class="social-button instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="#" class="social-button whatsapp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+
+
+
+
         </div>
 
         <div class="direita">

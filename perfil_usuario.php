@@ -64,7 +64,7 @@
                 <?php if (isset($message)) echo "<p>$message</p>"; ?>
                 </form>
                 <?php if ($imagePath): ?>
-                    <img src="<?= $imagePath ?>" style="max-width: 300px;">
+                    <img src="<?= $imagePath ?>" style="max-width: 500px;">
                 <?php endif; ?>
                 <h1><?php echo htmlspecialchars($editar['nome']); ?></h1>
             </div>

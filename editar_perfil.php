@@ -113,7 +113,7 @@ if ($result && $row = $result->fetch(PDO::FETCH_ASSOC)) {
             padding: 10px 15px;
             font-size: 16px;
             color: white;
-            background: #007BFF;
+            background: #1BB0AC;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -121,7 +121,7 @@ if ($result && $row = $result->fetch(PDO::FETCH_ASSOC)) {
         }
 
         button:hover {
-            background: #0056b3;
+            background: #148784;
         }
 
         p {
