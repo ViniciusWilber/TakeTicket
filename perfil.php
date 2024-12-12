@@ -226,7 +226,7 @@ include_once "conexao.php";
                                         <div class="emandamento">
                                             <p><?= $dados["nome"] ?></p>
                                             <img src="<?= htmlspecialchars($caminhosImagens[0] ?? '') ?>" alt="">
-                                            <a href="editar.php?id=<?= $dados['id'] ?>"><button class="reserva">Reservar</button></a>
+                                            <a href="editar.php?id=<?= $dados['id'] ?>"><button class="reserva">Editar</button></a>
                                         </div>
                                         <?php
                                     }
