@@ -84,26 +84,52 @@
                 <?php
                     include_once "conexao.php";
 
-                    // Verifique se o id_usuario existe na sessão
                     if (isset($_SESSION['id_usuario'])) {
                         // Pega o id_usuario da sessão
                         $id_usuario = $_SESSION['id_usuario'];
 
                         // Consulta utilizando INNER JOIN para buscar nome do evento e foto
                         $sql = "
-                    SELECT evento.nome,evento.descricao
+                    SELECT evento.nome,evento.descricao,evento.imagens
                     FROM ingresso
                     INNER JOIN evento ON ingresso.evento_id = evento.id
                     WHERE ingresso.id_usuario = ?
                         ";
-
                         // Prepare e execute a consulta utilizando sua conexão existente
                         $stmt = $conexao->prepare($sql);
                         $stmt->execute([$id_usuario]);
                         foreach ($stmt as $dados) {
+                            $caminhosImagens = json_decode($dados['imagens'], true);
                             ?>
                             <div class="emandamento">
-                                <img src="imagens/imgPerfil/AdobeStock_293894349.jpg" alt="">
+                                <img src="<?= htmlspecialchars($caminhosImagens[0] ?? '') ?>" alt="">
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">
+                                    Monstre seu ingresso
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: white;">
+                                                    QR-CODE do seu ingresso</h1>
+                                            </div>
+                                            <div class="modal-body">
+                                                <img src="imagen/qr-code.jpg" alt="Descrição da imagem" width="300"
+                                                    height="200">
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <p><?= $dados["descricao"] ?></p>
                                 <label><?= $dados["nome"] ?></label>
                             </div>

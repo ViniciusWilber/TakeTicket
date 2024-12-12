@@ -148,8 +148,13 @@
                         // Percorre cada evento e exibe os dados
                         foreach ($results as $dados) {
                             ?>
-                            <div class="carta1">
-                                <img class="cartaimg" src="imagens/imgPerfil/AdobeStock_369248728.jpg" alt="">
+                             <div class="carta1">
+                                <?php if (!empty($caminhosImagens)): ?>
+                                    <img src="<?= htmlspecialchars($caminhosImagens[0] ?? '') ?>" alt="Imagem do evento"
+                                        class="cartaimg">
+                                <?php else: ?>
+                                    <p>Imagem não encontrada.</p>
+                                <?php endif; ?>
                                 <div class="grupo">
                                     <div class="textocarta">
                                         <h1> <?= $dados["nome"] ?></h1>
@@ -157,7 +162,8 @@
                                         <h2><?= $dados["valor"] ?></h2>
                                     </div>
                                     <div class="iconcard">
-                                        <a href=""><i id="coracao" class="fa-solid fa-heart"></i></a>
+                                        <button class="favoritar" id="favoritar<?= $dados["id"] ?>"><i id="coracao"
+                                                class="fa fa-solid fa-heart" style="font-size: 25px;"></i></button>
                                         <a href=""><i id="link" class="fa fa-share-alt"></i></a>
                                     </div>
                                 </div>
@@ -180,7 +186,12 @@
                         foreach ($results as $dados) {
                             ?>
                             <div class="carta1">
-                                <img class="cartaimg" src="imagens/imgPerfil/AdobeStock_369248728.jpg" alt="">
+                                <?php if (!empty($caminhosImagens)): ?>
+                                    <img src="<?= htmlspecialchars($caminhosImagens[0] ?? '') ?>" alt="Imagem do evento"
+                                        class="cartaimg">
+                                <?php else: ?>
+                                    <p>Imagem não encontrada.</p>
+                                <?php endif; ?>
                                 <div class="grupo">
                                     <div class="textocarta">
                                         <h1> <?= $dados["nome"] ?></h1>
@@ -188,7 +199,8 @@
                                         <h2><?= $dados["valor"] ?></h2>
                                     </div>
                                     <div class="iconcard">
-                                        <a href=""><i id="coracao" class="fa-solid fa-heart"></i></a>
+                                        <button class="favoritar" id="favoritar<?= $dados["id"] ?>"><i id="coracao"
+                                                class="fa fa-solid fa-heart" style="font-size: 25px;"></i></button>
                                         <a href=""><i id="link" class="fa fa-share-alt"></i></a>
                                     </div>
                                 </div>
@@ -211,7 +223,12 @@
                         foreach ($results as $dados) {
                             ?>
                             <div class="carta1">
-                                <img class="cartaimg" src="imagens/imgPerfil/AdobeStock_369248728.jpg" alt="">
+                                <?php if (!empty($caminhosImagens)): ?>
+                                    <img src="<?= htmlspecialchars($caminhosImagens[0] ?? '') ?>" alt="Imagem do evento"
+                                        class="cartaimg">
+                                <?php else: ?>
+                                    <p>Imagem não encontrada.</p>
+                                <?php endif; ?>
                                 <div class="grupo">
                                     <div class="textocarta">
                                         <h1> <?= $dados["nome"] ?></h1>
@@ -219,7 +236,8 @@
                                         <h2><?= $dados["valor"] ?></h2>
                                     </div>
                                     <div class="iconcard">
-                                        <a href=""><i id="coracao" class="fa-solid fa-heart"></i></a>
+                                        <button class="favoritar" id="favoritar<?= $dados["id"] ?>"><i id="coracao"
+                                                class="fa fa-solid fa-heart" style="font-size: 25px;"></i></button>
                                         <a href=""><i id="link" class="fa fa-share-alt"></i></a>
                                     </div>
                                 </div>
@@ -242,7 +260,12 @@
                         foreach ($results as $dados) {
                             ?>
                             <div class="carta1">
-                                <img class="cartaimg" src="imagens/imgPerfil/AdobeStock_369248728.jpg" alt="">
+                                <?php if (!empty($caminhosImagens)): ?>
+                                    <img src="<?= htmlspecialchars($caminhosImagens[0] ?? '') ?>" alt="Imagem do evento"
+                                        class="cartaimg">
+                                <?php else: ?>
+                                    <p>Imagem não encontrada.</p>
+                                <?php endif; ?>
                                 <div class="grupo">
                                     <div class="textocarta">
                                         <h1> <?= $dados["nome"] ?></h1>
@@ -250,7 +273,8 @@
                                         <h2><?= $dados["valor"] ?></h2>
                                     </div>
                                     <div class="iconcard">
-                                        <a href=""><i id="coracao" class="fa-solid fa-heart"></i></a>
+                                        <button class="favoritar" id="favoritar<?= $dados["id"] ?>"><i id="coracao"
+                                                class="fa fa-solid fa-heart" style="font-size: 25px;"></i></button>
                                         <a href=""><i id="link" class="fa fa-share-alt"></i></a>
                                     </div>
                                 </div>
@@ -273,7 +297,12 @@
                         foreach ($results as $dados) {
                             ?>
                             <div class="carta1">
-                                <img class="cartaimg" src="imagens/imgPerfil/AdobeStock_369248728.jpg" alt="">
+                                <?php if (!empty($caminhosImagens)): ?>
+                                    <img src="<?= htmlspecialchars($caminhosImagens[0] ?? '') ?>" alt="Imagem do evento"
+                                        class="cartaimg">
+                                <?php else: ?>
+                                    <p>Imagem não encontrada.</p>
+                                <?php endif; ?>
                                 <div class="grupo">
                                     <div class="textocarta">
                                         <h1> <?= $dados["nome"] ?></h1>
@@ -281,7 +310,8 @@
                                         <h2><?= $dados["valor"] ?></h2>
                                     </div>
                                     <div class="iconcard">
-                                        <a href=""><i id="coracao" class="fa-solid fa-heart"></i></a>
+                                        <button class="favoritar" id="favoritar<?= $dados["id"] ?>"><i id="coracao"
+                                                class="fa fa-solid fa-heart" style="font-size: 25px;"></i></button>
                                         <a href=""><i id="link" class="fa fa-share-alt"></i></a>
                                     </div>
                                 </div>
@@ -304,7 +334,12 @@
                         foreach ($results as $dados) {
                             ?>
                             <div class="carta1">
-                                <img class="cartaimg" src="imagens/imgPerfil/AdobeStock_369248728.jpg" alt="">
+                                <?php if (!empty($caminhosImagens)): ?>
+                                    <img src="<?= htmlspecialchars($caminhosImagens[0] ?? '') ?>" alt="Imagem do evento"
+                                        class="cartaimg">
+                                <?php else: ?>
+                                    <p>Imagem não encontrada.</p>
+                                <?php endif; ?>
                                 <div class="grupo">
                                     <div class="textocarta">
                                         <h1> <?= $dados["nome"] ?></h1>
@@ -312,7 +347,8 @@
                                         <h2><?= $dados["valor"] ?></h2>
                                     </div>
                                     <div class="iconcard">
-                                        <a href=""><i id="coracao" class="fa-solid fa-heart"></i></a>
+                                        <button class="favoritar" id="favoritar<?= $dados["id"] ?>"><i id="coracao"
+                                                class="fa fa-solid fa-heart" style="font-size: 25px;"></i></button>
                                         <a href=""><i id="link" class="fa fa-share-alt"></i></a>
                                     </div>
                                 </div>
@@ -335,10 +371,10 @@
                         foreach ($results as $dados) {
                             $caminhosImagens = json_decode($dados['imagens'], true);
                             ?>
-                            <div class="carta1">
+                             <div class="carta1">
                                 <?php if (!empty($caminhosImagens)): ?>
                                     <img src="<?= htmlspecialchars($caminhosImagens[0] ?? '') ?>" alt="Imagem do evento"
-                                        class="foto_1">
+                                        class="cartaimg">
                                 <?php else: ?>
                                     <p>Imagem não encontrada.</p>
                                 <?php endif; ?>
@@ -349,7 +385,8 @@
                                         <h2><?= $dados["valor"] ?></h2>
                                     </div>
                                     <div class="iconcard">
-                                        <a href=""><i id="coracao" class="fa-solid fa-heart"></i></a>
+                                        <button class="favoritar" id="favoritar<?= $dados["id"] ?>"><i id="coracao"
+                                                class="fa fa-solid fa-heart" style="font-size: 25px;"></i></button>
                                         <a href=""><i id="link" class="fa fa-share-alt"></i></a>
                                     </div>
                                 </div>

@@ -42,7 +42,7 @@ include_once "conexao.php";
     } catch (PDOException $e) {
         die('Erro ao conectar ao banco de dados: ' . $e->getMessage());
     }
-    
+
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['image'])) {
         $uploadDir = 'uploads/';
@@ -67,44 +67,43 @@ include_once "conexao.php";
     if ($result && $row = $result->fetch(PDO::FETCH_ASSOC))
         $imagePath = $row['image_path'];
     ?>
-      <main class="Perfil">
+    <main class="Perfil">
         <div class="esquerda">
             <div class="elementos">
-                <?php if (isset($message)) echo "<p>$message</p>"; ?>
+                <?php if (isset($message))
+                    echo "<p>$message</p>"; ?>
                 </form>
                 <?php if ($imagePath): ?>
                     <img src="<?= $imagePath ?>" style="max-width: 500px;">
                 <?php endif; ?>
-                <div class="nome"> <h1><?php echo htmlspecialchars($editar['nome']); ?></h1></div>
-    
+                <div class="nome">
+                    <h1><?php echo htmlspecialchars($editar['nome']); ?></h1>
+                </div>
+
             </div>
             <div class="botoes">
-            <a href="editar_perfil_promotor.php"><button>
-  <span class="transition"></span>
-  <span class="gradient"></span>
-  <span class="label">Editar Perfil</span>
-</button></a>
-            <a href="cadastroevento.php"><button>
-  <span class="transition"></span>
-  <span class="gradient"></span>
-  <span class="label">Criar Evento</span>
-</button></a>
+                <a href="editar_perfil_promotor.php"><button>
+                        <span class="transition"></span>
+                        <span class="gradient"></span>
+                        <span class="label">Editar Perfil</span>
+                    </button></a>
+                <a href="cadastroevento.php"><button>
+                        <span class="transition"></span>
+                        <span class="gradient"></span>
+                        <span class="label">Criar Evento</span>
+                    </button></a>
             </div>
             <div class="social-buttons">
-  <a href="#" class="social-button facebook">
-    <i class="fab fa-facebook-f"></i>
-  </a>
-  <a href="#" class="social-button instagram">
-    <i class="fab fa-instagram"></i>
-  </a>
-  <a href="#" class="social-button whatsapp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-</div>
-
-
-
-
+                <a href="#" class="social-button facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-button instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-button whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
         </div>
 
         <div class="direita">
@@ -175,67 +174,13 @@ include_once "conexao.php";
                     ?>
                 </div>
 
-                <div class="eventosPassados" id="eventosPassados">
-                    <!-- Eventos passados aqui -->
 
-                    <div class="eventos" id="eventosPassados">
-                        <?php
+                 <?php
                         include_once "conexao.php";
-                        // $stmt = $conexao->prepare("SELECT * FROM evento e, favoritos f WHERE e.id = f.evento_id && f.usuario_id = :id && f.status = 0");
-                        // $stmt->bindParam("id", $_SESSION['id_usuario']);
-                        // $stmt->execute();
-                        // while ($dados = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                        //     ?>
-                        <div class="emandamento">
-                            <!-- //     <img src="imagens/imgPerfil/AdobeStock_293894349.jpg" alt="">
-                        //         <p>Como promotor de eventos em São Paulo, moldo espaços para celebrar, deixando meu legado
-                        //             na cultura local.
-                        //         </p>
-                        //         <label><?= $dados["nome"] ?></label>
-                        //         <a href="editar.php?id=<?= $dados['id'] ?>"></a><button class="Login">editar</button></a>
-                        //         <a href="excluir_evento.php?id=<?= $dados['id'] ?>">rgsvevsevse</a><button
-                        //             class="Login">apagar</button></a>
-                        //     </div>
-                        //     <?php
-                        // }
-                        
-
-                        if (isset($_SESSION['id_usuario'])) {
-                            // Recupera o id_usuario da sessão
-                            $id_usuario = $_SESSION['id_usuario'];
-
-                            // Query para buscar os eventos relacionados ao id_usuario
-                            $sql = "SELECT * FROM evento WHERE id_usuario = ?"; // Ajuste conforme a estrutura da sua tabela
-                        
-                            // Prepare a consulta
-                            $stmt = $conexao->prepare($sql);
-
-                            // Execute a consulta passando o id_usuario
-                            $stmt->execute([$id_usuario]);
-
-                            // Verifique se encontrou resultados
-                            if ($stmt->rowCount() > 0) {
-                                // Exibe os eventos encontrados
-                                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                                    echo "Nome do evento: " . $row['nome'] . "<br>";
-                                    echo "Descrição do evento: " . $row['descricao'] . "<br>";
-                                    // Outros campos que você deseja exibir
-                                }
-                            } else {
-                                echo "Nenhum evento encontrado para este usuário.";
-                            }
-                        } else {
-                            echo "Você precisa estar logado para ver os eventos.";
-                        }
-
-
                         ?>
-
                     </div>
                 </div>
             </div>
-        </div>
-
     </main>
     <?php include_once "footer.php" ?>
 

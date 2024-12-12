@@ -1,3 +1,6 @@
+<?php
+@session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -43,28 +46,30 @@
         $stmt = $pdo->query("SELECT * FROM evento where id= $id");
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if ($results)
-        // Decodificar o campo 'imagens' para obter as URLs
-    
-  if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['image'])) {
-    $uploadDir = 'uploads/';
-    $uploadFile = $uploadDir . basename($_FILES['image']['name']);
-    
-    if (!is_dir($uploadDir)) mkdir($uploadDir, 0777, true);
-    
-    $ext = strtolower(pathinfo($uploadFile, PATHINFO_EXTENSION));
-    if (in_array($ext, ['jpg', 'png']) && move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile)) {
-        $stmt = $pdo->prepare("INSERT INTO images (image_path) VALUES (:image_path)");
-        $stmt->bindParam(':image_path', $uploadFile);
-        $stmt->execute();
-        $message = "Imagem enviada com sucesso!";
-    } else {
-        $message = "Erro ao enviar imagem ou formato inválido.";
-    }
-  }
+            // Decodificar o campo 'imagens' para obter as URLs
+        
+            if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['image'])) {
+                $uploadDir = 'uploads/';
+                $uploadFile = $uploadDir . basename($_FILES['image']['name']);
 
-  $imagePath = '';
-  $result = $pdo->query("SELECT image_path FROM images ORDER BY id DESC LIMIT 1");
-  if ($result && $row = $result->fetch(PDO::FETCH_ASSOC)) $imagePath = $row['image_path'];
+                if (!is_dir($uploadDir))
+                    mkdir($uploadDir, 0777, true);
+
+                $ext = strtolower(pathinfo($uploadFile, PATHINFO_EXTENSION));
+                if (in_array($ext, ['jpg', 'png']) && move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile)) {
+                    $stmt = $pdo->prepare("INSERT INTO images (image_path) VALUES (:image_path)");
+                    $stmt->bindParam(':image_path', $uploadFile);
+                    $stmt->execute();
+                    $message = "Imagem enviada com sucesso!";
+                } else {
+                    $message = "Erro ao enviar imagem ou formato inválido.";
+                }
+            }
+
+        $imagePath = '';
+        $result = $pdo->query("SELECT image_path FROM images ORDER BY id DESC LIMIT 1");
+        if ($result && $row = $result->fetch(PDO::FETCH_ASSOC))
+            $imagePath = $row['image_path'];
         ?>
         <form action="pagamento.php">
 
@@ -109,38 +114,50 @@
                             </div>
                             <div class="gerais">
 
-                                <div class="promotor">
-                                <?php if ($imagePath): ?>
-    <img src="<?= $imagePath ?>" class="imagem-arredondada">
-<?php endif; ?>
+                            <div class="promotor">
+    <?php if ($imagePath): ?>
+        <img src="<?= htmlspecialchars($imagePath) ?>" class="imagem-arredondada">
+    <?php endif; ?>
 
-                                    <div class="infos">
-                                        <?php
-                                        $conexao = $pdo->prepare("
-                                        SELECT promotores.nome AS nome_promotor
-                                        FROM evento
-                                        INNER JOIN promotores ON evento.id_promotor = promotores.id
-                                        WHERE evento.id = :id
-                                        ");
-                                        $conexao->bindParam(':id', $id, PDO::PARAM_INT);
-                                        $conexao->execute();
+    <div class="infos">
+    <?php
+$id = $_SESSION['id_usuario'];
+$conexao = $pdo->prepare("
+    SELECT promotores.nome AS nome_promotor
+    FROM evento
+    INNER JOIN promotores ON evento.id_promotor = promotores.id
+    INNER JOIN usuario ON evento.id_usuario = usuario.id_usuario
+    WHERE evento.id = :id
+");
+$conexao->bindParam(':id', $id, PDO::PARAM_INT);
+$conexao->execute();
 
-                                        // Depurando o valor de $id (para verificar)
-                                        //var_dump($id);
-                                    
-                                        // Obtendo o resultado
-                                        $results = $conexao->fetch(PDO::FETCH_ASSOC);
+// Depurando o valor de $id (para verificar)
+// var_dump($id);
 
-                                        // Verificando se retornou algo
-                                    
-                                        ?>
+// Obtendo o resultado
+$results = $conexao->fetch(PDO::FETCH_ASSOC);
 
-                                        <h1 class="name"> <?php echo $results['nome_promotor']; ?></h1>
+// Verificando se retornou algo
+if ($results && isset($results['nome_promotor'])) {
+    $nome_promotor = htmlspecialchars($results['nome_promotor']);
+} else {
+    $nome_promotor = "Nenhum promotor encontrado.";
+}
+?>
 
+<div class="promotor">
+    <?php if ($imagePath): ?>
+        <img src="<?= htmlspecialchars($imagePath) ?>" class="imagem-arredondada">
+    <?php endif; ?>
 
-
-                                        <h3 class="sobrePromote">Promotor a mais de 5 anos</h3>
-                                    </div>
+    <div class="infos">
+        <h1 class="name"><?php echo $nome_promotor; ?></h1>
+        <h3 class="sobrePromote">Promotor a mais de 5 anos</h3>
+    </div>
+</div>
+    </div>
+</div>
                                 </div>
                                 <hr>
                                 <div class="infoEvento">

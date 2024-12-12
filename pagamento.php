@@ -138,7 +138,7 @@ session_start();
   $stmt = $conexao->prepare("SELECT * FROM evento where id=?");
   $stmt->execute([$id]);
   $results = $stmt->fetch(PDO::FETCH_ASSOC);
-  $_SESSION['valor'] = $results["valor"] ?? 0;
+  $_SESSION['valor'] = floatval($results["valor"]) ?? 0.0;
 
 
   $id_usuario = $_SESSION['id_usuario'];
@@ -168,7 +168,6 @@ session_start();
     <!-- Card à Esquerda -->
     <div class="left">
       <div class="info-card">
-
         <form id="form-checkout">
 
           <div id="form-checkout__cardNumber" class="container"></div>
@@ -215,10 +214,9 @@ session_start();
         
           // Obtendo o resultado
           $resultado = $select->fetch(PDO::FETCH_ASSOC);
-
-          // Verificando se retornou algo
-        
           ?>
+        <h1 class="name"> Promovido por:<?php echo $results["valor"]; ?></h1>
+
           <img src="<?= htmlspecialchars($caminhosImagens[0] ?? '') ?>" alt="Imagem do evento" class="foto_1">
           <h1 class="name"> Promovido por:<?php echo $resultado['nome']; ?></h1>
 
@@ -272,7 +270,7 @@ session_start();
 
 
     const cardForm = mp.cardForm({
-      amount: "10.5",
+      amount: "<?php echo $_SESSION['valor'] ?>",
       iframe: true,
       form: {
         id: "form-checkout",
@@ -341,7 +339,7 @@ session_start();
               token,
               issuer_id,
               payment_method_id,
-              transaction_amount: <?= floatval($_SESSION['valor']) ?>,//valor a ser pago
+              transaction_amount: <?php echo $_SESSION['valor'] ?>,//valor a ser pago
               installments: Number(installments),//parcelas
               description: "<?= $nome?>",//descrição
               payer: {
@@ -356,8 +354,8 @@ session_start();
             return resposta.json()
           })
             .then((dados) => {
-              //window.location.href = `pagamentos/aprovado.php?id=${dados.id}`;
-              console.log(dados.id)
+              window.location.href = `pagamentos/aprovado.php?id=${dados.id}`;
+              //console.log(dados.id)
             })
         },
         onFetching: (resource) => {

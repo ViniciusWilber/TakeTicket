@@ -25,6 +25,10 @@ $dados = [
         ]
     ]
 ];
+//echo json_encode($data);
+//echo '<hr>';
+//echo json_encode($dados);
+
 //KEY public: TEST-0aa04b1c-87eb-47cc-b6be-82f180539c72
 //KEY secret: TEST-5232080259225545-042515-bfeaf6dff3b3fd59594bb4d9ffe6525f-22727655
 $KEY = "TEST-5232080259225545-042515-bfeaf6dff3b3fd59594bb4d9ffe6525f-22727655";

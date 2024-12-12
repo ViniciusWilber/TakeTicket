@@ -124,28 +124,40 @@ use PHPMailer\PHPMailer\Exception;
                     <section class="section1">
 
 
-                        <?php
-                        // $usuario = $_SESSION['id_usuario']; // ID do usuário da sessão
-                        
-                        // $pdo = new PDO('mysql:host=localhost;dbname=TakeTicket', 'root', '');
+                    <?php
 
-                        // // Prepara a consulta para buscar o promotor com o mesmo id_usuario
-                        // $stmt = $pdo->prepare("SELECT * FROM promotores WHERE id_usuario = :id_usuario");
-                        // $stmt->bindParam(':id_usuario', $usuario, PDO::PARAM_INT);
-                        // $stmt->execute();
+$usuario = $_SESSION['id_usuario']; // ID do usuário da sessão
+if (!$usuario) {
+    die("ID do usuário não está definido na sessão.");
+}
 
-                        // // Pega o resultado
-                        // $promotor = $stmt->fetch(PDO::FETCH_ASSOC);
+try {
+    $conexao = new PDO('mysql:host=localhost;dbname=TakeTicket', 'root', '');
+    $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                        // ?>
+    // Prepara a consulta para buscar o promotor com o mesmo id_usuario
+    $stmt = $conexao->prepare("SELECT * FROM promotores WHERE id_usuario = :id_usuario");
+    $stmt->bindParam(':id_usuario', $usuario, PDO::PARAM_INT);
+    $stmt->execute();
 
-                        <!-- Verifica se o promotor foi encontrado antes de gerar o input -->
-                       
-                         <input type="text" name="id_promotor" >
-                         <!-- 
-                             <p>Promotor não encontrado.</p>
-                         -->
+    // Pega o resultado
+    $promotor = $stmt->fetch(PDO::FETCH_ASSOC);
+    if (!$promotor) {
+        die("Nenhum promotor encontrado para o ID do usuário: $usuario");
+    }
 
+    // Adiciona depuração para verificar o conteúdo de $promotor
+} catch (PDOException $e) {
+    die("Erro na conexão ou na consulta: " . $e->getMessage());
+}
+?>
+
+<!-- Verifica se o promotor foi encontrado antes de gerar o input -->
+<?php if ($promotor && isset($promotor['id'])): ?>
+    <input type="text" name="id_promotor" value="<?php echo htmlspecialchars($promotor['id']); ?>" style="display: none;">
+<?php else: ?>
+    <input type="text" name="id_promotor" value="">
+<?php endif; ?>
                         </select>
                         <div class="info">
                             <input type="text" id="rua" name="logradouro" class="input-box" placeholder="Rua/Avenida">
