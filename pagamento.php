@@ -119,6 +119,87 @@ session_start();
       width: 33rem;
       border-radius: 4%;
     }
+
+    @media (max-width: 768px) {
+      .corpo {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .right img {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      .right {
+        width: 100%;
+      }
+
+      .left {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .cadastro,
+      .progress-bar,
+      .botao {
+        font-size: 14px;
+      }
+
+
+      .container {
+        border-radius: 8px;
+        width: 18rem;
+        height: 2.8rem;
+        padding: 0.5em;
+        background-color: #e1e2e3;
+        box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
+        transition: 300ms ease-in-out;
+        text-align: center;
+        font-size: 20px;
+
+        .right h1,
+        .right p {
+          font-size: 16px;
+        }
+      }
+
+      .cadastro {
+        border-radius: 8px;
+        width: 18rem;
+        height: 2.8rem;
+        padding: 0.5em;
+        background-color: #e1e2e3;
+        box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
+        transition: 300ms ease-in-out;
+        text-align: center;
+        font-size: 20px;
+      }
+      .botao {
+    border-radius: 8px;
+    width: 18rem;
+    height: 2.8rem;
+    padding: 0.5em;
+    background-color: #e1e2e3;
+    box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: 300ms ease-in-out;
+    text-align: center;
+    font-size: 20px;
+}
+.progress-bar {
+    border-radius: 8px;
+    width: 18rem;
+    height: 2.8rem;
+    padding: 0.5em;
+    background-color: #e1e2e3;
+    box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: 300ms ease-in-out;
+    text-align: center;
+    font-size: 20px;
+}
+    }
   </style>
 </head>
 
@@ -215,7 +296,7 @@ session_start();
           // Obtendo o resultado
           $resultado = $select->fetch(PDO::FETCH_ASSOC);
           ?>
-        <h1 class="name"> Promovido por:<?php echo $results["valor"]; ?></h1>
+          <h1 class="name"> Promovido por:<?php echo $results["valor"]; ?></h1>
 
           <img src="<?= htmlspecialchars($caminhosImagens[0] ?? '') ?>" alt="Imagem do evento" class="foto_1">
           <h1 class="name"> Promovido por:<?php echo $resultado['nome']; ?></h1>
@@ -341,7 +422,7 @@ session_start();
               payment_method_id,
               transaction_amount: <?php echo $_SESSION['valor'] ?>,//valor a ser pago
               installments: Number(installments),//parcelas
-              description: "<?= $nome?>",//descrição
+              description: "<?= $nome ?>",//descrição
               payer: {
                 email,
                 identification: {

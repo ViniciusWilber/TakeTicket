@@ -579,6 +579,135 @@ button:hover .transition {
 button:active {
   transform: scale(0.97);
 }
+@media (max-width: 768px) {
+  main.Perfil {
+      flex-direction: column;
+  }
+
+  .esquerda, .direita {
+      width: 100%;
+  }
+
+  .botoesEvento {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .botoesEvento button {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+}
+
+/* Responsividade específica */
+@media (max-width: 480px) {
+  .esquerda, .direita {
+      padding: 10px;
+  }
+
+  .botoesEvento button {
+      width: 100%;
+      font-size: 14px;
+      padding: 10px;
+  }
+
+  .emandamento img {
+      width: 100%;
+  }
+
+  button {
+      padding: 10px 15px;
+      font-size: 14px;
+  }
+}
+
+@media (max-width: 414px) {
+  .esquerda, .direita {
+      padding: 8px;
+  }
+
+  .botoesEvento button {
+      width: 100%;
+      font-size: 12px;
+      padding: 8px;
+  }
+
+  .emandamento img {
+      width: 100%;
+  }
+
+  button {
+      padding: 8px 12px;
+      font-size: 12px;
+  }
+}
+
+@media (max-width: 375px) {
+   .form-footer {
+    font-size: 50%;
+   }
+  .esquerda, .direita {
+      padding: 6px;
+  }
+
+  .botoesEvento button {
+      width: 100%;
+      font-size: 11px;
+      padding: 6px;
+  }
+
+  .emandamento img {
+      width: 100%;
+  }
+
+  button {
+      padding: 6px 10px;
+      font-size: 11px;
+  }
+}
+
+
+@media (max-width: 360px) {
+  .esquerda, .direita {
+      padding: 5px;
+  }
+
+  .botoesEvento button {
+      width: 100%;
+      font-size: 10px;
+      padding: 5px;
+  }
+
+  .emandamento img {
+      width: 100%;
+  }
+
+  button {
+      padding: 5px 8px;
+      font-size: 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  .esquerda, .direita {
+      padding: 4px;
+  }
+
+  .botoesEvento button {
+      width: 100%;
+      font-size: 9px;
+      padding: 4px;
+  }
+
+  .emandamento img {
+      width: 100%;
+  }
+
+  button {
+      padding: 4px 6px;
+      font-size: 9px;
+  }
+}
 
 @media (max-width:768px) {
   header {
@@ -690,7 +819,11 @@ button:active {
 
   .emandamento {
     gap: 4%;
-  }
+    display: flex
+;
+    flex-direction: column;
+}
+
 
   .emandamento input {
     display: none;

@@ -21,7 +21,7 @@ include_once "conexao.php";
     <link rel="stylesheet" href="css/header.css">
     <title>Perfil/ViniciusWilber</title>
     <style>
-        .promovidos{
+        .promovidos {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -29,6 +29,34 @@ include_once "conexao.php";
             width: 100%;
             border: 1px solid rgba(114, 114, 114, 0.267);
             flex-direction: column;
+        }
+
+        @media (max-width: 425px) {
+            .emandamento {
+                gap: 4%;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .esquerda {
+                display: flex;
+                flex-direction: row;
+                width: 19rem;
+            }
+
+            .botoes {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 37px;
+                padding-right: 30px;
+            }
+
+            .esquerda {
+                display: flex;
+                flex-direction: column;
+                width: 19rem;
+            }
         }
     </style>
 </head>
@@ -198,8 +226,7 @@ include_once "conexao.php";
                                         <div class="emandamento">
                                             <p><?= $dados["nome"] ?></p>
                                             <img src="<?= htmlspecialchars($caminhosImagens[0] ?? '') ?>" alt="">
-                                            <a href="editar.php?id=<?= $dados['id'] ?>"><button
-                                            class="reserva">Reservar</button></a>
+                                            <a href="editar.php?id=<?= $dados['id'] ?>"><button class="reserva">Reservar</button></a>
                                         </div>
                                         <?php
                                     }
