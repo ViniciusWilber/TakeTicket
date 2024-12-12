@@ -20,11 +20,23 @@ include_once "conexao.php";
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/header.css">
     <title>Perfil/ViniciusWilber</title>
+    <style>
+        .promovidos{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 3%;
+            width: 100%;
+            border: 1px solid rgba(114, 114, 114, 0.267);
+            flex-direction: column;
+        }
+    </style>
 </head>
 
 <body>
     <?php
     include_once "header_deslogar.php";
+    include_once "conexao.php";
     $id = $_SESSION['id_usuario'];
     try {
         $pdo = new PDO('mysql:host=localhost;dbname=taketicket', 'root', '');
@@ -104,6 +116,7 @@ include_once "conexao.php";
                     <i class="fab fa-whatsapp"></i>
                 </a>
             </div>
+
         </div>
 
         <div class="direita">
@@ -112,23 +125,18 @@ include_once "conexao.php";
                     <button class="andamento" id="alt">Meus Eventos Comprados</button>
                     <button class="passado" id="btn">Meus Eventos Promovidos</button>
                 </div>
-                <div class="eventos" id="eventos">
+
+                <div class="eventos" id="eventosComprados">
                     <?php
-                    include_once "conexao.php";
 
-                    // Verifique se o id_usuario existe na sessão
                     if (isset($_SESSION['id_usuario'])) {
-                        // Pega o id_usuario da sessão
                         $id_usuario = $_SESSION['id_usuario'];
-
-                        // Consulta utilizando INNER JOIN para buscar nome do evento e foto
                         $sql = "
-                    SELECT evento.nome,evento.descricao,evento.imagens
-                    FROM ingresso
-                    INNER JOIN evento ON ingresso.evento_id = evento.id
-                    WHERE ingresso.id_usuario = ?
-                        ";
-                        // Prepare e execute a consulta utilizando sua conexão existente
+        SELECT evento.nome, evento.descricao, evento.imagens
+        FROM ingresso
+        INNER JOIN evento ON ingresso.evento_id = evento.id
+        WHERE ingresso.id_usuario = ?
+        ";
                         $stmt = $conexao->prepare($sql);
                         $stmt->execute([$id_usuario]);
                         foreach ($stmt as $dados) {
@@ -136,13 +144,10 @@ include_once "conexao.php";
                             ?>
                             <div class="emandamento">
                                 <img src="<?= htmlspecialchars($caminhosImagens[0] ?? '') ?>" alt="">
-                                <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
                                     data-bs-target="#exampleModal">
                                     Monstre seu ingresso
                                 </button>
-
-                                <!-- Modal -->
                                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                                     aria-hidden="true">
                                     <div class="modal-dialog">
@@ -154,7 +159,6 @@ include_once "conexao.php";
                                             <div class="modal-body">
                                                 <img src="imagen/qr-code.jpg" alt="Descrição da imagem" width="300"
                                                     height="200">
-
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
@@ -173,29 +177,74 @@ include_once "conexao.php";
                     }
                     ?>
                 </div>
-
-
-                 <?php
-                        include_once "conexao.php";
+                <div class="eventosPassados" id="eventosPromovidos">
+                    <div class="promovidos">
+                        <?php
+                        if (isset($_SESSION['id_usuario'])) {
+                            $id_usuario = $_SESSION['id_usuario'];
+                            $sql = "SELECT evento.*
+            FROM evento
+            INNER JOIN promotores ON evento.id_promotor = promotores.id
+            WHERE promotores.id_usuario = :id_usuario";
+                            $stmt = $conexao->prepare($sql);
+                            if ($stmt) {
+                                $stmt->bindParam(':id_usuario', $id_usuario, PDO::PARAM_INT);
+                                $stmt->execute();
+                                $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                if ($resultados) {
+                                    foreach ($resultados as $dados) {
+                                        $caminhosImagens = json_decode($dados['imagens'], true);
+                                        ?>
+                                        <div class="emandamento">
+                                            <p><?= $dados["nome"] ?></p>
+                                            <img src="<?= htmlspecialchars($caminhosImagens[0] ?? '') ?>" alt="">
+                                            <a href="editar.php?id=<?= $dados['id'] ?>"><button
+                                            class="reserva">Reservar</button></a>
+                                        </div>
+                                        <?php
+                                    }
+                                } else {
+                                }
+                            } else {
+                                echo "Erro ao preparar a consulta.";
+                            }
+                        } else {
+                            echo "Usuário não está logado.";
+                        }
                         ?>
                     </div>
                 </div>
-            </div>
-    </main>
-    <?php include_once "footer.php" ?>
 
-    <script>
-        $(document).ready(() => {
-            $('#alt').click(() => {
-                $('#eventos').show();
-                $('#eventosPassados').hide();
-            });
-            $('#btn').click(() => {
-                $('#eventos').hide();
-                $('#eventosPassados').show();
-            });
-        });
-    </script>
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const altButton = document.getElementById('alt');
+                    const btnButton = document.getElementById('btn');
+                    const eventosComprados = document.getElementById('eventosComprados');
+                    const eventosPromovidos = document.getElementById('eventosPromovidos');
+
+                    if (altButton && btnButton && eventosComprados && eventosPromovidos) {
+                        altButton.addEventListener('click', () => {
+                            eventosComprados.style.display = 'block';
+                            eventosPromovidos.style.display = 'none';
+                        });
+                        btnButton.addEventListener('click', () => {
+                            eventosComprados.style.display = 'none';
+                            eventosPromovidos.style.display = 'block';
+                        });
+                    } else {
+                        console.error('Elementos não encontrados.');
+                    }
+                });
+            </script>
+
+
+
+
+
+
+
 </body>
 
 </html>

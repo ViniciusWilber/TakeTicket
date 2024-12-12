@@ -115,37 +115,27 @@
                             <div class="gerais">
 
                             <div class="promotor">
-    <?php if ($imagePath): ?>
-        <img src="<?= htmlspecialchars($imagePath) ?>" class="imagem-arredondada">
-    <?php endif; ?>
 
     <div class="infos">
     <?php
-$id = $_SESSION['id_usuario'];
 $conexao = $pdo->prepare("
-    SELECT promotores.nome AS nome_promotor
+    SELECT promotores.nome
     FROM evento
     INNER JOIN promotores ON evento.id_promotor = promotores.id
-    INNER JOIN usuario ON evento.id_usuario = usuario.id_usuario
     WHERE evento.id = :id
 ");
 $conexao->bindParam(':id', $id, PDO::PARAM_INT);
 $conexao->execute();
-
-// Depurando o valor de $id (para verificar)
-// var_dump($id);
-
 // Obtendo o resultado
 $results = $conexao->fetch(PDO::FETCH_ASSOC);
 
 // Verificando se retornou algo
-if ($results && isset($results['nome_promotor'])) {
-    $nome_promotor = htmlspecialchars($results['nome_promotor']);
+if ($results && isset($results['nome'])) {
+    $nome_promotor = htmlspecialchars($results['nome']);
 } else {
     $nome_promotor = "Nenhum promotor encontrado.";
 }
 ?>
-
 <div class="promotor">
     <?php if ($imagePath): ?>
         <img src="<?= htmlspecialchars($imagePath) ?>" class="imagem-arredondada">

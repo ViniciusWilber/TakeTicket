@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,60 +9,70 @@
     <script src="https://kit.fontawesome.com/224a2d2542.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/perfil_usuario.css">
     <title>Perfil/ViniciusWilber</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+ 
 </head>
+
 <body>
-<?php
-  include_once "header_deslogar.php";
-  try {
-    // Conexão com o banco de dados
-    $pdo = new PDO('mysql:host=localhost;dbname=taketicket', 'root', '');
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    <?php
+    include_once "header_deslogar.php";
+    try {
+        // Conexão com o banco de dados
+        $pdo = new PDO('mysql:host=localhost;dbname=taketicket', 'root', '');
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Certifique-se de que o ID do usuário está armazenado na sessão após o login
-    if (!isset($_SESSION['id_usuario'])) {
-        die('Usuário não autenticado. Faça login para acessar.');
-    }
+        // Certifique-se de que o ID do usuário está armazenado na sessão após o login
+        if (!isset($_SESSION['id_usuario'])) {
+            die('Usuário não autenticado. Faça login para acessar.');
+        }
 
-    $id = $_SESSION['id_usuario']; // Pegar o ID do usuário da sessão
-
-    // Selecionar os dados do usuário logado
-    $stmt = $pdo->prepare('SELECT * FROM usuario WHERE id_usuario = :id');
-    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-    $stmt->execute();
-    $editar = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if (!$editar) {
-        die('Usuário não encontrado no banco de dados.');
-    }
-} catch (PDOException $e) {
-    die('Erro ao conectar ao banco de dados: ' . $e->getMessage());
-}
-
-  if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['image'])) {
-    $uploadDir = 'uploads/';
-    $uploadFile = $uploadDir . basename($_FILES['image']['name']);
+        $id = $_SESSION['id_usuario']; // Pegar o ID do usuário da sessão
     
-    if (!is_dir($uploadDir)) mkdir($uploadDir, 0777, true);
-    
-    $ext = strtolower(pathinfo($uploadFile, PATHINFO_EXTENSION));
-    if (in_array($ext, ['jpg', 'png']) && move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile)) {
-        $stmt = $pdo->prepare("INSERT INTO images (image_path) VALUES (:image_path)");
-        $stmt->bindParam(':image_path', $uploadFile);
+        // Selecionar os dados do usuário logado
+        $stmt = $pdo->prepare('SELECT * FROM usuario WHERE id_usuario = :id');
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
-        $message = "Imagem enviada com sucesso!";
-    } else {
-        $message = "Erro ao enviar imagem ou formato inválido.";
-    }
-  }
+        $editar = $stmt->fetch(PDO::FETCH_ASSOC);
 
-  $imagePath = '';
-  $result = $pdo->query("SELECT image_path FROM images ORDER BY id DESC LIMIT 1");
-  if ($result && $row = $result->fetch(PDO::FETCH_ASSOC)) $imagePath = $row['image_path'];
-?>
+        if (!$editar) {
+            die('Usuário não encontrado no banco de dados.');
+        }
+    } catch (PDOException $e) {
+        die('Erro ao conectar ao banco de dados: ' . $e->getMessage());
+    }
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['image'])) {
+        $uploadDir = 'uploads/';
+        $uploadFile = $uploadDir . basename($_FILES['image']['name']);
+
+        if (!is_dir($uploadDir))
+            mkdir($uploadDir, 0777, true);
+
+        $ext = strtolower(pathinfo($uploadFile, PATHINFO_EXTENSION));
+        if (in_array($ext, ['jpg', 'png']) && move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile)) {
+            $stmt = $pdo->prepare("INSERT INTO images (image_path) VALUES (:image_path)");
+            $stmt->bindParam(':image_path', $uploadFile);
+            $stmt->execute();
+            $message = "Imagem enviada com sucesso!";
+        } else {
+            $message = "Erro ao enviar imagem ou formato inválido.";
+        }
+    }
+
+    $imagePath = '';
+    $result = $pdo->query("SELECT image_path FROM images ORDER BY id DESC LIMIT 1");
+    if ($result && $row = $result->fetch(PDO::FETCH_ASSOC))
+        $imagePath = $row['image_path'];
+    ?>
     <main class="Perfil">
         <div class="esquerda">
             <div class="elementos">
-                <?php if (isset($message)) echo "<p>$message</p>"; ?>
+                <?php if (isset($message))
+                    echo "<p>$message</p>"; ?>
                 </form>
                 <?php if ($imagePath): ?>
                     <img src="<?= $imagePath ?>" style="max-width: 500px;">
@@ -81,9 +92,10 @@
                     <button class="passado" id="btn">Meus Eventos Concluídos</button>
                 </div>
                 <div class="eventos" id="eventos">
-                <?php
+                    <?php
                     include_once "conexao.php";
 
+                    // Verifique se o id_usuario existe na sessão
                     if (isset($_SESSION['id_usuario'])) {
                         // Pega o id_usuario da sessão
                         $id_usuario = $_SESSION['id_usuario'];
@@ -140,35 +152,20 @@
                     }
                     ?>
                 </div>
-                
+
+
                 <div class="eventosPassados" id="eventosPassados">
                     <!-- Eventos passados aqui -->
 
                     <div class="eventos" id="eventos">
-                    <?php
-                    include_once "conexao.php";
-                    $stmt = $conexao->prepare("SELECT * FROM evento e, favoritos f WHERE e.id = f.evento_id && f.usuario_id = :id && f.status = 0");
-                    $stmt->bindParam("id", $_SESSION['id_usuario']);
-                    $stmt->execute();
-                    while ($dados = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                    ?>
                         <div class="emandamento">
-                            <img src="imagens/imgPerfil/AdobeStock_293894349.jpg" alt="">
-                            <p>Como promotor de eventos em São Paulo, moldo espaços para celebrar, deixando meu legado na cultura local.
-                            </p>
-                            <label><?= $dados["nome"] ?></label>
-                            <a href="editar.php?id=<?= $dados['id'] ?>"></a><button class="Login">editar</button></a>
-                            <a href="excluir_evento.php?id=<?= $dados['id'] ?>"></a><button class="Login">apagar</button></a>
+
                         </div>
-                    <?php
-                    }
-                    ?>
-                   
-                </div>
+                    </div>
                 </div>
             </div>
         </div>
-        
+
     </main>
     <?php include_once "footer.php" ?>
 
@@ -185,4 +182,5 @@
         });
     </script>
 </body>
+
 </html>
